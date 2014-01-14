@@ -27,7 +27,7 @@ var subscriber = mongoose.model('subscribers', subscriberSchema);
 exports.list = function(req, res){
 	subscriber.find({}).exec(function (err, result) {
 		if(!err) {
-				res.write(result);
+				res.write(JSON.stringify(result));
 		} else { console.log('error: ' + err); }
 	});
 	
