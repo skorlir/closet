@@ -36,5 +36,8 @@ exports.list = function(req, res){
 
 exports.add = function(req, res){
 	
-	res.send('hurajdkflaj');
+	var newSub = new subscriber(req.body.email);
+	newSub.save(function(err){ console.log('err: '+ err); });
+	
+	res.send('shanks');
 };

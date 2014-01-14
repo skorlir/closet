@@ -10,6 +10,12 @@ $(document).ready(function () {
 			//send off the valid email to be handled all ajax-y like
 			console.log("That's what I call a good email!");
 			//TODO: make an $.ajax(); ter teh serverr
+			$.ajax({
+				url: "/users",
+				method: 'POST'
+			}).done(function( data ) {
+				console.log( "response: ", data );
+			});
 		}
 		
 		//else quietly die :-D
