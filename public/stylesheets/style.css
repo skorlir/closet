@@ -10,7 +10,7 @@ body {
 	background-size: 120%;
 	background-position: 20% 20%;
 	background-repeat: no-repeat;
-	font-size: 2em;
+	font-size: 38px;
 	display: table;
 	color: rgb(255, 255, 255);
 }
@@ -36,7 +36,6 @@ h1,p {
 }
 
 p {
-	font-size: 120%;
 	text-align: center;
 	margin: 0.7em auto;
 	width: auto;
@@ -44,7 +43,7 @@ p {
 
 h1 	{
 	font-family: pacifico, 'Lucida Grande', 'helvetica neue', helvetica, sans-serif;	
-	font-size: 4.55em;
+	font-size: 4em;
 	-moz-transform: rotate(-5deg);
 	-webkit-transform: rotate(-5deg);
 	transform: rotate(-5deg);
@@ -94,7 +93,7 @@ button {
 	background: linear-gradient(to bottom,  #59a8e5 0%,#1d86c6 97%,#7ab3ff 100%); /* W3C */
 	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#59a8e5', endColorstr='#7ab3ff',GradientType=0 ); /* IE6-9 */
 
-	font-size: 2em;
+	font-size: 1.6em;
 	background-color: linearGradient();
 }
 
