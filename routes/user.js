@@ -32,6 +32,7 @@ exports.list = function(req, res){
 	});
 	
 	res.write('list whut?');
+	res.end();
 	
 };
 
