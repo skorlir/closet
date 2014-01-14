@@ -25,12 +25,13 @@ var subscriberSchema = new mongoose.Schema({
 var subscriber = mongoose.model('subscribers', subscriberSchema);
 
 exports.list = function(req, res){
-	res.write('list whut?');
 	subscriber.find({}).exec(function (err, result) {
 		if(!err) {
 				res.render('userlist', result);
 		} else { console.log('error: ' + err); }
 	});
+	
+	res.send('list whut?');
 	
 };
 
