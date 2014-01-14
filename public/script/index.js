@@ -2,8 +2,15 @@ $(document).ready(function () {
 
   var body = $('body');
 	var overlay = $('.banner');
+	var validemail = /^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
 	
 	$('button').click(function () {
+		//validate email and send to database
+		if( validemail.test( $(this).prev().val() ) ) { 
+			//send off the valid email to be handled all ajax-y like
+		}
+		
+		//else quietly die :-D
    });
 	
 	var winwh, winhh;
@@ -18,7 +25,7 @@ $(document).ready(function () {
 		body.animate({
    'background-position-x': -winwh + (e.pageX-winwh)/10,
    'background-position-y': -winhh + (e.pageY-winhh)/10
- }, {queue:false,duration:50,easing:'smoothishmove'});
+ }, {queue:false,duration:100,easing:'smoothishmove'});
 		console.log((winwh - e.pageX)/winwh + ' ' + (winhh - e.pageY)/winhh);
 		}
 	
