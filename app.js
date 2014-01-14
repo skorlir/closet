@@ -11,6 +11,10 @@ var path = require('path');
 
 var app = express();
 
+var auth = express.basicAuth(function(user, pass) {
+ 		return user === 'admin' && pass === 'view users please';
+	});
+
 // all environments
 app.set('port', process.env.PORT || 3000);
 app.set('views', path.join(__dirname, 'views'));
@@ -29,7 +33,8 @@ if ('development' == app.get('env')) {
 }
 
 app.get('/', routes.index);
-app.get('/users', user.list);
+app.get('/users', auth, user.list);
+app.post('/users', user.add);
 
 http.createServer(app).listen(app.get('port'), function(){
   console.log('Express server listening on port ' + app.get('port'));

@@ -1,0 +1,10 @@
+extends layout
+
+block content
+	h1
+		Users
+	hr
+	
+	ul.results
+		- each res in result
+			li!= res.email
