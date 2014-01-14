@@ -19,7 +19,7 @@ if (err) {
 });
 
 var subscriberSchema = new mongoose.Schema({
-	email: { type: String, trim: true }
+	email: String
 });
 
 var subscriber = mongoose.model('subscribers', subscriberSchema);
@@ -31,14 +31,15 @@ exports.list = function(req, res){
 		} else { console.log('error: ' + err); }
 	});
 	
-	res.send('list whut?');
+	res.write('list whut?');
 	
 };
 
 exports.add = function(req, res){
 	
-	var newSub = new subscriber({email: req.body.email.toString()});
-	newSub.save(function(err){ res.send('err: '+ err); });
+	var newSub = new subscriber({email: req.body.email});
+	console.log(newSub);
+	newSub.save(function(err){ res.write(err); });
 	
 	res.send('shanks');
 };
