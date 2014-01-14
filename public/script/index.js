@@ -32,6 +32,6 @@ $(document).ready(function () {
 		}
 	
 	$(document).mousemove(function (e) {
-		parallalax(e);
+		//parallalax(e);
 	});
 });
