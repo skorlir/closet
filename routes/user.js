@@ -37,7 +37,7 @@ exports.list = function(req, res){
 exports.add = function(req, res){
 	
 	var newSub = new subscriber(req.body.email);
-	newSub.save(function(err){ console.log('err: '+ err); });
+	newSub.save(function(err){ res.send('err: '+ err); });
 	
 	res.send('shanks');
 };
