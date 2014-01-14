@@ -2,6 +2,7 @@ $(document).ready(function () {
 
   var body = $('body');
 	var overlay = $('.banner');
+	var input = $('input[type=email]');
 	var validemail = /^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
 	
 	$('button').click(function () {
@@ -10,9 +11,10 @@ $(document).ready(function () {
 			//send off the valid email to be handled all ajax-y like
 			console.log("That's what I call a good email!");
 			//TODO: make an $.ajax(); ter teh serverr
-			$.ajax({
+			$.ajax(
 				url: "/users",
-				method: 'POST'
+				method: 'POST',
+				data: input.val()
 			}).done(function( data ) {
 				console.log( "response: ", data );
 			});
