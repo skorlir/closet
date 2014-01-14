@@ -28,8 +28,8 @@ exports.list = function(req, res){
 	subscriber.find({}).exec(function (err, result) {
 		if(!err) {
 				console.log(result);
-				console.log(JSON.stringify(result, undefined, 2));
-				res.write(JSON.stringify(result, undefined, 2));
+				console.log(JSON.stringify(result, undefined, 0));
+				res.write(JSON.stringify(result, undefined, 0));
 		} else { console.log('error: ' + err); }
 	});
 	
