@@ -26,9 +26,9 @@ div.banner {
 	vertical-align: middle;
 	width: 1%;
 	margin-left: 50%;
-	background-position: 50% 40%;
-	/*background: url('../images/bluroverlay.jpg');*/
-	background-size: 120% 120%;
+	/*background-position: 50% 40%;
+	background: url('../images/bluroverlay.jpg');
+	background-size: 120% 120%; */
 }
 
 h1,p {
@@ -45,11 +45,12 @@ p {
 h1 	{
 	font-family: pacifico, 'Lucida Grande', 'helvetica neue', helvetica, sans-serif;	
 	font-size: 4.55em;
+	-moz-transform: rotate(-5deg);
 	-webkit-transform: rotate(-5deg);
-	transform: rotate(-15deg);
+	transform: rotate(-5deg);
 	position: absolute;
-	right: 28%;
-	top: -3%;
+	right: 25%;
+	bottom: 55%;
 	/*rgb(92, 175, 252)
 	-6px 3px white, 2px 1px 7px black*/
 	color: rgb(92,175,255);
@@ -129,8 +130,13 @@ input.subscribe {
 	border-width: thin;
 	background: rgba(255,255,255,0.85);
 	padding: 5px 15px;
-	box-shadow: 0px 2px 2px rgba(20,20,100,0.2);
+	box-shadow: inset 0px 1px 2px rgba(0,0,0,0.2),
+							0px 2px 2px rgba(20,20,100,0.2);
 	text-align: center;
+}
+
+input.subscribe:focus {
+	background-color: white;
 }
 
 ::-webkit-input-placeholder { /* WebKit browsers */

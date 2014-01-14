@@ -8,6 +8,8 @@ $(document).ready(function () {
 		//validate email and send to database
 		if( validemail.test( $(this).prev().val() ) ) { 
 			//send off the valid email to be handled all ajax-y like
+			console.log("That's what I call a good email!");
+			//TODO: make an $.ajax(); ter teh serverr
 		}
 		
 		//else quietly die :-D
