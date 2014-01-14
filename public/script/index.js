@@ -14,7 +14,7 @@ $(document).ready(function () {
 			$.ajax({
 				url: "/users",
 				method: 'POST',
-				data: input.val()
+				data: {'email': input.val()}
 			}).done(function( data ) {
 				console.log( "response: ", data );
 			});
