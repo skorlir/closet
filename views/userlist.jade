@@ -5,6 +5,5 @@ block content
 	hr
 	
 	ul.results
-		- for(var i=0; i<pinion.length; i++) {
-			li=pinion[i]
-		- }
+		- each pin in pinion
+			li= pin
