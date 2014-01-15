@@ -12,7 +12,7 @@ var path = require('path');
 var app = express();
 
 var auth = express.basicAuth(function(user, pass) {
- 		return user === 'admin' && pass === 'view users please';
+ 		return user === 'admin' && pass === 'granular crafty gidget';
 	});
 
 // all environments
