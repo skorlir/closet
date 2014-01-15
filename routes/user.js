@@ -28,7 +28,7 @@ exports.list = function(req, res){
 	subscriber.find({}).exec(function (err, result) {
 		if(!err) {
 				console.log(result);
-				res.redner('userlist', { result: JSON.stringify(result) });
+				res.render('userlist', { result: JSON.stringify(result) });
 		} else { console.log('error: ' + err); }
 	});
 	
