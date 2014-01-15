@@ -35,7 +35,7 @@ exports.list = function(req, res){
 						p.push(val);
 					}
 				});
-				console.log(pinion);
+				console.log(p);
 				res.render('userlist', { pinion: p });
 		} else { console.log('error: ' + err); }
 	});
