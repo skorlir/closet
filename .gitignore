@@ -38,3 +38,4 @@ mapreduce/results
 /mapreduce/**/*.txt
 
 /documents/*
+/testing-heroku/*
