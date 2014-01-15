@@ -6,13 +6,16 @@ html, body {
 body {
 	margin: 0;
 	font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+	font-size: 38px;
+	display: table;
+	color: rgb(255, 255, 255);
+}
+
+body.landing 	{
 	background-image: url('../images/bodybgblur.jpg');
 	background-size: 120%;
 	background-position: 20% 20%;
 	background-repeat: no-repeat;
-	font-size: 38px;
-	display: table;
-	color: rgb(255, 255, 255);
 }
 
 a {
