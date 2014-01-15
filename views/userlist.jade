@@ -1,10 +1,9 @@
 extends layout
 
 block content
-	h1
-		Users
+	h1 Users
 	hr
 	
 	ul.results
-		- each pin in pinion
-			li!= pin
+		- for(var i=0; i<pinion.length; i++)
+			li=pinion[i]
