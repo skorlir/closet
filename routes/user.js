@@ -30,10 +30,8 @@ exports.list = function(req, res){
 		if(!err) {
 				//console.log(result);
 				var p = [];
-				_.each(result, function(val, key) {
-					if (key === 'email') {
-						p.push(val);
-					}
+				_.each(result, function(el, dex) {
+					el.email === undefined ? null : p.push(el.email);
 				});
 				console.log(p);
 				res.render('userlist', { pinion: p });
