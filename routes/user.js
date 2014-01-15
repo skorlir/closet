@@ -4,6 +4,7 @@
  */
 
 var mongoose = require('mongoose');
+var _ = require('underscore');
 	
 var uristring =
 process.env.MONGOLAB_URI ||
