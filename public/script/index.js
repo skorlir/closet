@@ -10,17 +10,24 @@ $(document).ready(function () {
 		if( validemail.test( $(this).prev().val() ) ) { 
 			//send off the valid email to be handled all ajax-y like
 			console.log("That's what I call a good email!");
+			$(this).prev.val('adding you to the database...');
 			//TODO: make an $.ajax(); ter teh serverr
 			$.ajax({
 				url: "/users",
 				method: 'POST',
 				data: {'email': input.val()}
 			}).done(function( data ) {
-				console.log( "response: ", data );
+				if (!data.isError) {
+					$(this).prev().val(data.txt);
+				} else {
+					$(this).prev().val('Sorry, it looks like we ran into some trouble. Try again later?');
+				}
 			});
+		} else {
+			console.log('NOT A VALID EMAIL YOU TURRIBLE PERSAN');
 		}
 		
-		//else quietly die :-D
+		//else quietly die :-D WAI YOU BAD EMAIL NO NO TSK TSK
    });
 	
 	var winwh, winhh;

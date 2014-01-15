@@ -47,5 +47,5 @@ exports.add = function(req, res){
 	console.log(newSub);
 	newSub.save(function(err){ err=true; });
 	
-	res.send('shanks; err? '+err);
+	res.send({isError: err, txt: 'Thanks! We\'ll be in touch.'});
 };
