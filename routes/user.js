@@ -27,8 +27,14 @@ var subscriber = mongoose.model('subscribers', subscriberSchema);
 exports.list = function(req, res){
 	subscriber.find({}).exec(function (err, result) {
 		if(!err) {
-				console.log(result);
-				res.render('userlist', { result: JSON.stringify(result) });
+				//console.log(result);
+				var p = [];
+				_.each(result, function(val, key) {
+					if (key === 'email') {
+						p.push(val);
+					}
+				});
+				res.render('userlist', { pinion: p });
 		} else { console.log('error: ' + err); }
 	});
 	
