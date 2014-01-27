@@ -124,7 +124,7 @@ button:focus 	{
 	outline: none;
 }
 
-input.subscribe {
+input {
 	width: 500px;
 	font-size: inherit;
 	font-family: inherit;
@@ -139,7 +139,8 @@ input.subscribe {
 	text-align: center;
 }
 
-input.subscribe:focus {
+input:focus {
+	outline: none;
 	background-color: white;
 }
 
@@ -154,8 +155,4 @@ input.subscribe:focus {
 }
 :-ms-input-placeholder { /* Internet Explorer 10+ */
 		color: rgba(0,0,0,0.55);
-}
-
-input:focus {
-	outline: none;
 }

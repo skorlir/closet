@@ -32,7 +32,6 @@ $(document).ready(function () {
 			console.log('NOT A VALID EMAIL YOU TURRIBLE PERSAN');
 		}
 		
-		//else quietly die :-D WAI YOU BAD EMAIL NO NO TSK TSK
    });
 	
 	var winwh, winhh;

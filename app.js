@@ -51,6 +51,8 @@ app.get('/users/:id', passport.authenticate('local'), user.dash);
 app.post('/users/subscribers', user.addSub);
 app.get('/register', user.getRegister);
 app.post('/register', user.postRegister);
+app.get('/login', user.getLogin);
+app.post('/login', user.postLogin);
 
 //start listening
 http.createServer(app).listen(app.get('port'), function(){

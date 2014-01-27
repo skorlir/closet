@@ -51,7 +51,7 @@ exports.getLogin = function(req, res){
 }
 
 exports.postLogin = function(req, res) {
-	//user specific logic will need to be specified in routing
+	//user specific logic is specified in routing
 	res.redirect('/users/' + req.user);
 }
 
