@@ -2,41 +2,54 @@
 /**
  * Module dependencies.
  */
-
 var express = require('express');
 var routes = require('./routes');
 var user = require('./routes/user');
 var http = require('http');
-var path = require('path');
+var passport = require('passport');
+var LocalStrategy = require('passport-local').Strategy;
+var mongoose = require('mongoose');
 
 var app = express();
 
+//HTTP authentication scheme
 var auth = express.basicAuth(function(user, pass) {
  		return user === 'admin' && pass === 'granular crafty gidget';
 	});
 
-// all environments
-app.set('port', process.env.PORT || 3000);
-app.set('views', path.join(__dirname, 'views'));
-app.set('view engine', 'jade');
-app.use(express.favicon());
-app.use(express.logger('dev'));
-app.use(express.json());
-app.use(express.urlencoded());
-app.use(express.methodOverride());
-app.use(express.bodyParser());
-app.use(app.router);
-app.use(express.static(path.join(__dirname, 'public')));
+//set up the basic environment
+require('./setupEnv')(app);
+app.use(passport.initialize());
+app.use(passport.session());
 
-// development only
-if ('development' == app.get('env')) {
-  app.use(express.errorHandler());
+var mongoose = require('mongoose');
+
+// connect to db
+var uristring =
+	process.env.MONGOLAB_URI ||
+	process.env.MONGOHQ_URL ||
+	'mongodb://localhost/HelloMongoose';
+	
+mongoose.connect(uristring, function (err, res) {
+if (err) {
+	console.log ('ERROR connecting to: ' + uristring + '. ' + err);
+} else {
+	console.log ('Succeeded connected to: ' + uristring);
 }
+});
 
+//set up passport (better auth)
+var Account = require('./models/Account.js');
+passport.use(new LocalStrategy(Account.authenticate()));
+passport.serializeUser(Account.serializeUser());
+passport.deserializeUser(Account.deserializeUser());
+
+//declare routing
 app.get('/', routes.index);
 app.get('/users', auth, user.list);
 app.post('/users', user.add);
 
+//start listening
 http.createServer(app).listen(app.get('port'), function(){
   console.log('Express server listening on port ' + app.get('port'));
 });
