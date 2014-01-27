@@ -47,7 +47,10 @@ passport.deserializeUser(Account.deserializeUser());
 //declare routing
 app.get('/', routes.index);
 app.get('/users', auth, user.list);
-app.post('/users', user.add);
+app.get('/users/:id', passport.authenticate('local'), user.dash);
+app.post('/users/subscribers', user.addSub);
+app.get('/register', user.getRegister);
+app.post('/register', user.postRegister);
 
 //start listening
 http.createServer(app).listen(app.get('port'), function(){

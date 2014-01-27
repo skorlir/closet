@@ -17,7 +17,7 @@ $(document).ready(function () {
 			}, 300);
 
 			$.ajax({
-				url: "/users",
+				url: "/users/subscribers",
 				method: 'POST',
 				data: {'email': input.val()}
 			}).done(function( data ) {
