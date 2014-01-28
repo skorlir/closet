@@ -1,8 +1,6 @@
 var mongoose = require('mongoose')
 		, Schema = mongoose.Schema
-		, bcrypt = require('bcrypt-nodejs')
-		, passportLocalMongoose = require('passport-local-mongoose')
-		, SALT_WORK_FACTOR = 10;
+		, passportLocalMongoose = require('passport-local-mongoose');
 
 var account = Schema({
 	realName: { 

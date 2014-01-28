@@ -54,7 +54,9 @@ exports.getLogin = function(req, res){
 
 exports.postLogin = function(req, res) {
 	//user specific logic is specified in routing
-	res.redirect('/users/' + req.user.username + '/dash');
+	if(req.isAuthenticated()) {
+		res.send('/users/' + req.user.username + '/dash');
+	}
 }
 
 exports.dash = function(req, res){

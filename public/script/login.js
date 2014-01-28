@@ -12,6 +12,7 @@ $(document).ready(function() {
 				data: $(this).serialize()
 			}).done(function(data) {
 				console.log(data);
+				window.location.href = data;
 			});
 	});
 });
