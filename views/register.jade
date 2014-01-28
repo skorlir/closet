@@ -1,10 +1,15 @@
 extends layout
-
-block content
-	h1 Open your Closet!
 	
-	form(id="registration")
-		input(type="text" id="username" placeholder="Username")
-		input(type="password" id="password" placeholder="Password")
-		input(type="email" id="email" placeholder="Email Address")
-		input(type="submit")
+block content
+	link(href="./stylesheets/reserveForm.css" rel="stylesheet" type="text/css")
+	h2 Open your Closet!
+	
+	form(id="registerForm" class="userForm")
+		input(type="text" name="username" placeholder="Username" required)
+		input(type="password" name="password" placeholder="Password" required)
+		input(type="text" name="firstName" placeholder="First Name" required)
+		input(type="text" name="lastName" placeholder="Last Name" required)
+		input(type="email" name="email" placeholder="Email Address" required)
+		button Register
+		
+	script(src="./script/register.js")

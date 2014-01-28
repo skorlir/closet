@@ -1,9 +1,11 @@
 extends layout
 
 block content
-	h1 Login
+	h2 Login
 	
-	form(id="loginForm")
-		input(type="text" id="username" placeholder="Username or Email")
-		input(type="password" id="password" placeholder="Password")
-		input(type="submit")
+	form(id="loginForm" class="userForm")
+		input(type="text" name="username" placeholder="Username or Email")
+		input(type="password" name="password" placeholder="Password")
+		button Login
+	
+	script(src="./script/login.js")

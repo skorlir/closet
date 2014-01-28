@@ -5,6 +5,7 @@
 
 var Account = require('../models/Account.js');
 var Subscriber = require('../models/Subscriber.js');
+var passport = require('passport');
 var _ = require('underscore');
 
 exports.list = function(req, res){
@@ -21,7 +22,7 @@ exports.addSub = function(req, res){
 	var e = false;
 	newSub.save(function(err){ e = err; });
 	
-	res.send({isError: e, txt: 'Thanks! We\'ll be in touch.'});
+	res.send({error: e, txt: 'Thanks! We\'ll be in touch.'});
 };
 
 exports.getRegister = function(req, res){
@@ -36,14 +37,15 @@ exports.postRegister = function(req, res){
 									 req.body.password,
 									 function(err, account) {
 										if (err) {
-											return res.render('register', { account: account });
+											console.log(err);
+											return res.send({error: err});
 										}
 										 
-										 passport.authenticate('local')(req, res, function() {
-											 res.redirect('/');
+										passport.authenticate('local')(req, res, function() {
+											res.redirect('/users/' + req.user.username + '/dash');
 										 });
 									 });
-};
+								};
 
 exports.getLogin = function(req, res){
 	//load up a login page
@@ -52,10 +54,10 @@ exports.getLogin = function(req, res){
 
 exports.postLogin = function(req, res) {
 	//user specific logic is specified in routing
-	res.redirect('/users/' + req.user);
+	res.redirect('/users/' + req.user.username + '/dash');
 }
 
 exports.dash = function(req, res){
 	//produce user dashboard
-	res.render('dashboard', { user: req.user });
+	req.isAuthenticated() ? res.render('dashboard', { user: req.user }) : res.redirect('/login');
 }

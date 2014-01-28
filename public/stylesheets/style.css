@@ -57,6 +57,28 @@ h1 	{
 							 2px 1px 7px black;
 }
 
+h2 {
+	font-family: pacifico, 'Lucida Grande', 'helvetica neue', helvetica, sans-serif;	
+	font-size: 3.5em;
+	width: 80%;
+	margin: 1% 0;
+	-moz-transform: rotate(-5deg);
+	-webkit-transform: rotate(-5deg);
+	transform: rotate(-5deg);
+	/*rgb(92, 175, 252)
+	-6px 3px white, 2px 1px 7px black*/
+	color: rgb(92,175,255);
+	text-shadow: -6px 4px white, 
+							 2px 1px 7px black;
+}
+
+.userForm 	{
+	
+	max-width: 600px;
+	margin: 0 auto;
+	
+}
+
 body.landing h1 {	
 	position: absolute;
 	right: 25%;
@@ -128,7 +150,7 @@ input {
 	width: 500px;
 	font-size: inherit;
 	font-family: inherit;
-	margin: 50px auto;
+	margin: 10px auto 50px auto;
 	display: block;
 	border-radius: 5px;
 	border-width: thin;
