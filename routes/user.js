@@ -6,7 +6,6 @@
 var Account = require('../models/Account.js');
 var Subscriber = require('../models/Subscriber.js');
 var passport = require('passport');
-var _ = require('underscore');
 
 exports.list = function(req, res){
 	Subscriber.find({}).exec(function (err, result) {
@@ -54,12 +53,5 @@ exports.getLogin = function(req, res){
 
 exports.postLogin = function(req, res) {
 	//user specific logic is specified in routing
-	if(req.isAuthenticated()) {
-		res.send('/users/' + req.user.username + '/dash');
-	}
-}
-
-exports.dash = function(req, res){
-	//produce user dashboard
-	req.isAuthenticated() ? res.render('dashboard', { user: req.user }) : res.redirect('/login');
+	res.send('/users/' + req.user.username + '/dash');
 }

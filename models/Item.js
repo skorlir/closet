@@ -2,14 +2,15 @@ var mongoose = require('mongoose')
 		, Schema = mongoose.Schema;
 
 var itemMaster = new Schema({
-	upc: { type: Number, required: true, index: { unique: true, dropDups: true } },
+	upc: 	{ type: Number, index: { unique: true, dropDups: true } },
 	name: { type: String, lowercase: true, trim: true, required: true },
+	categories: [String],
 	keywords: [String],
 	description: String,
 	photos: [{ title: String, url: String }],
 	marketValue: Number,
 	siteValue: Number,
-	count: { type: Number, default: 0, required: true }
+	count: { type: Number, default: 0 }
 });
 
 var Masters = mongoose.model('ItemMaster', itemMaster);
