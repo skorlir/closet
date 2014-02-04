@@ -16,7 +16,7 @@
 }
 
 /* line 17, SASS/item.sass */
-img.item__prod-img {
+img.item__product-image {
   width: 100%;
   height: 100%;
 }
@@ -33,6 +33,6 @@ img.item__prod-img {
 }
 
 /* line 28, SASS/item.sass */
-.item__desc {
+.item__description {
   font-size: 80%;
 }
