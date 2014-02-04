@@ -1,0 +1,34 @@
+@import '_susy_base'
+
+$tablet-break: 60em 8
+$mobile-break: 30em 6
+
+body
+	@include container
+	
+	height: 100%
+	margin: 0
+	
+	//like a space gray-ish
+	background: rgb(230, 230, 230)
+	
+	header
+		@include span-columns($total-columns)
+		height: 10%
+		
+	nav
+		@include span-columns(2)
+		height: 90%
+		
+	main
+		@include pre(2)
+		@include span-columns($total-columns - 2)
+		
+	//RESPONSIVENESS BELOW
+	
+	@include at-breakpoint($tablet-break)
+		//tablet styles
+	
+	@include at-breakpoint($mobile-break)
+		//mobile styles
+	

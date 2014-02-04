@@ -1,13 +1,10 @@
 extends layout
 
 block content
-	h1 #{ user.username } Dashboard
+	p Welcome, #{ user.username }
 	
-	form(class="userForm")
-		input(type="text" name="name" placeholder="Product Name")
-		div(class="launchpad input-element")
-		
-		button Add item
+	.itemFlowContainer
 	
-	script(src="./script/dashboard.js")
+	
+	script(src="../../script/dashboard.js")
 		

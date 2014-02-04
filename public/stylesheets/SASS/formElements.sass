@@ -1,0 +1,43 @@
+@import 'compass'
+
+input, button, textarea
+	&:focus
+		outline: none
+		
+button
+	
+	display: block
+	margin: 1% auto 5% auto
+	padding: 10px 2%
+	
+	position: relative
+	top: 0
+	
+	color: rgb(230,230,230)
+	text-shadow: 0px 0px 5px rgba(0,0,0,0.5)
+	font-size: 1.6em
+	
+	@include background(linear-gradient(top bottom, #59a8e5 0%, #1d86c6 97%, #7ab3ff 100%))
+
+button.btn--3d
+	@extend button
+	
+	border: 1px solid rgba(103, 147, 232, 0.5)
+	border-bottom: 1px solid #1670a0
+	border-top: none
+	
+	@include box-shadow( inset 1px 1px rgba(20,20,100,0.55), inset -1px -1px rgba(20,20,100,0.55), 0px 10px #1374a8, 0px 15px 12px -3px black)
+	
+	@include border-radius(3px)
+	
+	@include single-transition(all, 0.3s, ease)
+
+	&:hover 
+		@include box-shadow(inset 1px 1px rgba(20,20,100,0.55), inset -1px -1px rgba(20,20,100,0.55), 0px 13px #0e6491,	0px 15px 12px -3px black)
+		top: -3px
+
+	&:active 
+		@include box-shadow(inset 1px 1px rgba(20,20,100,0.55),	inset -1px -1px rgba(20,20,100,0.55),	0px 0px #10618d)
+	
+		top: 10px
+	

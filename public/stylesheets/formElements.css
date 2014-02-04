@@ -1,0 +1,54 @@
+/* line 4, SASS/formElements.sass */
+input:focus, button:focus, textarea:focus {
+  outline: none;
+}
+
+/* line 7, SASS/formElements.sass */
+button, button.btn--3d {
+  display: block;
+  margin: 1% auto 5% auto;
+  padding: 10px 2%;
+  position: relative;
+  top: 0;
+  color: #e6e6e6;
+  text-shadow: 0px 0px 5px rgba(0, 0, 0, 0.5);
+  font-size: 1.6em;
+  background: -webkit-gradient(linear, 100% 0%, 0% 100%, color-stop(0%, #59a8e5), color-stop(97%, #1d86c6), color-stop(100%, #7ab3ff));
+  background: -webkit-linear-gradient(top bottom, #59a8e5 0%, #1d86c6 97%, #7ab3ff 100%);
+  background: -moz-linear-gradient(top bottom, #59a8e5 0%, #1d86c6 97%, #7ab3ff 100%);
+  background: -o-linear-gradient(top bottom, #59a8e5 0%, #1d86c6 97%, #7ab3ff 100%);
+  background: linear-gradient(top bottom, #59a8e5 0%, #1d86c6 97%, #7ab3ff 100%);
+}
+
+/* line 22, SASS/formElements.sass */
+button.btn--3d {
+  border: 1px solid rgba(103, 147, 232, 0.5);
+  border-bottom: 1px solid #1670a0;
+  border-top: none;
+  -webkit-box-shadow: inset 1px 1px rgba(20, 20, 100, 0.55), inset -1px -1px rgba(20, 20, 100, 0.55), 0px 10px #1374a8, 0px 15px 12px -3px black;
+  -moz-box-shadow: inset 1px 1px rgba(20, 20, 100, 0.55), inset -1px -1px rgba(20, 20, 100, 0.55), 0px 10px #1374a8, 0px 15px 12px -3px black;
+  box-shadow: inset 1px 1px rgba(20, 20, 100, 0.55), inset -1px -1px rgba(20, 20, 100, 0.55), 0px 10px #1374a8, 0px 15px 12px -3px black;
+  -webkit-border-radius: 3px;
+  -moz-border-radius: 3px;
+  -ms-border-radius: 3px;
+  -o-border-radius: 3px;
+  border-radius: 3px;
+  -webkit-transition: all 0.3s ease;
+  -moz-transition: all 0.3s ease;
+  -o-transition: all 0.3s ease;
+  transition: all 0.3s ease;
+}
+/* line 35, SASS/formElements.sass */
+button.btn--3d:hover {
+  -webkit-box-shadow: inset 1px 1px rgba(20, 20, 100, 0.55), inset -1px -1px rgba(20, 20, 100, 0.55), 0px 13px #0e6491, 0px 15px 12px -3px black;
+  -moz-box-shadow: inset 1px 1px rgba(20, 20, 100, 0.55), inset -1px -1px rgba(20, 20, 100, 0.55), 0px 13px #0e6491, 0px 15px 12px -3px black;
+  box-shadow: inset 1px 1px rgba(20, 20, 100, 0.55), inset -1px -1px rgba(20, 20, 100, 0.55), 0px 13px #0e6491, 0px 15px 12px -3px black;
+  top: -3px;
+}
+/* line 39, SASS/formElements.sass */
+button.btn--3d:active {
+  -webkit-box-shadow: inset 1px 1px rgba(20, 20, 100, 0.55), inset -1px -1px rgba(20, 20, 100, 0.55), 0px 0px #10618d;
+  -moz-box-shadow: inset 1px 1px rgba(20, 20, 100, 0.55), inset -1px -1px rgba(20, 20, 100, 0.55), 0px 0px #10618d;
+  box-shadow: inset 1px 1px rgba(20, 20, 100, 0.55), inset -1px -1px rgba(20, 20, 100, 0.55), 0px 0px #10618d;
+  top: 10px;
+}
