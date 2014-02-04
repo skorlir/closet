@@ -1,0 +1,11 @@
+extends layout
+
+block content
+	h2 Login
+	
+	form(id="loginForm" class="userForm")
+		input(type="text" name="username" placeholder="Username or Email")
+		input(type="password" name="password" placeholder="Password")
+		button Login
+	
+	script(src="./script/login.js")

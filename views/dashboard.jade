@@ -1,0 +1,13 @@
+extends layout
+
+block content
+	h1 #{ user.username } Dashboard
+	
+	form(class="userForm")
+		input(type="text" name="name" placeholder="Product Name")
+		div(class="launchpad input-element")
+		
+		button Add item
+	
+	script(src="./script/dashboard.js")
+		
