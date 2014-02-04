@@ -1,11 +1,21 @@
-/* line 4, sass/formElements.sass */
+/* line 3, SASS/formElements.sass */
+.form--vertically-centered {
+  display: table-cell;
+  vertical-align: middle;
+}
+
+/* line 7, SASS/formElements.sass */
+input, button, textarea {
+  margin: 15px 0;
+}
+/* line 9, SASS/formElements.sass */
 input:focus, button:focus, textarea:focus {
   outline: none;
 }
 
-/* line 7, sass/formElements.sass */
+/* line 12, SASS/formElements.sass */
 input {
-  width: 500px;
+  width: 80%;
   font-size: inherit;
   font-family: inherit;
   text-align: center;
@@ -23,32 +33,35 @@ input {
   border-radius: 5px;
   border-width: thin;
 }
-/* line 27, sass/formElements.sass */
+/* line 32, SASS/formElements.sass */
 input:focus {
   outline: none;
   background-color: white;
 }
 
-/* line 33, sass/formElements.sass */
+/* line 38, SASS/formElements.sass */
 ::-webkit-input-placeholder {
   color: rgba(0, 0, 0, 0.55);
 }
 
-/* line 36, sass/formElements.sass */
+/* line 41, SASS/formElements.sass */
 ::-moz-placeholder {
   color: rgba(0, 0, 0, 0.55);
 }
 
-/* line 39, sass/formElements.sass */
-button, button.btn--3d {
+/* line 44, SASS/formElements.sass */
+.button, .button--3d {
   display: block;
-  margin: 1% auto 5% auto;
+  margin: 1% auto;
   padding: 10px 2%;
   position: relative;
   top: 0;
   color: #e6e6e6;
   text-shadow: 0px 0px 5px rgba(0, 0, 0, 0.5);
   font-size: 1.6em;
+  border: 1px solid rgba(103, 147, 232, 0.5);
+  border-bottom: 1px solid #1670a0;
+  border-top: none;
   background: -webkit-gradient(linear, 100% 0%, 0% 100%, color-stop(0%, #59a8e5), color-stop(97%, #1d86c6), color-stop(100%, #7ab3ff));
   background: -webkit-linear-gradient(top bottom, #59a8e5 0%, #1d86c6 97%, #7ab3ff 100%);
   background: -moz-linear-gradient(top bottom, #59a8e5 0%, #1d86c6 97%, #7ab3ff 100%);
@@ -56,11 +69,8 @@ button, button.btn--3d {
   background: linear-gradient(top bottom, #59a8e5 0%, #1d86c6 97%, #7ab3ff 100%);
 }
 
-/* line 54, sass/formElements.sass */
-button.btn--3d {
-  border: 1px solid rgba(103, 147, 232, 0.5);
-  border-bottom: 1px solid #1670a0;
-  border-top: none;
+/* line 63, SASS/formElements.sass */
+.button--3d {
   -webkit-box-shadow: inset 1px 1px rgba(20, 20, 100, 0.55), inset -1px -1px rgba(20, 20, 100, 0.55), 0px 10px #1374a8, 0px 15px 12px -3px black;
   -moz-box-shadow: inset 1px 1px rgba(20, 20, 100, 0.55), inset -1px -1px rgba(20, 20, 100, 0.55), 0px 10px #1374a8, 0px 15px 12px -3px black;
   box-shadow: inset 1px 1px rgba(20, 20, 100, 0.55), inset -1px -1px rgba(20, 20, 100, 0.55), 0px 10px #1374a8, 0px 15px 12px -3px black;
@@ -74,15 +84,15 @@ button.btn--3d {
   -o-transition: all 0.3s ease;
   transition: all 0.3s ease;
 }
-/* line 67, sass/formElements.sass */
-button.btn--3d:hover {
+/* line 72, SASS/formElements.sass */
+.button--3d:hover {
   -webkit-box-shadow: inset 1px 1px rgba(20, 20, 100, 0.55), inset -1px -1px rgba(20, 20, 100, 0.55), 0px 13px #0e6491, 0px 15px 12px -3px black;
   -moz-box-shadow: inset 1px 1px rgba(20, 20, 100, 0.55), inset -1px -1px rgba(20, 20, 100, 0.55), 0px 13px #0e6491, 0px 15px 12px -3px black;
   box-shadow: inset 1px 1px rgba(20, 20, 100, 0.55), inset -1px -1px rgba(20, 20, 100, 0.55), 0px 13px #0e6491, 0px 15px 12px -3px black;
   top: -3px;
 }
-/* line 71, sass/formElements.sass */
-button.btn--3d:active {
+/* line 76, SASS/formElements.sass */
+.button--3d:active {
   -webkit-box-shadow: inset 1px 1px rgba(20, 20, 100, 0.55), inset -1px -1px rgba(20, 20, 100, 0.55), 0px 0px #10618d;
   -moz-box-shadow: inset 1px 1px rgba(20, 20, 100, 0.55), inset -1px -1px rgba(20, 20, 100, 0.55), 0px 0px #10618d;
   box-shadow: inset 1px 1px rgba(20, 20, 100, 0.55), inset -1px -1px rgba(20, 20, 100, 0.55), 0px 0px #10618d;

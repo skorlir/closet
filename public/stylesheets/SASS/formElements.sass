@@ -1,11 +1,16 @@
 @import 'compass'
 
+.form--vertically-centered
+	display: table-cell
+	vertical-align: middle
+
 input, button, textarea
+	margin: 15px 0
 	&:focus
 		outline: none
 		
 input 
-	width: 500px
+	width: 80%
 
 	font-size: inherit
 	font-family: inherit
@@ -36,10 +41,10 @@ input
 ::-moz-placeholder  /* Mozilla Firefox 19+ */
 	color: rgba(0,0,0,0.55)
 		
-button
+.button
 	
 	display: block
-	margin: 1% auto 5% auto
+	margin: 1% auto
 	padding: 10px 2%
 	
 	position: relative
@@ -49,14 +54,14 @@ button
 	text-shadow: 0px 0px 5px rgba(0,0,0,0.5)
 	font-size: 1.6em
 	
-	@include background(linear-gradient(top bottom, #59a8e5 0%, #1d86c6 97%, #7ab3ff 100%))
-
-button.btn--3d
-	@extend button
-	
 	border: 1px solid rgba(103, 147, 232, 0.5)
 	border-bottom: 1px solid #1670a0
 	border-top: none
+	
+	@include background(linear-gradient(top bottom, #59a8e5 0%, #1d86c6 97%, #7ab3ff 100%))
+
+.button--3d
+	@extend .button
 	
 	@include box-shadow( inset 1px 1px rgba(20,20,100,0.55), inset -1px -1px rgba(20,20,100,0.55), 0px 10px #1374a8, 0px 15px 12px -3px black)
 	
