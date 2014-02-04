@@ -1,4 +1,4 @@
-/* line 3, SASS/landing.sass */
+/* line 3, ../../SASS/landing.sass */
 body.landing {
   background-image: url("../images/bodybgblur.jpg");
   background-size: 120%;
@@ -7,7 +7,7 @@ body.landing {
   color: white;
 }
 
-/* line 10, SASS/landing.sass */
+/* line 10, ../../SASS/landing.sass */
 div.banner {
   background: rgba(0, 0, 0, 0.65);
   margin-left: 65.08475%;
@@ -21,7 +21,7 @@ div.banner {
   display: table;
 }
 
-/* line 18, SASS/landing.sass */
+/* line 18, ../../SASS/landing.sass */
 body.landing h1 {
   position: absolute;
   right: 25%;

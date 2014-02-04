@@ -1,38 +1,38 @@
-/* line 3, SASS/item.sass */
+/* line 3, ../../SASS/item.sass */
 .item {
   width: 300px;
   margin: 10px 50px;
 }
 
-/* line 7, SASS/item.sass */
+/* line 7, ../../SASS/item.sass */
 .item__main {
   width: 300px;
   height: 300px;
 }
 
-/* line 11, SASS/item.sass */
+/* line 11, ../../SASS/item.sass */
 .item__mark-button, .item__mark-button--marked {
   float: right;
 }
 
-/* line 17, SASS/item.sass */
+/* line 17, ../../SASS/item.sass */
 img.item__prod-img {
   width: 100%;
   height: 100%;
 }
 
-/* line 21, SASS/item.sass */
+/* line 21, ../../SASS/item.sass */
 .item__name {
   font-size: 120%;
 }
 
-/* line 24, SASS/item.sass */
+/* line 24, ../../SASS/item.sass */
 .item__bottom {
   width: 300px;
   height: 50px;
 }
 
-/* line 28, SASS/item.sass */
+/* line 28, ../../SASS/item.sass */
 .item__desc {
   font-size: 80%;
 }
