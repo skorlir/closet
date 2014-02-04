@@ -58,7 +58,7 @@ app.get('/login', user.getLogin);
 app.post('/login', passport.authenticate('local'), user.postLogin);
 app.get('/logout', function(req, res) {
 	req.logout();
-	res.redirect('/');
+	res.redirect('/login');
 });
 
 //start listening

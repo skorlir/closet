@@ -1,9 +1,9 @@
-/* line 4, SASS/formElements.sass */
+/* line 4, sass/formElements.sass */
 input:focus, button:focus, textarea:focus {
   outline: none;
 }
 
-/* line 7, SASS/formElements.sass */
+/* line 7, sass/formElements.sass */
 input {
   width: 500px;
   font-size: inherit;
@@ -23,23 +23,23 @@ input {
   border-radius: 5px;
   border-width: thin;
 }
-/* line 27, SASS/formElements.sass */
+/* line 27, sass/formElements.sass */
 input:focus {
   outline: none;
   background-color: white;
 }
 
-/* line 33, SASS/formElements.sass */
+/* line 33, sass/formElements.sass */
 ::-webkit-input-placeholder {
   color: rgba(0, 0, 0, 0.55);
 }
 
-/* line 36, SASS/formElements.sass */
+/* line 36, sass/formElements.sass */
 ::-moz-placeholder {
   color: rgba(0, 0, 0, 0.55);
 }
 
-/* line 39, SASS/formElements.sass */
+/* line 39, sass/formElements.sass */
 button, button.btn--3d {
   display: block;
   margin: 1% auto 5% auto;
@@ -56,7 +56,7 @@ button, button.btn--3d {
   background: linear-gradient(top bottom, #59a8e5 0%, #1d86c6 97%, #7ab3ff 100%);
 }
 
-/* line 54, SASS/formElements.sass */
+/* line 54, sass/formElements.sass */
 button.btn--3d {
   border: 1px solid rgba(103, 147, 232, 0.5);
   border-bottom: 1px solid #1670a0;
@@ -74,14 +74,14 @@ button.btn--3d {
   -o-transition: all 0.3s ease;
   transition: all 0.3s ease;
 }
-/* line 67, SASS/formElements.sass */
+/* line 67, sass/formElements.sass */
 button.btn--3d:hover {
   -webkit-box-shadow: inset 1px 1px rgba(20, 20, 100, 0.55), inset -1px -1px rgba(20, 20, 100, 0.55), 0px 13px #0e6491, 0px 15px 12px -3px black;
   -moz-box-shadow: inset 1px 1px rgba(20, 20, 100, 0.55), inset -1px -1px rgba(20, 20, 100, 0.55), 0px 13px #0e6491, 0px 15px 12px -3px black;
   box-shadow: inset 1px 1px rgba(20, 20, 100, 0.55), inset -1px -1px rgba(20, 20, 100, 0.55), 0px 13px #0e6491, 0px 15px 12px -3px black;
   top: -3px;
 }
-/* line 71, SASS/formElements.sass */
+/* line 71, sass/formElements.sass */
 button.btn--3d:active {
   -webkit-box-shadow: inset 1px 1px rgba(20, 20, 100, 0.55), inset -1px -1px rgba(20, 20, 100, 0.55), 0px 0px #10618d;
   -moz-box-shadow: inset 1px 1px rgba(20, 20, 100, 0.55), inset -1px -1px rgba(20, 20, 100, 0.55), 0px 0px #10618d;

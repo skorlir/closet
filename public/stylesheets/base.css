@@ -1,4 +1,4 @@
-/* line 6, SASS/base.sass */
+/* line 6, sass/base.sass */
 body {
   *zoom: 1;
   max-width: 100%;
@@ -11,13 +11,13 @@ body {
   margin: 0;
   background: #e6e6e6;
 }
-/* line 38, ../../../../../../Ruby200/lib/ruby/gems/2.0.0/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/utilities/general/_clearfix.scss */
+/* line 38, ../../../../../../../.rvm/gems/ruby-2.1.0/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/utilities/general/_clearfix.scss */
 body:after {
   content: "";
   display: table;
   clear: both;
 }
-/* line 15, SASS/base.sass */
+/* line 15, sass/base.sass */
 body header {
   width: 100%;
   float: left;
@@ -25,7 +25,7 @@ body header {
   display: inline;
   height: 10%;
 }
-/* line 19, SASS/base.sass */
+/* line 19, sass/base.sass */
 body nav {
   width: 15.25424%;
   float: left;
@@ -33,7 +33,7 @@ body nav {
   display: inline;
   height: 90%;
 }
-/* line 23, SASS/base.sass */
+/* line 23, sass/base.sass */
 body main {
   margin-left: 16.94915%;
   width: 83.05085%;
