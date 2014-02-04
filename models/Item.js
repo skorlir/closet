@@ -57,4 +57,4 @@ itemInstance.pre('save', function(next) {
 });
 
 exports.ItemMasters = Masters;
-exports.Items = mongoose.model('Item', ItemInstance);
+exports.Items = mongoose.model('Item', itemInstance);
