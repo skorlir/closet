@@ -8,6 +8,4 @@ var hobby = Schema({
 	itemMasterRefs: [{ master_id: Schema.ObjectId }]
 });
 
-account.plugin(passportLocalMongoose);
-
-module.exports = mongoose.model('User', account);
+module.exports = mongoose.model('Hobby', hobby);
