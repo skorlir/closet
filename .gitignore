@@ -40,3 +40,4 @@ mapreduce/results
 /documents/*
 /testing-heroku/
 /testing-heroku/*
+/.sass-cache/*

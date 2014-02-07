@@ -1,0 +1,65 @@
+@import '_susy_base'
+@import 'compass'
+@import 'formElements'
+
+$tablet-break: 60em 8
+$mobile-break: 30em 6
+
+h1, h2
+	font-family: pacifico, 'Lucida Grande', 'Lucida Sans', 'helvetica neue', helvetica, sans-serif
+	@include transform(rotate(-5deg))
+	color: rgb(92,175,255)
+	@include text-shadow(-6px 4px white, 2px 1px 7px black)
+
+h1
+	font-size: 4em
+	
+h2 
+	font-size: 3.5em
+	width: 80%
+	margin: 1% 0
+
+p
+	text-align: center
+	margin: 0.7em auto
+	width: auto
+	&.heavyShadow
+		text-shadow: -1px 1px 3px rgba(0,0,0,0.8)
+		
+a
+	color: #00B7FF
+
+html, body
+	height: 100%
+
+body
+	@include container
+	@include susy-grid-background
+	@include span-columns($total-columns)
+	margin: 0
+	font-family: "Lucida Grande", Helvetica, Arial, sans-serif
+	font-size: 38px
+	
+	//like a space gray-ish
+	background: rgb(230, 230, 230)
+	
+	header
+		@include span-columns($total-columns)
+		height: 10%
+		
+	nav
+		@include span-columns(2)
+		height: 90%
+		
+	main
+		@include pre(2)
+		@include span-columns($total-columns - 2)
+		
+	//RESPONSIVENESS BELOW
+	
+	@include at-breakpoint($tablet-break)
+		//tablet styles
+	
+	@include at-breakpoint($mobile-break)
+		//mobile styles
+	

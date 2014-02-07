@@ -4,8 +4,9 @@ var mongoose = require('mongoose')
 var itemMaster = new Schema({
 	upc: 	{ type: Number, index: { unique: true, dropDups: true } },
 	name: { type: String, lowercase: true, trim: true, required: true },
-	categories: [String],
-	keywords: [String],
+	
+	hobbies: [String],
+	tags: [String],
 	description: String,
 	photos: [{ title: String, url: String }],
 	marketValue: Number,
@@ -18,7 +19,7 @@ var Masters = mongoose.model('ItemMaster', itemMaster);
 var itemInstance = new Schema({
 	master_id: { type: Schema.ObjectId, required: true },
 	index: { type: Number, min: 1, required: true },
-	name: { type: String, lowercase: true },
+	name: String,
 	condition: {
 								description: String,
 								rating: { type: Number, min: 0.0, max: 10.0 }
@@ -56,4 +57,4 @@ itemInstance.pre('save', function(next) {
 });
 
 exports.ItemMasters = Masters;
-exports.Items = mongoose.model('Item', ItemInstance);
+exports.Items = mongoose.model('Item', itemInstance);

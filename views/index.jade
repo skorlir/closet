@@ -2,12 +2,13 @@ extends layout
 
 block content
 	link(href="./stylesheets/landing.css" rel="stylesheet" type="text/css")
-	body(class='landing')
+	body.landing
 	h1 Closet
-	div(class='banner')
-		p Trade with friends.
-		
-		input(type='email' class='subscribe' placeholder='john.smith@email.com' required)
-		button Open your Closet
+	div.banner
+		div.form--vertically-centered
+			p.heavyShadow Trade with friends.
+			
+			input.subscribe(type='email' placeholder='Your Email' required)
+			button.button--3d Open your Closet
 		
 	script(src='./script/index.js')

@@ -8,6 +8,7 @@ var account = Schema({
 						  lastName: String 
 						},
 	location: { type: String, default: 'unknown'},
+	hobbies: [String],
 	communities: [String],
 	itemMasterRefs: [{ master_id: Schema.ObjectId, instances: [] }]
 });

@@ -3,9 +3,9 @@ extends layout
 block content
 	h2 Login
 	
-	form(id="loginForm" class="userForm")
+	form#loginForm.userForm
 		input(type="text" name="username" placeholder="Username or Email")
 		input(type="password" name="password" placeholder="Password")
-		button Login
+		button.button--3d Login
 	
 	script(src="./script/login.js")
