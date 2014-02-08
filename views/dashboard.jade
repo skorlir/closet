@@ -1,9 +1,12 @@
 extends layout
+link(rel='stylesheet', href='/stylesheets/dashboard.css')
 
 block content
 	p Welcome, #{ user.username }
 	
 	.itemFlowContainer
+		p All your items
+		button.button--3d Add to your showcase
 		include dashItem
 	
 	script(src="../../script/dashboard.js")
