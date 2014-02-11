@@ -6,6 +6,7 @@ var express = require('express')
 		, routes = require('./routes')
 		, user = require('./routes/user')
 		, dash = require('./routes/dash')
+		, item = require('./routes/item')
 		, http = require('http')
 		, passport = require('passport')
 		, mongoose = require('mongoose');
@@ -38,10 +39,12 @@ mongoose.connect(uristring, function (err, res) {
 		console.log ('ERROR connecting to: ' + uristring + '. ' + err);
 	} else {
 		console.log ('Succeeded connecting to: ' + uristring);
+		//Add seed data for videogames
+		(require('./routes/populate.js'))();
 	}
 });
 
-//set up passport (better auth)
+//set up passport (better auth) using passport-local-mongoose plugin
 var Account = require('./models/Account.js');
 passport.use(Account.createStrategy());
 passport.serializeUser(Account.serializeUser());
@@ -49,6 +52,7 @@ passport.deserializeUser(Account.deserializeUser());
 
 //declare routing
 app.get('/', routes.index);
+app.get('/items/masters', item.getItemsQuery);
 app.get('/users', auth, user.list);
 app.get('/users/:user/dash', dash.index);
 app.get('/users/:user/item-page', item-page.index;)

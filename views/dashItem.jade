@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 .item
 	.item__main
 		i.item__mark-button
@@ -6,3 +7,14 @@
 	.item__bottom
 		p.item__description
 		
+=======
+//View partial for dashboard items
+each item in items
+	.item
+		.item__main
+			i.item__mark-button
+			img.item__prod-img(src=item.photos[0])
+			p.item__name=item.name
+		.item__bottom
+			p.item__desc=item.description.substr(0, 147)+'...'
+>>>>>>> 574d51c508e3df5aa4a964bdf85a5e4e4b8d7e5e

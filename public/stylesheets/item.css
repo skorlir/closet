@@ -1,38 +1,48 @@
-/* line 3, SASS/item.sass */
+/* line 3, ../../SASS/item.sass */
 .item {
   width: 300px;
   margin: 10px 50px;
 }
 
-/* line 7, SASS/item.sass */
+/* line 7, ../../SASS/item.sass */
 .item__main {
   width: 300px;
   height: 300px;
 }
 
-/* line 11, SASS/item.sass */
+/* line 11, ../../SASS/item.sass */
 .item__mark-button, .item__mark-button--marked {
   float: right;
 }
 
+<<<<<<< HEAD
 /* line 17, SASS/item.sass */
 img.item__product-image {
+=======
+/* line 17, ../../SASS/item.sass */
+img.item__prod-img {
+>>>>>>> 574d51c508e3df5aa4a964bdf85a5e4e4b8d7e5e
   width: 100%;
   height: 100%;
 }
 
-/* line 21, SASS/item.sass */
+/* line 21, ../../SASS/item.sass */
 .item__name {
   font-size: 120%;
 }
 
-/* line 24, SASS/item.sass */
+/* line 24, ../../SASS/item.sass */
 .item__bottom {
   width: 300px;
   height: 50px;
 }
 
+<<<<<<< HEAD
 /* line 28, SASS/item.sass */
 .item__description {
+=======
+/* line 28, ../../SASS/item.sass */
+.item__desc {
+>>>>>>> 574d51c508e3df5aa4a964bdf85a5e4e4b8d7e5e
   font-size: 80%;
 }
