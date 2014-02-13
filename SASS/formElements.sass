@@ -10,7 +10,6 @@ input, button, textarea
 		outline: none
 		
 input 
-	width: 80%
 
 	font-size: inherit
 	font-family: inherit
@@ -41,7 +40,7 @@ input
 ::-moz-placeholder  /* Mozilla Firefox 19+ */
 	color: rgba(0,0,0,0.55)
 		
-.button
+input[type="button"], .button
 	
 	display: block
 	margin: 1% auto
@@ -50,15 +49,15 @@ input
 	position: relative
 	top: 0
 	
-	color: rgb(230,230,230)
+	color: white
 	text-shadow: 0px 0px 5px rgba(0,0,0,0.5)
-	font-size: 1.6em
+	font-size: 1.2em
 	
 	border: 1px solid rgba(103, 147, 232, 0.5)
 	border-bottom: 1px solid #1670a0
 	border-top: none
 	
-	@include background(linear-gradient(top bottom, #59a8e5 0%, #1d86c6 97%, #7ab3ff 100%))
+	@include background(linear-gradient(#59a8e5 0%, #1d86c6 97%, #7ab3ff 100%))
 
 .button--3d
 	@extend .button

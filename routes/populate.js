@@ -28,7 +28,7 @@ module.exports = function() {
 			, infamousSecondSon = new ItemMaster(OinfamousSecondSon);
 	
 	
-	ItemMaster.create([watch_dogs, tombRaider, infamousSecondSon], function(err, wd, tr, iss) {
+	ItemMaster.create([watch_dogs, tombRaider, infamousSecondSon], function(err) {
 		if(err) console.log(err);
 	});
 	

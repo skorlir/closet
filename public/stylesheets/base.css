@@ -15,7 +15,6 @@ input:focus, button:focus, textarea:focus {
 
 /* line 12, ../../SASS/formElements.sass */
 input {
-  width: 80%;
   font-size: inherit;
   font-family: inherit;
   text-align: center;
@@ -33,43 +32,43 @@ input {
   border-radius: 5px;
   border-width: thin;
 }
-/* line 32, ../../SASS/formElements.sass */
+/* line 31, ../../SASS/formElements.sass */
 input:focus {
   outline: none;
   background-color: white;
 }
 
-/* line 38, ../../SASS/formElements.sass */
+/* line 37, ../../SASS/formElements.sass */
 ::-webkit-input-placeholder {
   color: rgba(0, 0, 0, 0.55);
 }
 
-/* line 41, ../../SASS/formElements.sass */
+/* line 40, ../../SASS/formElements.sass */
 ::-moz-placeholder {
   color: rgba(0, 0, 0, 0.55);
 }
 
-/* line 44, ../../SASS/formElements.sass */
-.button, .button--3d {
+/* line 43, ../../SASS/formElements.sass */
+input[type="button"], .button, .button--3d {
   display: block;
   margin: 1% auto;
   padding: 10px 2%;
   position: relative;
   top: 0;
-  color: #e6e6e6;
+  color: white;
   text-shadow: 0px 0px 5px rgba(0, 0, 0, 0.5);
-  font-size: 1.6em;
+  font-size: 1.2em;
   border: 1px solid rgba(103, 147, 232, 0.5);
   border-bottom: 1px solid #1670a0;
   border-top: none;
-  background: -webkit-gradient(linear, 100% 0%, 0% 100%, color-stop(0%, #59a8e5), color-stop(97%, #1d86c6), color-stop(100%, #7ab3ff));
-  background: -webkit-linear-gradient(top bottom, #59a8e5 0%, #1d86c6 97%, #7ab3ff 100%);
-  background: -moz-linear-gradient(top bottom, #59a8e5 0%, #1d86c6 97%, #7ab3ff 100%);
-  background: -o-linear-gradient(top bottom, #59a8e5 0%, #1d86c6 97%, #7ab3ff 100%);
-  background: linear-gradient(top bottom, #59a8e5 0%, #1d86c6 97%, #7ab3ff 100%);
+  background: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #59a8e5), color-stop(97%, #1d86c6), color-stop(100%, #7ab3ff));
+  background: -webkit-linear-gradient(#59a8e5 0%, #1d86c6 97%, #7ab3ff 100%);
+  background: -moz-linear-gradient(#59a8e5 0%, #1d86c6 97%, #7ab3ff 100%);
+  background: -o-linear-gradient(#59a8e5 0%, #1d86c6 97%, #7ab3ff 100%);
+  background: linear-gradient(#59a8e5 0%, #1d86c6 97%, #7ab3ff 100%);
 }
 
-/* line 63, ../../SASS/formElements.sass */
+/* line 62, ../../SASS/formElements.sass */
 .button--3d {
   -webkit-box-shadow: inset 1px 1px rgba(20, 20, 100, 0.55), inset -1px -1px rgba(20, 20, 100, 0.55), 0px 10px #1374a8, 0px 15px 12px -3px black;
   -moz-box-shadow: inset 1px 1px rgba(20, 20, 100, 0.55), inset -1px -1px rgba(20, 20, 100, 0.55), 0px 10px #1374a8, 0px 15px 12px -3px black;
@@ -84,14 +83,14 @@ input:focus {
   -o-transition: all 0.3s ease;
   transition: all 0.3s ease;
 }
-/* line 72, ../../SASS/formElements.sass */
+/* line 71, ../../SASS/formElements.sass */
 .button--3d:hover {
   -webkit-box-shadow: inset 1px 1px rgba(20, 20, 100, 0.55), inset -1px -1px rgba(20, 20, 100, 0.55), 0px 13px #0e6491, 0px 15px 12px -3px black;
   -moz-box-shadow: inset 1px 1px rgba(20, 20, 100, 0.55), inset -1px -1px rgba(20, 20, 100, 0.55), 0px 13px #0e6491, 0px 15px 12px -3px black;
   box-shadow: inset 1px 1px rgba(20, 20, 100, 0.55), inset -1px -1px rgba(20, 20, 100, 0.55), 0px 13px #0e6491, 0px 15px 12px -3px black;
   top: -3px;
 }
-/* line 76, ../../SASS/formElements.sass */
+/* line 75, ../../SASS/formElements.sass */
 .button--3d:active {
   -webkit-box-shadow: inset 1px 1px rgba(20, 20, 100, 0.55), inset -1px -1px rgba(20, 20, 100, 0.55), 0px 0px #10618d;
   -moz-box-shadow: inset 1px 1px rgba(20, 20, 100, 0.55), inset -1px -1px rgba(20, 20, 100, 0.55), 0px 0px #10618d;
@@ -153,28 +152,14 @@ body {
   padding-right: 0;
   margin-left: auto;
   margin-right: auto;
-  background-image: -webkit-gradient(linear, 0% 50%, 100% 50%, color-stop(0%, rgba(0, 0, 0, 0)), color-stop(0%, rgba(100, 100, 225, 0.25)), color-stop(6.77966%, rgba(100, 100, 225, 0.25)), color-stop(6.77966%, rgba(0, 0, 0, 0)), color-stop(8.47458%, rgba(0, 0, 0, 0)), color-stop(8.47458%, rgba(100, 100, 225, 0.25)), color-stop(15.25424%, rgba(100, 100, 225, 0.25)), color-stop(15.25424%, rgba(0, 0, 0, 0)), color-stop(16.94915%, rgba(0, 0, 0, 0)), color-stop(16.94915%, rgba(100, 100, 225, 0.25)), color-stop(23.72881%, rgba(100, 100, 225, 0.25)), color-stop(23.72881%, rgba(0, 0, 0, 0)), color-stop(25.42373%, rgba(0, 0, 0, 0)), color-stop(25.42373%, rgba(100, 100, 225, 0.25)), color-stop(32.20339%, rgba(100, 100, 225, 0.25)), color-stop(32.20339%, rgba(0, 0, 0, 0)), color-stop(33.89831%, rgba(0, 0, 0, 0)), color-stop(33.89831%, rgba(100, 100, 225, 0.25)), color-stop(40.67797%, rgba(100, 100, 225, 0.25)), color-stop(40.67797%, rgba(0, 0, 0, 0)), color-stop(42.37288%, rgba(0, 0, 0, 0)), color-stop(42.37288%, rgba(100, 100, 225, 0.25)), color-stop(49.15254%, rgba(100, 100, 225, 0.25)), color-stop(49.15254%, rgba(0, 0, 0, 0)), color-stop(50.84746%, rgba(0, 0, 0, 0)), color-stop(50.84746%, rgba(100, 100, 225, 0.25)), color-stop(57.62712%, rgba(100, 100, 225, 0.25)), color-stop(57.62712%, rgba(0, 0, 0, 0)), color-stop(59.32203%, rgba(0, 0, 0, 0)), color-stop(59.32203%, rgba(100, 100, 225, 0.25)), color-stop(66.10169%, rgba(100, 100, 225, 0.25)), color-stop(66.10169%, rgba(0, 0, 0, 0)), color-stop(67.79661%, rgba(0, 0, 0, 0)), color-stop(67.79661%, rgba(100, 100, 225, 0.25)), color-stop(74.57627%, rgba(100, 100, 225, 0.25)), color-stop(74.57627%, rgba(0, 0, 0, 0)), color-stop(76.27119%, rgba(0, 0, 0, 0)), color-stop(76.27119%, rgba(100, 100, 225, 0.25)), color-stop(83.05085%, rgba(100, 100, 225, 0.25)), color-stop(83.05085%, rgba(0, 0, 0, 0)), color-stop(84.74576%, rgba(0, 0, 0, 0)), color-stop(84.74576%, rgba(100, 100, 225, 0.25)), color-stop(91.52542%, rgba(100, 100, 225, 0.25)), color-stop(91.52542%, rgba(0, 0, 0, 0)), color-stop(93.22034%, rgba(0, 0, 0, 0)), color-stop(93.22034%, rgba(100, 100, 225, 0.25)), color-stop(100.0%, rgba(100, 100, 225, 0.25)), color-stop(100.0%, rgba(0, 0, 0, 0)), color-stop(100%, rgba(0, 0, 0, 0)));
-  background-image: -webkit-linear-gradient(left, rgba(0, 0, 0, 0) 0%, rgba(100, 100, 225, 0.25) 0%, rgba(100, 100, 225, 0.25) 6.77966%, rgba(0, 0, 0, 0) 6.77966%, rgba(0, 0, 0, 0) 8.47458%, rgba(100, 100, 225, 0.25) 8.47458%, rgba(100, 100, 225, 0.25) 15.25424%, rgba(0, 0, 0, 0) 15.25424%, rgba(0, 0, 0, 0) 16.94915%, rgba(100, 100, 225, 0.25) 16.94915%, rgba(100, 100, 225, 0.25) 23.72881%, rgba(0, 0, 0, 0) 23.72881%, rgba(0, 0, 0, 0) 25.42373%, rgba(100, 100, 225, 0.25) 25.42373%, rgba(100, 100, 225, 0.25) 32.20339%, rgba(0, 0, 0, 0) 32.20339%, rgba(0, 0, 0, 0) 33.89831%, rgba(100, 100, 225, 0.25) 33.89831%, rgba(100, 100, 225, 0.25) 40.67797%, rgba(0, 0, 0, 0) 40.67797%, rgba(0, 0, 0, 0) 42.37288%, rgba(100, 100, 225, 0.25) 42.37288%, rgba(100, 100, 225, 0.25) 49.15254%, rgba(0, 0, 0, 0) 49.15254%, rgba(0, 0, 0, 0) 50.84746%, rgba(100, 100, 225, 0.25) 50.84746%, rgba(100, 100, 225, 0.25) 57.62712%, rgba(0, 0, 0, 0) 57.62712%, rgba(0, 0, 0, 0) 59.32203%, rgba(100, 100, 225, 0.25) 59.32203%, rgba(100, 100, 225, 0.25) 66.10169%, rgba(0, 0, 0, 0) 66.10169%, rgba(0, 0, 0, 0) 67.79661%, rgba(100, 100, 225, 0.25) 67.79661%, rgba(100, 100, 225, 0.25) 74.57627%, rgba(0, 0, 0, 0) 74.57627%, rgba(0, 0, 0, 0) 76.27119%, rgba(100, 100, 225, 0.25) 76.27119%, rgba(100, 100, 225, 0.25) 83.05085%, rgba(0, 0, 0, 0) 83.05085%, rgba(0, 0, 0, 0) 84.74576%, rgba(100, 100, 225, 0.25) 84.74576%, rgba(100, 100, 225, 0.25) 91.52542%, rgba(0, 0, 0, 0) 91.52542%, rgba(0, 0, 0, 0) 93.22034%, rgba(100, 100, 225, 0.25) 93.22034%, rgba(100, 100, 225, 0.25) 100.0%, rgba(0, 0, 0, 0) 100.0%, rgba(0, 0, 0, 0) 100%);
-  background-image: -moz-linear-gradient(left, rgba(0, 0, 0, 0) 0%, rgba(100, 100, 225, 0.25) 0%, rgba(100, 100, 225, 0.25) 6.77966%, rgba(0, 0, 0, 0) 6.77966%, rgba(0, 0, 0, 0) 8.47458%, rgba(100, 100, 225, 0.25) 8.47458%, rgba(100, 100, 225, 0.25) 15.25424%, rgba(0, 0, 0, 0) 15.25424%, rgba(0, 0, 0, 0) 16.94915%, rgba(100, 100, 225, 0.25) 16.94915%, rgba(100, 100, 225, 0.25) 23.72881%, rgba(0, 0, 0, 0) 23.72881%, rgba(0, 0, 0, 0) 25.42373%, rgba(100, 100, 225, 0.25) 25.42373%, rgba(100, 100, 225, 0.25) 32.20339%, rgba(0, 0, 0, 0) 32.20339%, rgba(0, 0, 0, 0) 33.89831%, rgba(100, 100, 225, 0.25) 33.89831%, rgba(100, 100, 225, 0.25) 40.67797%, rgba(0, 0, 0, 0) 40.67797%, rgba(0, 0, 0, 0) 42.37288%, rgba(100, 100, 225, 0.25) 42.37288%, rgba(100, 100, 225, 0.25) 49.15254%, rgba(0, 0, 0, 0) 49.15254%, rgba(0, 0, 0, 0) 50.84746%, rgba(100, 100, 225, 0.25) 50.84746%, rgba(100, 100, 225, 0.25) 57.62712%, rgba(0, 0, 0, 0) 57.62712%, rgba(0, 0, 0, 0) 59.32203%, rgba(100, 100, 225, 0.25) 59.32203%, rgba(100, 100, 225, 0.25) 66.10169%, rgba(0, 0, 0, 0) 66.10169%, rgba(0, 0, 0, 0) 67.79661%, rgba(100, 100, 225, 0.25) 67.79661%, rgba(100, 100, 225, 0.25) 74.57627%, rgba(0, 0, 0, 0) 74.57627%, rgba(0, 0, 0, 0) 76.27119%, rgba(100, 100, 225, 0.25) 76.27119%, rgba(100, 100, 225, 0.25) 83.05085%, rgba(0, 0, 0, 0) 83.05085%, rgba(0, 0, 0, 0) 84.74576%, rgba(100, 100, 225, 0.25) 84.74576%, rgba(100, 100, 225, 0.25) 91.52542%, rgba(0, 0, 0, 0) 91.52542%, rgba(0, 0, 0, 0) 93.22034%, rgba(100, 100, 225, 0.25) 93.22034%, rgba(100, 100, 225, 0.25) 100.0%, rgba(0, 0, 0, 0) 100.0%, rgba(0, 0, 0, 0) 100%);
-  background-image: -o-linear-gradient(left, rgba(0, 0, 0, 0) 0%, rgba(100, 100, 225, 0.25) 0%, rgba(100, 100, 225, 0.25) 6.77966%, rgba(0, 0, 0, 0) 6.77966%, rgba(0, 0, 0, 0) 8.47458%, rgba(100, 100, 225, 0.25) 8.47458%, rgba(100, 100, 225, 0.25) 15.25424%, rgba(0, 0, 0, 0) 15.25424%, rgba(0, 0, 0, 0) 16.94915%, rgba(100, 100, 225, 0.25) 16.94915%, rgba(100, 100, 225, 0.25) 23.72881%, rgba(0, 0, 0, 0) 23.72881%, rgba(0, 0, 0, 0) 25.42373%, rgba(100, 100, 225, 0.25) 25.42373%, rgba(100, 100, 225, 0.25) 32.20339%, rgba(0, 0, 0, 0) 32.20339%, rgba(0, 0, 0, 0) 33.89831%, rgba(100, 100, 225, 0.25) 33.89831%, rgba(100, 100, 225, 0.25) 40.67797%, rgba(0, 0, 0, 0) 40.67797%, rgba(0, 0, 0, 0) 42.37288%, rgba(100, 100, 225, 0.25) 42.37288%, rgba(100, 100, 225, 0.25) 49.15254%, rgba(0, 0, 0, 0) 49.15254%, rgba(0, 0, 0, 0) 50.84746%, rgba(100, 100, 225, 0.25) 50.84746%, rgba(100, 100, 225, 0.25) 57.62712%, rgba(0, 0, 0, 0) 57.62712%, rgba(0, 0, 0, 0) 59.32203%, rgba(100, 100, 225, 0.25) 59.32203%, rgba(100, 100, 225, 0.25) 66.10169%, rgba(0, 0, 0, 0) 66.10169%, rgba(0, 0, 0, 0) 67.79661%, rgba(100, 100, 225, 0.25) 67.79661%, rgba(100, 100, 225, 0.25) 74.57627%, rgba(0, 0, 0, 0) 74.57627%, rgba(0, 0, 0, 0) 76.27119%, rgba(100, 100, 225, 0.25) 76.27119%, rgba(100, 100, 225, 0.25) 83.05085%, rgba(0, 0, 0, 0) 83.05085%, rgba(0, 0, 0, 0) 84.74576%, rgba(100, 100, 225, 0.25) 84.74576%, rgba(100, 100, 225, 0.25) 91.52542%, rgba(0, 0, 0, 0) 91.52542%, rgba(0, 0, 0, 0) 93.22034%, rgba(100, 100, 225, 0.25) 93.22034%, rgba(100, 100, 225, 0.25) 100.0%, rgba(0, 0, 0, 0) 100.0%, rgba(0, 0, 0, 0) 100%);
-  background-image: linear-gradient(left, rgba(0, 0, 0, 0) 0%, rgba(100, 100, 225, 0.25) 0%, rgba(100, 100, 225, 0.25) 6.77966%, rgba(0, 0, 0, 0) 6.77966%, rgba(0, 0, 0, 0) 8.47458%, rgba(100, 100, 225, 0.25) 8.47458%, rgba(100, 100, 225, 0.25) 15.25424%, rgba(0, 0, 0, 0) 15.25424%, rgba(0, 0, 0, 0) 16.94915%, rgba(100, 100, 225, 0.25) 16.94915%, rgba(100, 100, 225, 0.25) 23.72881%, rgba(0, 0, 0, 0) 23.72881%, rgba(0, 0, 0, 0) 25.42373%, rgba(100, 100, 225, 0.25) 25.42373%, rgba(100, 100, 225, 0.25) 32.20339%, rgba(0, 0, 0, 0) 32.20339%, rgba(0, 0, 0, 0) 33.89831%, rgba(100, 100, 225, 0.25) 33.89831%, rgba(100, 100, 225, 0.25) 40.67797%, rgba(0, 0, 0, 0) 40.67797%, rgba(0, 0, 0, 0) 42.37288%, rgba(100, 100, 225, 0.25) 42.37288%, rgba(100, 100, 225, 0.25) 49.15254%, rgba(0, 0, 0, 0) 49.15254%, rgba(0, 0, 0, 0) 50.84746%, rgba(100, 100, 225, 0.25) 50.84746%, rgba(100, 100, 225, 0.25) 57.62712%, rgba(0, 0, 0, 0) 57.62712%, rgba(0, 0, 0, 0) 59.32203%, rgba(100, 100, 225, 0.25) 59.32203%, rgba(100, 100, 225, 0.25) 66.10169%, rgba(0, 0, 0, 0) 66.10169%, rgba(0, 0, 0, 0) 67.79661%, rgba(100, 100, 225, 0.25) 67.79661%, rgba(100, 100, 225, 0.25) 74.57627%, rgba(0, 0, 0, 0) 74.57627%, rgba(0, 0, 0, 0) 76.27119%, rgba(100, 100, 225, 0.25) 76.27119%, rgba(100, 100, 225, 0.25) 83.05085%, rgba(0, 0, 0, 0) 83.05085%, rgba(0, 0, 0, 0) 84.74576%, rgba(100, 100, 225, 0.25) 84.74576%, rgba(100, 100, 225, 0.25) 91.52542%, rgba(0, 0, 0, 0) 91.52542%, rgba(0, 0, 0, 0) 93.22034%, rgba(100, 100, 225, 0.25) 93.22034%, rgba(100, 100, 225, 0.25) 100.0%, rgba(0, 0, 0, 0) 100.0%, rgba(0, 0, 0, 0) 100%);
-  background-position: left top;
-  -webkit-background-origin: content;
-  -moz-background-origin: content;
-  -ms-background-origin: content-box;
-  -o-background-origin: content-box;
-  background-origin: content-box;
-  -webkit-background-clip: content-box;
-  -moz-background-clip: content-box;
-  background-clip: content-box;
   width: 100%;
   float: left;
-  margin-right: 1.69492%;
+  margin-right: 1.0101%;
   display: inline;
   margin: 0;
   font-family: "Lucida Grande", Helvetica, Arial, sans-serif;
   font-size: 18px;
-  background: #e6e6e6;
+  background: whitesmoke;
 }
 /* line 38, ../../../../../../Ruby200/lib/ruby/gems/2.0.0/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/utilities/general/_clearfix.scss */
 body:after {
@@ -182,27 +167,97 @@ body:after {
   display: table;
   clear: both;
 }
-/* line 46, ../../SASS/base.sass */
+/* line 45, ../../SASS/base.sass */
 body header {
   width: 100%;
   float: left;
-  margin-right: 1.69492%;
+  margin-right: 1.0101%;
   display: inline;
-  height: 10%;
+  height: 50px;
+  margin-bottom: 15px;
+  -webkit-box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.1);
+  -moz-box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.1);
+  box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.1);
 }
-/* line 50, ../../SASS/base.sass */
+/* line 51, ../../SASS/base.sass */
 body nav {
-  width: 15.25424%;
+  width: 14.14141%;
   float: left;
-  margin-right: 1.69492%;
+  margin-right: 1.0101%;
   display: inline;
-  height: 90%;
+  padding-left: 2.0202%;
+  padding-right: 2.0202%;
+  max-width: 200px;
 }
-/* line 54, ../../SASS/base.sass */
-body main {
-  margin-left: 16.94915%;
-  width: 83.05085%;
+/* line 56, ../../SASS/base.sass */
+body nav input[type="search"] {
+  font-size: 14px;
+  width: 95%;
+  margin: 0 2% 15px 2%;
+}
+/* line 61, ../../SASS/base.sass */
+body nav h3 {
+  font-size: 14pt;
+  color: white;
+  font-family: sans-serif;
+  font-weight: normal;
+  margin: 0;
+  padding: 15px;
+  cursor: pointer;
+}
+/* line 70, ../../SASS/base.sass */
+body nav ul {
+  margin: 0;
+  padding: 0;
+}
+/* line 73, ../../SASS/base.sass */
+body nav ul li {
+  list-style: none;
+}
+/* line 76, ../../SASS/base.sass */
+body nav #my-hobby {
+  background: #ff3333;
+}
+/* line 79, ../../SASS/base.sass */
+body nav #my-closet {
+  background: #ff9019;
+}
+/* line 82, ../../SASS/base.sass */
+body nav #explore {
+  background: #ffbb20;
+}
+/* line 85, ../../SASS/base.sass */
+body nav #hobbies {
+  background: #fafafa;
+}
+/* line 87, ../../SASS/base.sass */
+body nav #hobbies ul {
+  margin: 0;
+  padding: 5px 0 5px 5px;
+}
+/* line 90, ../../SASS/base.sass */
+body nav #hobbies ul li {
+  list-style: none;
+  font-size: 12pt;
+  color: #999999;
+  padding: 4px 5px;
+  cursor: pointer;
+}
+/* line 96, ../../SASS/base.sass */
+body nav #hobbies ul li:hover {
+  color: #555555;
+}
+/* line 99, ../../SASS/base.sass */
+body .main {
+  width: 74.74747%;
   float: left;
-  margin-right: 1.69492%;
+  margin-right: 1.0101%;
   display: inline;
+  padding-left: 1.0101%;
+  padding-right: 1.0101%;
+  padding-top: 15px;
+  background: white;
+  -webkit-box-shadow: -1px -1px 1px rgba(0, 0, 0, 0.1);
+  -moz-box-shadow: -1px -1px 1px rgba(0, 0, 0, 0.1);
+  box-shadow: -1px -1px 1px rgba(0, 0, 0, 0.1);
 }

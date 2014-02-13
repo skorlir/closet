@@ -11,18 +11,18 @@ body.landing {
 /* line 11, ../../SASS/landing.sass */
 div.banner {
   background: rgba(0, 0, 0, 0.65);
-  margin-left: 65.08475%;
-  padding-left: 1.35593%;
-  padding-right: 1.35593%;
-  width: 32.20339%;
-  float: left;
-  margin-right: 1.69492%;
+  padding-left: 0.80808%;
+  padding-right: 0.80808%;
+  width: 19.19192%;
+  float: right;
+  margin-right: 0;
+  *margin-left: -1em;
   display: inline;
   height: 100%;
   display: table;
 }
 
-/* line 19, ../../SASS/landing.sass */
+/* line 18, ../../SASS/landing.sass */
 body.landing h1 {
   position: absolute;
   right: 25%;
