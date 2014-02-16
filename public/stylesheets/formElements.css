@@ -15,7 +15,6 @@ input:focus, button:focus, textarea:focus {
 
 /* line 12, ../../SASS/formElements.sass */
 input {
-  width: 80%;
   font-size: inherit;
   font-family: inherit;
   text-align: center;
@@ -33,43 +32,43 @@ input {
   border-radius: 5px;
   border-width: thin;
 }
-/* line 32, ../../SASS/formElements.sass */
+/* line 31, ../../SASS/formElements.sass */
 input:focus {
   outline: none;
   background-color: white;
 }
 
-/* line 38, ../../SASS/formElements.sass */
+/* line 37, ../../SASS/formElements.sass */
 ::-webkit-input-placeholder {
   color: rgba(0, 0, 0, 0.55);
 }
 
-/* line 41, ../../SASS/formElements.sass */
+/* line 40, ../../SASS/formElements.sass */
 ::-moz-placeholder {
   color: rgba(0, 0, 0, 0.55);
 }
 
-/* line 44, ../../SASS/formElements.sass */
-.button, .button--3d {
+/* line 43, ../../SASS/formElements.sass */
+input[type="button"], .button, .button--3d {
   display: block;
   margin: 1% auto;
   padding: 10px 2%;
   position: relative;
   top: 0;
-  color: #e6e6e6;
+  color: white;
   text-shadow: 0px 0px 5px rgba(0, 0, 0, 0.5);
-  font-size: 1.6em;
+  font-size: 1.2em;
   border: 1px solid rgba(103, 147, 232, 0.5);
   border-bottom: 1px solid #1670a0;
   border-top: none;
-  background: -webkit-gradient(linear, 100% 0%, 0% 100%, color-stop(0%, #59a8e5), color-stop(97%, #1d86c6), color-stop(100%, #7ab3ff));
-  background: -webkit-linear-gradient(top bottom, #59a8e5 0%, #1d86c6 97%, #7ab3ff 100%);
-  background: -moz-linear-gradient(top bottom, #59a8e5 0%, #1d86c6 97%, #7ab3ff 100%);
-  background: -o-linear-gradient(top bottom, #59a8e5 0%, #1d86c6 97%, #7ab3ff 100%);
-  background: linear-gradient(top bottom, #59a8e5 0%, #1d86c6 97%, #7ab3ff 100%);
+  background: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #59a8e5), color-stop(97%, #1d86c6), color-stop(100%, #7ab3ff));
+  background: -webkit-linear-gradient(#59a8e5 0%, #1d86c6 97%, #7ab3ff 100%);
+  background: -moz-linear-gradient(#59a8e5 0%, #1d86c6 97%, #7ab3ff 100%);
+  background: -o-linear-gradient(#59a8e5 0%, #1d86c6 97%, #7ab3ff 100%);
+  background: linear-gradient(#59a8e5 0%, #1d86c6 97%, #7ab3ff 100%);
 }
 
-/* line 63, ../../SASS/formElements.sass */
+/* line 62, ../../SASS/formElements.sass */
 .button--3d {
   -webkit-box-shadow: inset 1px 1px rgba(20, 20, 100, 0.55), inset -1px -1px rgba(20, 20, 100, 0.55), 0px 10px #1374a8, 0px 15px 12px -3px black;
   -moz-box-shadow: inset 1px 1px rgba(20, 20, 100, 0.55), inset -1px -1px rgba(20, 20, 100, 0.55), 0px 10px #1374a8, 0px 15px 12px -3px black;
@@ -84,14 +83,14 @@ input:focus {
   -o-transition: all 0.3s ease;
   transition: all 0.3s ease;
 }
-/* line 72, ../../SASS/formElements.sass */
+/* line 71, ../../SASS/formElements.sass */
 .button--3d:hover {
   -webkit-box-shadow: inset 1px 1px rgba(20, 20, 100, 0.55), inset -1px -1px rgba(20, 20, 100, 0.55), 0px 13px #0e6491, 0px 15px 12px -3px black;
   -moz-box-shadow: inset 1px 1px rgba(20, 20, 100, 0.55), inset -1px -1px rgba(20, 20, 100, 0.55), 0px 13px #0e6491, 0px 15px 12px -3px black;
   box-shadow: inset 1px 1px rgba(20, 20, 100, 0.55), inset -1px -1px rgba(20, 20, 100, 0.55), 0px 13px #0e6491, 0px 15px 12px -3px black;
   top: -3px;
 }
-/* line 76, ../../SASS/formElements.sass */
+/* line 75, ../../SASS/formElements.sass */
 .button--3d:active {
   -webkit-box-shadow: inset 1px 1px rgba(20, 20, 100, 0.55), inset -1px -1px rgba(20, 20, 100, 0.55), 0px 0px #10618d;
   -moz-box-shadow: inset 1px 1px rgba(20, 20, 100, 0.55), inset -1px -1px rgba(20, 20, 100, 0.55), 0px 0px #10618d;

@@ -4,5 +4,5 @@
  */
 
 exports.index = function(req, res){
-  res.render('index');
+  req.isAuthenticated() ? res.render('dashboard', { user: req.user }) : res.render('index', {title: 'Closet'});
 };

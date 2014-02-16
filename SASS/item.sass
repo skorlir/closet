@@ -1,12 +1,13 @@
-$container-width: 300px
+@import '_susy_base'
 
 .item
-	width: $container-width
-	margin: 10px 50px
+	@include span-columns(5)
+	max-width: 250px
+	min-width: 185px
+	margin: 10px 30px
 
 .item__main
-	width: $container-width
-	height: $container-width
+	width: 100%
 
 .item__mark-button
 	float: right
@@ -20,10 +21,6 @@ img.item__prod-img
 
 .item__name
 	font-size: 120%
-
-.item__bottom
-	width: $container-width
-	height: $container-width/6
 
 .item__desc
 	font-size: 80%
