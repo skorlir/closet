@@ -1,0 +1,37 @@
+extends layout
+
+block content
+	link(href='/stylesheets/dashboard.css' rel='stylesheet' type='style/css')
+	.page
+		.header
+		.body
+			.sidebar
+				input(type='search',placeholder='search for an item', name='searh-field')
+				#my-hobby
+					h3 MY HOBBY
+				#hobbies
+					ul
+						li Outdoor
+						li Fasion
+						li Wine
+						li Photography
+						li Music
+				#my-closet
+					h3 MY CLOSET
+				#explore
+					h3 EXPLORE
+			.profile
+				img#cover(alt="Cover Photo")
+				img.propic		(alt="Profile Picture")
+				h3 Jessica Grey
+				p Lives in Chicago
+				p Likes Wine Fashion Outdoor Photography Music
+				input(type="button" name="upload-new" value="Upload New Item")
+				.section
+					h4 My Closet
+					h5 Wine (5)
+					.images
+					h5 Fashion (4)
+					.images
+				.section
+					h4 My Bookmarks
