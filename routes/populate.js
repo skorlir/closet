@@ -1,4 +1,5 @@
-var ItemMaster = require('../models/Item.js').ItemMasters;
+var ItemMaster = require('../models/Item.js').ItemMasters
+		, Account = require('../models/Account.js');
 
 module.exports = function() {
 	
@@ -22,6 +23,32 @@ module.exports = function() {
 		description: 'inFAMOUS Second Son, a PlayStation 4 exclusive, brings you an action adventure game where surrounded by a society that fears them, superhumans are ruthlessly hunted down and caged by the Department of Unified Protection. Step into a locked-down Seattle as Delsin Rowe, who has recently discovered his superhuman power and is now capable of fighting back against the oppressive DUP. Enjoy your power as you choose how you will push your awesome abilities to the limit and witness the consequences of your actions as they affect the city and people around you.',
 		photos: [ 'inFAMOUSSecondSonTile.jpg', 'inFAMOUSSecondSonBanner.jpg' ]
 	};
+	
+	var Ouser2 = {
+		username: "user2",
+		email: "test2@test.com",
+		realName: { firstName: "John", lastName: "Smith" },
+		profilePicture: "/images/user2.jpg"
+	}
+	
+	var OtestUser = {
+			username: "testUser",
+			email: "test@test.com",
+			realName: {firstName: "Abigail", lastName: "User" },
+			hobbies: ["Camping", "Wine", "Videogames", "Cycling"],
+			profilePicture: "/images/user1.jpg",
+			myCollection: [Owatch_dogs],
+			favorites: [OtombRaider],
+			friends: [Ouser2]
+	};
+	
+	Account.register(new Account(OtestUser),
+									 "test123",
+									 function(err, account) {
+											if (err) {
+												console.log(err);
+											}
+									 });
 	
 	var watch_dogs = new ItemMaster(Owatch_dogs)
 			, tombRaider = new ItemMaster(OtombRaider)

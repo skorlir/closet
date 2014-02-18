@@ -16,7 +16,6 @@ h1
 	
 h2 
 	font-size: 3.5em
-	width: 80%
 	margin: 1% 0
 
 p
@@ -44,9 +43,24 @@ body
 	
 	header
 		@include span-columns($total-columns)
-		height: 50px
+		height: 60px
 		margin-bottom: 15px
 		@include box-shadow(0px 1px 1px rgba(0,0,0,0.1))
+		
+		img.profile
+			width: 60px
+			margin-left: 50px
+	
+		span.centeredLogo
+			font-family: pacifico, 'Lucida Grande', 'Lucida Sans', 'helvetica neue', helvetica, sans-serif
+			color: rgb(92,175,255)
+			@include text-shadow(-3px 2px white)
+			font-size: 1.9em
+			display: inline-block
+			width: auto
+			position: relative
+			top: -15px
+			left: 40%
 		
 	nav
 		@include span-columns(3)

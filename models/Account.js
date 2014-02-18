@@ -13,9 +13,10 @@ var account = Schema({
 	communities: [String],
 	profilePicture: String,
 	bannerPicture: String,
+	profileURL: String,
 	//TODO: denormalize item schema
-	myCollection: [{ master_id: Schema.ObjectId, instances: [] }],
-	favorites: [{ master_id: Schema.ObjectId, instances: [] }],
+	myCollection: [Schema.mixed],
+	favorites: [Schema.mixed],
 	friends: [{ username: String, profileURL: String, profilePicture: String }]
 });
 

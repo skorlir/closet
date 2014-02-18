@@ -54,6 +54,7 @@ app.get('/', routes.index);
 app.get('/items/masters', item.getItemsQuery);
 app.get('/users', auth, user.list);
 app.post('/users/subscribers', user.addSub);
+app.get('/profile', user.profile);
 app.get('/register', user.getRegister);
 app.post('/register', user.postRegister);
 app.get('/login', user.getLogin);
