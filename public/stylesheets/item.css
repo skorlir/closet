@@ -1,0 +1,36 @@
+/* line 3, ../../SASS/item.sass */
+.item {
+  width: 24.24242%;
+  float: left;
+  margin-right: 1.0101%;
+  display: inline;
+  max-width: 250px;
+  min-width: 185px;
+  margin: 10px 30px;
+}
+
+/* line 9, ../../SASS/item.sass */
+.item__main {
+  width: 100%;
+}
+
+/* line 12, ../../SASS/item.sass */
+.item__mark-button, .item__mark-button--marked {
+  float: right;
+}
+
+/* line 18, ../../SASS/item.sass */
+img.item__prod-img {
+  width: 100%;
+  height: 100%;
+}
+
+/* line 22, ../../SASS/item.sass */
+.item__name {
+  font-size: 120%;
+}
+
+/* line 25, ../../SASS/item.sass */
+.item__desc {
+  font-size: 80%;
+}

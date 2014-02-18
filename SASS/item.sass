@@ -1,0 +1,27 @@
+@import '_susy_base'
+
+.item
+	@include span-columns(5)
+	max-width: 250px
+	min-width: 185px
+	margin: 10px 30px
+
+.item__main
+	width: 100%
+
+.item__mark-button
+	float: right
+
+.item__mark-button--marked
+	@extend .item__mark-button
+
+img.item__prod-img
+	width: 100%
+	height: 100%
+
+.item__name
+	font-size: 120%
+
+.item__desc
+	font-size: 80%
+	

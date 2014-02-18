@@ -1,0 +1,21 @@
+@import '_susy_base'
+
+body.landing
+	background-image: url('../images/bodybgblur.jpg')
+	background-size: 120%
+	background-position: 20% 20%
+	background-repeat: no-repeat
+	color: white
+	font-size: 38px
+
+div.banner 
+	background: rgba(0,0,0,0.65)
+	@include pad(0.2, 0.2)
+	@include span-columns(4 omega)
+	height: 100%
+	display: table
+
+body.landing h1 	
+	position: absolute
+	right: 25%
+	bottom: 55%

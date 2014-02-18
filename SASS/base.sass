@@ -1,0 +1,113 @@
+@import '_susy_base'
+@import 'compass'
+@import 'formElements'
+
+$tablet-break: 60em 8
+$mobile-break: 30em 6
+
+h1, h2
+	font-family: pacifico, 'Lucida Grande', 'Lucida Sans', 'helvetica neue', helvetica, sans-serif
+	@include transform(rotate(-5deg))
+	color: rgb(92,175,255)
+	@include text-shadow(-6px 4px white, 2px 1px 7px black)
+
+h1
+	font-size: 4em
+	
+h2 
+	font-size: 3.5em
+	width: 80%
+	margin: 1% 0
+
+p
+	text-align: center
+	margin: 0.7em auto
+	width: auto
+	&.heavyShadow
+		text-shadow: -1px 1px 3px rgba(0,0,0,0.8)
+		
+a
+	color: #00B7FF
+
+html, body
+	height: 100%
+
+body
+	@include container
+	@include span-columns($total-columns)
+	margin: 0
+	font-family: "Lucida Grande", Helvetica, Arial, sans-serif
+	font-size: 18px
+	
+	//like a space gray-ish
+	background: rgb(245, 245, 245)
+	
+	header
+		@include span-columns($total-columns)
+		height: 50px
+		margin-bottom: 15px
+		@include box-shadow(0px 1px 1px rgba(0,0,0,0.1))
+		
+	nav
+		@include span-columns(3)
+		@include pad(0.5, 0.5)
+		max-width: 200px
+
+		input[type="search"] 
+			font-size: 14px
+			width: 95%
+			margin: 0 2% 15px 2%
+
+		h3 
+			font-size: 14pt
+			color: #fff
+			font-family: sans-serif
+			font-weight: normal
+			margin: 0
+			padding: 15px
+			cursor: pointer
+		
+		ul
+			margin: 0
+			padding: 0
+			li
+				list-style: none
+		
+		#my-hobby 
+			background: #ff3333
+
+		#my-closet
+			background: #ff9019
+
+		#explore 
+			background: #ffbb20
+
+		#hobbies 
+			background: rgb(250,250,250)
+			ul 
+				margin: 0
+				padding: 5px 0 5px 5px
+				li 
+					list-style: none
+					font-size: 12pt
+					color: #999
+					padding: 4px 5px
+					cursor: pointer
+					&:hover 
+						color: #555
+
+	.main
+		@include span-columns($total-columns - 5)
+		@include pad(0.25, 0.25)
+		padding-top: 15px
+		background: white
+		@include box-shadow(-1px -1px 1px rgba(0,0,0,0.1))
+
+	//RESPONSIVENESS BELOW
+	
+	@include at-breakpoint($tablet-break)
+		//tablet styles
+	
+	@include at-breakpoint($mobile-break)
+		//mobile styles
+	

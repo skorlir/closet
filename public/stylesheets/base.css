@@ -1,0 +1,263 @@
+/* line 3, ../../SASS/formElements.sass */
+.form--vertically-centered {
+  display: table-cell;
+  vertical-align: middle;
+}
+
+/* line 7, ../../SASS/formElements.sass */
+input, button, textarea {
+  margin: 15px 0;
+}
+/* line 9, ../../SASS/formElements.sass */
+input:focus, button:focus, textarea:focus {
+  outline: none;
+}
+
+/* line 12, ../../SASS/formElements.sass */
+input {
+  font-size: inherit;
+  font-family: inherit;
+  text-align: center;
+  margin: 10px auto 50px auto;
+  padding: 5px 15px;
+  display: block;
+  background: rgba(255, 255, 255, 0.85);
+  -webkit-box-shadow: inset 0px 1px 2px rgba(0, 0, 0, 0.2), 0px 2px 2px rgba(20, 20, 100, 0.2);
+  -moz-box-shadow: inset 0px 1px 2px rgba(0, 0, 0, 0.2), 0px 2px 2px rgba(20, 20, 100, 0.2);
+  box-shadow: inset 0px 1px 2px rgba(0, 0, 0, 0.2), 0px 2px 2px rgba(20, 20, 100, 0.2);
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  -ms-border-radius: 5px;
+  -o-border-radius: 5px;
+  border-radius: 5px;
+  border-width: thin;
+}
+/* line 31, ../../SASS/formElements.sass */
+input:focus {
+  outline: none;
+  background-color: white;
+}
+
+/* line 37, ../../SASS/formElements.sass */
+::-webkit-input-placeholder {
+  color: rgba(0, 0, 0, 0.55);
+}
+
+/* line 40, ../../SASS/formElements.sass */
+::-moz-placeholder {
+  color: rgba(0, 0, 0, 0.55);
+}
+
+/* line 43, ../../SASS/formElements.sass */
+input[type="button"], .button, .button--3d {
+  display: block;
+  margin: 1% auto;
+  padding: 10px 2%;
+  position: relative;
+  top: 0;
+  color: white;
+  text-shadow: 0px 0px 5px rgba(0, 0, 0, 0.5);
+  font-size: 1.2em;
+  border: 1px solid rgba(103, 147, 232, 0.5);
+  border-bottom: 1px solid #1670a0;
+  border-top: none;
+  background: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #59a8e5), color-stop(97%, #1d86c6), color-stop(100%, #7ab3ff));
+  background: -webkit-linear-gradient(#59a8e5 0%, #1d86c6 97%, #7ab3ff 100%);
+  background: -moz-linear-gradient(#59a8e5 0%, #1d86c6 97%, #7ab3ff 100%);
+  background: -o-linear-gradient(#59a8e5 0%, #1d86c6 97%, #7ab3ff 100%);
+  background: linear-gradient(#59a8e5 0%, #1d86c6 97%, #7ab3ff 100%);
+}
+
+/* line 62, ../../SASS/formElements.sass */
+.button--3d {
+  -webkit-box-shadow: inset 1px 1px rgba(20, 20, 100, 0.55), inset -1px -1px rgba(20, 20, 100, 0.55), 0px 10px #1374a8, 0px 15px 12px -3px black;
+  -moz-box-shadow: inset 1px 1px rgba(20, 20, 100, 0.55), inset -1px -1px rgba(20, 20, 100, 0.55), 0px 10px #1374a8, 0px 15px 12px -3px black;
+  box-shadow: inset 1px 1px rgba(20, 20, 100, 0.55), inset -1px -1px rgba(20, 20, 100, 0.55), 0px 10px #1374a8, 0px 15px 12px -3px black;
+  -webkit-border-radius: 3px;
+  -moz-border-radius: 3px;
+  -ms-border-radius: 3px;
+  -o-border-radius: 3px;
+  border-radius: 3px;
+  -webkit-transition: all 0.3s ease;
+  -moz-transition: all 0.3s ease;
+  -o-transition: all 0.3s ease;
+  transition: all 0.3s ease;
+}
+/* line 71, ../../SASS/formElements.sass */
+.button--3d:hover {
+  -webkit-box-shadow: inset 1px 1px rgba(20, 20, 100, 0.55), inset -1px -1px rgba(20, 20, 100, 0.55), 0px 13px #0e6491, 0px 15px 12px -3px black;
+  -moz-box-shadow: inset 1px 1px rgba(20, 20, 100, 0.55), inset -1px -1px rgba(20, 20, 100, 0.55), 0px 13px #0e6491, 0px 15px 12px -3px black;
+  box-shadow: inset 1px 1px rgba(20, 20, 100, 0.55), inset -1px -1px rgba(20, 20, 100, 0.55), 0px 13px #0e6491, 0px 15px 12px -3px black;
+  top: -3px;
+}
+/* line 75, ../../SASS/formElements.sass */
+.button--3d:active {
+  -webkit-box-shadow: inset 1px 1px rgba(20, 20, 100, 0.55), inset -1px -1px rgba(20, 20, 100, 0.55), 0px 0px #10618d;
+  -moz-box-shadow: inset 1px 1px rgba(20, 20, 100, 0.55), inset -1px -1px rgba(20, 20, 100, 0.55), 0px 0px #10618d;
+  box-shadow: inset 1px 1px rgba(20, 20, 100, 0.55), inset -1px -1px rgba(20, 20, 100, 0.55), 0px 0px #10618d;
+  top: 10px;
+}
+
+/* line 8, ../../SASS/base.sass */
+h1, h2 {
+  font-family: pacifico, "Lucida Grande", "Lucida Sans", "helvetica neue", helvetica, sans-serif;
+  -webkit-transform: rotate(-5deg);
+  -moz-transform: rotate(-5deg);
+  -ms-transform: rotate(-5deg);
+  -o-transform: rotate(-5deg);
+  transform: rotate(-5deg);
+  color: #5cafff;
+  text-shadow: -6px 4px white, 2px 1px 7px black;
+}
+
+/* line 14, ../../SASS/base.sass */
+h1 {
+  font-size: 4em;
+}
+
+/* line 17, ../../SASS/base.sass */
+h2 {
+  font-size: 3.5em;
+  width: 80%;
+  margin: 1% 0;
+}
+
+/* line 22, ../../SASS/base.sass */
+p {
+  text-align: center;
+  margin: 0.7em auto;
+  width: auto;
+}
+/* line 26, ../../SASS/base.sass */
+p.heavyShadow {
+  text-shadow: -1px 1px 3px rgba(0, 0, 0, 0.8);
+}
+
+/* line 29, ../../SASS/base.sass */
+a {
+  color: #00b7ff;
+}
+
+/* line 32, ../../SASS/base.sass */
+html, body {
+  height: 100%;
+}
+
+/* line 35, ../../SASS/base.sass */
+body {
+  *zoom: 1;
+  max-width: 100%;
+  _width: 100%;
+  padding-left: 0;
+  padding-right: 0;
+  margin-left: auto;
+  margin-right: auto;
+  width: 100%;
+  float: left;
+  margin-right: 1.0101%;
+  display: inline;
+  margin: 0;
+  font-family: "Lucida Grande", Helvetica, Arial, sans-serif;
+  font-size: 18px;
+  background: whitesmoke;
+}
+/* line 38, ../../../../../../Ruby200/lib/ruby/gems/2.0.0/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/utilities/general/_clearfix.scss */
+body:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+/* line 45, ../../SASS/base.sass */
+body header {
+  width: 100%;
+  float: left;
+  margin-right: 1.0101%;
+  display: inline;
+  height: 50px;
+  margin-bottom: 15px;
+  -webkit-box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.1);
+  -moz-box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.1);
+  box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.1);
+}
+/* line 51, ../../SASS/base.sass */
+body nav {
+  width: 14.14141%;
+  float: left;
+  margin-right: 1.0101%;
+  display: inline;
+  padding-left: 2.0202%;
+  padding-right: 2.0202%;
+  max-width: 200px;
+}
+/* line 56, ../../SASS/base.sass */
+body nav input[type="search"] {
+  font-size: 14px;
+  width: 95%;
+  margin: 0 2% 15px 2%;
+}
+/* line 61, ../../SASS/base.sass */
+body nav h3 {
+  font-size: 14pt;
+  color: white;
+  font-family: sans-serif;
+  font-weight: normal;
+  margin: 0;
+  padding: 15px;
+  cursor: pointer;
+}
+/* line 70, ../../SASS/base.sass */
+body nav ul {
+  margin: 0;
+  padding: 0;
+}
+/* line 73, ../../SASS/base.sass */
+body nav ul li {
+  list-style: none;
+}
+/* line 76, ../../SASS/base.sass */
+body nav #my-hobby {
+  background: #ff3333;
+}
+/* line 79, ../../SASS/base.sass */
+body nav #my-closet {
+  background: #ff9019;
+}
+/* line 82, ../../SASS/base.sass */
+body nav #explore {
+  background: #ffbb20;
+}
+/* line 85, ../../SASS/base.sass */
+body nav #hobbies {
+  background: #fafafa;
+}
+/* line 87, ../../SASS/base.sass */
+body nav #hobbies ul {
+  margin: 0;
+  padding: 5px 0 5px 5px;
+}
+/* line 90, ../../SASS/base.sass */
+body nav #hobbies ul li {
+  list-style: none;
+  font-size: 12pt;
+  color: #999999;
+  padding: 4px 5px;
+  cursor: pointer;
+}
+/* line 96, ../../SASS/base.sass */
+body nav #hobbies ul li:hover {
+  color: #555555;
+}
+/* line 99, ../../SASS/base.sass */
+body .main {
+  width: 74.74747%;
+  float: left;
+  margin-right: 1.0101%;
+  display: inline;
+  padding-left: 1.0101%;
+  padding-right: 1.0101%;
+  padding-top: 15px;
+  background: white;
+  -webkit-box-shadow: -1px -1px 1px rgba(0, 0, 0, 0.1);
+  -moz-box-shadow: -1px -1px 1px rgba(0, 0, 0, 0.1);
+  box-shadow: -1px -1px 1px rgba(0, 0, 0, 0.1);
+}
