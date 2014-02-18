@@ -1,0 +1,30 @@
+extends layout
+
+block content
+	include top
+	
+	.profile-container
+		.banner
+			.profile-picture
+		.main
+			.main__info
+				//about stuff... perhaps location, age, date joined, real name, etc... or just leave blank for now
+			.main__recent-activity
+				//render some activityTile s
+					not part of original mockup though, so commented out
+				//each activity in recent
+					.activity-tile
+						.activity-tile__user=activity.user
+						.activity-tile__message=activity.message
+			.main__my-collections
+				//render some dashItem s
+				//render dashItem with my-collection passed as items param
+			.main__my-favorites
+				//render some more dashItem s
+				//rather, render dashItem with favorites list passed as items param	
+			.main__my-friends
+				//render some profile pictures and usernames
+				each friend in friends
+					.friend
+						img(src=friend.profilePicture).friend__profile-picture
+						a(href=friend.profileURL).friend__user-name=friend.name
