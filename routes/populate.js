@@ -39,7 +39,8 @@ module.exports = function() {
 			profilePicture: "/images/user1.jpg",
 			myCollection: [Owatch_dogs],
 			favorites: [OtombRaider],
-			friends: [Ouser2]
+			friends: [Ouser2],
+			bannerPicture: "banner.jpg"
 	};
 	
 	Account.register(new Account(OtestUser),
