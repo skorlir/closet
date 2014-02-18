@@ -18,7 +18,7 @@ block content
 						.activity-tile__message=activity.message
 			.main__my-collections
 				//render some dashItem s
-				//render dashItem with my-collection passed as items param
+				//render dashItem with collection passed as items param
 			.main__my-favorites
 				//render some more dashItem s
 				//rather, render dashItem with favorites list passed as items param	
@@ -27,4 +27,5 @@ block content
 				each friend in friends
 					.friend
 						img(src=friend.profilePicture).friend__profile-picture
-						a(href=friend.profileURL).friend__user-name=friend.name
+						//if user hasn't specified a first name, use their login username
+						a(href=friend.profileURL).friend__user-name=(friend.realName.firstName || friend.username)
