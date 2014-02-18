@@ -12,6 +12,7 @@ var itemMaster = new Schema({
 	mainPhoto: String,
 	marketValue: Number,
 	siteValue: Number,
+	rating: {type: Number, min: 0.0, max: 10.0 },
 	count: { type: Number, default: 0 }
 });
 
@@ -21,10 +22,7 @@ var itemInstance = new Schema({
 	master_id: { type: Schema.ObjectId, required: true },
 	index: { type: Number, min: 1, required: true },
 	name: String,
-	condition: {
-								description: String,
-								rating: { type: Number, min: 0.0, max: 10.0 }
-							},
+	condition: String,
 	description: String
 });
 
@@ -33,8 +31,8 @@ itemMaster.pre('save', function(next) {
 	Masters.findOne({name: item.name}, function(err, obj) {
 		if(err) return next(err);
 		if(obj) return next(new Error('master ref exists'));
+		return next();
 	});
-	next();
 });
 
 itemInstance.pre('save', function(next) {

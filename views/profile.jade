@@ -19,12 +19,24 @@ block content
 			.main__my-collections
 				//render some dashItem s
 				//render dashItem with collection passed as items param
+				each item in user.myCollection
+					.item--small
+						.item__main
+							i.item__mark-button
+							img.item__prod-img(src='../../images/'+item.photos[0])
+							p.item__name=item.name
 			.main__my-favorites
 				//render some more dashItem s
 				//rather, render dashItem with favorites list passed as items param	
+				each item in user.favorites
+					.item--small
+						.item__main
+							i.item__mark-button
+							img.item__prod-img(src='../../images/'+item.photos[0])
+							p.item__name=item.name
 			.main__my-friends
 				//render some profile pictures and usernames
-				each friend in friends
+				each friend in user.friends
 					.friend
 						img(src=friend.profilePicture).friend__profile-picture
 						//if user hasn't specified a first name, use their login username
