@@ -5,7 +5,7 @@
 var express = require('express')
 		, routes = require('./routes')
 		, user = require('./routes/user')
-		, dash = require('./routes/dash')
+		// , dash = require('./routes/dash')
 		, item = require('./routes/item')
 		, http = require('http')
 		, passport = require('passport')
