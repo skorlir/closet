@@ -1,0 +1,20 @@
+extends layout
+
+block content
+	include top
+	
+	.main
+		//story feed/item activity feed
+		.story
+			.user
+				.user__profile-picture
+			.content
+				.content__body
+				.content__image
+	
+	.right
+		//item info panel
+		img(src=item.mainPhoto)
+		.name=item.name
+		.rating=item.rating
+		.description=item.description

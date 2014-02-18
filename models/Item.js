@@ -9,6 +9,7 @@ var itemMaster = new Schema({
 	tags: [String],
 	description: String,
 	photos: [String],
+	mainPhoto: String,
 	marketValue: Number,
 	siteValue: Number,
 	count: { type: Number, default: 0 }

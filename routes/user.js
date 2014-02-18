@@ -41,7 +41,7 @@ exports.postRegister = function(req, res){
 										}
 										 
 										passport.authenticate('local')(req, res, function() {
-											res.redirect('/users/' + req.user.username + '/dash');
+											res.redirect('/');
 										 });
 									 });
 								};
@@ -53,5 +53,5 @@ exports.getLogin = function(req, res){
 
 exports.postLogin = function(req, res) {
 	//user specific logic is specified in routing
-	res.send('/users/' + req.user.username + '/dash');
+	res.send('/');
 }
