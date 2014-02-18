@@ -30,7 +30,7 @@ var itemInstance = new Schema({
 
 itemMaster.pre('save', function(next) {
 	var item = this;
-	Masters.findOne(item, function(err, obj) {
+	Masters.findOne({name: item.name}, function(err, obj) {
 		if(err) return next(err);
 		if(obj) return next(new Error('master ref exists'));
 	});
