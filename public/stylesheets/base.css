@@ -68,6 +68,25 @@ input[type="button"], .button, .button--3d {
   background: linear-gradient(#59a8e5 0%, #1d86c6 97%, #7ab3ff 100%);
 }
 
+.searchbutton {
+  margin: .5%;
+  padding: 3px .5%;
+  position: relative;
+  top: -9px;
+  left: -20px;
+  color: white;
+  text-shadow: 0px 0px 2px rgba(0, 0, 0, 0.5);
+  font-size: .75em;
+  border: 1px solid rgba(103, 147, 232, 0.5);
+  border-bottom: 1px solid #1670a0;
+  border-top: none;
+  background: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #59a8e5), color-stop(97%, #1d86c6), color-stop(100%, #7ab3ff));
+  background: -webkit-linear-gradient(#59a8e5 0%, #1d86c6 97%, #7ab3ff 100%);
+  background: -moz-linear-gradient(#59a8e5 0%, #1d86c6 97%, #7ab3ff 100%);
+  background: -o-linear-gradient(#59a8e5 0%, #1d86c6 97%, #7ab3ff 100%);
+  background: linear-gradient(#59a8e5 0%, #1d86c6 97%, #7ab3ff 100%);
+}
+
 /* line 62, ../../SASS/formElements.sass */
 .button--3d {
   -webkit-box-shadow: inset 1px 1px rgba(20, 20, 100, 0.55), inset -1px -1px rgba(20, 20, 100, 0.55), 0px 10px #1374a8, 0px 15px 12px -3px black;
@@ -180,8 +199,13 @@ body header {
 }
 /* line 50, ../../SASS/base.sass */
 body header img.profile {
-  width: 60px;
-  margin-left: 50px;
+    width: 50px;
+    margin-right: 50px;
+    float: right;
+    top: -15px;
+    border-style: solid;
+    border-width: 4px;
+    border-color: #fff;
 }
 /* line 54, ../../SASS/base.sass */
 body header span.centeredLogo {
@@ -192,8 +216,8 @@ body header span.centeredLogo {
   display: inline-block;
   width: auto;
   position: relative;
-  top: -15px;
-  left: 40%;
+  /*top: -15px;*/
+  left: 18%;
 }
 /* line 65, ../../SASS/base.sass */
 body nav {
@@ -206,10 +230,11 @@ body nav {
   max-width: 200px;
 }
 /* line 70, ../../SASS/base.sass */
-body nav input[type="search"] {
-  font-size: 14px;
-  width: 95%;
-  margin: 0 2% 15px 2%;
+body header input[type="search"] {
+  font-size: 18px;
+  float: left;
+  width: 20%;
+  margin: 1.5% 2% 15px 2%;
 }
 /* line 75, ../../SASS/base.sass */
 body nav h3 {

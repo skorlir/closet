@@ -2,13 +2,19 @@ extends layout
 
 block content
 	include top
+	link(href="../../stylesheets/profile.css" rel="stylesheet" type="text/css")
 	
 	.profile-container
 		.banner
+			img(src='../../images/coverpic.png').cover-photo
 			img(src=user.profilePicture).profile-picture
+			h3=user.realName.firstName + ' ' + user.realName.lastName
 		.main
 			.main__info
-				//about stuff... perhaps location, age, date joined, real name, etc... or just leave blank for now
+				h4 Lives in 
+					a(href=)=user.location
+				h4 Likes 
+					a(href=)=user.hobbies
 			.main__recent-activity
 				//render some activityTile s
 					not part of original mockup though, so commented out

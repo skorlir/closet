@@ -1,90 +1,16 @@
-.page {
-	background: #fff;
-	margin: 5px;
-	border-style: solid;
-	border-width: 1px;
-	border-color: #444;
-	height: 175%;
+.profile-container .main {
+	position: inline;
 }
 
-.header {
-	background: #f2f2f2;
-	height: 80px;
-	border-bottom-style: double;
-}
-
-.body {
-	height: 175%;
-	background: #fff;
-	padding: 1% 2%;
-}
-
-.sidebar {
-	width: 180px;
-	border-style: none;
-}
-
-.sidebar input {
-	font-size: 14px;
-	width: 180px;
-	margin: 5px 0;
-}
-
-.sidebar h3 {
-	font-size: 14pt;
+.profile-container h3 {
+	position: relative;
 	color: #fff;
-	font-family: sans-serif;
-	font-weight: normal;
-	margin: 0;
-	padding: 14px 20px;
+	top: -200px;
+	left: 33%;
+	font-size: 1.5em;
 }
 
-#my-hobby {
-	height: 50px;
-	border-style: none;
-	background: #ff3333;
-}
-
-#hobbies {
-	height: 140px;
-	border-style: none;
-	background: #F1F4FA;
-}
-
-#hobbies ul {
-	margin: 0;
-	padding: 5px 10px;
-}
-
-#hobbies li {
-	list-style: none;
-	font-size: 12pt;
-	text-indent: 5px;
-	color: #999;
-	padding: 4px 5px;
-}
-
-#my-closet {
-	height: 50px;
-	border-style: none;
-	background: #ff9019;
-}
-
-#explore {
-	height: 50px;
-	border-style: none;
-	background: #ffbb20;
-}
-
-.profile {
-
-}
-
-.profile h3 {
-
-}
-
-.profile h4 {
+.profile-container h4 {
 
 }
 
@@ -100,12 +26,21 @@
 	
 }
 
-#cover {
-
+.profile-picture {
+	border-style: solid;
+	border-color: #fff;
+	border-width: 6px;
+	width: 6em;
+	height: 6em;
+	position: relative;
+	top: -80px;
+	left: 22%;
 }
 
-.propic {
-
+.cover-photo {
+	width: 950px;
+	height: 300px;
+	position: relative;
 }
 
 .section {
