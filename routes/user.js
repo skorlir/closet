@@ -57,5 +57,5 @@ exports.postLogin = function(req, res) {
 }
 
 exports.profile = function(req, res) {
-	res.render('profile', { user: req.user });
+	req.isAuthenticated() ? res.render('profile', { user: req.user }) : res.redirect('/login');
 }

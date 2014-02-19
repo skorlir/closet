@@ -1,11 +1,14 @@
 header
 	a(href='/profile')
-		img.profile(src=user.profilePicture)
-	span.centeredLogo Closet
+		if(user)
+			img.profile(src=user.profilePicture)
+			span=user.realName.firstName+' '+user.realName.lastName 
+	a(href='/')
+		span.centeredLogo Closet
 nav
-	input(type='search',placeholder='search for an item', name='searchField')
+	input(type='search', placeholder='search for an item', name='searchField')
 	ul
-		li#my-hobby
+		li#my-hobbies
 			h3 MY HOBBIES
 		li#hobbies
 			ul
