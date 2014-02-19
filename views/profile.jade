@@ -4,6 +4,8 @@ block content
 	include top
 	link(href="../../stylesheets/profile.css" rel="stylesheet" type="text/css")
 	
+	=console.log(user)
+	
 	.profile-container
 		.banner
 			img(src='../../images/coverpic.png').cover-photo
@@ -31,7 +33,8 @@ block content
 						.item__main
 							i.item__mark-button
 							img.item__prod-img(src='../../images/'+item.photos[0])
-							p.item__name=item.name
+							a(href='/items/'+item._id)
+								p.item__name=item.name
 			.main__my-favorites
 				//render some more dashItem s
 				//rather, render dashItem with favorites list passed as items param	
@@ -41,7 +44,8 @@ block content
 						.item__main
 							i.item__mark-button
 							img.item__prod-img(src='../../images/'+item.photos[0])
-							p.item__name=item.name
+							a(href='/items/'+item._id)
+								p.item__name=item.name
 			.main__my-friends
 				//render some profile pictures and usernames
 				each friend in user.friends

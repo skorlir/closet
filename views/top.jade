@@ -3,10 +3,14 @@ header
 	button.searchbutton Search
 	span.centeredLogo Closet
 	a(href='/profile')
-		img.profile(src=user.profilePicture)
+		if(user)
+			img.profile(src=user.profilePicture)
+			span=user.realName.firstName+' '+user.realName.lastName 
+	a(href='/')
+		span.centeredLogo Closet
 nav
 	ul
-		li#my-hobby
+		li#my-hobbies
 			h3 MY HOBBIES
 		li#hobbies
 			ul

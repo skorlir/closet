@@ -37,27 +37,37 @@ module.exports = function() {
 			realName: {firstName: "Abigail", lastName: "User" },
 			hobbies: ["Camping", "Wine", "Videogames", "Cycling"],
 			profilePicture: "/images/user1.jpg",
-			myCollection: [Owatch_dogs],
-			favorites: [OtombRaider],
+			myCollection: [],
+			favorites: [],
 			friends: [Ouser2],
 			bannerPicture: "banner.jpg"
 	};
-	
-	Account.register(new Account(OtestUser),
-									 "test123",
-									 function(err, account) {
-											if (err) {
-												console.log(err);
-											}
-									 });
 	
 	var watch_dogs = new ItemMaster(Owatch_dogs)
 			, tombRaider = new ItemMaster(OtombRaider)
 			, infamousSecondSon = new ItemMaster(OinfamousSecondSon);
 	
 	
-	ItemMaster.create([watch_dogs, tombRaider, infamousSecondSon], function(err) {
+	ItemMaster.create([watch_dogs, tombRaider, infamousSecondSon], function(err, w, t, i) {
 		if(err) console.log(err);
+		
+		ItemMaster.find({ name: 'Watch_Dogs' }).exec(function(e, r){
+			OtestUser.myCollection.push(r[0]);
+
+			ItemMaster.find({ name: 'Tomb Raider: Definitive Edition' }).exec(function(e, r){
+				OtestUser.favorites.push(r[0]);
+				
+				Account.register(new Account(OtestUser),
+										 "test123",
+										 function(err, account) {
+												if (err) {
+													console.log(err);
+												}
+										 });
+			});
+			
+		});
+	
 	});
 	
 }
