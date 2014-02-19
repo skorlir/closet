@@ -6,6 +6,7 @@
 var Masters = require('../models/Item.js').ItemMasters;
 var Items = require('../models/Item.js').Items;
 var _ = require('underscore');
+var Schema = require('mongoose').Schema;
 
 exports.getItemsQuery = function(req, res){
 	if (req.isAuthenticated()) {
@@ -25,7 +26,9 @@ exports.getItemsQuery = function(req, res){
 }
 
 exports.itemPage = function(req, res) {
-	Masters.find({ _id: req.params[0] }).exec( function(err, result) {
+	//aaaah need regex stuff darnit
+	console.log(req.params[0]);
+	Masters.find({ _id: new Schema.ObjectId(req.params[0]) }).exec( function(err, result) {
 		if(err) console.log(err);
 		if(result) console.log(result);
 		
