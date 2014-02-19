@@ -63,17 +63,22 @@ body
 			width: auto
 			position: relative
 			top: -15px
-			left: 40%
+			left: 35%
+	
+		input[type="search"]
+			display: inline-block
+			float: right
+		
+		button.searchButton
+			display: inline-block
+			float: right
+			margin-left: 10px
+			margin-right: 10px
 		
 	nav
 		@include span-columns(3)
 		@include pad(0.5, 0.5)
 		max-width: 200px
-
-		input[type="search"] 
-			font-size: 14px
-			width: 95%
-			margin: 0 2% 15px 2%
 
 		h3 
 			font-size: 14pt
