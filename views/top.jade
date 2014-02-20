@@ -1,0 +1,24 @@
+header
+	a(href='/profile')
+		if(user)
+			img.profile(src=user.profilePicture)
+			span=user.realName.firstName+' '+user.realName.lastName 
+	a(href='/')
+		span.centeredLogo Closet
+	button.searchbutton Search
+	input(type='search', placeholder='search for an item', name='searchField')
+nav
+	ul
+		li#my-hobbies
+			h3 MY HOBBIES
+		li#hobbies
+			ul
+				li Outdoor
+				li Fasion
+				li Wine
+				li Photography
+				li Music
+		li#my-closet
+			h3 MY CLOSET
+		li#explore
+			h3 EXPLORE

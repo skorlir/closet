@@ -1,37 +1,55 @@
 extends layout
 
 block content
-	link(href='/stylesheets/dashboard.css' rel='stylesheet' type='style/css')
-	.page
-		.header
-		.body
-			.sidebar
-				input(type='search',placeholder='search for an item', name='searh-field')
-				#my-hobby
-					h3 MY HOBBY
-				#hobbies
-					ul
-						li Outdoor
-						li Fasion
-						li Wine
-						li Photography
-						li Music
-				#my-closet
-					h3 MY CLOSET
-				#explore
-					h3 EXPLORE
-			.profile
-				img#cover(alt="Cover Photo")
-				img.propic		(alt="Profile Picture")
-				h3 Jessica Grey
-				p Lives in Chicago
-				p Likes Wine Fashion Outdoor Photography Music
-				input(type="button" name="upload-new" value="Upload New Item")
-				.section
-					h4 My Closet
-					h5 Wine (5)
-					.images
-					h5 Fashion (4)
-					.images
-				.section
-					h4 My Bookmarks
+	include top
+	link(href="../../stylesheets/profile.css" rel="stylesheet" type="text/css")
+	
+	=console.log(user)
+	
+	.main
+		img(src='../../images/coverpic.png').cover-photo
+		img(src=user.profilePicture).profile-picture
+		h3=user.realName.firstName + ' ' + user.realName.lastName
+
+		.main__info
+			h4 Lives in 
+				a(href=)=user.location
+			h4 Likes 
+				a(href=)=user.hobbies
+		.main__recent-activity
+			//render some activityTile s
+				not part of original mockup though, so commented out
+			//each activity in recent
+				.activity-tile
+					.activity-tile__user=activity.user
+					.activity-tile__message=activity.message
+		.main__my-collections
+			//render some dashItem s
+			//render dashItem with collection passed as items param
+			each item in user.myCollection
+				=console.log(item)
+				.item
+					.item__main
+						i.item__mark-button
+						img.item__prod-img(src='../../images/'+item.photos[0])
+						a(href='/items/'+item._id)
+							p.item__name=item.name
+		.main__my-favorites
+			//render some more dashItem s
+			//rather, render dashItem with favorites list passed as items param	
+			each item in user.favorites
+				=console.log(item)
+				.item
+					.item__main
+						i.item__mark-button
+						img.item__prod-img(src='../../images/'+item.photos[0])
+						a(href='/items/'+item._id)
+							p.item__name=item.name
+		.main__my-friends
+			//render some profile pictures and usernames
+			each friend in user.friends
+				=console.log(friend)
+				.friend
+					img(src=friend.profilePicture).friend__profile-picture
+					//if user hasn't specified a first name, use their login username
+					a(href=friend.profileURL).friend__user-name=friend.username

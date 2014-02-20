@@ -23,3 +23,12 @@ exports.getItemsQuery = function(req, res){
 	
 	}
 }
+
+exports.itemPage = function(req, res) {
+	Masters.find({ _id: req.params[0] }).exec( function(err, result) {
+		if(err) console.log(err);
+		if(result) console.log(result);
+		
+		res.render('itempage', { item: result, user: req.user });
+	});
+}

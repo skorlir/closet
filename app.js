@@ -5,7 +5,6 @@
 var express = require('express')
 		, routes = require('./routes')
 		, user = require('./routes/user')
-		, dash = require('./routes/dash')
 		, item = require('./routes/item')
 		, http = require('http')
 		, passport = require('passport')
@@ -53,8 +52,10 @@ passport.deserializeUser(Account.deserializeUser());
 //declare routing
 app.get('/', routes.index);
 app.get('/items/masters', item.getItemsQuery);
+app.get('/items/:item', item.itemPage);
 app.get('/users', auth, user.list);
 app.post('/users/subscribers', user.addSub);
+app.get('/profile', user.profile);
 app.get('/register', user.getRegister);
 app.post('/register', user.postRegister);
 app.get('/login', user.getLogin);

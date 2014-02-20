@@ -49,7 +49,7 @@ input:focus {
 }
 
 /* line 43, ../../SASS/formElements.sass */
-input[type="button"], .button, .button--3d {
+input[type="button"], .button, .searchButton, .button--3d {
   display: block;
   margin: 1% auto;
   padding: 10px 2%;
@@ -69,6 +69,18 @@ input[type="button"], .button, .button--3d {
 }
 
 /* line 62, ../../SASS/formElements.sass */
+.searchButton {
+  margin: 2px;
+  padding: 4px 0.5px;
+  text-shadow: 0px 0px 2px rgba(0, 0, 0, 0.5);
+  font-size: 0.75em;
+  display: inline-block;
+  float: right;
+  margin-left: 10px;
+  margin-right: 10px;
+}
+
+/* line 74, ../../SASS/formElements.sass */
 .button--3d {
   -webkit-box-shadow: inset 1px 1px rgba(20, 20, 100, 0.55), inset -1px -1px rgba(20, 20, 100, 0.55), 0px 10px #1374a8, 0px 15px 12px -3px black;
   -moz-box-shadow: inset 1px 1px rgba(20, 20, 100, 0.55), inset -1px -1px rgba(20, 20, 100, 0.55), 0px 10px #1374a8, 0px 15px 12px -3px black;
@@ -83,14 +95,14 @@ input[type="button"], .button, .button--3d {
   -o-transition: all 0.3s ease;
   transition: all 0.3s ease;
 }
-/* line 71, ../../SASS/formElements.sass */
+/* line 83, ../../SASS/formElements.sass */
 .button--3d:hover {
   -webkit-box-shadow: inset 1px 1px rgba(20, 20, 100, 0.55), inset -1px -1px rgba(20, 20, 100, 0.55), 0px 13px #0e6491, 0px 15px 12px -3px black;
   -moz-box-shadow: inset 1px 1px rgba(20, 20, 100, 0.55), inset -1px -1px rgba(20, 20, 100, 0.55), 0px 13px #0e6491, 0px 15px 12px -3px black;
   box-shadow: inset 1px 1px rgba(20, 20, 100, 0.55), inset -1px -1px rgba(20, 20, 100, 0.55), 0px 13px #0e6491, 0px 15px 12px -3px black;
   top: -3px;
 }
-/* line 75, ../../SASS/formElements.sass */
+/* line 87, ../../SASS/formElements.sass */
 .button--3d:active {
   -webkit-box-shadow: inset 1px 1px rgba(20, 20, 100, 0.55), inset -1px -1px rgba(20, 20, 100, 0.55), 0px 0px #10618d;
   -moz-box-shadow: inset 1px 1px rgba(20, 20, 100, 0.55), inset -1px -1px rgba(20, 20, 100, 0.55), 0px 0px #10618d;
@@ -118,32 +130,31 @@ h1 {
 /* line 17, ../../SASS/base.sass */
 h2 {
   font-size: 3.5em;
-  width: 80%;
   margin: 1% 0;
 }
 
-/* line 22, ../../SASS/base.sass */
+/* line 21, ../../SASS/base.sass */
 p {
   text-align: center;
   margin: 0.7em auto;
   width: auto;
 }
-/* line 26, ../../SASS/base.sass */
+/* line 25, ../../SASS/base.sass */
 p.heavyShadow {
   text-shadow: -1px 1px 3px rgba(0, 0, 0, 0.8);
 }
 
-/* line 29, ../../SASS/base.sass */
+/* line 28, ../../SASS/base.sass */
 a {
   color: #00b7ff;
 }
 
-/* line 32, ../../SASS/base.sass */
+/* line 31, ../../SASS/base.sass */
 html, body {
   height: 100%;
 }
 
-/* line 35, ../../SASS/base.sass */
+/* line 34, ../../SASS/base.sass */
 body {
   *zoom: 1;
   max-width: 100%;
@@ -167,19 +178,57 @@ body:after {
   display: table;
   clear: both;
 }
-/* line 45, ../../SASS/base.sass */
+/* line 44, ../../SASS/base.sass */
 body header {
   width: 100%;
   float: left;
   margin-right: 1.0101%;
   display: inline;
-  height: 50px;
+  height: 60px;
   margin-bottom: 15px;
   -webkit-box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.1);
   -moz-box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.1);
   box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.1);
 }
-/* line 51, ../../SASS/base.sass */
+/* line 50, ../../SASS/base.sass */
+body header img.profile {
+  width: 50px;
+  margin-left: 50px;
+  border-style: solid;
+  border-width: 4px;
+  border-color: white;
+}
+/* line 57, ../../SASS/base.sass */
+body header span.profileLink {
+  font-size: 0.75em;
+  text-decoration: none;
+  color: #cc3300;
+}
+/* line 62, ../../SASS/base.sass */
+body header span.centeredLogo {
+  font-family: pacifico, "Lucida Grande", "Lucida Sans", "helvetica neue", helvetica, sans-serif;
+  color: #5cafff;
+  text-shadow: -3px 2px white;
+  font-size: 1.9em;
+  display: inline-block;
+  width: auto;
+  position: relative;
+  top: -15px;
+  left: 35%;
+}
+/* line 73, ../../SASS/base.sass */
+body header input[type="search"] {
+  display: inline-block;
+  float: right;
+}
+/* line 77, ../../SASS/base.sass */
+body header button.searchButton {
+  display: inline-block;
+  float: right;
+  margin-left: 10px;
+  margin-right: 10px;
+}
+/* line 83, ../../SASS/base.sass */
 body nav {
   width: 14.14141%;
   float: left;
@@ -189,13 +238,7 @@ body nav {
   padding-right: 2.0202%;
   max-width: 200px;
 }
-/* line 56, ../../SASS/base.sass */
-body nav input[type="search"] {
-  font-size: 14px;
-  width: 95%;
-  margin: 0 2% 15px 2%;
-}
-/* line 61, ../../SASS/base.sass */
+/* line 88, ../../SASS/base.sass */
 body nav h3 {
   font-size: 14pt;
   color: white;
@@ -205,37 +248,37 @@ body nav h3 {
   padding: 15px;
   cursor: pointer;
 }
-/* line 70, ../../SASS/base.sass */
+/* line 97, ../../SASS/base.sass */
 body nav ul {
   margin: 0;
   padding: 0;
 }
-/* line 73, ../../SASS/base.sass */
+/* line 100, ../../SASS/base.sass */
 body nav ul li {
   list-style: none;
 }
-/* line 76, ../../SASS/base.sass */
-body nav #my-hobby {
+/* line 103, ../../SASS/base.sass */
+body nav #my-hobbies {
   background: #ff3333;
 }
-/* line 79, ../../SASS/base.sass */
+/* line 106, ../../SASS/base.sass */
 body nav #my-closet {
   background: #ff9019;
 }
-/* line 82, ../../SASS/base.sass */
+/* line 109, ../../SASS/base.sass */
 body nav #explore {
   background: #ffbb20;
 }
-/* line 85, ../../SASS/base.sass */
+/* line 112, ../../SASS/base.sass */
 body nav #hobbies {
   background: #fafafa;
 }
-/* line 87, ../../SASS/base.sass */
+/* line 114, ../../SASS/base.sass */
 body nav #hobbies ul {
   margin: 0;
   padding: 5px 0 5px 5px;
 }
-/* line 90, ../../SASS/base.sass */
+/* line 117, ../../SASS/base.sass */
 body nav #hobbies ul li {
   list-style: none;
   font-size: 12pt;
@@ -243,11 +286,11 @@ body nav #hobbies ul li {
   padding: 4px 5px;
   cursor: pointer;
 }
-/* line 96, ../../SASS/base.sass */
+/* line 123, ../../SASS/base.sass */
 body nav #hobbies ul li:hover {
   color: #555555;
 }
-/* line 99, ../../SASS/base.sass */
+/* line 126, ../../SASS/base.sass */
 body .main {
   width: 74.74747%;
   float: left;
@@ -260,4 +303,5 @@ body .main {
   -webkit-box-shadow: -1px -1px 1px rgba(0, 0, 0, 0.1);
   -moz-box-shadow: -1px -1px 1px rgba(0, 0, 0, 0.1);
   box-shadow: -1px -1px 1px rgba(0, 0, 0, 0.1);
+  position: relative;
 }
