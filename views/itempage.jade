@@ -11,11 +11,10 @@ block content
 			.content
 				.content__body
 				.content__image
-	
-	.right
-		//item info panel
-		=console.log(item)
-		img(src=item.mainPhoto)
-		.name=item.name
-		.rating=item.rating
-		.description=item.description
+		
+		.right
+			//item info panel
+			img(src= '../images/' + item.mainPhoto)
+			.name= item.name
+			.rating= item.rating
+			.description= item.description.substring(0,117) + '...'

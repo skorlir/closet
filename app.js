@@ -52,7 +52,7 @@ passport.deserializeUser(Account.deserializeUser());
 //declare routing
 app.get('/', routes.index);
 app.get('/items/masters', item.getItemsQuery);
-app.get('/items/:item', item.itemPage);
+app.get('/items/:id', item.itemPage);
 app.get('/users', auth, user.list);
 app.post('/users/subscribers', user.addSub);
 app.get('/profile', user.profile);

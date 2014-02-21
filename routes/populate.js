@@ -8,7 +8,8 @@ module.exports = function() {
 		hobbies: ['videogames'],
 		description: "All it takes is the swipe of a finger. We connect with friends. We buy the latest gadgets and gear. We find out what's happening in the world. But with that same simple swipe, we cast an increasingly expansive shadow. With each connection, we leave a digital trail that tracks our every move and milestone, our every like and dislike. And it's not just people. Today, all major cities are networked. Urban infrastructures are monitored and controlled by complex operating systems. In Watch_Dogs, this system is called the Central Operating System (CTOS) – and it controls almost every piece of the city's technology and holds key information on all of the city's residents. You play as Aiden Pearce, a brilliant hacker and former thug, whose criminal past led to a violent family tragedy. Now on the hunt for those who hurt your family, you'll be able to monitor and hack all who surround you by manipulating everything connected to the city's network. Access omnipresent security cameras, download personal information to locate a target, control traffic lights and public transportation to stop the enemy…and more. Use the city of Chicago as your ultimate weapon and exact your own style of revenge.",
 		photos: ['Watch_DogsTile.jpg', 'WatchDogs_Banner.jpg'],
-		mainPhoto: 'Watch_DogsTile.jpg'
+		mainPhoto: 'Watch_DogsTile.jpg',
+		rating: 8.0
 	};
 	
 	var OtombRaider = {
