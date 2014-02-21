@@ -5,14 +5,13 @@ var itemMaster = new Schema({
 	//upc: 	{ type: Number, index: { unique: true, dropDups: true } },
 	name: { type: String, trim: true, required: true },
 	
-	hobbies: [String],
+	hobbies: {type: [String], required: true },
 	tags: [String],
-	description: String,
-	photos: [String],
-	mainPhoto: String,
+	description: { type: String, required: true },
+	tilePhoto: { type: String, required: true },
 	marketValue: Number,
 	siteValue: Number,
-	rating: {type: Number, min: 0.0, max: 10.0 },
+	rating: { type: Number, min: 0.0, max: 10.0 },
 	count: { type: Number, default: 0 }
 });
 

@@ -30,7 +30,7 @@ block content
 					.item__main
 						i.item__mark-button
 						a(href='/items/'+item._id)
-							img.item__prod-img(src='../../images/'+item.photos[0])
+							img.item__prod-img(src='../../images/'+item.tilePhoto)
 							p.item__name=item.name
 		.main__my-favorites
 			//render some more moar dashItem s
@@ -39,7 +39,7 @@ block content
 					.item__main
 						i.item__mark-button
 						a(href='/items/'+item._id)
-							img.item__prod-img(src='../../images/'+item.photos[0])
+							img.item__prod-img(src='../../images/'+item.tilePhoto)
 							p.item__name=item.name
 		.main__my-friends
 			//render some profile pictures and usernames
