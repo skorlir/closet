@@ -215,8 +215,9 @@ body header {
   -webkit-box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.1);
   -moz-box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.1);
   box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.1);
+  background: #fafafa;
 }
-/* line 51, ../../SASS/base.sass */
+/* line 52, ../../SASS/base.sass */
 body header img.profile {
   width: 50px;
   margin-left: 50px;
@@ -224,7 +225,7 @@ body header img.profile {
   border-width: 4px;
   border-color: white;
 }
-/* line 58, ../../SASS/base.sass */
+/* line 59, ../../SASS/base.sass */
 body header span.centeredLogo {
   font-family: pacifico, "Lucida Grande", "Lucida Sans", "helvetica neue", helvetica, sans-serif;
   color: #5cafff;
@@ -236,19 +237,19 @@ body header span.centeredLogo {
   top: -15px;
   left: 35%;
 }
-/* line 69, ../../SASS/base.sass */
+/* line 70, ../../SASS/base.sass */
 body header input[type="search"] {
   display: inline-block;
   float: right;
 }
-/* line 73, ../../SASS/base.sass */
+/* line 74, ../../SASS/base.sass */
 body header button.searchButton {
   display: inline-block;
   float: right;
   margin-left: 10px;
   margin-right: 10px;
 }
-/* line 79, ../../SASS/base.sass */
+/* line 80, ../../SASS/base.sass */
 body nav {
   width: 14.14141%;
   float: left;
@@ -258,7 +259,7 @@ body nav {
   padding-right: 2.0202%;
   max-width: 200px;
 }
-/* line 84, ../../SASS/base.sass */
+/* line 85, ../../SASS/base.sass */
 body nav h3 {
   font-size: 14pt;
   color: white;
@@ -268,37 +269,37 @@ body nav h3 {
   padding: 15px;
   cursor: pointer;
 }
-/* line 93, ../../SASS/base.sass */
+/* line 94, ../../SASS/base.sass */
 body nav ul {
   margin: 0;
   padding: 0;
 }
-/* line 96, ../../SASS/base.sass */
+/* line 97, ../../SASS/base.sass */
 body nav ul li {
   list-style: none;
 }
-/* line 99, ../../SASS/base.sass */
+/* line 100, ../../SASS/base.sass */
 body nav #my-hobbies {
   background: #ff3333;
 }
-/* line 102, ../../SASS/base.sass */
+/* line 103, ../../SASS/base.sass */
 body nav #my-closet {
   background: #ff9019;
 }
-/* line 105, ../../SASS/base.sass */
+/* line 106, ../../SASS/base.sass */
 body nav #explore {
   background: #ffbb20;
 }
-/* line 108, ../../SASS/base.sass */
+/* line 109, ../../SASS/base.sass */
 body nav #hobbies {
   background: #fafafa;
 }
-/* line 110, ../../SASS/base.sass */
+/* line 111, ../../SASS/base.sass */
 body nav #hobbies ul {
   margin: 0;
   padding: 5px 0 5px 5px;
 }
-/* line 113, ../../SASS/base.sass */
+/* line 114, ../../SASS/base.sass */
 body nav #hobbies ul li {
   list-style: none;
   font-size: 12pt;
@@ -306,11 +307,11 @@ body nav #hobbies ul li {
   padding: 4px 5px;
   cursor: pointer;
 }
-/* line 119, ../../SASS/base.sass */
+/* line 120, ../../SASS/base.sass */
 body nav #hobbies ul li:hover {
   color: #555555;
 }
-/* line 122, ../../SASS/base.sass */
+/* line 123, ../../SASS/base.sass */
 body .main {
   width: 74.74747%;
   float: left;

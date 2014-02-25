@@ -16,8 +16,6 @@ exports.getItemsQuery = function(req, res){
 		
 		Masters.find(q).exec(function(err, result) {
 			
-			console.log(result);
-			
 			res.render('dashItem', { items: result });
 			
 		});

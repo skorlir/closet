@@ -7,6 +7,7 @@ var express = require('express')
 		, user = require('./routes/user')
 		, item = require('./routes/item')
 		, upload = require('./routes/upload')
+		, hobby = require('./routes/hobby')
 		, http = require('http')
 		, passport = require('passport')
 		, mongoose = require('mongoose');
@@ -53,6 +54,7 @@ passport.deserializeUser(Account.deserializeUser());
 //declare routing
 app.get('/', routes.index);
 app.get('/items/masters', item.getItemsQuery);
+app.get('/hobby/:hobby', hobby.index);
 app.get('/items/:id', item.itemPage);
 app.get('/users', auth, user.list);
 app.post('/users/subscribers', user.addSub);
