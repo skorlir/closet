@@ -1,15 +1,15 @@
-/* line 1, ../../sass/profile.sass */
+/* line 1, ../../SASS/profile.sass */
 .main h3 {
   position: absolute;
   width: 200px;
   color: white;
-  top: 8%;
+  top: 31%;
   left: 22%;
   display: inline-block;
   font-size: 1.5em;
 }
 
-/* line 22, ../../sass/profile.sass */
+/* line 22, ../../SASS/profile.sass */
 .profile-picture {
   border-style: solid;
   border-color: white;
@@ -17,11 +17,11 @@
   width: 6em;
   height: 6em;
   position: absolute;
-  top: 7.5%;
+  top: 30%;
   right: 80%;
 }
 
-/* line 32, ../../sass/profile.sass */
+/* line 32, ../../SASS/profile.sass */
 .cover-photo {
   width: 100%;
 }
