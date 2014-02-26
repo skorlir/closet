@@ -59,7 +59,6 @@ app.get('/items/:id', item.itemPage);
 app.get('/users', auth, user.list);
 app.post('/users/subscribers', user.addSub);
 app.get('/profile', user.profile);
-app.get('/upload', upload.index);
 app.get('/register', user.getRegister);
 app.post('/register', user.postRegister);
 app.get('/login', user.getLogin);
