@@ -3,8 +3,7 @@
  *  
  */
 
-var Masters = require('../models/Item.js').ItemMasters;
-var Items = require('../models/Item.js').Items;
+var Items = require('../models/Item.js');
 var _ = require('underscore');
 var Types = require('mongoose').Types;
 
@@ -14,7 +13,7 @@ exports.getItemsQuery = function(req, res){
 		
 		console.log(q);
 		
-		Masters.find(q).exec(function(err, result) {
+		Items.find(q).exec(function(err, result) {
 			
 			res.render('dashItem', { items: result });
 			
@@ -25,7 +24,7 @@ exports.getItemsQuery = function(req, res){
 
 exports.itemPage = function(req, res) {
 	
-	Masters.findOne({ _id: Types.ObjectId(req.params.id) }).exec( function(err, result) {		
+	Items.findOne({ _id: Types.ObjectId(req.params.id) }).exec( function(err, result) {		
 		res.render('itempage', { item: result, user: req.user });
 	});
 }

@@ -1,4 +1,4 @@
-var ItemMaster = require('../models/Item.js').ItemMasters
+var Item = require('../models/Item.js')
 		, Account = require('../models/Account.js');
 
 module.exports = function() {
@@ -49,18 +49,18 @@ module.exports = function() {
 			bannerPhoto: "banner.jpg"
 	};
 	
-	var watch_dogs = new ItemMaster(Owatch_dogs)
-			, tombRaider = new ItemMaster(OtombRaider)
-			, infamousSecondSon = new ItemMaster(OinfamousSecondSon);
+	var watch_dogs = new Item(Owatch_dogs)
+			, tombRaider = new Item(OtombRaider)
+			, infamousSecondSon = new Item(OinfamousSecondSon);
 	
 	
-	ItemMaster.create([watch_dogs, tombRaider, infamousSecondSon], function(err, w, t, i) {
+	Item.create([watch_dogs, tombRaider, infamousSecondSon], function(err, w, t, i) {
 		if(err) console.log(err);
 		
-		ItemMaster.find({ name: 'Watch_Dogs' }).exec(function(e, r){
+		Item.find({ name: 'Watch_Dogs' }).exec(function(e, r){
 			OtestUser.myCollection.push(r[0]);
 
-			ItemMaster.find({ name: 'Tomb Raider: Definitive Edition' }).exec(function(e, r){
+			Item.find({ name: 'Tomb Raider: Definitive Edition' }).exec(function(e, r){
 				OtestUser.favorites.push(r[0]);
 				
 				Account.register(new Account(OtestUser),

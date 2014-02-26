@@ -1,12 +1,11 @@
-var item = require('./item.js')
-	, _  = require('underscore')
-	, Masters = require('../models/Item.js').ItemMasters;
+var _  = require('underscore')
+	, Item = require('../models/Item.js');
 
 exports.index = function(req, res) {
 	console.log(req.params);
 	var q = _.extend({}, { hobbies: req.params.hobby });
 
-	Masters.find(q).exec(function(err, result) {
+	Item.find(q).exec(function(err, result) {
 		console.log(err);
 		console.log(result);
 
