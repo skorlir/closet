@@ -2,6 +2,7 @@ var mongoose = require('mongoose')
 		, Schema = mongoose.Schema;
 
 var item = new Schema({
+
 	name: { type: String, trim: true, required: true },
 
 	hobbies: {type: [String], required: true },
@@ -14,13 +15,22 @@ var item = new Schema({
 	owner: Schema.Types.Mixed,
 	condition: {type: String, enum: ['New', 'Like new', 'Lightly used', 'Used', 'Poor'] },
 	conditionDetails: String,
-
-	isForSale: Boolean,
-	isForRent: Boolean,
-
-	reviews: Schema.Types.Mixed,
-	location: String
+	photos: [String],
 	
+	isForSale: Boolean,
+	salePrice: Number,
+	isForRent: Boolean,
+	rentalPrice: Number,
+
+	reviews: [{	username: String,
+				realName: {firstName: String, lastName: String},
+				profilePhoto: String,
+				rating: { type: Number, min: 0.0, max: 10.0 },
+				content: String
+		}],
+			  	
+	location: String
+
 });
 
 var itemModel = mongoose.model('Item', item);
