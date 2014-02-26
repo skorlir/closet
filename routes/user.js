@@ -55,3 +55,7 @@ exports.postLogin = function(req, res) {
 	//user specific logic is specified in routing
 	res.send('/');
 }
+
+exports.profile = function(req, res) {
+	req.isAuthenticated() ? res.render('profile', { user: req.user }) : res.redirect('/login');
+}

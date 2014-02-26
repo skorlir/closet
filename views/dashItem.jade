@@ -4,7 +4,8 @@ each item in items
 	.item
 		.item__main
 			i.item__mark-button
-			img.item__prod-img(src='../../images/'+item.photos[0])
-			p.item__name=item.name
+			a(href='/items/' + item._id)
+				img.item__prod-img(src='../../images/'+item.tilePhoto)
+				p.item__name=item.name
 		.item__bottom
 			p.item__desc=item.description.substr(0, 147)+'...'

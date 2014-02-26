@@ -8,9 +8,16 @@ var account = Schema({
 						  lastName: String 
 						},
 	location: { type: String, default: 'unknown'},
+	age: Number,
 	hobbies: [String],
 	communities: [String],
-	itemMasterRefs: [{ master_id: Schema.ObjectId, instances: [] }]
+	profilePicture: String,
+	bannerPicture: String,
+	profileURL: String,
+	//TODO: denormalize item schema
+	myCollection: [Schema.mixed],
+	favorites: [Schema.mixed],
+	friends: [{ username: String, profileURL: String, profilePicture: String }]
 });
 
 account.plugin(passportLocalMongoose);

@@ -1,6 +1,7 @@
 @import '_susy_base'
 @import 'compass'
 @import 'formElements'
+@import 'item'
 
 $tablet-break: 60em 8
 $mobile-break: 30em 6
@@ -16,7 +17,6 @@ h1
 	
 h2 
 	font-size: 3.5em
-	width: 80%
 	margin: 1% 0
 
 p
@@ -44,19 +44,48 @@ body
 	
 	header
 		@include span-columns($total-columns)
-		height: 50px
+		height: 60px
 		margin-bottom: 15px
 		@include box-shadow(0px 1px 1px rgba(0,0,0,0.1))
+		background: rgb(250,250,250)
+		
+		img.profile
+			width: 50px
+			margin-left: 50px
+			border-style: solid
+			border-width: 4px
+			border-color: #fff
+
+		span.profileLink 
+			font-size: 0.75em
+			text-decoration: none
+			color: #CC3300
+	
+		span.centeredLogo
+			font-family: pacifico, 'Lucida Grande', 'Lucida Sans', 'helvetica neue', helvetica, sans-serif
+			color: rgb(92,175,255)
+			@include text-shadow(-3px 2px white)
+			font-size: 1.9em
+			display: inline-block
+			width: auto
+			position: relative
+			top: -15px
+			left: 35%
+	
+		input[type="search"]
+			display: inline-block
+			float: right
+		
+		button.searchButton
+			display: inline-block
+			float: right
+			margin-left: 10px
+			margin-right: 10px
 		
 	nav
 		@include span-columns(3)
 		@include pad(0.5, 0.5)
 		max-width: 200px
-
-		input[type="search"] 
-			font-size: 14px
-			width: 95%
-			margin: 0 2% 15px 2%
 
 		h3 
 			font-size: 14pt
@@ -73,7 +102,7 @@ body
 			li
 				list-style: none
 		
-		#my-hobby 
+		#my-hobbies
 			background: #ff3333
 
 		#my-closet
@@ -102,6 +131,7 @@ body
 		padding-top: 15px
 		background: white
 		@include box-shadow(-1px -1px 1px rgba(0,0,0,0.1))
+		position: relative
 
 	//RESPONSIVENESS BELOW
 	
@@ -110,4 +140,7 @@ body
 	
 	@include at-breakpoint($mobile-break)
 		//mobile styles
+
+	
+
 	

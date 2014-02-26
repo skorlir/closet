@@ -1,26 +1,10 @@
 extends layout
 
 block content
-	link(href="../../stylesheets/item.css" rel="stylesheet" type="text/css")
-	header
-	nav
-		input(type='search',placeholder='search for an item', name='searchField')
-		ul
-			li#my-hobby
-				h3 MY HOBBIES
-			li#hobbies
-				ul
-					li Outdoor
-					li Fasion
-					li Wine
-					li Photography
-					li Music
-			li#my-closet
-				h3 MY CLOSET
-			li#explore
-				h3 EXPLORE
+	include top
+	
 	.main
 		.stories
 	
 	script(src="../../script/dashboard.js")
-		
+	

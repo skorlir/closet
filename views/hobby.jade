@@ -1,0 +1,12 @@
+extends layout
+
+block content
+	include top
+	include mixins
+	link(href="../../stylesheets/hobby.css" rel="stylesheet" type="text/css")
+	
+	//all the content for the hobby page
+	.main
+		//this loads all the items related to the hobbie, which are passed to the template as "items"
+		mixin dashItems(items)
+		
