@@ -46,4 +46,4 @@ block content
 				.friend
 					img(src=friend.profilePicture).friend__profile-picture
 					//if user hasn't specified a first name, use their login username
-					a(href=friend.profileURL).friend__user-name=friend.username
+					a(href='/users/'+friend._id).friend__user-name=friend.username

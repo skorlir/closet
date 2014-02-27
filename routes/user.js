@@ -53,14 +53,36 @@ exports.getLogin = function(req, res){
 
 exports.postLogin = function(req, res) {
 	//user specific logic is specified in routing
+	//TODO: this is kinda gross. Shouldn't really be sending the page this way, but just redirecting. I think if I change it it'll cascade though, so I'll leave it for now.
 	res.send('/');
 }
 
 exports.profile = function(req, res) {
 	if(req.params.userid) {
-		Account.find({username: req.params.userid}, function(err, result) {
+		Account.find({_id: req.params.userid}, function(err, result) {
 			res.render('profile', { user: result });
 		});
+	} else {
+		req.isAuthenticated() ? res.render('profile', { user: req.user }) : res.redirect('/login');
 	}
-	req.isAuthenticated() ? res.render('profile', { user: req.user }) : res.redirect('/login');
+}
+
+exports.getName = function (req, res) {
+	if(req.params.userid) {
+		Account.find({_id: req.params.userid}, 'username', function(err, result) {
+			if(err) console.log(err);
+			console.log('getname: '+result);
+			res.send(result);
+		});
+	}
+}
+
+exports.getPhoto = function (req, res) {
+	if(req.params.userid) {
+		Account.find({_id: req.params.userid}, 'profilePhoto', function(err, result) {
+			if(err) console.log(err);
+			console.log('getphoto: '+result);
+			res.send('../../images/'+result);
+		});
+	}
 }

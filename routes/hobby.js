@@ -7,13 +7,16 @@ exports.index = function(req, res) {
 	var hobbyQuery = req.params.hobby;
 	var hobbyResult, itemsResult;
 	
-	Hobbies.findOne({ name: hobbyQuery }).exec(function(err, result) {
+	Hobbies.findOne({ name: hobbyQuery }).exec().addBack(function(err, result) {
 		if(err) console.log(err);
-		hobbyResult = result;
-
-		Items.find({ hobbies: hobbyQuery }).exec(function(err, result) {
-			if(err) console.log(err);
-			itemsResult = result;
+		return result;
+	})
+	.then( function(hobby) {
+		hobbyResult = hobby;
+		return Items.find({ hobbies: hobbyQuery }).exec();
+	})
+	.then(function(hobbyItems) {
+		itemsResult = hobbyItems;
 //			var stuff = hobbyResult.activity.map(function(el) { return el.userId });
 //			console.log(stuff);
 //			
@@ -22,13 +25,19 @@ exports.index = function(req, res) {
 //				console.log(result);
 //			});
 
-			var activity = hobbyResult.activity.concat(itemsResult);
+		var activity = hobbyResult.activity.concat(itemsResult);
+		
+		console.log(activity);
 
-			activity.sort(function(i1, i2) {
-				return i1.timeStamp - i2.timeStamp;
-			});
-
-			res.render('hobby', { user: req.user, recentActivity: activity, hobby: hobbyResult });
+		activity.sort(function(i1, i2) {
+			return i1.timeStamp - i2.timeStamp;
 		});
+		
+		console.log(activity);
+		
+		return activity;
+	})
+	.then( function(activity) {
+		res.render('hobby', { user: req.user, recentActivity: activity, hobby: hobbyResult });
 	});
 }

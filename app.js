@@ -57,6 +57,8 @@ app.get('/hobby/:hobby', hobby.index);
 app.get('/items/:id', item.itemPage);
 app.get('/users', auth, user.list);
 app.get('/users/:userid', user.profile);
+app.get('/users/:userid/photo', user.getPhoto);
+app.get('/users/:userid/name', user.getName);
 app.post('/users/subscribers', user.addSub);
 app.get('/profile', user.profile);
 app.get('/register', user.getRegister);

@@ -13,14 +13,13 @@ block content
 		.activityFeed
 			each activity in recentActivity
 				.activity
-					img(src='../../images/')
-					a(href='../../users/')
-						h3
+					.user
+						a(href='../../users/'+activity.owner)
+							img(src='../../users/'+activity.owner+'/photo')
+					h3 hello
 					.content
-						-if (activity.photoContent) {
-							img(src='../../images/'+activity.photoContent)
-						- }
-						p=activity.textContent
+						img(src='../../images/'+activity.tilePhoto)
+						p=activity.description
 
 		.members
 			each member in hobby.members
