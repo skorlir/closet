@@ -40,7 +40,7 @@ mongoose.connect(uristring, function (err, res) {
 	} else {
 		console.log ('Succeeded connecting to: ' + uristring);
 		//Add seed data for videogames
-		(require('./routes/populate.js'))();
+		require('./routes/populate.js')();
 	}
 });
 
@@ -56,13 +56,14 @@ app.get('/items/masters', item.getItemsQuery);
 app.get('/hobby/:hobby', hobby.index);
 app.get('/items/:id', item.itemPage);
 app.get('/users', auth, user.list);
+app.get('/users/:userid', user.profile);
 app.post('/users/subscribers', user.addSub);
 app.get('/profile', user.profile);
 app.get('/register', user.getRegister);
 app.post('/register', user.postRegister);
 app.get('/login', user.getLogin);
 app.post('/login', passport.authenticate('local'), user.postLogin);
-app.get('/logout', function(req, res) {
+app.get('/logout', function (req, res) {
 	req.logout();
 	res.redirect('/');
 });

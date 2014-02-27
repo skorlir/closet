@@ -4,6 +4,7 @@ var mongoose = require('mongoose')
 var item = new Schema({
 
 	name: { type: String, trim: true, required: true },
+	timestamp: { type: Number, required: true },
 
 	hobbies: {type: [String], required: true },
 	tags: [String],

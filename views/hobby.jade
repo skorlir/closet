@@ -7,6 +7,24 @@ block content
 	
 	//all the content for the hobby page
 	.main
-		//this loads all the items related to the hobbie, which are passed to the template as "items"
-		mixin dashItems(items)
-		
+		//this loads all the items related to the hobby, which are passed to the template as "items"
+		img(src=hobby.bannerPhoto)
+		h2=hobby.name
+		.activityFeed
+			each activity in recentActivity
+				.activity
+					img(src='../../images/')
+					a(href='../../users/')
+						h3
+					.content
+						-if (activity.photoContent) {
+							img(src='../../images/'+activity.photoContent)
+						- }
+						p=activity.textContent
+
+		.members
+			each member in hobby.members
+				.member
+					a(href='../../users/'+member.username)
+						img(src='../../images/'+member.profilePhoto)
+

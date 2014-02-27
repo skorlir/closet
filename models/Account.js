@@ -4,9 +4,9 @@ var mongoose = require('mongoose')
 
 var account = Schema({
 	realName: { 
-							firstName: String,
-						  lastName: String 
-						},
+				firstName: String,
+				lastName: String 
+				},
 	location: { type: String, default: 'unknown'},
 	age: Number,
 	hobbies: [String],

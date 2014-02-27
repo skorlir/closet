@@ -3,9 +3,14 @@ var mongoose = require('mongoose')
 
 var hobby = Schema({
 	name: String,
-	members: [{ name: String, uid: Schema.ObjectId }],
-	communities: [String],
-	itemMasterRefs: [{ master_id: Schema.ObjectId }]
+	// consider referencing users by uid instead
+	members: [Schema.ObjectId],
+	bannerPhoto: String,
+	activity: [{ userId: Schema.ObjectId,
+				 timestamp: Number,
+			   	 photoContent: String,
+				 textContent: String
+			   }]
 });
 
 module.exports = mongoose.model('Hobby', hobby);

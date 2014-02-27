@@ -57,5 +57,10 @@ exports.postLogin = function(req, res) {
 }
 
 exports.profile = function(req, res) {
+	if(req.params.userid) {
+		Account.find({username: req.params.userid}, function(err, result) {
+			res.render('profile', { user: result });
+		});
+	}
 	req.isAuthenticated() ? res.render('profile', { user: req.user }) : res.redirect('/login');
 }
