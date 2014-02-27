@@ -9,3 +9,34 @@ mixin dashItems(items)
 					p.item__name=item.name
 			.item__bottom
 				p.item__desc=item.description.substr(0, 147)+'...'
+
+mixin top(user)
+	header
+		a(href='/profile')
+			if(user)
+				img.profile(src=user.profilePicture)
+				span=user.realName.firstName+' '+user.realName.lastName 
+		a(href='/')
+			span.centeredLogo Closet
+		button.searchButton Search
+		input(type='search', placeholder='search for an item', name='searchField')
+	nav
+		ul
+			li#my-hobbies
+				h3 MY HOBBIES
+			li#hobbies
+				ul
+					li 
+						a(href='/hobby/outdoor') Outdoor
+					li 
+						a(href='/hobby/fashion') Fashion
+					li 
+						a(href='/hobby/wine') Wine
+					li 
+						a(href='/hobby/photography') Photography
+					li 
+						a(href='/hobby/videogames') Videogames
+			li#my-closet
+				h3 MY CLOSET
+			li#explore
+				h3 EXPLORE

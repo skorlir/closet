@@ -95,11 +95,9 @@ module.exports = function() {
 	var videogameActivity = { 
 				 owner: user2._id,
 				 timestamp: Date.now(),
-				 tilePhoto: '',
+				 tilePhoto: 'titanfallTile.jpg',
 				 description: 'Just pre-ordered a copy of Titanfall!'
 				}
-	
-	console.log(videogameActivity);
 	
 	var Ovideogames = {
 		name: 'videogames',

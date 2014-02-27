@@ -26,14 +26,10 @@ exports.index = function(req, res) {
 //			});
 
 		var activity = hobbyResult.activity.concat(itemsResult);
-		
-		console.log(activity);
 
 		activity.sort(function(i1, i2) {
 			return i1.timeStamp - i2.timeStamp;
 		});
-		
-		console.log(activity);
 		
 		return activity;
 	})

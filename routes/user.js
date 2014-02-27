@@ -59,17 +59,18 @@ exports.postLogin = function(req, res) {
 
 exports.profile = function(req, res) {
 	if(req.params.userid) {
-		Account.find({_id: req.params.userid}, function(err, result) {
-			res.render('profile', { user: result });
+		Account.findOne({_id: req.params.userid}, function(err, result) {
+			console.log(result);
+			res.render('profile', { user: req.user, profile: result });
 		});
 	} else {
-		req.isAuthenticated() ? res.render('profile', { user: req.user }) : res.redirect('/login');
+		req.isAuthenticated() ? res.render('profile', { user: req.user, profile: req.user }) : res.redirect('/login');
 	}
 }
 
 exports.getName = function (req, res) {
 	if(req.params.userid) {
-		Account.find({_id: req.params.userid}, 'username', function(err, result) {
+		Account.findOne({_id: req.params.userid}, 'username', function(err, result) {
 			if(err) console.log(err);
 			console.log('getname: '+result);
 			res.send(result);
@@ -79,10 +80,10 @@ exports.getName = function (req, res) {
 
 exports.getPhoto = function (req, res) {
 	if(req.params.userid) {
-		Account.find({_id: req.params.userid}, 'profilePhoto', function(err, result) {
+		Account.findOne({_id: req.params.userid}, 'profilePicture', function(err, result) {
 			if(err) console.log(err);
-			console.log('getphoto: '+result);
-			res.send('../../images/'+result);
+			console.log('getphoto: '+result.profilePicture);
+			res.send(result.profilePicture);
 		});
 	}
 }

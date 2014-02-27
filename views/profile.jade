@@ -1,19 +1,20 @@
 extends layout
 
 block content
-	include top
+	include mixins
+	mixin top(user)
 	link(href="../../stylesheets/profile.css" rel="stylesheet" type="text/css")
 	
 	.main
 		img(src='../../images/coverpic.png').cover-photo
-		img(src=user.profilePicture).profile-picture
-		h3=user.realName.firstName + ' ' + user.realName.lastName
+		img(src=profile.profilePicture).profile-picture
+		h3=profile.realName.firstName + ' ' + profile.realName.lastName
 
 		.main__info
 			h4 Lives in 
-				=user.location
+				=profile.location
 			h4 Likes 
-				=user.hobbies
+				=profile.hobbies
 		.main__recent-activity
 			//render some activityTile s
 				not part of original mockup though, so commented out
@@ -23,7 +24,7 @@ block content
 					.activity-tile__message=activity.message
 		.main__my-collections
 			//render some dashItem s
-			each item in user.myCollection
+			each item in profile.myCollection
 				.item
 					.item__main
 						i.item__mark-button
@@ -32,7 +33,7 @@ block content
 							p.item__name=item.name
 		.main__my-favorites
 			//render some more moar dashItem s
-			each item in user.favorites
+			each item in profile.favorites
 				.item
 					.item__main
 						i.item__mark-button
@@ -41,7 +42,7 @@ block content
 							p.item__name=item.name
 		.main__my-friends
 			//render some profile pictures and usernames
-			each friend in user.friends
+			each friend in profile.friends
 				=console.log(friend)
 				.friend
 					img(src=friend.profilePicture).friend__profile-picture

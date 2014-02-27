@@ -3,27 +3,27 @@ extends layout
 block content
 	include top
 	include mixins
-	link(href="../../stylesheets/hobby.css" rel="stylesheet" type="text/css")
+	link(href="/stylesheets/hobby.css" rel="stylesheet" type="text/css")
 	
 	//all the content for the hobby page
 	.main
 		//this loads all the items related to the hobby, which are passed to the template as "items"
-		img(src=hobby.bannerPhoto)
+		img(src='/images/'+hobby.bannerPhoto)
 		h2=hobby.name
 		.activityFeed
 			each activity in recentActivity
 				.activity
 					.user
 						a(href='../../users/'+activity.owner)
-							img(src='../../users/'+activity.owner+'/photo')
+							img(data-prof='../../users/'+activity.owner)
 					h3 hello
 					.content
-						img(src='../../images/'+activity.tilePhoto)
+						img(src='/images/'+activity.tilePhoto)
 						p=activity.description
 
 		.members
 			each member in hobby.members
 				.member
-					a(href='../../users/'+member.username)
-						img(src='../../images/'+member.profilePhoto)
+					a(href='../../users/'+member)
+						img(data-prof='../../users/'+member)
 
