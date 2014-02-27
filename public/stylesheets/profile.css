@@ -1,4 +1,4 @@
-/* line 1, ../../SASS/profile.sass */
+/* line 1, ../../sass/profile.sass */
 .main h3 {
   position: relative;
   width: 200px;
@@ -9,7 +9,7 @@
   font-size: 1.5em;
 }
 
-/* line 22, ../../SASS/profile.sass */
+/* line 22, ../../sass/profile.sass */
 .profile-picture {
   border-style: solid;
   border-color: white;
@@ -21,7 +21,7 @@
   left: 5%;
 }
 
-/* line 32, ../../SASS/profile.sass */
+/* line 32, ../../sass/profile.sass */
 .cover-photo {
   width: 100%;
 }
