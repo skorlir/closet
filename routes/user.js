@@ -61,7 +61,7 @@ exports.profile = function(req, res) {
 	if(req.params.userid) {
 		Account.findOne({_id: req.params.userid}, function(err, result) {
 			console.log(result);
-			res.render('profile', { user: req.user, profile: result });
+			result ? res.render('profile', { user: req.user, profile: result }) : res.status('404').send('No such user.');
 		});
 	} else {
 		req.isAuthenticated() ? res.render('profile', { user: req.user, profile: req.user }) : res.redirect('/login');
@@ -80,6 +80,7 @@ exports.getName = function (req, res) {
 
 exports.getPhoto = function (req, res) {
 	if(req.params.userid) {
+		console.log(req.params.userid);
 		Account.findOne({_id: req.params.userid}, 'profilePicture', function(err, result) {
 			if(err) console.log(err);
 			console.log('getphoto: '+result.profilePicture);

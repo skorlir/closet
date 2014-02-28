@@ -4,7 +4,7 @@ var mongoose = require('mongoose')
 var item = new Schema({
 
 	name: { type: String, trim: true, required: true },
-	timestamp: { type: Number, required: true },
+	timestamp: { type: Date, required: true },
 
 	hobbies: {type: [String], required: true },
 	tags: [String],
@@ -28,10 +28,10 @@ var item = new Schema({
 				profilePhoto: String,
 				rating: { type: Number, min: 0.0, max: 10.0 },
 				content: String
-		}],
+			}],
 			  	
 	location: String
-
+	
 });
 
 var itemModel = mongoose.model('Item', item);

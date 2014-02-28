@@ -17,14 +17,9 @@ exports.index = function(req, res) {
 	})
 	.then(function(hobbyItems) {
 		itemsResult = hobbyItems;
-//			var stuff = hobbyResult.activity.map(function(el) { return el.userId });
-//			console.log(stuff);
-//			
-//			Account.find({_id: { $in : stuff}}).exec(function (err, result) {
-//				if(err) console.log(err);
-//				console.log(result);
-//			});
-
+		
+		if(! (hobbyResult && itemsResult)) return [];
+		
 		var activity = hobbyResult.activity.concat(itemsResult);
 
 		activity.sort(function(i1, i2) {
@@ -34,6 +29,6 @@ exports.index = function(req, res) {
 		return activity;
 	})
 	.then( function(activity) {
-		res.render('hobby', { user: req.user, recentActivity: activity, hobby: hobbyResult });
+		activity && hobbyResult ? res.render('hobby', { user: req.user, recentActivity: activity, hobby: hobbyResult }) : res.status('404').send('That hobby doesn\'t exist!');
 	});
 }

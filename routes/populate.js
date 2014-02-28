@@ -58,7 +58,7 @@ module.exports = function() {
 		bannerPhoto: 'WatchDogs_Banner.jpg',
 		tilePhoto: 'Watch_DogsTile.jpg',
 		rating: 8.4,
-		timestamp: Date.now(),
+		timestamp: new Date(),
 		owner: testUser._id
 	};
 	
@@ -69,7 +69,7 @@ module.exports = function() {
 		bannerPhoto: 'TombRaiderBanner.jpg',
 		tilePhoto: 'TombRaiderTile.jpg',
 		rating: 8.0,
-		timestamp: Date.now(),
+		timestamp: new Date(),
 		owner: user3._id
 	};
 	
@@ -80,7 +80,7 @@ module.exports = function() {
 		bannerPhoto: 'inFAMOUSSecondSonBanner.jpg',
 		tilePhoto: 'inFAMOUSSecondSonTile.jpg',
 		rating: 7.7,
-		timestamp: Date.now(),
+		timestamp: new Date(),
 		owner: user2._id
 	};
 
@@ -94,7 +94,7 @@ module.exports = function() {
 
 	var videogameActivity = { 
 				 owner: user2._id,
-				 timestamp: Date.now(),
+				 timestamp: new Date(),
 				 tilePhoto: 'titanfallTile.jpg',
 				 description: 'Just pre-ordered a copy of Titanfall!'
 				}

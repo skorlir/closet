@@ -6,6 +6,7 @@ var express = require('express')
 		, routes = require('./routes')
 		, user = require('./routes/user')
 		, item = require('./routes/item')
+		, upload = require('./routes/upload')
 		, hobby = require('./routes/hobby')
 		, http = require('http')
 		, passport = require('passport')
@@ -61,6 +62,7 @@ app.get('/users/:userid/photo', user.getPhoto);
 app.get('/users/:userid/name', user.getName);
 app.post('/users/subscribers', user.addSub);
 app.get('/profile', user.profile);
+app.get('/upload', upload.index);
 app.get('/register', user.getRegister);
 app.post('/register', user.postRegister);
 app.get('/login', user.getLogin);

@@ -4,26 +4,34 @@ block content
 	include top
 	include mixins
 	link(href="/stylesheets/hobby.css" rel="stylesheet" type="text/css")
-	
-	//all the content for the hobby page
+	script(src="/script/hobby.js")
 	.main
-		//this loads all the items related to the hobby, which are passed to the template as "items"
-		img(src='/images/'+hobby.bannerPhoto)
-		h2=hobby.name
-		.activityFeed
-			each activity in recentActivity
-				.activity
-					.user
-						a(href='../../users/'+activity.owner)
-							img(data-prof='../../users/'+activity.owner)
-					h3 hello
-					.content
-						img(src='/images/'+activity.tilePhoto)
-						p=activity.description
-
-		.members
-			each member in hobby.members
-				.member
-					a(href='../../users/'+member)
-						img(data-prof='../../users/'+member)
-
+		.title
+			img(src='/images/'+hobby.bannerPhoto).cover-photo
+			h3.hobbyTitle=hobby.name
+		#tabs
+			ul
+				li.tab
+					a(href='#whatsNew') What's New
+				li.tab
+					a(href='#marketplace') Marketplace
+			#whatsNew
+				#posts
+					each activity in recentActivity
+						.activity
+							.user
+								a(href='/users/'+activity.owner)
+									img(data-prof='/users/'+activity.owner)
+							h4 hello
+							.content
+								img(src='/images/'+activity.tilePhoto)
+								p=activity.description
+				#hobbyists
+					h4= 'Hobbyists ('+hobby.members.length+')'
+					each member in hobby.members
+						.member
+							a(href='/users/'+member)
+								img(data-prof='/users/'+member)
+			#Marketplace
+				//filter forSale items from database by hobby, pass as marketplaceItems
+				//mixin dashItem(marketplaceItems)

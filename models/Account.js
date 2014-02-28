@@ -17,7 +17,7 @@ var account = Schema({
 	//TODO: denormalize item schema
 	myCollection: [Schema.mixed],
 	favorites: [Schema.mixed],
-	friends: [{ username: String, profileURL: String, profilePicture: String }]
+	friends: [Schema.ObjectId]
 });
 
 account.plugin(passportLocalMongoose);

@@ -7,7 +7,7 @@ var hobby = Schema({
 	members: [Schema.ObjectId],
 	bannerPhoto: String,
 	activity: [{ owner: Schema.ObjectId,
-				 timestamp: Number,
+				 timestamp: Date,
 			   	 tilePhoto: String,
 				 description: String
 			   }]
