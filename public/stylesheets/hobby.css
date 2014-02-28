@@ -16,9 +16,9 @@
   height: 98.5%;
   width: 25%;
   text-transform: uppercase;
-  font-size: 250%;
+  font-size: 2.5em;
   text-shadow: none;
-  line-height: 800%;
+  line-height: 4em;
   text-align: center;
   position: absolute;
   margin: 0;
@@ -155,9 +155,9 @@ h4.name {
 /* line 113, ../../sass/hobby.sass */
 .newItem h4.buy {
   position: absolute;
-  top: 284px;
-  right: 2px;
-  padding: 7px 20px;
+  top: 74%;
+  right: 0;
+  padding: 1.6% 6%;
   font-family: "Lucida Grande", Helvetica, Arial, sans-serif;
   color: white;
   background: #007aa3;
@@ -171,6 +171,11 @@ h4.name {
 }
 
 /* line 127, ../../sass/hobby.sass */
+.postContent img {
+  width: 100%;
+}
+
+/* line 130, ../../sass/hobby.sass */
 .postContent p {
   font-family: "Lucida Grande", Helvetica, Arial, sans-serif;
   font-weight: normal;
@@ -178,7 +183,7 @@ h4.name {
   text-align: left;
 }
 
-/* line 133, ../../sass/hobby.sass */
+/* line 136, ../../sass/hobby.sass */
 .postContent h5.comments {
   margin: 10px 0 15px 0;
   font-family: "Lucida Grande", Helvetica, Arial, sans-serif;
@@ -186,21 +191,22 @@ h4.name {
   color: #cccccc;
 }
 
-/* line 139, ../../sass/hobby.sass */
+/* line 142, ../../sass/hobby.sass */
 #hobbyists {
   position: absolute;
   top: 52px;
-  right: 90px;
+  right: 80px;
   width: 28%;
 }
 
-/* line 145, ../../sass/hobby.sass */
-#hobbyists h3 {
+/* line 148, ../../sass/hobby.sass */
+#hobbyists h4 {
   color: #007aa3;
-  margin-bottom: 5px;
+  margin-bottom: 2%;
+  margin-top: 7%;
 }
 
-/* line 149, ../../sass/hobby.sass */
+/* line 153, ../../sass/hobby.sass */
 #hobbyists img {
   position: relative;
   margin: 10px;
