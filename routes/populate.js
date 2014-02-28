@@ -91,6 +91,7 @@ module.exports = function() {
 	//FIXME: this should reference by ids
 	user2.myCollection.push(infamousSecondSon);
 	user3.myCollection.push(tombRaider);
+	testUser.myCollection.push(watch_dogs);
 
 	var videogameActivity = { 
 				 owner: user2._id,
