@@ -13,14 +13,14 @@ block content
 	//- all the content for the hobby page
 	.main
 		.title
-			img(src='../../images/coverpic.png').cover-photo
+			img(src='../../images/hobbypic.png').cover-photo
 			h3.hobbyTitle Outdoor
 		#tabs
 			ul
 				li.tab
 					a(href='#whatsNew') What's New
 				li.tab
-					a(href='#marketplace') Marketplace
+					a(href='#Marketplace') Marketplace
 			#whatsNew
 				#posts
 					.newItemPost
@@ -58,6 +58,57 @@ block content
 					img(src='../../images/hobbyist15.png')
 					img(src='../../images/hobbyist16.png')
 			#Marketplace
+				#category
+					h3 category
+					input(type='search', placeholder='Search items by category tags', name='searchField')
+				#type
+					h3 type
+					button.typeButton buy
+					button.typeButton rent
+				#items
+					#item_1
+						img(src='../../images/yellowtent.png').productImage
+						img(src='../../images/hobbyist01.png').feed-profile-picture
+						h4.title Northface Backcountry Tent
+						p.condition Like New
+						h4.buy $240
+						p.buy buy
+					#item_2
+						img(src='../../images/sleepingbag.png').productImage
+						img(src='../../images/hobbyist02.png').feed-profile-picture
+						h4.title Columbia Sleeping Bag
+						p.condition Mint Condition
+						h4.rent $35/day
+						p.rent rent
+					#item_3
+						img(src='../../images/harness.png').productImage
+						img(src='../../images/hobbyist03.png').feed-profile-picture
+						h4.title Misty Rock Climbing Set
+						p.condition Almost New
+						h4.buy $35
+						p.buy buy
+					#item_4
+						img(src='../../images/snowboard.png').productImage
+						img(src='../../images/hobbyist04.png').feed-profile-picture
+						h4.title Burton Parkstar Snowboard
+						p.condition Used
+						h4.rent $15/day
+						p.rent rent
+					#item_5
+						img(src='../../images/camera.png').productImage
+						img(src='../../images/hobbyist05.png').feed-profile-picture
+						h4.title IDK What
+						p.condition Like New
+						h4.buy $100
+						p.buy buy
+					#item_6
+						img(src='../../images/surfboard.png').productImage
+						img(src='../../images/hobbyist06.png').feed-profile-picture
+						h4.title Infinity Surfboard
+						p.condition Lightly Used
+						h4.buy $150
+						p.buy buy
+
 		//- //this loads all the items related to the hobbie, which are passed to the template as "items"
 		//- mixin dashItems(items)
 
