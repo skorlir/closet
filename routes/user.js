@@ -26,7 +26,8 @@ exports.addSub = function(req, res){
 
 exports.getRegister = function(req, res){
 	//load a registration page
-	res.render('register', { });
+	console.log(req.query);
+	res.render('register', { params: req.query||'none' });
 };
 
 exports.postRegister = function(req, res){
@@ -53,7 +54,6 @@ exports.getLogin = function(req, res){
 
 exports.postLogin = function(req, res) {
 	//user specific logic is specified in routing
-	//TODO: this is kinda gross. Shouldn't really be sending the page this way, but just redirecting. I think if I change it it'll cascade though, so I'll leave it for now.
 	res.send('/');
 }
 

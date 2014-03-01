@@ -6,9 +6,11 @@ block content
 	h1 Closet
 	div.banner
 		div.form--vertically-centered
-			p.heavyShadow Trade with friends.
+			p.heavyShadow Meet Hobbyists, join hobbies, and explore the marketplace.
 			
-			input.subscribe(type='email' placeholder='Your Email' required)
+			input.subscribe(type='text' placeholder='email' required)
+			input.subscribe(type='password' placeholder='password' required)
+			p#add-msg(style="margin: 0; display: none") Logging you in...
 			button.button--3d Open your Closet
 		
 	script(src='./script/index.js')

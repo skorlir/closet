@@ -136,7 +136,6 @@ module.exports = function() {
 			});
 		})
 		.then(function(r) {
-							
 			var videogames = new Hobby(Ovideogames);
 
 			videogames.save(function(err, v) {
