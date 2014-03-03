@@ -245,9 +245,9 @@ body header span.centeredLogo {
   font-size: 1.9em;
   display: inline-block;
   width: auto;
-  position: relative;
-  top: -15px;
-  left: 40%;
+  position: absolute;
+  left: 44%;
+  top: 0;
 }
 /* line 81, ../../SASS/base.sass */
 body header input[type="search"] {
