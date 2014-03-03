@@ -8,7 +8,7 @@ block content
 	.main
 		img(src='../../images/coverpic.png').cover-photo
 		img(src=profile.profilePicture).profile-picture
-		h3=profile.realName.firstName + ' ' + profile.realName.lastName
+		h3=profile.name.first + ' ' + profile.name.last
 
 		.main__info
 			h4 Lives in 
@@ -29,7 +29,7 @@ block content
 					.item__main
 						i.item__mark-button
 						a(href='/items/'+item._id)
-							img.item__prod-img(src='../../images/'+item.tilePhoto)
+							img.item__prod-img(src='/images/'+item.tilePhoto)
 							p.item__name=item.name
 		.main__my-favorites
 			//render some more moar dashItem s
@@ -38,7 +38,7 @@ block content
 					.item__main
 						i.item__mark-button
 						a(href='/items/'+item._id)
-							img.item__prod-img(src='../../images/'+item.tilePhoto)
+							img.item__prod-img(src='/images/'+item.tilePhoto)
 							p.item__name=item.name
 		.main__my-friends
 			//render some profile pictures and usernames

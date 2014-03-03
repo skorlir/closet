@@ -10,7 +10,7 @@ module.exports = function() {
 	var Ouser2 = {
 		username: "user2",
 		email: "test2@test.com",
-		realName: { firstName: "John", lastName: "Smith" },
+		name: { first: "John", last: "Smith" },
 		hobbies: ["Camping", "Wine", "Videogames", "Fashion"],
 		profilePicture: "/images/user2.jpg",
 		myCollection: [],
@@ -22,7 +22,7 @@ module.exports = function() {
 	var Ouser3 = {
 		username: "user3",
 		email: "test3@test.com",
-		realName: { firstName: "Andy", lastName: "Trudeau" },
+		name: { first: "Andy", last: "Trudeau" },
 		hobbies: ["Camping", "Wine", "Videogames", "Fashion"],
 		profilePicture: "/images/user3.jpg",
 		myCollection: [],
@@ -34,7 +34,7 @@ module.exports = function() {
 	var OtestUser = {
 		username: "testUser",
 		email: "test@test.com",
-		realName: {firstName: "Abigail", lastName: "User" },
+		name: {first: "Abigail", last: "User" },
 		hobbies: ["Camping", "Wine", "Videogames", "Fashion"],
 		profilePicture: "/images/user1.jpg",
 		myCollection: [],
@@ -92,6 +92,7 @@ module.exports = function() {
 	user2.myCollection.push(infamousSecondSon);
 	user3.myCollection.push(tombRaider);
 	testUser.myCollection.push(watch_dogs);
+	testUser.favorites.push(tombRaider);
 
 	var videogameActivity = { 
 				 owner: user2._id,
@@ -112,13 +113,10 @@ module.exports = function() {
 		
 		Item.find({ name: 'Watch_Dogs' }).exec().addBack(function(e, r){
 			if(e) console.log(e);
-			OtestUser.myCollection.push(r[0]);
 			return Item.find({ name: 'Tomb Raider: Definitive Edition' }).exec();
 		})
 		.addBack(function(e,r) {
 			if(e) console.log(e);
-			
-			OtestUser.favorites.push(r[0]);
 		})
 		.then(function() {	
 			Account.register(user2, 'test123', function(err) {
