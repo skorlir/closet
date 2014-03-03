@@ -9,6 +9,19 @@ block content
 		.title
 			img(src='/images/'+hobby.bannerPhoto).cover-photo
 			h3.hobbyTitle=hobby.name
+	
+	//- //all the content for the hobby page
+	//- 	//this loads all the items related to the hobbie, which are passed to the template as "items"
+	//- 	mixin dashItems(items)
+	//- include mixins
+	link(href="../../stylesheets/hobby.css" rel="stylesheet" type="text/css")
+	script(src="/script/hobby.js")
+
+	//- all the content for the hobby page
+	.main
+		.title
+			img(src='../../images/hobbypic.png').banner-photo
+			h3.hobbyTitle Outdoor
 		#tabs
 			ul
 				li.tab
@@ -33,9 +46,67 @@ block content
 							a(href='/users/'+member)
 								img(data-prof='/users/'+member)
 			//- #Marketplace
-				//filter forSale items from database by hobby, pass as marketplaceItems
-				//mixin dashItem(marketplaceItems)
+			//- 	//filter forSale items from database by hobby, pass as marketplaceItems
+			//- 	//mixin dashItem(marketplaceItems)
 
+			//- #whatsNew
+			//- 	#posts
+			//- 		.newItemPost
+			//- 			img(src='../../images/ChrisGriffin.png').feed-profile-picture
+			//- 			h4.name
+			//- 				a(href='#') Chris Griffin
+			//- 			p posted an item
+			//- 			.newItem
+			//- 				img(src='../../images/newtent.png')
+			//- 				h3.rating 9.6/10
+			//- 				p rated by 23 people
+			//- 				h4.buy
+			//- 					a(href='#') Buy for $140
+			//- 		.userPost
+			//- 			img(src='../../images/JasonTroop.png').feed-profile-picture
+			//- 			h4.name
+			//- 				a(href='#') Jason Troop
+			//- 			.postContent
+			//- 				p Yosemite has amazing weather now. Highly recommended climbing half dome to watch sunrise! Make sure to layer up--it’s still chilly at night.
+			//- 				h5.comments 
+			//- 					a(href='#') Comments (3)
+			//- 					a(href='#')  Share
+			//- 				img(src='../../images/usertent.png')
+			//- 	#hobbyists
+			//- 		h4 Hobbyists 
+			//- 				a(href='#') (149)
+			//- 		a(href='#') 
+			//- 			img(src='../../images/hobbyist01.png')
+			//- 		a(href='#') 
+			//- 			img(src='../../images/hobbyist02.png')
+			//- 		a(href='#') 
+			//- 			img(src='../../images/hobbyist03.png')
+			//- 		a(href='#') 
+			//- 			img(src='../../images/hobbyist04.png')
+			//- 		a(href='#') 
+			//- 			img(src='../../images/hobbyist05.png')
+			//- 		a(href='#') 
+			//- 			img(src='../../images/hobbyist06.png')
+			//- 		a(href='#') 
+			//- 			img(src='../../images/hobbyist07.png')
+			//- 		a(href='#') 
+			//- 			img(src='../../images/hobbyist08.png')
+			//- 		a(href='#') 
+			//- 			img(src='../../images/hobbyist09.png')
+			//- 		a(href='#') 
+			//- 			img(src='../../images/hobbyist10.png')
+			//- 		a(href='#') 
+			//- 			img(src='../../images/hobbyist11.png')
+			//- 		a(href='#') 
+			//- 			img(src='../../images/hobbyist12.png')
+			//- 		a(href='#') 
+			//- 			img(src='../../images/hobbyist13.png')
+			//- 		a(href='#') 
+			//- 			img(src='../../images/hobbyist14.png')
+			//- 		a(href='#') 
+			//- 			img(src='../../images/hobbyist15.png')
+			//- 		a(href='#') 
+			//- 			img(src='../../images/hobbyist16.png')
 			#Marketplace
 				#category
 					h3 category
