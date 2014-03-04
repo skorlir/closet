@@ -3,9 +3,9 @@ var mongoose = require('mongoose')
 		, passportLocalMongoose = require('passport-local-mongoose');
 
 var account = Schema({
-	realName: { 
-				firstName: String,
-				lastName: String 
+	name: { 
+				first: String,
+				last: String 
 				},
 	location: { type: String, default: 'unknown'},
 	age: Number,
@@ -17,7 +17,8 @@ var account = Schema({
 	//TODO: denormalize item schema
 	myCollection: [Schema.mixed],
 	favorites: [Schema.mixed],
-	friends: [Schema.ObjectId]
+	friends: [Schema.ObjectId],
+	isAdmin: { type: Boolean, default: false }
 });
 
 account.plugin(passportLocalMongoose);

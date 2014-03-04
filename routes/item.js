@@ -24,7 +24,7 @@ exports.getItemsQuery = function(req, res){
 
 exports.itemPage = function(req, res) {
 	
-	Items.findOne({ _id: Types.ObjectId(req.params.id) }).exec( function(err, result) {		
-		res.render('itempage', { item: result, user: req.user });
+	Items.findOne({ _id: req.params.id }).exec( function(err, result) {	
+		result === null ? res.status('404').send('No such item! Whoops!') : res.render('itempage', { item: result, user: req.user });
 	});
 }
