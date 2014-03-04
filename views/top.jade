@@ -2,8 +2,7 @@ header
 	a(href='/profile')
 		if(user)
 			img.profile(src=user.profilePicture)
-			span
-				h3=user.name.first+' '+user.name.last 
+			h3=user.name.first+' '+user.name.last 
 	a(href='/')
 		span.centeredLogo Closet
 	button.searchButton Search
