@@ -1,8 +1,9 @@
 /* line 5, ../../SASS/hobby.sass */
 .main .title {
   height: 11em;
+  background-size: contain;
 }
-/* line 8, ../../SASS/hobby.sass */
+/* line 9, ../../SASS/hobby.sass */
 .main .title h3.hobbyTitle {
   font-family: "Lucida Grande", Helvetica, Arial, sans-serif;
   color: white;
@@ -19,37 +20,41 @@
   top: 20px;
   left: 10px;
 }
-/* line 24, ../../SASS/hobby.sass */
+/* line 25, ../../SASS/hobby.sass */
 .main .title .cover-photo {
   width: 100%;
 }
-/* line 27, ../../SASS/hobby.sass */
+/* line 28, ../../SASS/hobby.sass */
 .main .ui-widget-header {
   background: #f6f6f6;
   border: none;
   padding: 0;
 }
-/* line 32, ../../SASS/hobby.sass */
+/* line 33, ../../SASS/hobby.sass */
 .main .ui-corner-all {
   border-radius: 0;
 }
-/* line 35, ../../SASS/hobby.sass */
+/* line 36, ../../SASS/hobby.sass */
 .main .ui-tabs .ui-tabs-panel {
   border-style: solid;
   border-width: 1px;
   border-color: #888888;
   padding: 0 0;
 }
-/* line 41, ../../SASS/hobby.sass */
+/* line 42, ../../SASS/hobby.sass */
+.main .ui-tabs-panel {
+  border-color: rgba(0, 0, 0, 0.2);
+}
+/* line 45, ../../SASS/hobby.sass */
 .main .ui-tabs-nav {
   background-color: white !important;
   height: 1.95em;
 }
-/* line 45, ../../SASS/hobby.sass */
+/* line 49, ../../SASS/hobby.sass */
 .main .ui-tabs .ui-tabs-nav li.ui-tabs-active {
   background: white;
 }
-/* line 48, ../../SASS/hobby.sass */
+/* line 52, ../../SASS/hobby.sass */
 .main .ui-tabs .ui-tabs-nav .ui-tabs-anchor {
   padding: 0.7em 2.5em 0.4em 2.5em;
   font-family: "Lucida Grande", Helvetica, Arial, sans-serif;
@@ -58,98 +63,101 @@
   color: black;
   font-weight: normal;
 }
-/* line 56, ../../SASS/hobby.sass */
+/* line 60, ../../SASS/hobby.sass */
 .main .ui-tabs .ui-tabs-nav li {
   left: -3px;
   border-style: solid;
   border-width: 1px;
-  border-color: #888888;
+  border-color: #bbbbbb;
   border-bottom-width: 0;
   background: #eeeeee;
   margin: 0 0 0 0;
   border-radius: 0 0 0 0;
-  -webkit-box-shadow: 2px -1px 1px rgba(0, 0, 0, 0.3);
-  -moz-box-shadow: 2px -1px 1px rgba(0, 0, 0, 0.3);
-  box-shadow: 2px -1px 1px rgba(0, 0, 0, 0.3);
+  -webkit-box-shadow: 2px -1px 1px rgba(0, 0, 0, 0.1);
+  -moz-box-shadow: 2px -1px 1px rgba(0, 0, 0, 0.1);
+  box-shadow: 2px -1px 1px rgba(0, 0, 0, 0.1);
 }
-/* line 67, ../../SASS/hobby.sass */
+/* line 71, ../../SASS/hobby.sass */
 .main .ui-widget-content {
   background: white;
   border: none;
 }
-/* line 71, ../../SASS/hobby.sass */
-.main .newItemPost, .main .userPost {
+/* line 75, ../../SASS/hobby.sass */
+.main .newItemPost, .main .generalPost {
   width: 62%;
   height: 20em;
   position: relative;
   margin: 1em 1.4em;
 }
-/* line 77, ../../SASS/hobby.sass */
-.main .newItemPost .feed-profile-picture, .main .userPost .feed-profile-picture {
+/* line 81, ../../SASS/hobby.sass */
+.main .newItemPost .feed-profile-picture, .main .generalPost .feed-profile-picture {
   display: inline-block;
   position: relative;
   width: 80px;
   height: 80px;
-  margin: 2%;
+  margin: 0 2%;
 }
-/* line 84, ../../SASS/hobby.sass */
-.main .newItemPost h4.name, .main .userPost h4.name {
+/* line 88, ../../SASS/hobby.sass */
+.main .newItemPost h4.name, .main .generalPost h4.name {
   display: inline-block;
   position: relative;
   color: #007aa3;
-  top: -70px;
+  top: -65px;
   margin: 0;
   text-decoration: none;
 }
-/* line 92, ../../SASS/hobby.sass */
-.main .newItemPost h4.name a, .main .userPost h4.name a {
+/* line 96, ../../SASS/hobby.sass */
+.main .newItemPost h4.name a, .main .generalPost h4.name a {
   text-decoration: none;
   color: inherit;
 }
-/* line 96, ../../SASS/hobby.sass */
-.main .newItemPost h4.name a:hover, .main .userPost h4.name a:hover {
+/* line 100, ../../SASS/hobby.sass */
+.main .newItemPost h4.name a:hover, .main .generalPost h4.name a:hover {
   text-decoration: underline;
 }
-/* line 99, ../../SASS/hobby.sass */
-.main .newItemPost p, .main .userPost p {
+/* line 103, ../../SASS/hobby.sass */
+.main .newItemPost p, .main .generalPost p {
   display: inline-block;
   position: relative;
-  top: -70px;
+  top: -65px;
   font-size: 12pt;
-  color: #cccccc;
+  color: #6c6c6c;
   margin-left: 1%;
 }
-/* line 107, ../../SASS/hobby.sass */
-.main .newItemPost .newItem, .main .userPost .newItem {
-  margin: 3.5% 0 0 7%;
+/* line 111, ../../SASS/hobby.sass */
+.main .newItemPost .newItem, .main .generalPost .newItem {
+  margin: 0 0 0 7%;
   width: 70%;
+  border: 1px solid rgba(0, 0, 0, 0.2);
+  height: 90%;
   position: relative;
-  top: -5em;
+  top: -4em;
   left: 3em;
 }
-/* line 114, ../../SASS/hobby.sass */
-.main .newItemPost .newItem img, .main .userPost .newItem img {
-  width: 100%;
+/* line 120, ../../SASS/hobby.sass */
+.main .newItemPost .newItem img, .main .generalPost .newItem img {
+  height: 90%;
+  margin: 0 auto;
   position: relative;
-  display: inline-block;
+  display: block;
 }
-/* line 119, ../../SASS/hobby.sass */
-.main .newItemPost .newItem h3.rating, .main .userPost .newItem h3.rating {
+/* line 126, ../../SASS/hobby.sass */
+.main .newItemPost .newItem h3.rating, .main .generalPost .newItem h3.rating {
   position: relative;
   display: inline-block;
   margin: 0 2%;
   top: -0.5%;
   font-family: "Lucida Grande", Helvetica, Arial, sans-serif;
 }
-/* line 126, ../../SASS/hobby.sass */
-.main .newItemPost .newItem p, .main .userPost .newItem p {
+/* line 133, ../../SASS/hobby.sass */
+.main .newItemPost .newItem p, .main .generalPost .newItem p {
   position: relative;
   display: inline-block;
   top: -0.4%;
   margin: 0;
 }
-/* line 132, ../../SASS/hobby.sass */
-.main .newItemPost .newItem h4.buy, .main .userPost .newItem h4.buy {
+/* line 139, ../../SASS/hobby.sass */
+.main .newItemPost .newItem h4.buy, .main .generalPost .newItem h4.buy {
   position: relative;
   display: inline-block;
   margin: 0;
@@ -160,30 +168,32 @@
   color: white;
   background: #007aa3;
 }
-/* line 143, ../../SASS/hobby.sass */
-.main .newItemPost .newItem h4.buy a, .main .userPost .newItem h4.buy a {
+/* line 150, ../../SASS/hobby.sass */
+.main .newItemPost .newItem h4.buy a, .main .generalPost .newItem h4.buy a {
   text-decoration: none;
   color: inherit;
 }
-/* line 147, ../../SASS/hobby.sass */
-.main .newItemPost .newItem h4.buy:hover, .main .userPost .newItem h4.buy:hover {
+/* line 154, ../../SASS/hobby.sass */
+.main .newItemPost .newItem h4.buy:hover, .main .generalPost .newItem h4.buy:hover {
   text-decoration: underline;
   cursor: pointer;
 }
-/* line 151, ../../SASS/hobby.sass */
-.main .newItemPost .postContent, .main .userPost .postContent {
+/* line 158, ../../SASS/hobby.sass */
+.main .newItemPost .general, .main .generalPost .general {
   margin: 3.5% 0 0 7%;
   width: 70%;
+  height: 90%;
   position: relative;
   top: -5em;
   left: 3em;
 }
-/* line 158, ../../SASS/hobby.sass */
-.main .newItemPost .postContent img, .main .userPost .postContent img {
-  width: 65%;
+/* line 166, ../../SASS/hobby.sass */
+.main .newItemPost .general img, .main .generalPost .general img {
+  height: 90%;
+  display: block;
 }
-/* line 161, ../../SASS/hobby.sass */
-.main .newItemPost .postContent p, .main .userPost .postContent p {
+/* line 170, ../../SASS/hobby.sass */
+.main .newItemPost .general p, .main .generalPost .general p {
   font-family: "Lucida Grande", Helvetica, Arial, sans-serif;
   font-weight: normal;
   position: relative;
@@ -191,54 +201,48 @@
   color: #222222;
   top: 0;
 }
-/* line 169, ../../SASS/hobby.sass */
-.main .newItemPost .postContent h5.comments, .main .userPost .postContent h5.comments {
+/* line 178, ../../SASS/hobby.sass */
+.main .newItemPost .general h5.comments, .main .generalPost .general h5.comments {
   margin: 10px 0 15px 0;
   position: relative;
   font-family: "Lucida Grande", Helvetica, Arial, sans-serif;
   font-size: 12pt;
   color: #cccccc;
 }
-/* line 176, ../../SASS/hobby.sass */
-.main .newItemPost .postContent h5.comments a, .main .userPost .postContent h5.comments a {
+/* line 185, ../../SASS/hobby.sass */
+.main .newItemPost .general h5.comments a, .main .generalPost .general h5.comments a {
   text-decoration: none;
   margin: 0 5px;
   color: inherit;
 }
-/* line 181, ../../SASS/hobby.sass */
-.main .newItemPost .postContent h5.comments a:hover, .main .userPost .postContent h5.comments a:hover {
+/* line 190, ../../SASS/hobby.sass */
+.main .newItemPost .general h5.comments a:hover, .main .generalPost .general h5.comments a:hover {
   color: #007aa3;
   text-decoration: underline;
 }
-/* line 185, ../../SASS/hobby.sass */
+/* line 194, ../../SASS/hobby.sass */
 .main #hobbyists {
   position: absolute;
   top: 2.45em;
   right: 5em;
   width: 20%;
 }
-/* line 191, ../../SASS/hobby.sass */
+/* line 200, ../../SASS/hobby.sass */
 .main #hobbyists h4 {
   color: #007aa3;
   margin-bottom: 2%;
   margin-top: 7%;
 }
-/* line 196, ../../SASS/hobby.sass */
-.main #hobbyists h4 a {
-  text-decoration: none;
-}
-/* line 199, ../../SASS/hobby.sass */
-.main #hobbyists h4 a:hover {
-  text-decoration: underline;
-}
-/* line 202, ../../SASS/hobby.sass */
+/* line 205, ../../SASS/hobby.sass */
 .main #hobbyists img {
   position: relative;
+  display: inline-block;
+  float: left;
   margin: 3px;
   width: 60px;
   height: 60px;
 }
-/* line 208, ../../SASS/hobby.sass */
+/* line 213, ../../SASS/hobby.sass */
 .main #category, .main #type {
   width: 50%;
   position: relative;
@@ -246,7 +250,7 @@
   margin: 0;
   border-bottom: 1px solid #333333;
 }
-/* line 215, ../../SASS/hobby.sass */
+/* line 220, ../../SASS/hobby.sass */
 .main #category h3, .main #type h3 {
   position: relative;
   display: inline-block;
@@ -255,13 +259,13 @@
   color: #007aa3;
   text-transform: uppercase;
 }
-/* line 223, ../../SASS/hobby.sass */
+/* line 228, ../../SASS/hobby.sass */
 .main #category input {
   display: inline-block;
   width: 40%;
   margin: 0;
 }
-/* line 228, ../../SASS/hobby.sass */
+/* line 233, ../../SASS/hobby.sass */
 .main #type button {
   border: 2px solid #007aa3;
   margin: 5px 25px;
@@ -269,16 +273,16 @@
   background: white;
   text-transform: uppercase;
 }
-/* line 235, ../../SASS/hobby.sass */
+/* line 240, ../../SASS/hobby.sass */
 .main #type button:hover {
   background: #ffd685;
   cursor: pointer;
 }
-/* line 239, ../../SASS/hobby.sass */
+/* line 244, ../../SASS/hobby.sass */
 .main #items {
   padding-left: 1.75%;
 }
-/* line 242, ../../SASS/hobby.sass */
+/* line 247, ../../SASS/hobby.sass */
 .main #items .forSale, .main #items .forRent {
   position: relative;
   display: inline-block;
@@ -288,14 +292,14 @@
   width: 31.2%;
   margin: 10px;
 }
-/* line 249, ../../SASS/hobby.sass */
+/* line 254, ../../SASS/hobby.sass */
 .main #items .forSale img.productImage, .main #items .forRent img.productImage {
   position: relative;
   display: inline-block;
   width: 100%;
   height: 275px;
 }
-/* line 255, ../../SASS/hobby.sass */
+/* line 260, ../../SASS/hobby.sass */
 .main #items .forSale img.feed-profile-picture, .main #items .forRent img.feed-profile-picture {
   position: relative;
   display: inline-block;
@@ -303,30 +307,30 @@
   width: 60px;
   height: 60px;
 }
-/* line 262, ../../SASS/hobby.sass */
+/* line 267, ../../SASS/hobby.sass */
 .main #items .forSale .info, .main #items .forRent .info {
   position: relative;
   display: inline-block;
   top: -4px;
   width: 50%;
 }
-/* line 268, ../../SASS/hobby.sass */
+/* line 273, ../../SASS/hobby.sass */
 .main #items .forSale .info h4, .main #items .forRent .info h4 {
   margin: 0 2%;
   top: -0.5%;
   font-family: "Lucida Grande", Helvetica, Arial, sans-serif;
 }
-/* line 273, ../../SASS/hobby.sass */
+/* line 278, ../../SASS/hobby.sass */
 .main #items .forSale .info h4 a, .main #items .forRent .info h4 a {
   text-decoration: none;
   color: inherit;
 }
-/* line 277, ../../SASS/hobby.sass */
+/* line 282, ../../SASS/hobby.sass */
 .main #items .forSale .info h4 a:hover, .main #items .forRent .info h4 a:hover {
   text-decoration: underline;
   cursor: pointer;
 }
-/* line 281, ../../SASS/hobby.sass */
+/* line 286, ../../SASS/hobby.sass */
 .main #items .forSale .info p, .main #items .forRent .info p {
   font-size: 12pt;
   color: #cccccc;
@@ -335,7 +339,7 @@
   text-align: left;
   top: 0;
 }
-/* line 289, ../../SASS/hobby.sass */
+/* line 294, ../../SASS/hobby.sass */
 .main #items .forSale .buy, .main #items .forSale .rent, .main #items .forRent .buy, .main #items .forRent .rent {
   position: relative;
   display: inline-block;
@@ -344,7 +348,7 @@
   top: -1px;
   right: 4px;
 }
-/* line 297, ../../SASS/hobby.sass */
+/* line 302, ../../SASS/hobby.sass */
 .main #items .forSale .buy h4, .main #items .forSale .rent h4, .main #items .forRent .buy h4, .main #items .forRent .rent h4 {
   padding: 5px 0;
   width: 100%;
@@ -354,19 +358,19 @@
   color: white;
   background: #007aa3;
 }
-/* line 306, ../../SASS/hobby.sass */
+/* line 311, ../../SASS/hobby.sass */
 .main #items .forSale .buy p, .main #items .forSale .rent p, .main #items .forRent .buy p, .main #items .forRent .rent p {
   text-transform: uppercase;
   margin: 0;
   padding: 5px 0;
   border: 2px solid #888888;
 }
-/* line 312, ../../SASS/hobby.sass */
+/* line 317, ../../SASS/hobby.sass */
 .main #items .forSale .buy p a, .main #items .forSale .rent p a, .main #items .forRent .buy p a, .main #items .forRent .rent p a {
   text-decoration: none;
   color: inherit;
 }
-/* line 316, ../../SASS/hobby.sass */
+/* line 321, ../../SASS/hobby.sass */
 .main #items .forSale .buy p:hover, .main #items .forSale .rent p:hover, .main #items .forRent .buy p:hover, .main #items .forRent .rent p:hover {
   background: #ffd685;
 }

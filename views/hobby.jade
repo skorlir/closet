@@ -6,8 +6,7 @@ block content
 	link(href="/stylesheets/hobby.css" rel="stylesheet" type="text/css")
 	script(src="/script/hobby.js")
 	.main
-		.title
-			img(src='/images/'+hobby.bannerPhoto).banner-photo
+		.title(style='background-image: url("/images/'+hobby.bannerPhoto+'")')
 			h3.hobbyTitle=hobby.name
 		#tabs
 			ul
@@ -21,13 +20,17 @@ block content
 						div(class=activity.type+'Post')
 							a(href='/users/'+activity.owner)
 								img(data-prof='/users/'+activity.owner).feed-profile-picture
-							//h4.name(data-get='/users/'+activity.owner+'/getname')
+							h4.name(data-get='/users/'+activity.owner)
 							if(activity.type==='newItem')
 								p posted an item
 							div(class=activity.type)
 								if(activity.type==='general')
 									p=activity.description
-								img(src='/images/'+activity.tilePhoto)
+								if(activity._id)
+									a(href='/items/'+activity._id)
+										img(src='/images/'+activity.tilePhoto)
+								else
+									img(src='/images/'+activity.tilePhoto)
 								if(activity.type==='newItem')
 									h3.rating=activity.rating+'/10'
 									p rated by #{Math.floor(Math.random()*243)}
@@ -53,16 +56,16 @@ block content
 					button.typeButton(onclick='filter("rent")') rent
 				#items
 					.forSale
-						img(src='../../images/yellowtent.png').productImage
-						img(src='../../images/hobbyist01.png').feed-profile-picture
+						img(src='/images/yellowtent.png').productImage
+						img(src='/images/ChrisGriffin.png').feed-profile-picture
 						.info
 							h4 
-								a(href='#') Northface Backcountry Tent
+								a(href='/demoSale') Northface Backcountry Tent
 							p Like New
 						.buy
-							h4 $240
-							p
-								a(href='#') buy
+							a(href='/demoSale')
+								h4 $240
+								p buy
 					.forRent
 						img(src='../../images/sleepingbag.png').productImage
 						img(src='../../images/hobbyist02.png').feed-profile-picture

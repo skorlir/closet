@@ -4,6 +4,7 @@
 
 	.title
 		height: 11em
+		background-size: contain
 
 		h3.hobbyTitle
 			font-family: "Lucida Grande", Helvetica, Arial, sans-serif 
@@ -37,6 +38,9 @@
 		border-width: 1px
 		border-color: #888
 		padding: 0 0
+
+	.ui-tabs-panel
+		border-color: rgba(0,0,0,0.2)
 		
 	.ui-tabs-nav
 		background-color: #fff !important
@@ -57,18 +61,18 @@
 		left: -3px
 		border-style: solid
 		border-width: 1px
-		border-color: #888
+		border-color: #bbb
 		border-bottom-width: 0
 		background: #eee
 		margin: 0 0 0 0
 		border-radius: 0 0 0 0
-		@include box-shadow(2px -1px 1px rgba(0,0,0,0.3))
+		@include box-shadow(2px -1px 1px rgba(0,0,0,0.1))
 
 	.ui-widget-content
 		background: #fff
 		border: none
 
-	.newItemPost, .userPost
+	.newItemPost, .generalPost
 		width: 62%
 		height: 20em
 		position: relative
@@ -79,13 +83,13 @@
 			position: relative
 			width: 80px
 			height: 80px
-			margin: 2%
+			margin: 0 2%
 
 		h4.name
 			display: inline-block
 			position: relative
 			color: #007AA3
-			top: -70px
+			top: -65px
 			margin: 0
 			text-decoration: none
 
@@ -99,22 +103,25 @@
 		p
 			display: inline-block
 			position: relative
-			top: -70px
+			top: -65px
 			font-size: 12pt
-			color: #ccc
+			color: #6c6c6c
 			margin-left: 1%
 
 		.newItem
-			margin: 3.5% 0 0 7%
+			margin: 0 0 0 7%
 			width: 70%
+			border: 1px solid rgba(0,0,0,0.2)
+			height: 90%
 			position: relative
-			top: -5em
+			top: -4em
 			left: 3em
 
 			img
-				width: 100%
+				height: 90%
+				margin: 0 auto
 				position: relative
-				display: inline-block
+				display: block
 
 			h3.rating
 				position: relative
@@ -148,15 +155,17 @@
 					text-decoration: underline
 					cursor: pointer
 
-		.postContent
+		.general
 			margin: 3.5% 0 0 7%
 			width: 70%
+			height: 90%
 			position: relative
 			top: -5em
 			left: 3em
 
 			img
-				width: 65%
+				height: 90%
+				display: block
 
 			p
 				font-family: "Lucida Grande", Helvetica, Arial, sans-serif
@@ -193,14 +202,10 @@
 			margin-bottom: 2%
 			margin-top: 7%
 
-			a
-				text-decoration: none
-
-				&:hover
-					text-decoration: underline
-
 		img
 			position: relative
+			display: inline-block
+			float: left
 			margin: 3px
 			width: 60px
 			height: 60px

@@ -43,13 +43,41 @@ module.exports = function() {
 		bannerPhoto: "banner.jpg"
 	};
 	
+	var OjasonTroop = {
+		username: "jtr33po",
+		email: "jasetr00@test.com",
+		name: {first: "Jason", last: "Troop" },
+		hobbies: ["outdoor", "Wine", "Videogames", "Fashion"],
+		profilePicture: '/images/JasonTroop.png',
+		myCollection: [],
+		favorites: [],
+		friends: [],
+		bannerPhoto: "banner.jpg"
+	};
+	
+	var OchrisGriffin = {
+		username: 'chrischris',
+		email: 'mrgriffinjr@omg.pop.org',
+		name: {first: 'Chris', last: 'Griffin'},
+		hobbies: ['outdoor'],
+		profilePicture: '/images/ChrisGriffin.png',
+		myCollection: [],
+		favorites: [],
+		friends: [],
+		bannerPhoto: "banner.jpg"
+	}
+	
 	var user2 = new Account(Ouser2)
 		, user3 = new Account(Ouser3)
-		, testUser = new Account(OtestUser);
+		, testUser = new Account(OtestUser)
+		, jasonTroop = new Account(OjasonTroop)
+		, chrisGriffin = new Account(OchrisGriffin);
 	
-	testUser.friends.push(user2._id, user3._id);
+	testUser.friends.push(user2._id, user3._id, jasonTroop._id);
 	user2.friends.push(user3._id, testUser._id);
 	user3.friends.push(user2._id, testUser._id);
+	jasonTroop.friends.push(testUser._id, chrisGriffin._id);
+	chrisGriffin.friends.push(jasonTroop._id);
 	
 	var Owatch_dogs = {
 		name: 'Watch_Dogs',
@@ -59,7 +87,9 @@ module.exports = function() {
 		tilePhoto: 'Watch_DogsTile.jpg',
 		rating: 8.4,
 		timestamp: new Date(),
-		owner: testUser._id
+		owner: testUser._id,
+		isForSale: true,
+		salePrice: 70
 	};
 	
 	var OtombRaider = {
@@ -83,16 +113,29 @@ module.exports = function() {
 		timestamp: new Date(),
 		owner: user2._id
 	};
+	
+	var OyellowTent = {
+		name: 'North Face Backcountry Tent',
+		hobbies: ['outdoor'],
+		description: "Trusty tent. It's rated below freezing, and let me tell you, it works. It was amazing on our trip through Northern Washington last month.",
+		bannerPhoto: 'yellowTent.png',
+		tilePhoto: 'yellowTent.png',
+		rating: 8.7,
+		timestamp: new Date(),
+		owner: chrisGriffin._id
+	};
 
 	var watch_dogs = new Item(Owatch_dogs)
 			, tombRaider = new Item(OtombRaider)
-			, infamousSecondSon = new Item(OinfamousSecondSon);
+			, infamousSecondSon = new Item(OinfamousSecondSon)
+			, yellowTent = new Item(OyellowTent);
 	
 	//FIXME: this should reference by ids
 	user2.myCollection.push(infamousSecondSon);
 	user3.myCollection.push(tombRaider);
 	testUser.myCollection.push(watch_dogs);
 	testUser.favorites.push(tombRaider);
+	chrisGriffin.myCollection.push(yellowTent);
 
 	var videogameActivity = { 
 				 owner: user2._id,
@@ -108,7 +151,21 @@ module.exports = function() {
 		activity: [videogameActivity]
 	};
 	
-	Item.create([watch_dogs, tombRaider, infamousSecondSon], function(err, w, t, i) {
+	var outdoorActivity = {
+		owner: 	jasonTroop._id,
+		timestamp: new Date(),
+		tilePhoto: 'newTent.png',
+		description: "Yosemite has amazing weather right now. Highly recommend climbing the hald dome to watch the sunrise! Make sure to layer up - it's still chilly at night."
+	};
+	
+	var Ooutdoor = {
+		name: 'outdoor',
+		members: [user2._id, user3._id, testUser._id, jasonTroop._id, chrisGriffin._id],
+		bannerPhoto: 'hobbypic.png',
+		activity: [outdoorActivity]
+	};
+	
+	Item.create([watch_dogs, tombRaider, infamousSecondSon, yellowTent], function(err, w, t, i) {
 		if(err) console.log(err);
 		
 		Item.find({ name: 'Watch_Dogs' }).exec().addBack(function(e, r){
@@ -133,10 +190,24 @@ module.exports = function() {
 				if (err) console.log(err);
 			});
 		})
+		.then(function() {
+			Account.register(jasonTroop, "test123", function(err) {
+				if(err) console.log(err);
+			});
+		})
+		.then(function() {
+			Account.register(chrisGriffin, "test123", function(err) {
+				if(err) console.log(err);
+			});
+		})
 		.then(function(r) {
 			var videogames = new Hobby(Ovideogames);
+			var outdoor = new Hobby(Ooutdoor);
 
 			videogames.save(function(err, v) {
+				if(err) console.log(err);
+			});
+			outdoor.save(function(err,o){
 				if(err) console.log(err);
 			});
 		});

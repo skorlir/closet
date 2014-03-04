@@ -70,10 +70,10 @@ exports.profile = function(req, res) {
 
 exports.getName = function (req, res) {
 	if(req.params.userid) {
-		Account.findOne({_id: req.params.userid}, 'username', function(err, result) {
+		Account.findOne({_id: req.params.userid}, 'name', function(err, result) {
 			if(err) console.log(err);
-			console.log('getname: '+result);
-			res.send(result);
+			console.log('getname: '+result.name);
+			res.send(result.name);
 		});
 	}
 }

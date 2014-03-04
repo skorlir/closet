@@ -28,3 +28,9 @@ exports.itemPage = function(req, res) {
 		result === null ? res.status('404').send('No such item! Whoops!') : res.render('itempage', { item: result, user: req.user });
 	});
 }
+
+exports.demo = function(req, res) {
+	Items.findOne({ name: 'North Face Backcountry Tent' }).exec( function(err, result) {
+		result === null ? res.status('404').send('No demo for you darnit') : res.render('itempage', { item: result, user: req.user });
+	});
+}
