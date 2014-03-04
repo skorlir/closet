@@ -103,7 +103,7 @@ module.exports = function() {
 	
 	var Ovideogames = {
 		name: 'videogames',
-		members: [user2._id, user3._id, testUser],
+		members: [user2._id, user3._id, testUser._id],
 		bannerPhoto: 'videogamesBanner.jpg',
 		activity: [videogameActivity]
 	};

@@ -20,7 +20,7 @@ exports.index = function(req, res) {
 		
 		if(! (hobbyResult && itemsResult)) return [];
 		
-		var activity = hobbyResult.activity.concat(itemsResult);
+		var activity = hobbyResult.activity.map(function(el){el.type='general'; return el}).concat(itemsResult.map(function(el){ el.type='newItem'; return el}));
 
 		activity.sort(function(i1, i2) {
 			return i1.timeStamp - i2.timeStamp;
