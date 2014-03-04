@@ -3,19 +3,72 @@ extends layout
 block content
 	include mixins
 	mixin top(user)
+	link(href="/stylesheets/itempage.css" rel="stylesheet" type="text/css")
+	script(src="/script/itempage.js")
 	
 	.main
-		//story feed/item activity feed
-		.story
-			.user
-				.user__profile-picture
-			.content
-				.content__body
-				.content__image
+		//- //story feed/item activity feed
+		.left
+
+			.headerInfo
+				h3.itemName=item.name
+				p.condition Like New
+				p.location San Francisco, CA
+			.ratingInfo
+				h4 9.6/10
+				p Rated by 23 people
+			img(src="/images/newTent.png").productImage
+			//- .imageGallery
+			#tabs
+				ul
+					li.tab
+						a(href='#description') Description
+					li.tab
+						a(href='#reviews') Reviews
+				#description
+					.productDes
+						p.cat Product
+						p.des This Northface backcountry tent is tall throughout tent, big doors on each side, rainfly versatility, huge vestibule,
+							durable floor, lots of pockets, two rooms inside, backpack style carrying bag.
+					.productCond
+						p.cat Condition
+						p.des Like new. I’ve used it for one year. Front zipper is a little hard to open, but no problem to use.
+				#reviews
 		
 		.right
-			//item info panel
-			img(src= '/images/' + item.tilePhoto)
-			.name= item.name
-			.rating= item.rating
-			.description= item.description
+			.buy
+				h3.price $100
+				h5.buyButton Buy
+			img(src='/images/standIn.png').standIn
+			//- .collection
+			//- 	#heart.red
+			//- 	h5 Added to my Collection
+			//- .sellerInfo
+			//- 	img(src="/images/ChrisGriffin.png").profile-pic
+			//- 	span.basic
+			//- 		p Owner
+			//- 		h4.name Chris Griffin
+			//- 		p San Fransisco, CA
+			//- 	span.star.yellow
+			//- 	span.star.yellow
+			//- 	span.star.yellow
+			//- 	span.star.yellow
+			//- 	span.star
+			//- 	span.rating
+			//- 		h5 8/10
+			//- 		p 5 reviews
+			//- .testimony
+			//- 	img(src="/images/hobbyist02.png").mini-profile-pic
+			//- 	span.star.yellow
+			//- 	span.star.yellow
+			//- 	span.star.yellow
+			//- 	span.star.yellow
+			//- 	span.star.yellow
+			//- 	h6 I rent from Chris last month. He’s very helpful in delivering things on time for my trip. He gave me lots of hiking advice. Also an absolutely fun outdoorsy person to chat with. Great experience overall. Thanks!
+			//- 	p Read all 5 reviews about Chris
+			
+
+			//- img(src= '../images/' + item.tilePhoto)
+			//- .name= item.name
+			//- .rating= item.rating
+			//- .description= item.description.substring(0,117) + '...'
