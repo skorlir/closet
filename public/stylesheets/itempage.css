@@ -1,106 +1,358 @@
-.page {
-	background: #fff;
-	margin: 5px;
-	border-style: solid;
-	border-width: 1px;
-	border-color: #444;
-	height: 175%;
+/* line 3, ../../sass/hobby.sass */
+.main {
+  background: #f6f6f6;
 }
 
-.header {
-	background: #f2f2f2;
-	height: 80px;
-	border-bottom-style: double;
+/* line 6, ../../sass/hobby.sass */
+.title {
+  position: relative;
 }
 
-.body {
-	height: 175%;
-	background: #fff;
-	padding: 1% 2%;
+/* line 9, ../../sass/hobby.sass */
+.title h3.hobbyTitle {
+  font-family: "Lucida Grande", Helvetica, Arial, sans-serif;
+  color: white;
+  background: rgba(0, 0, 0, 0.4);
+  height: 98.5%;
+  width: 25%;
+  text-transform: uppercase;
+  font-size: 2.5em;
+  text-shadow: none;
+  line-height: 4em;
+  text-align: center;
+  position: absolute;
+  margin: 0;
+  top: 0;
+  left: 0;
 }
 
-.sidebar {
-	width: 180px;
-	border-style: none;
+/* line 25, ../../sass/hobby.sass */
+.cover-photo {
+  width: 100%;
 }
 
-.sidebar input {
-	font-size: 14px;
-	width: 180px;
-	margin: 5px 0;
+/* line 28, ../../sass/hobby.sass */
+.ui-tabs-nav {
+  background-color: white !important;
+  height: 1.95em;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.3);
 }
 
-.sidebar h3 {
-	font-size: 14pt;
-	color: #fff;
-	font-family: sans-serif;
-	font-weight: normal;
-	margin: 0;
-	padding: 14px 20px;
+/* line 33, ../../sass/hobby.sass */
+.ui-widget-header {
+  background: #f6f6f6;
+  border: none;
+  padding: 0;
 }
 
-#my-hobby {
-	height: 50px;
-	border-style: none;
-	background: #ff3333;
+/* line 38, ../../sass/hobby.sass */
+.ui-corner-all {
+  border-radius: 0;
 }
 
-#hobbies {
-	height: 140px;
-	border-style: none;
-	background: #F1F4FA;
+/* line 41, ../../sass/hobby.sass */
+.ui-tabs .ui-tabs-nav .ui-tabs-anchor {
+  padding: 0.7em 2.5em 0.4em 2.5em;
+  font-family: "Lucida Grande", Helvetica, Arial, sans-serif;
+  font-size: 0.8em;
+  width: 60%;
+  color: black;
+  font-weight: normal;
 }
 
-#hobbies ul {
-	margin: 0;
-	padding: 5px 10px;
+/* line 49, ../../sass/hobby.sass */
+.ui-tabs .ui-tabs-nav li {
+  left: -3px;
+  border: none;
+  background: #eeeeee;
+  margin: 0 0 0 0;
+  border-radius: 0 0 0 0;
+  -webkit-box-shadow: 1px 0px 2px rgba(0, 0, 0, 0.2);
+  -moz-box-shadow: 1px 0px 2px rgba(0, 0, 0, 0.2);
+  box-shadow: 1px 0px 2px rgba(0, 0, 0, 0.2);
 }
 
-#hobbies li {
-	list-style: none;
-	font-size: 12pt;
-	text-indent: 5px;
-	color: #999;
-	padding: 4px 5px;
+/* line 57, ../../sass/hobby.sass */
+.ui-tabs .ui-tabs-nav li.ui-tabs-active {
+  background: white;
 }
 
-#my-closet {
-	height: 50px;
-	border-style: none;
-	background: #ff9019;
+/* line 60, ../../sass/hobby.sass */
+.ui-widget-content {
+  background: white;
+  border: none;
 }
 
-#explore {
-	height: 50px;
-	border-style: none;
-	background: #ffbb20;
+/* line 64, ../../sass/hobby.sass */
+.ui-tabs .ui-tabs-panel {
+  border: none;
+  padding: 0 0;
 }
 
-.stories {
-	margin: 0 5%;
-	border-style: solid;
-	position: relative;
-	top: -316px;
-	left: 185px;
-	width: 70%;
+/* line 68, ../../sass/hobby.sass */
+.ui-widget {
+  font-family: inherit;
+  font-size: inherit;
 }
 
-.story {
-
+/* line 72, ../../sass/hobby.sass */
+.feed-profile-picture {
+  position: absolute;
+  width: 5%;
+  top: 20px;
+  margin: 0;
 }
 
-.story h3 {
-
+/* line 78, ../../sass/hobby.sass */
+h4.name {
+  position: absolute;
+  color: #007aa3;
+  top: 0px;
+  left: 120px;
 }
 
-.story p {
-
+/* line 84, ../../sass/hobby.sass */
+.newItemPost, .userPost {
+  position: relative;
+  padding: 1em 1.4em;
 }
 
-.story a {
-
+/* line 88, ../../sass/hobby.sass */
+.newItemPost p {
+  font-size: 12pt;
+  position: absolute;
+  top: 19px;
+  left: 240px;
+  color: #cccccc;
 }
 
-.story input {
-	
+/* line 95, ../../sass/hobby.sass */
+.newItem {
+  margin: 45px 0 0 95px;
+  width: 50%;
+  position: relative;
+  border: 1px solid #333333;
+  -webkit-box-shadow: -1px 1px 1px rgba(0, 0, 0, 0.3);
+  -moz-box-shadow: -1px 1px 1px rgba(0, 0, 0, 0.3);
+  box-shadow: -1px 1px 1px rgba(0, 0, 0, 0.3);
+}
+
+/* line 102, ../../sass/hobby.sass */
+.newItem img {
+  width: 100%;
+}
+
+/* line 105, ../../sass/hobby.sass */
+.newItem h3.rating {
+  margin: 3px 10px;
+  font-family: "Lucida Grande", Helvetica, Arial, sans-serif;
+}
+
+/* line 109, ../../sass/hobby.sass */
+.newItemPost .newItem p {
+  top: 313px;
+  left: 94px;
+}
+
+/* line 113, ../../sass/hobby.sass */
+.newItem h4.buy {
+  position: absolute;
+  top: 74%;
+  right: 0;
+  padding: 1.6% 6%;
+  font-family: "Lucida Grande", Helvetica, Arial, sans-serif;
+  color: white;
+  background: #007aa3;
+}
+
+/* line 122, ../../sass/hobby.sass */
+.postContent {
+  margin: 45px 0 0 95px;
+  width: 50%;
+  position: relative;
+}
+
+/* line 127, ../../sass/hobby.sass */
+.postContent img {
+  width: 100%;
+}
+
+/* line 130, ../../sass/hobby.sass */
+.postContent p {
+  font-family: "Lucida Grande", Helvetica, Arial, sans-serif;
+  font-weight: normal;
+  position: relative;
+  text-align: left;
+}
+
+/* line 136, ../../sass/hobby.sass */
+.postContent h5.comments {
+  margin: 10px 0 15px 0;
+  font-family: "Lucida Grande", Helvetica, Arial, sans-serif;
+  font-size: 12pt;
+  color: #cccccc;
+}
+
+/* line 142, ../../sass/hobby.sass */
+#hobbyists {
+  position: absolute;
+  top: 52px;
+  right: 80px;
+  width: 28%;
+}
+
+/* line 148, ../../sass/hobby.sass */
+#hobbyists h4 {
+  color: #007aa3;
+  margin-bottom: 2%;
+  margin-top: 7%;
+}
+
+/* line 153, ../../sass/hobby.sass */
+#hobbyists img {
+  position: relative;
+  margin: 10px;
+  width: 80px;
+  height: 80px;
+}
+
+/* line 4, ../../sass/itempage.sass */
+.main {
+  background: #f6f6f6 !important;
+}
+/* line 7, ../../sass/itempage.sass */
+.main .left {
+  width: 60%;
+  display: inline-block;
+  background: #f6f6f6;
+  margin-right: 4%;
+}
+/* line 13, ../../sass/itempage.sass */
+.main .left .headerInfo {
+  width: 70%;
+  position: relative;
+  display: inline-block;
+  margin-bottom: 10px;
+}
+/* line 20, ../../sass/itempage.sass */
+.main .left .headerInfo h3.itemName {
+  position: relative;
+  font-family: "Lucida Grande", Helvetica, Arial, sans-serif;
+  font-weight: normal;
+  margin: 0 10px;
+}
+/* line 26, ../../sass/itempage.sass */
+.main .left .headerInfo p.condition {
+  text-align: left;
+  position: relative;
+  display: inline-block;
+  margin: 4px 10px;
+  font-family: "Lucida Grande", Helvetica, Arial, sans-serif;
+  color: #cccccc;
+}
+/* line 34, ../../sass/itempage.sass */
+.main .left .headerInfo p.location {
+  text-align: left;
+  position: relative;
+  display: inline-block;
+  margin: 4px;
+  font-family: "Lucida Grande", Helvetica, Arial, sans-serif;
+  color: #333333;
+}
+/* line 42, ../../sass/itempage.sass */
+.main .left .ratingInfo {
+  width: 30%;
+  position: relative;
+  display: inline-block;
+  margin-bottom: 10px;
+}
+/* line 48, ../../sass/itempage.sass */
+.main .left .ratingInfo h4 {
+  font-family: "Lucida Grande", Helvetica, Arial, sans-serif;
+  font-weight: normal;
+  margin: 5px 0;
+  text-align: right;
+}
+/* line 53, ../../sass/itempage.sass */
+.main .left .ratingInfo p {
+  font-family: "Lucida Grande", Helvetica, Arial, sans-serif;
+  font-weight: normal;
+  margin: 5px 0;
+  text-align: right;
+  color: #cccccc;
+}
+/* line 60, ../../sass/itempage.sass */
+.main .left img.productImage {
+  width: 100%;
+  margin-bottom: 20px;
+}
+/* line 66, ../../sass/itempage.sass */
+.main .left #description .productDes, .main .left #description .productCond {
+  padding: 0 20px;
+}
+/* line 69, ../../sass/itempage.sass */
+.main .left #description .productDes p.cat, .main .left #description .productCond p.cat {
+  position: relative;
+  display: inline-block;
+  margin: 20px 0;
+  width: 25%;
+  vertical-align: top;
+  text-align: left;
+  font-weight: bold;
+  font-family: "Lucida Grande", Helvetica, Arial, sans-serif;
+  color: #33ccff;
+}
+/* line 80, ../../sass/itempage.sass */
+.main .left #description .productDes p.des, .main .left #description .productCond p.des {
+  position: relative;
+  display: inline-block;
+  margin: 0;
+  width: 75%;
+  text-align: left;
+  font-weight: normal;
+  font-family: "Lucida Grande", Helvetica, Arial, sans-serif;
+  color: #333333;
+  margin: 20px 0;
+}
+/* line 91, ../../sass/itempage.sass */
+.main .right {
+  width: 30%;
+  position: relative;
+  display: inline-block;
+  float: right;
+}
+/* line 98, ../../sass/itempage.sass */
+.main .right .buy {
+  width: 90%;
+  float: center;
+  background: #eeeeee;
+  border: 1px solid #888888;
+}
+/* line 104, ../../sass/itempage.sass */
+.main .right .buy h3.price {
+  text-align: center;
+  margin: 10px 0;
+  font-weight: bold;
+  font-family: "Lucida Grande", Helvetica, Arial, sans-serif;
+  color: #007aa3;
+  font-size: 24pt;
+}
+/* line 112, ../../sass/itempage.sass */
+.main .right .buy h5.buyButton {
+  display: block;
+  padding: 3% 0%;
+  margin: 10px auto;
+  width: 30%;
+  text-align: center;
+  font-size: 16pt;
+  border-radius: 5px;
+  font-family: "Lucida Grande", Helvetica, Arial, sans-serif;
+  color: white;
+  background: #33ccff;
+}
+/* line 127, ../../sass/itempage.sass */
+.main .right img.standIn {
+  margin: 10px 0;
+  width: 90%;
+  float: middle;
 }
