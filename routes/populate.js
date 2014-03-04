@@ -11,7 +11,7 @@ module.exports = function() {
 		username: "user2",
 		email: "test2@test.com",
 		name: { first: "John", last: "Smith" },
-		hobbies: ["Camping", "Wine", "Videogames", "Fashion"],
+		hobbies: ["outdoor", "Wine", "Videogames", "Fashion"],
 		profilePicture: "/images/user2.jpg",
 		myCollection: [],
 		favorites: [],
@@ -23,7 +23,7 @@ module.exports = function() {
 		username: "user3",
 		email: "test3@test.com",
 		name: { first: "Andy", last: "Trudeau" },
-		hobbies: ["Camping", "Wine", "Videogames", "Fashion"],
+		hobbies: ["outdoor", "Wine", "Videogames", "Fashion"],
 		profilePicture: "/images/user3.jpg",
 		myCollection: [],
 		favorites: [],
@@ -35,7 +35,7 @@ module.exports = function() {
 		username: "testUser",
 		email: "test@test.com",
 		name: {first: "Abigail", last: "User" },
-		hobbies: ["Camping", "Wine", "Videogames", "Fashion"],
+		hobbies: ["Outdoor", "Fashion", "Wine", "Photography", "Videogames"],
 		profilePicture: "/images/abigail.png",
 		myCollection: [],
 		favorites: [],
@@ -115,7 +115,7 @@ module.exports = function() {
 	};
 	
 	var OyellowTent = {
-		name: 'North Face Backcountry Tent',
+		name: 'Northface Backcountry Tent',
 		hobbies: ['outdoor'],
 		description: "Trusty tent. It's rated below freezing, and let me tell you, it works. It was amazing on our trip through Northern Washington last month.",
 		bannerPhoto: 'yellowTent.png',
@@ -128,9 +128,9 @@ module.exports = function() {
 	};
 
 	var watch_dogs = new Item(Owatch_dogs)
-			, tombRaider = new Item(OtombRaider)
-			, infamousSecondSon = new Item(OinfamousSecondSon)
-			, yellowTent = new Item(OyellowTent);
+		, tombRaider = new Item(OtombRaider)
+		, infamousSecondSon = new Item(OinfamousSecondSon)
+		, yellowTent = new Item(OyellowTent);
 	
 	//FIXME: this should reference by ids
 	user2.myCollection.push(infamousSecondSon);

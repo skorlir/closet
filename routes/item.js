@@ -30,7 +30,7 @@ exports.itemPage = function(req, res) {
 }
 
 exports.demo = function(req, res) {
-	Items.findOne({ name: 'North Face Backcountry Tent' }).exec( function(err, result) {
+	Items.findOne({ name: 'Northface Backcountry Tent' }).exec( function(err, result) {
 		result === null ? res.status('404').send('No demo for you darnit') : res.redirect('/items/'+result._id);
 	});
 }
