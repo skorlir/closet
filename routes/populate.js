@@ -36,7 +36,7 @@ module.exports = function() {
 		email: "test@test.com",
 		name: {first: "Abigail", last: "User" },
 		hobbies: ["Camping", "Wine", "Videogames", "Fashion"],
-		profilePicture: "/images/user1.jpg",
+		profilePicture: "/images/abigail.png",
 		myCollection: [],
 		favorites: [],
 		friends: [],
