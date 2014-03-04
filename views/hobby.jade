@@ -49,13 +49,13 @@ block content
 			#marketplace
 				#category
 					h3 category
-					input(type='search', placeholder='Search items by category tags', name='searchField')
+					input(type='search', placeholder='Search items by category tags', name='searchField' id='searchTags')
 				#type
 					h3 type
-					button.typeButton(onclick='filter("buy")') buy
-					button.typeButton(onclick='filter("rent")') rent
+					button.typeButton.buy buy
+					button.typeButton.rent rent
 				#items
-					.forSale
+					.forSale(tags='tent,yellow tent,north face')
 						img(src='/images/yellowtent.png').productImage
 						img(src='/images/ChrisGriffin.png').feed-profile-picture
 						.info
@@ -66,7 +66,7 @@ block content
 							a(href='/demoSale')
 								h4 $240
 								p buy
-					.forRent
+					.forRent(tags='tent,sleeping bag,bag')
 						img(src='../../images/sleepingbag.png').productImage
 						img(src='../../images/hobbyist02.png').feed-profile-picture
 						.info

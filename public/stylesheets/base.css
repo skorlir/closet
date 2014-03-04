@@ -355,3 +355,11 @@ body .main {
   box-shadow: -1px -1px 1px rgba(0, 0, 0, 0.1);
   position: relative;
 }
+/* line 153, ../../SASS/base.sass */
+body .main .feed-profile-picture {
+  display: inline-block;
+  position: relative;
+  width: 80px;
+  height: 80px;
+  margin: 0 2%;
+}

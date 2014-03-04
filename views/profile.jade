@@ -40,9 +40,9 @@ block content
 						a(href='/items/'+item._id)
 							img.item__prod-img(src='/images/'+item.tilePhoto)
 							p.item__name=item.name
-		.main__my-friends
+		.friends
 			//render some profile pictures and usernames
+			h4 Friends (#{profile.friends.length})
 			each friend in profile.friends
-				.friend
-					a(href='/users/'+friend)
-						img(data-prof='/users/'+friend).friend__profile-picture
+				a(href='/users/'+friend)
+					img(data-prof='/users/'+friend).feed-profile-picture

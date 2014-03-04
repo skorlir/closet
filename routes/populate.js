@@ -122,7 +122,9 @@ module.exports = function() {
 		tilePhoto: 'yellowTent.png',
 		rating: 8.7,
 		timestamp: new Date(),
-		owner: chrisGriffin._id
+		owner: chrisGriffin._id,
+		isForSale: true,
+		salePrice: 250
 	};
 
 	var watch_dogs = new Item(Owatch_dogs)
@@ -138,11 +140,11 @@ module.exports = function() {
 	chrisGriffin.myCollection.push(yellowTent);
 
 	var videogameActivity = { 
-				 owner: user2._id,
-				 timestamp: new Date(),
-				 tilePhoto: 'titanfallTile.jpg',
-				 description: 'Just pre-ordered a copy of Titanfall!'
-				}
+		owner: user2._id,
+		timestamp: new Date(),
+		tilePhoto: 'titanfallTile.jpg',
+		description: 'Just pre-ordered a copy of Titanfall!'
+	};
 	
 	var Ovideogames = {
 		name: 'videogames',
