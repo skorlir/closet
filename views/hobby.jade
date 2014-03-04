@@ -21,6 +21,7 @@ block content
 							a(href='/users/'+activity.owner)
 								img(data-prof='/users/'+activity.owner).feed-profile-picture
 							h4.name(data-get='/users/'+activity.owner)
+							//p=' at '+activity.timestamp.getHours()%12+':'+activity.timestamp.getMinutes()
 							if(activity.type==='newItem')
 								p posted an item
 							div(class=activity.type)
