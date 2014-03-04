@@ -1,59 +1,66 @@
 var mongoose = require('mongoose')
 		, Schema = mongoose.Schema;
 
-var itemMaster = new Schema({
-	//upc: 	{ type: Number, index: { unique: true, dropDups: true } },
+var item = new Schema({
+<<<<<<< HEAD
+
 	name: { type: String, trim: true, required: true },
-	
-	hobbies: [String],
+
+	hobbies: {type: [String], required: true },
 	tags: [String],
-	description: String,
+	tilePhoto: { type: String, required: true },
+	bannerPhoto: { type: String, required: true },
+
+	rating: { type: Number, min: 0.0, max: 10.0 },
+	description: { type: String, required: true },
+	owner: Schema.Types.Mixed,
+	condition: {type: String, enum: ['New', 'Like new', 'Lightly used', 'Used', 'Poor'] },
+	conditionDetails: String,
 	photos: [String],
-	mainPhoto: String,
-	marketValue: Number,
-	siteValue: Number,
-	rating: {type: Number, min: 0.0, max: 10.0 },
-	count: { type: Number, default: 0 }
+	
+	isForSale: Boolean,
+	salePrice: Number,
+	isForRent: Boolean,
+	rentalPrice: Number,
+
+	reviews: [{	username: String,
+				realName: {firstName: String, lastName: String},
+				profilePhoto: String,
+				rating: { type: Number, min: 0.0, max: 10.0 },
+				content: String
+		}],
+			  	
+	location: String
+
+=======
+	name: { type: String, trim: true, required: true },
+
+	hobbies: {type: [String], required: true },
+	tags: [String],
+	tilePhoto: { type: String, required: true },
+	bannerPhoto: { type: String, required: true },
+
+	rating: { type: Number, min: 0.0, max: 10.0 },
+	description: { type: String, required: true },
+	owner: Schema.Types.Mixed,
+	condition: {type: String, enum: ['New', 'Like new', 'Lightly used', 'Used', 'Poor'] },
+	isForSale: Boolean,
+	isForRent: Boolean,
+	reviews: Schema.Types.Mixed,
+	location: String,
+	
+>>>>>>> itempage-dev
 });
 
-var Masters = mongoose.model('itemMasters', itemMaster);
+var itemModel = mongoose.model('Item', item);
 
-var itemInstance = new Schema({
-	master_id: { type: Schema.ObjectId, required: true },
-	index: { type: Number, min: 1, required: true },
-	name: String,
-	condition: String,
-	description: String
-});
-
-itemMaster.pre('save', function(next) {
+item.pre('save', function(next) {
 	var item = this;
-	Masters.findOne({name: item.name}, function(err, obj) {
+	itemModel.findOne({name: item.name}, function(err, obj) {
 		if(err) return next(err);
 		if(obj) return next(new Error('master ref exists'));
 		return next();
 	});
 });
 
-itemInstance.pre('save', function(next) {
-	var item = this;
-	var master = Masters.findOne({ _id: item.master_id }, function (err, obj) { 
-		console.log(err); 
-		return obj; 
-	});
-	
-	if (!master) return next(new Error('No itemMaster of _id ' + item.master_id + ' found.'));
-	
-	item.index = master.count + 1;
-	
-	master.update({ count: master.count + 1 }, { upsert: false }, function (err) { 
-		if (err) { 
-			console.log(err); 
-			return err; 
-		}
-	});
-	next();
-});
-
-exports.ItemMasters = Masters;
-exports.Items = mongoose.model('Item', itemInstance);
+module.exports = itemModel;

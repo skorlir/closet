@@ -1,0 +1,64 @@
+extends layout
+
+block content
+	include top
+	
+	//- //all the content for the hobby page
+	//- 	//this loads all the items related to the hobbie, which are passed to the template as "items"
+	//- 	mixin dashItems(items)
+	//- include mixins
+	link(href="../../stylesheets/hobby.css" rel="stylesheet" type="text/css")
+	script(src="/script/hobby.js")
+
+	//- all the content for the hobby page
+	.main
+		.title
+			img(src='../../images/coverpic.png').cover-photo
+			h3.hobbyTitle Outdoor
+		#tabs
+			ul
+				li.tab
+					a(href='#whatsNew') What's New
+				li.tab
+					a(href='#marketplace') Marketplace
+			#whatsNew
+				#posts
+					.newItemPost
+						img(src='../../images/ChrisGriffin.png').feed-profile-picture
+						h4.name Chris Griffin
+						p posted an items
+						.newItem
+							img(src='../../images/newtent.png')
+							h3.rating 9.6/10
+							p rated by 23 people
+							h4.buy Buy for $140
+					.userPost
+						img(src='../../images/JasonTroop.png').feed-profile-picture
+						h4.name Jason Troop
+						.postContent
+							p Yosemite has amazing weather now. Highly recommended climbing half dome to watch sunrise! Make sure to layer up--it’s still chilly at night.
+							h5.comments Comments (3) Share
+							img(src='../../images/usertent.png')
+				#hobbyists
+					h4 Hobbyists (149)
+					img(src='../../images/hobbyist01.png')
+					img(src='../../images/hobbyist02.png')
+					img(src='../../images/hobbyist03.png')
+					img(src='../../images/hobbyist04.png')
+					img(src='../../images/hobbyist05.png')
+					img(src='../../images/hobbyist06.png')
+					img(src='../../images/hobbyist07.png')
+					img(src='../../images/hobbyist08.png')
+					img(src='../../images/hobbyist09.png')
+					img(src='../../images/hobbyist10.png')
+					img(src='../../images/hobbyist11.png')
+					img(src='../../images/hobbyist12.png')
+					img(src='../../images/hobbyist13.png')
+					img(src='../../images/hobbyist14.png')
+					img(src='../../images/hobbyist15.png')
+					img(src='../../images/hobbyist16.png')
+			#Marketplace
+		//- //this loads all the items related to the hobbie, which are passed to the template as "items"
+		//- mixin dashItems(items)
+
+		
