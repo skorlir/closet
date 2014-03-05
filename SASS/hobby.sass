@@ -72,10 +72,16 @@
 		background: #fff
 		border: none
 
+	#posts
+		width: 70%
+		display: inline-block
+		position: relative
+
 	.newItemPost, .generalPost
-		width: 62%
+		width: 100%
 		height: 20em
 		position: relative
+		display: inline-block
 		margin: 1em 1.4em
 
 		.feed-profile-picture
@@ -109,7 +115,7 @@
 			margin-left: 1%
 
 		.newItem
-			margin: 0 0 0 7%
+			margin: 2% 0 0 7%
 			width: 70%
 			border: 1px solid rgba(0,0,0,0.2)
 			height: 90%
@@ -172,7 +178,7 @@
 				position: relative
 				text-align: left
 				color: #222
-				top: 0
+				top: 5px
 
 			h5.comments
 				margin: 10px 0 15px 0
@@ -191,10 +197,10 @@
 						text-decoration: underline
 
 	#hobbyists
-		position: absolute
-		top: 2.45em
-		right: 5em
-		width: 20%
+		position: relative
+		display: inline-block
+		width: 30%
+		float: right
 
 		h4
 			color: #007AA3
@@ -219,7 +225,7 @@
 		h3
 			position: relative
 			display: inline-block
-			margin: 2% 3% 2% 20%
+			margin: 2% 3% 2% 0%
 			font-weight: normal
 			color: #007AA3
 			text-transform: uppercase
@@ -227,7 +233,7 @@
 	#category input
 		display: inline-block
 		width: 40%
-		margin: 0
+		margin: 0 0 2.25% 0
 
 	#type button
 		border: 2px solid #007AA3
@@ -241,14 +247,16 @@
 			cursor: pointer
 
 	#items
-		padding-left: 1.75%
+		// padding-left: 1.75%
 
 		.forSale, .forRent
 			position: relative
 			display: inline-block
 			@include box-shadow(0 2px 3px rgba(0,0,0,0.7))
-			width: 31.2%
-			margin: 10px
+			width: 32%
+			margin: 5px
+			height: 366px
+			vertical-align: top
 
 			img.productImage
 				position: relative
@@ -267,11 +275,12 @@
 				position: relative
 				display: inline-block
 				top: -4px
-				width: 50%
+				width: 45%
 
 				h4
 					margin: 0 2%
 					top: -0.5%
+					font-size: 14pt
 					font-family: "Lucida Grande", Helvetica, Arial, sans-serif
 
 					a
@@ -295,7 +304,7 @@
 				display: inline-block
 				width: 30%
 				float: right
-				top: -1px
+				top: 5px
 				right: 4px
 
 				h4

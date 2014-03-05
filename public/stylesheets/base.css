@@ -347,7 +347,7 @@ body header span.centeredLogo {
   display: inline-block;
   width: auto;
   position: absolute;
-  left: 44%;
+  left: 47%;
   top: 0;
 }
 /* line 90, ../../SASS/base.sass */
@@ -355,7 +355,7 @@ body header input[type="search"] {
   display: inline-block;
   float: right;
   width: 15%;
-  margin: 10px 0;
+  margin: 17px 0;
 }
 /* line 96, ../../SASS/base.sass */
 body header button.searchButton {
