@@ -136,7 +136,7 @@ img.item__prod-img {
   font-size: 80%;
 }
 
-/* line 9, ../../SASS/base.sass */
+/* line 10, ../../SASS/base.sass */
 h1, h2 {
   font-family: pacifico, "Lucida Grande", "Lucida Sans", "helvetica neue", helvetica, sans-serif;
   -webkit-transform: rotate(-5deg);
@@ -148,39 +148,140 @@ h1, h2 {
   text-shadow: -6px 4px white, 2px 1px 7px black;
 }
 
-/* line 15, ../../SASS/base.sass */
+/* line 16, ../../SASS/base.sass */
 h1 {
   font-size: 4em;
 }
 
-/* line 18, ../../SASS/base.sass */
+/* line 19, ../../SASS/base.sass */
 h2 {
   font-size: 3.5em;
   margin: 1% 0;
 }
 
-/* line 22, ../../SASS/base.sass */
+/* line 23, ../../SASS/base.sass */
 p {
   text-align: center;
   margin: 0.7em auto;
   width: auto;
 }
-/* line 26, ../../SASS/base.sass */
+/* line 27, ../../SASS/base.sass */
 p.heavyShadow {
   text-shadow: -1px 1px 3px rgba(0, 0, 0, 0.8);
 }
 
-/* line 29, ../../SASS/base.sass */
+/* line 30, ../../SASS/base.sass */
 a {
   color: #00b7ff;
 }
 
-/* line 32, ../../SASS/base.sass */
+/* line 33, ../../SASS/base.sass */
+.heart-empty {
+  position: relative;
+  width: 40px;
+  height: 35px;
+  -webkit-box-shadow: 0, 0, 1px, rgba(0, 0, 0, 0.5);
+  -moz-box-shadow: 0, 0, 1px, rgba(0, 0, 0, 0.5);
+  box-shadow: 0, 0, 1px, rgba(0, 0, 0, 0.5);
+}
+/* line 16, ../../../../../../Ruby200/lib/ruby/gems/2.0.0/gems/compass-recipes-0.3.0/stylesheets/recipes/shape/symbol/_heart.scss */
+.heart-empty:before, .heart-empty:after {
+  position: absolute;
+  content: "";
+  top: 0;
+  width: 20px;
+  height: 35px;
+  background: transparent;
+  -webkit-border-radius: 17.5px 17.5px 0 0;
+  -moz-border-radius: 17.5px 17.5px 0 0;
+  -ms-border-radius: 17.5px 17.5px 0 0;
+  -o-border-radius: 17.5px 17.5px 0 0;
+  border-radius: 17.5px 17.5px 0 0;
+}
+/* line 27, ../../../../../../Ruby200/lib/ruby/gems/2.0.0/gems/compass-recipes-0.3.0/stylesheets/recipes/shape/symbol/_heart.scss */
+.heart-empty:before {
+  left: 20px;
+  -webkit-transform: rotate(-45deg);
+  -moz-transform: rotate(-45deg);
+  -ms-transform: rotate(-45deg);
+  -o-transform: rotate(-45deg);
+  transform: rotate(-45deg);
+  -webkit-transform-origin: 0% 100%;
+  -moz-transform-origin: 0% 100%;
+  -ms-transform-origin: 0% 100%;
+  -o-transform-origin: 0% 100%;
+  transform-origin: 0% 100%;
+}
+/* line 34, ../../../../../../Ruby200/lib/ruby/gems/2.0.0/gems/compass-recipes-0.3.0/stylesheets/recipes/shape/symbol/_heart.scss */
+.heart-empty:after {
+  left: 0;
+  -webkit-transform: rotate(45deg);
+  -moz-transform: rotate(45deg);
+  -ms-transform: rotate(45deg);
+  -o-transform: rotate(45deg);
+  transform: rotate(45deg);
+  -webkit-transform-origin: 100% 100%;
+  -moz-transform-origin: 100% 100%;
+  -ms-transform-origin: 100% 100%;
+  -o-transform-origin: 100% 100%;
+  transform-origin: 100% 100%;
+}
+
+/* line 38, ../../SASS/base.sass */
+.heart-full {
+  position: relative;
+  width: 40px;
+  height: 35px;
+}
+/* line 16, ../../../../../../Ruby200/lib/ruby/gems/2.0.0/gems/compass-recipes-0.3.0/stylesheets/recipes/shape/symbol/_heart.scss */
+.heart-full:before, .heart-full:after {
+  position: absolute;
+  content: "";
+  top: 0;
+  width: 20px;
+  height: 35px;
+  background: #fa6464;
+  -webkit-border-radius: 17.5px 17.5px 0 0;
+  -moz-border-radius: 17.5px 17.5px 0 0;
+  -ms-border-radius: 17.5px 17.5px 0 0;
+  -o-border-radius: 17.5px 17.5px 0 0;
+  border-radius: 17.5px 17.5px 0 0;
+}
+/* line 27, ../../../../../../Ruby200/lib/ruby/gems/2.0.0/gems/compass-recipes-0.3.0/stylesheets/recipes/shape/symbol/_heart.scss */
+.heart-full:before {
+  left: 20px;
+  -webkit-transform: rotate(-45deg);
+  -moz-transform: rotate(-45deg);
+  -ms-transform: rotate(-45deg);
+  -o-transform: rotate(-45deg);
+  transform: rotate(-45deg);
+  -webkit-transform-origin: 0% 100%;
+  -moz-transform-origin: 0% 100%;
+  -ms-transform-origin: 0% 100%;
+  -o-transform-origin: 0% 100%;
+  transform-origin: 0% 100%;
+}
+/* line 34, ../../../../../../Ruby200/lib/ruby/gems/2.0.0/gems/compass-recipes-0.3.0/stylesheets/recipes/shape/symbol/_heart.scss */
+.heart-full:after {
+  left: 0;
+  -webkit-transform: rotate(45deg);
+  -moz-transform: rotate(45deg);
+  -ms-transform: rotate(45deg);
+  -o-transform: rotate(45deg);
+  transform: rotate(45deg);
+  -webkit-transform-origin: 100% 100%;
+  -moz-transform-origin: 100% 100%;
+  -ms-transform-origin: 100% 100%;
+  -o-transform-origin: 100% 100%;
+  transform-origin: 100% 100%;
+}
+
+/* line 41, ../../SASS/base.sass */
 html, body {
   height: 100%;
 }
 
-/* line 35, ../../SASS/base.sass */
+/* line 44, ../../SASS/base.sass */
 body {
   *zoom: 1;
   max-width: 100%;
@@ -204,7 +305,7 @@ body:after {
   display: table;
   clear: both;
 }
-/* line 45, ../../SASS/base.sass */
+/* line 54, ../../SASS/base.sass */
 body header {
   width: 100%;
   float: left;
@@ -217,7 +318,7 @@ body header {
   box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.1);
   background: white;
 }
-/* line 52, ../../SASS/base.sass */
+/* line 61, ../../SASS/base.sass */
 body header img.profile {
   width: 50px;
   margin-left: 50px;
@@ -225,7 +326,7 @@ body header img.profile {
   border-width: 4px;
   border-color: white;
 }
-/* line 59, ../../SASS/base.sass */
+/* line 68, ../../SASS/base.sass */
 body header h3 {
   position: absolute;
   top: 0;
@@ -237,7 +338,7 @@ body header h3 {
   padding: 0 5px;
   text-decoration: none;
 }
-/* line 70, ../../SASS/base.sass */
+/* line 79, ../../SASS/base.sass */
 body header span.centeredLogo {
   font-family: pacifico, "Lucida Grande", "Lucida Sans", "helvetica neue", helvetica, sans-serif;
   color: #5cafff;
@@ -249,14 +350,14 @@ body header span.centeredLogo {
   left: 44%;
   top: 0;
 }
-/* line 81, ../../SASS/base.sass */
+/* line 90, ../../SASS/base.sass */
 body header input[type="search"] {
   display: inline-block;
   float: right;
   width: 15%;
   margin: 10px 0;
 }
-/* line 87, ../../SASS/base.sass */
+/* line 96, ../../SASS/base.sass */
 body header button.searchButton {
   display: inline-block;
   float: right;
@@ -273,7 +374,7 @@ body header button.searchButton {
   background: -o-linear-gradient(#59a8e5 0%, #1d86c6 97%, #7ab3ff 100%);
   background: linear-gradient(#59a8e5 0%, #1d86c6 97%, #7ab3ff 100%);
 }
-/* line 99, ../../SASS/base.sass */
+/* line 108, ../../SASS/base.sass */
 body nav {
   width: 14.14141%;
   float: left;
@@ -283,7 +384,7 @@ body nav {
   padding-right: 0%;
   max-width: 275px;
 }
-/* line 104, ../../SASS/base.sass */
+/* line 113, ../../SASS/base.sass */
 body nav h3 {
   font-size: 14pt;
   color: white;
@@ -293,40 +394,40 @@ body nav h3 {
   padding: 15px;
   cursor: pointer;
 }
-/* line 113, ../../SASS/base.sass */
+/* line 122, ../../SASS/base.sass */
 body nav ul {
   margin: 0;
   padding: 0;
 }
-/* line 116, ../../SASS/base.sass */
+/* line 125, ../../SASS/base.sass */
 body nav ul li {
   list-style: none;
 }
-/* line 119, ../../SASS/base.sass */
+/* line 128, ../../SASS/base.sass */
 body nav #my-hobbies {
   background: #7594cf;
 }
-/* line 122, ../../SASS/base.sass */
+/* line 131, ../../SASS/base.sass */
 body nav #my-closet {
   background: #4db2d4;
 }
-/* line 125, ../../SASS/base.sass */
+/* line 134, ../../SASS/base.sass */
 body nav #explore {
   background: #3333ff;
 }
-/* line 128, ../../SASS/base.sass */
+/* line 137, ../../SASS/base.sass */
 body nav #hobbies {
   background: #fafafa;
 }
-/* line 130, ../../SASS/base.sass */
+/* line 139, ../../SASS/base.sass */
 body nav #hobbies ul {
   padding: 20px 0 40px 15px;
 }
-/* line 132, ../../SASS/base.sass */
+/* line 141, ../../SASS/base.sass */
 body nav #hobbies ul li {
   padding: 5px 0;
 }
-/* line 134, ../../SASS/base.sass */
+/* line 143, ../../SASS/base.sass */
 body nav #hobbies ul li a {
   list-style: none;
   text-decoration: none;
@@ -335,11 +436,11 @@ body nav #hobbies ul li a {
   padding: 4px 5px;
   cursor: pointer;
 }
-/* line 141, ../../SASS/base.sass */
+/* line 150, ../../SASS/base.sass */
 body nav #hobbies ul li a:hover {
   color: #555555;
 }
-/* line 144, ../../SASS/base.sass */
+/* line 153, ../../SASS/base.sass */
 body .main {
   width: 74.74747%;
   float: left;
@@ -355,7 +456,7 @@ body .main {
   box-shadow: -1px -1px 1px rgba(0, 0, 0, 0.1);
   position: relative;
 }
-/* line 153, ../../SASS/base.sass */
+/* line 162, ../../SASS/base.sass */
 body .main .feed-profile-picture {
   display: inline-block;
   position: relative;

@@ -124,7 +124,8 @@ module.exports = function() {
 		timestamp: new Date(),
 		owner: chrisGriffin._id,
 		isForSale: true,
-		salePrice: 250
+		salePrice: 250,
+		location: 'San Francisco, CA'
 	};
 
 	var watch_dogs = new Item(Owatch_dogs)

@@ -1,5 +1,6 @@
 @import '_susy_base'
 @import 'compass'
+@import 'recipes/shape'
 @import 'formElements'
 @import 'item'
 
@@ -28,6 +29,14 @@ p
 		
 a
 	color: #00B7FF
+
+.heart-empty
+	@include heart(40px, 35px)
+	@include box-shadow(0,0,1px,rgba(0,0,0,0.5))
+	
+
+.heart-full
+	@include heart(40px, 35px, rgb(250,100,100))
 
 html, body
 	height: 100%
