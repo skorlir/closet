@@ -76,61 +76,6 @@ block content
 									a(href='/items/'+item._id)
 										h4 $#{item.rentalPrice}/day
 										p rent
-					.forRent(tags='tent,sleeping bag,bag')
-						img(src='../../images/sleepingbag.png').productImage
-						img(src='../../images/hobbyist02.png').feed-profile-picture
-						.info
-							h4
-								a(href='#') Columbia Sleeping Bag
-							p Mint Condition
-						.rent
-							h4 $35/day
-							p 
-								a(href='#') rent
-					.forSale
-						img(src='../../images/harness.png').productImage
-						img(src='../../images/hobbyist03.png').feed-profile-picture
-						.info
-							h4
-								a(href='#') Misty Rock Climbing Set
-							p Almost New
-						.buy
-							h4 $35
-							p
-								a(href='#') buy
-					.forRent
-						img(src='../../images/snowboard.png').productImage
-						img(src='../../images/hobbyist04.png').feed-profile-picture
-						.info
-							h4
-								a(href='#') Burton Parkstar Snowboard
-							p Used
-						.rent
-							h4 $15/day
-							p
-								a(href='#') rent
-					.forSale
-						img(src='../../images/camera.png').productImage
-						img(src='../../images/hobbyist05.png').feed-profile-picture
-						.info
-							h4
-								a(href='#') Waterproof Camera Case
-							p Like New
-						.buy 
-							h4 $100
-							p
-								a(href='#') buy
-					.forSale
-						img(src='../../images/surfboard.png').productImage
-						img(src='../../images/hobbyist06.png').feed-profile-picture
-						.info
-							h4 
-								a(href='#') Infinity Surfboard
-							p Lightly Used
-						.buy
-							h4 $150
-							p
-								a(href='#') buy
 
 		//- //this loads all the items related to the hobbie, which are passed to the template as "items"
 		//- mixin dashItems(items)

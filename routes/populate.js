@@ -308,7 +308,7 @@ module.exports = function() {
 		activity: [outdoorActivity]
 	};
 	
-	Item.create([watch_dogs, tombRaider, infamousSecondSon, yellowTent], function(err, w, t, i) {
+	Item.create([watch_dogs, tombRaider, infamousSecondSon, yellowTent, sleepingBag, climbingSet, snowboard, cameraCase, infinitySurfboard], function(err, w, t, i) {
 		if(err) console.log(err);
 		
 		Item.find({ name: 'Watch_Dogs' }).exec().addBack(function(e, r){
