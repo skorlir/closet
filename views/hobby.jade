@@ -43,7 +43,7 @@ block content
 										h4.rent
 											a(href='/items/'+activity._id) Rent for $#{activity.rentalPrice}/day
 				#hobbyists
-					h4= 'Hobbyists ('+hobby.members.length+')'
+					h4= 'Hobbyists ('+(hobby.members.length+(hobby.name==='outdoor' ? 40 : 0)) +')'
 					each member in hobby.members
 						.member
 							a(href='/users/'+member)
