@@ -48,15 +48,16 @@ block content
 							a(href='/users/'+member)
 								img(data-prof='/users/'+member)
 			#marketplace
-				#category
-					h3 category
+				#categoryType
+					h3 Category
 					input(type='search', placeholder='Search items by category tags', name='searchField' id='searchTags')
-				#type
-					h3 type
-					button.typeButton.buy buy
-					button.typeButton.rent rent
-					if(user)
-						h3 showing items near #{user.location}
+					h3 Type
+					button.typeButton.buy Buy
+					button.typeButton.rent Rent
+					//- if(user)
+					h3 Showing items near San Fransisco, CA
+						//- #{user.location}
+					p change
 				#items
 					each item in marketplace
 						div(class= item.isForSale ? 'forSale' : 'forRent')(tags=item.tags)
