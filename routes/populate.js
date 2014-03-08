@@ -193,7 +193,7 @@ module.exports = function() {
 	var OclimbingSet = {
 		name: 'Misty Rock Climbing Set',
 		hobbies: ['outdoor'],
-		description: 'Good for beginners in rock climbing. Used twice for training sessions, then replaced with a newer model. Rated with the highest safety rating.',
+		description: 'The set is good for beginners in rock climbing. Used twice for training sessions, then replaced with a newer model. Rated with the highest safety rating.',
 		bannerPhoto: 'harness.png',
 		tilePhoto: 'harness.png',
 		rating: 7.3,
