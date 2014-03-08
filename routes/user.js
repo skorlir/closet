@@ -83,6 +83,7 @@ exports.getPhoto = function (req, res) {
 		console.log(req.params.userid);
 		Account.findOne({_id: req.params.userid}, 'profilePicture', function(err, result) {
 			if(err) console.log(err);
+			console.log(result);
 			console.log('getphoto: '+result.profilePicture);
 			res.send(result.profilePicture);
 		});
