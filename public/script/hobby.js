@@ -4,14 +4,18 @@ $(document).ready(function(){
 	$('.typeButton.buy').click(function(event) {
 		$('.forRent').fadeOut();
 		$('.forSale').fadeIn();
-		if(lastClicked == this) $('.forRent').fadeIn();
-		lastClicked = this;
+		if(lastClicked == this) {
+			$('.forRent').fadeIn();
+			lastClicked = null;
+		} else lastClicked = this;
 	});
 	$('.typeButton.rent').click(function(event) {
 		$('.forSale').fadeOut();
 		$('.forRent').fadeIn();
-		if(lastClicked == this) $('.forSale').fadeIn();
-		lastClicked = this;
+		if(lastClicked == this) {
+			$('.forSale').fadeIn();
+			lastClicked = null;
+		} else lastClicked = this;
 	});
 	$('#searchTags').on('input', function(event) {
 		var val = $('#searchTags').val();
