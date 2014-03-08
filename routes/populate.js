@@ -311,7 +311,7 @@ module.exports = function() {
 	{
 		owner: jeanMackie._id,
 		timestamp: new Date(),
-		tilePhoto: 'ziplining.png',
+		tilePhoto: 'zipline.jpg',
 		description: 'Mike and I went ziplining today near walnut creek. Too much fun! Would totally do it again.' 
 	}];
 	
@@ -319,7 +319,7 @@ module.exports = function() {
 		name: 'outdoor',
 		members: [user2._id, user3._id, testUser._id, jasonTroop._id, chrisGriffin._id, amyTsu._id, seanDeiter._id, jeanMackie._id],
 		bannerPhoto: 'hobbypic.png',
-		activity: [outdoorActivity]
+		activity: outdoorActivity
 	};
 	
 	Item.create([watch_dogs, tombRaider, infamousSecondSon, yellowTent, sleepingBag, climbingSet, snowboard, cameraCase, infinitySurfboard], function(err, w, t, i) {

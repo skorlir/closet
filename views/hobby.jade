@@ -17,6 +17,7 @@ block content
 			#whatsNew
 				#posts
 					each activity in recentActivity
+						=console.log(activity)
 						div(class=activity.type+'Post')
 							a(href='/users/'+activity.owner)
 								img(data-prof='/users/'+activity.owner).feed-profile-picture
@@ -27,7 +28,7 @@ block content
 							div(class=activity.type)
 								if(activity.type==='general')
 									p=activity.description
-								if(activity._id)
+								if(activity.type==='newItem' && activity._id)
 									a(href='/items/'+activity._id)
 										img(src='/images/'+activity.tilePhoto)
 								else
