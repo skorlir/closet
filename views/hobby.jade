@@ -55,18 +55,27 @@ block content
 					h3 type
 					button.typeButton.buy buy
 					button.typeButton.rent rent
+					if(user)
+						h3 showing items near #{user.location}
 				#items
-					.forSale(tags='tent,yellow tent,northface,north face')
-						img(src='/images/yellowtent.png').productImage
-						img(src='/images/ChrisGriffin.png').feed-profile-picture
-						.info
-							h4 
-								a(href='/demoSale') Northface Backcountry Tent
-							p Like New
-						.buy
-							a(href='/demoSale')
-								h4 $240
-								p buy
+					each item in marketplace
+						div(class= item.isForSale ? 'forSale' : 'forRent')(tags=item.tags)
+							img(src='/images/'+item.tilePhoto).productImage
+							img(data-prof='/users/'+item.owner).feed-profile-picture
+							.info
+								h4 
+									a(href='/items/'+item._id) #{item.name}
+								p #{item.condition}
+							if(item.isForSale)
+								.buy
+									a(href='/items/'+item._id)
+										h4 $#{item.salePrice}
+										p buy
+							else
+								.rent
+									a(href='/items/'+item._id)
+										h4 $#{item.rentalPrice}/day
+										p rent
 					.forRent(tags='tent,sleeping bag,bag')
 						img(src='../../images/sleepingbag.png').productImage
 						img(src='../../images/hobbyist02.png').feed-profile-picture
