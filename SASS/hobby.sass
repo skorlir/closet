@@ -215,26 +215,37 @@
 			margin: 3px
 			width: 60px
 			height: 60px
-
+	
+	.head
+		border-bottom: 1px solid #333
+	
+	#category
+		width: 40%
+	
+	#type
+		width: 60%
+	
 	#category, #type
-		width: 50%
 		position: relative
 		display: inline-block
 		margin: 0
-		border-bottom: 1px solid #333
 
 		h3
 			position: relative
 			display: inline-block
-			margin: 2% 3% 2% 0%
+			margin: 2% 3% 2% 3%
 			font-weight: normal
 			color: #007AA3
 			text-transform: uppercase
+		
+		h4
+			font-size: 1em
+			display: inline
 
 	#category input
 		display: inline-block
 		width: 40%
-		margin: 0 0 2.25% 0
+		margin: 0
 
 	#type button
 		border: 2px solid #007AA3
@@ -242,6 +253,7 @@
 		padding: 5px 50px
 		background: #fff
 		text-transform: uppercase
+		display: inline-block
 
 		&:hover
 			background: #FFD685

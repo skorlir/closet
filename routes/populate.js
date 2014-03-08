@@ -37,6 +37,7 @@ module.exports = function() {
 		name: {first: "Abigail", last: "User" },
 		hobbies: ["Outdoor", "Fashion", "Wine", "Photography", "Videogames"],
 		profilePicture: "/images/abigail.png",
+		location: 'San Francisco, CA',
 		myCollection: [],
 		favorites: [],
 		friends: [],

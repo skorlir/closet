@@ -48,15 +48,16 @@ block content
 							a(href='/users/'+member)
 								img(data-prof='/users/'+member)
 			#marketplace
-				#category
-					h3 category
-					input(type='search', placeholder='Search items by category tags', name='searchField' id='searchTags')
-				#type
-					h3 type
-					button.typeButton.buy buy
-					button.typeButton.rent rent
-					if(user)
-						h3 showing items near #{user.location}
+				.head
+					#category
+						h3 category
+						input(type='search', placeholder='Search items by category tags', name='searchField' id='searchTags')
+					#type
+						h3 type
+						button.typeButton.buy buy
+						button.typeButton.rent rent
+						if(user)
+							h4 Showing items near #{user.location}
 				#items
 					each item in marketplace
 						div(class= item.isForSale ? 'forSale' : 'forRent')(tags=item.tags)

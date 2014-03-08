@@ -250,42 +250,58 @@
   height: 60px;
 }
 /* line 219, ../../SASS/hobby.sass */
+.main .head {
+  border-bottom: 1px solid #333333;
+}
+/* line 222, ../../SASS/hobby.sass */
+.main #category {
+  width: 40%;
+}
+/* line 225, ../../SASS/hobby.sass */
+.main #type {
+  width: 60%;
+}
+/* line 228, ../../SASS/hobby.sass */
 .main #category, .main #type {
-  width: 50%;
   position: relative;
   display: inline-block;
   margin: 0;
-  border-bottom: 1px solid #333333;
 }
-/* line 226, ../../SASS/hobby.sass */
+/* line 233, ../../SASS/hobby.sass */
 .main #category h3, .main #type h3 {
   position: relative;
   display: inline-block;
-  margin: 2% 3% 2% 0%;
+  margin: 2% 3% 2% 3%;
   font-weight: normal;
   color: #007aa3;
   text-transform: uppercase;
 }
-/* line 234, ../../SASS/hobby.sass */
+/* line 241, ../../SASS/hobby.sass */
+.main #category h4, .main #type h4 {
+  font-size: 1em;
+  display: inline;
+}
+/* line 245, ../../SASS/hobby.sass */
 .main #category input {
   display: inline-block;
   width: 40%;
-  margin: 0 0 2.25% 0;
+  margin: 0;
 }
-/* line 239, ../../SASS/hobby.sass */
+/* line 250, ../../SASS/hobby.sass */
 .main #type button {
   border: 2px solid #007aa3;
   margin: 5px 25px;
   padding: 5px 50px;
   background: white;
   text-transform: uppercase;
+  display: inline-block;
 }
-/* line 246, ../../SASS/hobby.sass */
+/* line 258, ../../SASS/hobby.sass */
 .main #type button:hover {
   background: #ffd685;
   cursor: pointer;
 }
-/* line 253, ../../SASS/hobby.sass */
+/* line 265, ../../SASS/hobby.sass */
 .main #items .forSale, .main #items .forRent {
   position: relative;
   display: inline-block;
@@ -297,14 +313,14 @@
   height: 366px;
   vertical-align: top;
 }
-/* line 262, ../../SASS/hobby.sass */
+/* line 274, ../../SASS/hobby.sass */
 .main #items .forSale img.productImage, .main #items .forRent img.productImage {
   position: relative;
   display: inline-block;
   width: 100%;
   height: 275px;
 }
-/* line 268, ../../SASS/hobby.sass */
+/* line 280, ../../SASS/hobby.sass */
 .main #items .forSale img.feed-profile-picture, .main #items .forRent img.feed-profile-picture {
   position: relative;
   display: inline-block;
@@ -312,31 +328,31 @@
   width: 60px;
   height: 60px;
 }
-/* line 275, ../../SASS/hobby.sass */
+/* line 287, ../../SASS/hobby.sass */
 .main #items .forSale .info, .main #items .forRent .info {
   position: relative;
   display: inline-block;
   top: -4px;
   width: 45%;
 }
-/* line 281, ../../SASS/hobby.sass */
+/* line 293, ../../SASS/hobby.sass */
 .main #items .forSale .info h4, .main #items .forRent .info h4 {
   margin: 0 2%;
   top: -0.5%;
   font-size: 14pt;
   font-family: "Lucida Grande", Helvetica, Arial, sans-serif;
 }
-/* line 287, ../../SASS/hobby.sass */
+/* line 299, ../../SASS/hobby.sass */
 .main #items .forSale .info h4 a, .main #items .forRent .info h4 a {
   text-decoration: none;
   color: inherit;
 }
-/* line 291, ../../SASS/hobby.sass */
+/* line 303, ../../SASS/hobby.sass */
 .main #items .forSale .info h4 a:hover, .main #items .forRent .info h4 a:hover {
   text-decoration: underline;
   cursor: pointer;
 }
-/* line 295, ../../SASS/hobby.sass */
+/* line 307, ../../SASS/hobby.sass */
 .main #items .forSale .info p, .main #items .forRent .info p {
   font-size: 12pt;
   color: #cccccc;
@@ -345,7 +361,7 @@
   text-align: left;
   top: 0;
 }
-/* line 303, ../../SASS/hobby.sass */
+/* line 315, ../../SASS/hobby.sass */
 .main #items .forSale .buy, .main #items .forSale .rent, .main #items .forRent .buy, .main #items .forRent .rent {
   position: relative;
   display: inline-block;
@@ -354,7 +370,7 @@
   top: 5px;
   right: 4px;
 }
-/* line 311, ../../SASS/hobby.sass */
+/* line 323, ../../SASS/hobby.sass */
 .main #items .forSale .buy h4, .main #items .forSale .rent h4, .main #items .forRent .buy h4, .main #items .forRent .rent h4 {
   padding: 5px 0;
   width: 100%;
@@ -364,19 +380,19 @@
   color: white;
   background: #007aa3;
 }
-/* line 320, ../../SASS/hobby.sass */
+/* line 332, ../../SASS/hobby.sass */
 .main #items .forSale .buy p, .main #items .forSale .rent p, .main #items .forRent .buy p, .main #items .forRent .rent p {
   text-transform: uppercase;
   margin: 0;
   padding: 5px 0;
   border: 2px solid #888888;
 }
-/* line 326, ../../SASS/hobby.sass */
+/* line 338, ../../SASS/hobby.sass */
 .main #items .forSale .buy p a, .main #items .forSale .rent p a, .main #items .forRent .buy p a, .main #items .forRent .rent p a {
   text-decoration: none;
   color: inherit;
 }
-/* line 330, ../../SASS/hobby.sass */
+/* line 342, ../../SASS/hobby.sass */
 .main #items .forSale .buy p:hover, .main #items .forSale .rent p:hover, .main #items .forRent .buy p:hover, .main #items .forRent .rent p:hover {
   background: #ffd685;
 }
