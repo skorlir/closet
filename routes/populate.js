@@ -295,12 +295,25 @@ module.exports = function() {
 		activity: [videogameActivity]
 	};
 	
-	var outdoorActivity = {
+	var outdoorActivity = [
+	{
 		owner: 	jasonTroop._id,
 		timestamp: new Date(),
 		tilePhoto: 'lightTent.png',
 		description: "Yosemite has amazing weather right now. Highly recommend climbing the hald dome to watch the sunrise! Make sure to layer up - it's still chilly at night."
-	};
+	},
+	{
+		owner: seanDeiter._id,
+		timestamp: new Date(),
+		tilePhoto: 'shanghai tower.png',
+		description: 'Climbers!! See this guy who climbed this 2100 feet building in Shanghai. Crazy stuff.'
+	},
+	{
+		owner: jeanMackie._id,
+		timestamp: new Date(),
+		tilePhoto: 'ziplining.png',
+		description: 'Mike and I went ziplining today near walnut creek. Too much fun! Would totally do it again.' 
+	}];
 	
 	var Ooutdoor = {
 		name: 'outdoor',
