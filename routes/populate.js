@@ -34,7 +34,7 @@ module.exports = function() {
 	var OtestUser = {
 		username: "testUser",
 		email: "test@test.com",
-		name: {first: "Abigail", last: "User" },
+		name: {first: "Abigail", last: "Berwyn" },
 		hobbies: ["Outdoor", "Fashion", "Wine", "Photography", "Videogames"],
 		profilePicture: "/images/abigail.png",
 		location: 'San Francisco, CA',
