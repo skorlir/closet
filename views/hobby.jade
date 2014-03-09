@@ -44,6 +44,7 @@ block content
 											a(href='/items/'+activity._id) Rent for $#{activity.rentalPrice}/day
 				#hobbyists
 					h4= 'Hobbyists ('+(hobby.members.length+(hobby.name==='outdoor' ? 40 : 0)) +')'
+					p See all
 					each member in hobby.members
 						.member
 							a(href='/users/'+member)
@@ -51,12 +52,12 @@ block content
 			#marketplace
 				#categoryType
 					h3 Category
-					input(type='search', placeholder='Search items by category tags', name='searchField' id='searchTags')
+					input(type='search', placeholder='Search by category', name='searchField' id='searchTags')
 					h3 Type
 					button.typeButton.buy Buy
 					button.typeButton.rent Rent
 					if(user)
-							h4 Showing items near #{user.location}
+							h3 Showing items near #{user.location}
 					p change
 				#items
 					each item in marketplace
