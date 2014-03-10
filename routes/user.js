@@ -26,7 +26,8 @@ exports.addSub = function(req, res){
 
 exports.getRegister = function(req, res){
 	//load a registration page
-	res.render('register', { });
+	console.log(req.query);
+	res.render('register', { params: req.query||'none' });
 };
 
 exports.postRegister = function(req, res){
@@ -57,5 +58,33 @@ exports.postLogin = function(req, res) {
 }
 
 exports.profile = function(req, res) {
-	req.isAuthenticated() ? res.render('profile', { user: req.user }) : res.redirect('/login');
+	if(req.params.userid) {
+		Account.findOne({_id: req.params.userid}, function(err, result) {
+			console.log(result);
+			result ? res.render('profile', { user: req.user, profile: result }) : res.status('404').send('No such user.');
+		});
+	} else {
+		req.isAuthenticated() ? res.render('profile', { user: req.user, profile: req.user }) : res.redirect('/login');
+	}
+}
+
+exports.getName = function (req, res) {
+	if(req.params.userid) {
+		Account.findOne({_id: req.params.userid}, 'name', function(err, result) {
+			if(err) console.log(err);
+			console.log('getname: '+result.name);
+			res.send(result.name);
+		});
+	}
+}
+
+exports.getPhoto = function (req, res) {
+	if(req.params.userid) {
+		console.log(req.params.userid);
+		Account.findOne({_id: req.params.userid}, 'profilePicture', function(err, result) {
+			if(err) console.log(err);
+			console.log('getphoto: '+result.profilePicture);
+			res.send(result.profilePicture);
+		});
+	}
 }

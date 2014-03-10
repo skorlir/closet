@@ -1,106 +1,823 @@
-.page {
-	background: #fff;
-	margin: 5px;
-	border-style: solid;
-	border-width: 1px;
-	border-color: #444;
-	height: 175%;
+/* line 5, ../../SASS/hobby.sass */
+.main .title {
+  height: 11em;
+  background-size: contain;
+}
+/* line 9, ../../SASS/hobby.sass */
+.main .title h3.hobbyTitle {
+  font-family: "Lucida Grande", Helvetica, Arial, sans-serif;
+  color: white;
+  background: rgba(0, 0, 0, 0.4);
+  height: 5.5em;
+  line-height: 5.5em;
+  width: 30%;
+  text-transform: uppercase;
+  font-size: 2em;
+  text-shadow: none;
+  text-align: center;
+  position: absolute;
+  margin: 0;
+  top: 20px;
+  left: 10px;
+}
+/* line 25, ../../SASS/hobby.sass */
+.main .title .cover-photo {
+  width: 100%;
+}
+/* line 28, ../../SASS/hobby.sass */
+.main a {
+  text-decoration: none;
+  color: inherit;
+}
+/* line 32, ../../SASS/hobby.sass */
+.main .ui-widget-header {
+  background: #f6f6f6;
+  border: none;
+  padding: 0;
+}
+/* line 37, ../../SASS/hobby.sass */
+.main .ui-corner-all {
+  border-radius: 0;
+}
+/* line 40, ../../SASS/hobby.sass */
+.main .ui-tabs .ui-tabs-panel {
+  border-style: solid;
+  border-width: 1px;
+  border-color: #bbbbbb;
+  padding: 0;
+}
+/* line 46, ../../SASS/hobby.sass */
+.main .ui-tabs-nav {
+  background-color: white !important;
+  height: 1.95em;
+}
+/* line 50, ../../SASS/hobby.sass */
+.main .ui-tabs .ui-tabs-nav li.ui-tabs-active {
+  background: white;
+}
+/* line 53, ../../SASS/hobby.sass */
+.main .ui-tabs-nav .ui-tabs-anchor {
+  padding: 0.7em 2.5em 0.4em 2.5em;
+  font-family: "Lucida Grande", Helvetica, Arial, sans-serif;
+  font-size: 0.8em;
+  width: 60%;
+  color: black;
+  font-weight: normal;
+}
+/* line 61, ../../SASS/hobby.sass */
+.main .ui-tabs .ui-tabs-nav li {
+  border-style: solid;
+  border-width: 1px;
+  border-color: #bbbbbb;
+  border-bottom-width: 0;
+  background: #eeeeee;
+  margin: 0 0 0 0;
+  border-radius: 0 0 0 0;
+  -webkit-box-shadow: 2px -1px 1px rgba(0, 0, 0, 0.1);
+  -moz-box-shadow: 2px -1px 1px rgba(0, 0, 0, 0.1);
+  box-shadow: 2px -1px 1px rgba(0, 0, 0, 0.1);
+}
+/* line 71, ../../SASS/hobby.sass */
+.main .ui-widget-content {
+  background: white;
+  border: none;
+}
+/* line 75, ../../SASS/hobby.sass */
+.main #posts {
+  width: 70%;
+  display: inline-block;
+  position: relative;
+}
+/* line 80, ../../SASS/hobby.sass */
+.main .newItemPost, .main .generalPost {
+  width: 100%;
+  height: 20em;
+  position: relative;
+  display: inline-block;
+  margin: 1em 1.4em;
+}
+/* line 87, ../../SASS/hobby.sass */
+.main .newItemPost .feed-profile-picture, .main .generalPost .feed-profile-picture {
+  display: inline-block;
+  position: relative;
+  width: 80px;
+  height: 80px;
+  margin: 0 2%;
+}
+/* line 94, ../../SASS/hobby.sass */
+.main .newItemPost h4.name, .main .generalPost h4.name {
+  display: inline-block;
+  position: relative;
+  color: #007aa3;
+  top: -65px;
+  margin: 0;
+  text-decoration: none;
+}
+/* line 102, ../../SASS/hobby.sass */
+.main .newItemPost h4.name a, .main .generalPost h4.name a {
+  text-decoration: none;
+  color: inherit;
+}
+/* line 106, ../../SASS/hobby.sass */
+.main .newItemPost h4.name a:hover, .main .generalPost h4.name a:hover {
+  text-decoration: underline;
+}
+/* line 109, ../../SASS/hobby.sass */
+.main .newItemPost p, .main .generalPost p {
+  display: inline-block;
+  position: relative;
+  top: -65px;
+  font-size: 12pt;
+  color: #6c6c6c;
+  margin-left: 1%;
+}
+/* line 117, ../../SASS/hobby.sass */
+.main .newItemPost .newItem, .main .generalPost .newItem {
+  margin: 2% 0 0 7%;
+  width: 70%;
+  border: 1px solid rgba(0, 0, 0, 0.2);
+  height: 90%;
+  position: relative;
+  top: -4em;
+  left: 3em;
+}
+/* line 126, ../../SASS/hobby.sass */
+.main .newItemPost .newItem img, .main .generalPost .newItem img {
+  height: 90%;
+  margin: 0 auto;
+  position: relative;
+  display: block;
+}
+/* line 132, ../../SASS/hobby.sass */
+.main .newItemPost .newItem h3.rating, .main .generalPost .newItem h3.rating {
+  position: relative;
+  display: inline-block;
+  margin: 0 2%;
+  top: -0.5%;
+  font-family: "Lucida Grande", Helvetica, Arial, sans-serif;
+}
+/* line 139, ../../SASS/hobby.sass */
+.main .newItemPost .newItem p, .main .generalPost .newItem p {
+  position: relative;
+  display: inline-block;
+  top: -0.4%;
+  margin: 0;
+}
+/* line 145, ../../SASS/hobby.sass */
+.main .newItemPost .newItem h4.buy, .main .generalPost .newItem h4.buy {
+  position: relative;
+  display: inline-block;
+  margin: 0;
+  float: right;
+  padding: 0.9% 6%;
+  font-family: "Lucida Grande", Helvetica, Arial, sans-serif;
+  color: white;
+  background: #007aa3;
+}
+/* line 155, ../../SASS/hobby.sass */
+.main .newItemPost .newItem h4.buy a, .main .generalPost .newItem h4.buy a {
+  text-decoration: none;
+  color: inherit;
+}
+/* line 159, ../../SASS/hobby.sass */
+.main .newItemPost .newItem h4.buy:hover, .main .generalPost .newItem h4.buy:hover {
+  text-decoration: underline;
+  cursor: pointer;
+}
+/* line 163, ../../SASS/hobby.sass */
+.main .newItemPost .general, .main .generalPost .general {
+  margin: 3.5% 0 0 7%;
+  width: 70%;
+  height: 90%;
+  position: relative;
+  top: -5em;
+  left: 3em;
+}
+/* line 171, ../../SASS/hobby.sass */
+.main .newItemPost .general img, .main .generalPost .general img {
+  width: 100%;
+  display: block;
+}
+/* line 175, ../../SASS/hobby.sass */
+.main .newItemPost .general p, .main .generalPost .general p {
+  font-family: "Lucida Grande", Helvetica, Arial, sans-serif;
+  font-weight: normal;
+  position: relative;
+  text-align: left;
+  color: #222222;
+  top: 5px;
+}
+/* line 183, ../../SASS/hobby.sass */
+.main .newItemPost .general h5.comments, .main .generalPost .general h5.comments {
+  margin: 10px 0 15px 0;
+  position: relative;
+  font-family: "Lucida Grande", Helvetica, Arial, sans-serif;
+  font-size: 12pt;
+  color: #cccccc;
+}
+/* line 190, ../../SASS/hobby.sass */
+.main .newItemPost .general h5.comments a, .main .generalPost .general h5.comments a {
+  text-decoration: none;
+  margin: 0 5px;
+  color: inherit;
+}
+/* line 195, ../../SASS/hobby.sass */
+.main .newItemPost .general h5.comments a:hover, .main .generalPost .general h5.comments a:hover {
+  color: #007aa3;
+  text-decoration: underline;
+}
+/* line 199, ../../SASS/hobby.sass */
+.main #hobbyists {
+  position: relative;
+  display: inline-block;
+  width: 30%;
+  float: right;
+}
+/* line 205, ../../SASS/hobby.sass */
+.main #hobbyists h4 {
+  color: #007aa3;
+  margin-bottom: 2%;
+  margin-top: 7%;
+}
+/* line 210, ../../SASS/hobby.sass */
+.main #hobbyists img {
+  position: relative;
+  display: inline-block;
+  float: left;
+  margin: 3px;
+  width: 60px;
+  height: 60px;
+}
+/* line 218, ../../SASS/hobby.sass */
+.main #category, .main #type {
+  width: 50%;
+  position: relative;
+  display: inline-block;
+  margin: 0;
+  border-bottom: 1px solid #333333;
+}
+/* line 225, ../../SASS/hobby.sass */
+.main #category h3, .main #type h3 {
+  position: relative;
+  display: inline-block;
+  margin: 2% 3% 2% 0%;
+  font-weight: normal;
+  color: #007aa3;
+  text-transform: uppercase;
+}
+/* line 233, ../../SASS/hobby.sass */
+.main #category input {
+  display: inline-block;
+  width: 40%;
+  margin: 0 0 2.25% 0;
+}
+/* line 238, ../../SASS/hobby.sass */
+.main #type button {
+  border: 2px solid #007aa3;
+  margin: 5px 25px;
+  padding: 5px 50px;
+  background: white;
+  text-transform: uppercase;
+}
+/* line 245, ../../SASS/hobby.sass */
+.main #type button:hover {
+  background: #ffd685;
+  cursor: pointer;
+}
+/* line 252, ../../SASS/hobby.sass */
+.main #items .forSale, .main #items .forRent {
+  position: relative;
+  display: inline-block;
+  -webkit-box-shadow: 0 2px 3px rgba(0, 0, 0, 0.7);
+  -moz-box-shadow: 0 2px 3px rgba(0, 0, 0, 0.7);
+  box-shadow: 0 2px 3px rgba(0, 0, 0, 0.7);
+  width: 32%;
+  margin: 5px;
+  height: 366px;
+  vertical-align: top;
+}
+/* line 261, ../../SASS/hobby.sass */
+.main #items .forSale img.productImage, .main #items .forRent img.productImage {
+  position: relative;
+  display: inline-block;
+  width: 100%;
+  height: 275px;
+}
+/* line 267, ../../SASS/hobby.sass */
+.main #items .forSale img.feed-profile-picture, .main #items .forRent img.feed-profile-picture {
+  position: relative;
+  display: inline-block;
+  margin: 3px;
+  width: 60px;
+  height: 60px;
+}
+/* line 274, ../../SASS/hobby.sass */
+.main #items .forSale .info, .main #items .forRent .info {
+  position: relative;
+  display: inline-block;
+  top: -4px;
+  width: 45%;
+}
+/* line 280, ../../SASS/hobby.sass */
+.main #items .forSale .info h4, .main #items .forRent .info h4 {
+  margin: 0 2%;
+  top: -0.5%;
+  font-size: 14pt;
+  font-family: "Lucida Grande", Helvetica, Arial, sans-serif;
+}
+/* line 286, ../../SASS/hobby.sass */
+.main #items .forSale .info h4 a, .main #items .forRent .info h4 a {
+  text-decoration: none;
+  color: inherit;
+}
+/* line 290, ../../SASS/hobby.sass */
+.main #items .forSale .info h4 a:hover, .main #items .forRent .info h4 a:hover {
+  text-decoration: underline;
+  cursor: pointer;
+}
+/* line 294, ../../SASS/hobby.sass */
+.main #items .forSale .info p, .main #items .forRent .info p {
+  font-size: 12pt;
+  color: #cccccc;
+  margin: 1%;
+  margin-left: 2%;
+  text-align: left;
+  top: 0;
+}
+/* line 302, ../../SASS/hobby.sass */
+.main #items .forSale .buy, .main #items .forSale .rent, .main #items .forRent .buy, .main #items .forRent .rent {
+  position: relative;
+  display: inline-block;
+  width: 30%;
+  float: right;
+  top: 5px;
+  right: 4px;
+}
+/* line 310, ../../SASS/hobby.sass */
+.main #items .forSale .buy h4, .main #items .forSale .rent h4, .main #items .forRent .buy h4, .main #items .forRent .rent h4 {
+  padding: 5px 0;
+  width: 100%;
+  text-align: center;
+  margin: 0;
+  font-family: "Lucida Grande", Helvetica, Arial, sans-serif;
+  color: white;
+  background: #007aa3;
+}
+/* line 319, ../../SASS/hobby.sass */
+.main #items .forSale .buy p, .main #items .forSale .rent p, .main #items .forRent .buy p, .main #items .forRent .rent p {
+  text-transform: uppercase;
+  margin: 0;
+  padding: 5px 0;
+  border: 2px solid #888888;
+}
+/* line 325, ../../SASS/hobby.sass */
+.main #items .forSale .buy p a, .main #items .forSale .rent p a, .main #items .forRent .buy p a, .main #items .forRent .rent p a {
+  text-decoration: none;
+  color: inherit;
+}
+/* line 329, ../../SASS/hobby.sass */
+.main #items .forSale .buy p:hover, .main #items .forSale .rent p:hover, .main #items .forRent .buy p:hover, .main #items .forRent .rent p:hover {
+  background: #ffd685;
 }
 
-.header {
-	background: #f2f2f2;
-	height: 80px;
-	border-bottom-style: double;
+/* line 6, ../../SASS/itempage.sass */
+.main .left {
+  width: 60%;
+  display: inline-block;
+  margin-right: 4%;
 }
-
-.body {
-	height: 175%;
-	background: #fff;
-	padding: 1% 2%;
+/* line 11, ../../SASS/itempage.sass */
+.main .left .headerInfo {
+  width: 70%;
+  position: relative;
+  display: inline-block;
+  margin-bottom: 10px;
 }
-
-.sidebar {
-	width: 180px;
-	border-style: none;
+/* line 18, ../../SASS/itempage.sass */
+.main .left .headerInfo h3.itemName {
+  position: relative;
+  font-family: "Lucida Grande", Helvetica, Arial, sans-serif;
+  font-weight: normal;
+  margin: 0 10px;
+  font-size: 20pt;
 }
-
-.sidebar input {
-	font-size: 14px;
-	width: 180px;
-	margin: 5px 0;
+/* line 25, ../../SASS/itempage.sass */
+.main .left .headerInfo p.condition {
+  text-align: left;
+  position: relative;
+  display: inline-block;
+  margin: 4px 10px;
+  font-family: "Lucida Grande", Helvetica, Arial, sans-serif;
+  color: #bbbbbb;
+  font-size: 12pt;
 }
-
-.sidebar h3 {
-	font-size: 14pt;
-	color: #fff;
-	font-family: sans-serif;
-	font-weight: normal;
-	margin: 0;
-	padding: 14px 20px;
+/* line 34, ../../SASS/itempage.sass */
+.main .left .headerInfo p.location {
+  text-align: left;
+  position: relative;
+  display: inline-block;
+  margin: 4px;
+  font-family: "Lucida Grande", Helvetica, Arial, sans-serif;
+  color: #333333;
+  font-size: 12pt;
 }
-
-#my-hobby {
-	height: 50px;
-	border-style: none;
-	background: #ff3333;
+/* line 43, ../../SASS/itempage.sass */
+.main .left .ratingInfo {
+  width: 30%;
+  position: relative;
+  display: inline-block;
+  margin-bottom: 10px;
 }
-
-#hobbies {
-	height: 140px;
-	border-style: none;
-	background: #F1F4FA;
+/* line 49, ../../SASS/itempage.sass */
+.main .left .ratingInfo h4 {
+  font-family: "Lucida Grande", Helvetica, Arial, sans-serif;
+  font-weight: normal;
+  margin: 5px 0;
+  text-align: right;
+  font-size: 18pt;
 }
-
-#hobbies ul {
-	margin: 0;
-	padding: 5px 10px;
+/* line 56, ../../SASS/itempage.sass */
+.main .left .ratingInfo p {
+  font-family: "Lucida Grande", Helvetica, Arial, sans-serif;
+  font-weight: normal;
+  margin: 5px 0;
+  text-align: right;
+  color: #bbbbbb;
+  font-size: 12pt;
 }
-
-#hobbies li {
-	list-style: none;
-	font-size: 12pt;
-	text-indent: 5px;
-	color: #999;
-	padding: 4px 5px;
+/* line 64, ../../SASS/itempage.sass */
+.main .left img.productImage {
+  width: 100%;
+  margin-bottom: 20px;
 }
-
-#my-closet {
-	height: 50px;
-	border-style: none;
-	background: #ff9019;
+/* line 70, ../../SASS/itempage.sass */
+.main .left #description .productDes, .main .left #description .productCond {
+  padding: 0 20px;
 }
-
-#explore {
-	height: 50px;
-	border-style: none;
-	background: #ffbb20;
+/* line 73, ../../SASS/itempage.sass */
+.main .left #description .productDes p.cat, .main .left #description .productCond p.cat {
+  position: relative;
+  display: inline-block;
+  margin: 20px 0;
+  width: 25%;
+  vertical-align: top;
+  text-align: left;
+  font-weight: bold;
+  font-family: "Lucida Grande", Helvetica, Arial, sans-serif;
+  color: #33ccff;
 }
-
-.stories {
-	margin: 0 5%;
-	border-style: solid;
-	position: relative;
-	top: -316px;
-	left: 185px;
-	width: 70%;
+/* line 84, ../../SASS/itempage.sass */
+.main .left #description .productDes p.des, .main .left #description .productCond p.des {
+  position: relative;
+  display: inline-block;
+  margin: 0;
+  width: 75%;
+  text-align: left;
+  font-weight: normal;
+  font-family: "Lucida Grande", Helvetica, Arial, sans-serif;
+  color: #333333;
+  margin: 20px 0;
 }
-
-.story {
-
+/* line 95, ../../SASS/itempage.sass */
+.main .right {
+  width: 30%;
+  position: relative;
+  display: inline-block;
+  float: right;
 }
-
-.story h3 {
-
+/* line 102, ../../SASS/itempage.sass */
+.main .right .buy {
+  margin-top: 68px;
+  width: 90%;
+  float: center;
+  background: #fafafa;
+  border: 1px solid #bbbbbb;
 }
-
-.story p {
-
+/* line 109, ../../SASS/itempage.sass */
+.main .right .buy h3.price {
+  text-align: center;
+  margin: 10px 0;
+  font-weight: bold;
+  font-family: "Lucida Grande", Helvetica, Arial, sans-serif;
+  color: #007aa3;
+  font-size: 24pt;
 }
-
-.story a {
-
+/* line 117, ../../SASS/itempage.sass */
+.main .right .buy h5.buyButton {
+  display: block;
+  padding: 3% 0%;
+  margin: 0;
+  width: 100%;
+  text-align: center;
+  font-size: 16pt;
+  font-family: "Lucida Grande", Helvetica, Arial, sans-serif;
+  color: white;
+  background: #33ccff;
 }
-
-.story input {
-	
+/* line 128, ../../SASS/itempage.sass */
+.main .right .collection {
+  margin: 15px 0;
+  background: white;
+  width: 90%;
+  float: center;
+  border-radius: 5px;
+  border: 1px solid #888888;
+}
+/* line 136, ../../SASS/itempage.sass */
+.main .right .collection span#heart {
+  position: relative;
+  width: 40px;
+  height: 36px;
+  left: 80%;
+}
+/* line 142, ../../SASS/itempage.sass */
+.main .right .collection span#heart:before, .main .right .collection #heart:after {
+  position: absolute;
+  content: "";
+  left: 20px;
+  top: 13px;
+  width: 20px;
+  height: 32px;
+  background: #cccccc;
+  border-radius: 20px 20px 0 0;
+  -webkit-transform: rotate(-45deg);
+  -moz-transform: rotate(-45deg);
+  -ms-transform: rotate(-45deg);
+  -o-transform: rotate(-45deg);
+  transform: rotate(-45deg);
+  -webkit-transform-origin: 0 100%;
+  -moz-transform-origin: 0 100%;
+  -ms-transform-origin: 0 100%;
+  -o-transform-origin: 0 100%;
+  transform-origin: 0 100%;
+}
+/* line 154, ../../SASS/itempage.sass */
+.main .right .collection span#heart:after {
+  left: 0;
+  -webkit-transform: rotate(45deg);
+  -moz-transform: rotate(45deg);
+  -ms-transform: rotate(45deg);
+  -o-transform: rotate(45deg);
+  transform: rotate(45deg);
+  -webkit-transform-origin: 100% 100%;
+  -moz-transform-origin: 100% 100%;
+  -ms-transform-origin: 100% 100%;
+  -o-transform-origin: 100% 100%;
+  transform-origin: 100% 100%;
+}
+/* line 159, ../../SASS/itempage.sass */
+.main .right .collection span#heart.red {
+  position: relative;
+  width: 40px;
+  height: 36px;
+  left: 80%;
+}
+/* line 165, ../../SASS/itempage.sass */
+.main .right .collection span#heart.red:before, .main .right .collection #heart.red:after {
+  position: absolute;
+  content: "";
+  left: 20px;
+  top: 13px;
+  width: 20px;
+  height: 32px;
+  background: red;
+  border-radius: 20px 20px 0 0;
+  -webkit-transform: rotate(-45deg);
+  -moz-transform: rotate(-45deg);
+  -ms-transform: rotate(-45deg);
+  -o-transform: rotate(-45deg);
+  transform: rotate(-45deg);
+  -webkit-transform-origin: 0 100%;
+  -moz-transform-origin: 0 100%;
+  -ms-transform-origin: 0 100%;
+  -o-transform-origin: 0 100%;
+  transform-origin: 0 100%;
+}
+/* line 177, ../../SASS/itempage.sass */
+.main .right .collection span#heart.red:after {
+  left: 0;
+  -webkit-transform: rotate(45deg);
+  -moz-transform: rotate(45deg);
+  -ms-transform: rotate(45deg);
+  -o-transform: rotate(45deg);
+  transform: rotate(45deg);
+  -webkit-transform-origin: 100% 100%;
+  -moz-transform-origin: 100% 100%;
+  -ms-transform-origin: 100% 100%;
+  -o-transform-origin: 100% 100%;
+  transform-origin: 100% 100%;
+}
+/* line 182, ../../SASS/itempage.sass */
+.main .right .collection h5 {
+  text-align: right;
+  vertical-align: middle;
+  line-height: 100%;
+  width: 72%;
+  margin: 8% 3%;
+}
+/* line 189, ../../SASS/itempage.sass */
+.main .right .sellerInfo {
+  width: 90%;
+  float: center;
+}
+/* line 193, ../../SASS/itempage.sass */
+.main .right img.profile-pic {
+  position: relative;
+  display: inline-block;
+  border-style: solid;
+  border-color: white;
+  border-width: 6px;
+  width: 30%;
+  height: 30%;
+  margin-bottom: 5px;
+}
+/* line 203, ../../SASS/itempage.sass */
+.main .right .basic {
+  vertical-align: top;
+  width: 65%;
+  position: relative;
+  display: inline-block;
+}
+/* line 209, ../../SASS/itempage.sass */
+.main .right .basic p {
+  text-align: left;
+  position: relative;
+  margin: 2px 4px;
+  font-family: "Lucida Grande", Helvetica, Arial, sans-serif;
+  color: #bbbbbb;
+  top: 0;
+  font-size: 12pt;
+}
+/* line 218, ../../SASS/itempage.sass */
+.main .right .basic h4.name {
+  text-align: left;
+  position: relative;
+  margin: 2px 4px;
+  font-family: "Lucida Grande", Helvetica, Arial, sans-serif;
+  color: #333333;
+  top: 0;
+}
+/* line 226, ../../SASS/itempage.sass */
+.main .right span.star {
+  margin: 7.5px 0;
+  position: relative;
+  display: inline-block;
+  color: #cccccc;
+  width: 0px;
+  height: 0px;
+  border-right: 15px solid transparent;
+  border-bottom: 10.5px solid #cccccc;
+  border-left: 15px solid transparent;
+  -webkit-transform: rotate(35deg);
+  -moz-transform: rotate(35deg);
+  -ms-transform: rotate(35deg);
+  -o-transform: rotate(35deg);
+  transform: rotate(35deg);
+}
+/* line 238, ../../SASS/itempage.sass */
+.main .right span.star:before {
+  border-bottom: 12px solid #cccccc;
+  border-left: 4.5px solid transparent;
+  border-right: 4.5px solid transparent;
+  position: absolute;
+  height: 0;
+  width: 0;
+  top: -6.75px;
+  left: -9.75px;
+  display: block;
+  content: "";
+  -webkit-transform: rotate(-35deg);
+  -moz-transform: rotate(-35deg);
+  -ms-transform: rotate(-35deg);
+  -o-transform: rotate(-35deg);
+  transform: rotate(-35deg);
+}
+/* line 251, ../../SASS/itempage.sass */
+.main .right span.star:after {
+  position: absolute;
+  display: block;
+  color: #cccccc;
+  top: 0.75px;
+  left: -15.75px;
+  width: 0px;
+  height: 0px;
+  border-right: 15px solid transparent;
+  border-bottom: 10.5px solid #cccccc;
+  border-left: 15px solid transparent;
+  -webkit-transform: rotate(-70deg);
+  -moz-transform: rotate(-70deg);
+  -ms-transform: rotate(-70deg);
+  -o-transform: rotate(-70deg);
+  transform: rotate(-70deg);
+  content: "";
+}
+/* line 265, ../../SASS/itempage.sass */
+.main .right span.star.yellow {
+  margin: 7.5px 0;
+  position: relative;
+  display: inline-block;
+  color: yellow;
+  width: 0px;
+  height: 0px;
+  border-right: 15px solid transparent;
+  border-bottom: 10.5px solid yellow;
+  border-left: 15px solid transparent;
+  -webkit-transform: rotate(35deg);
+  -moz-transform: rotate(35deg);
+  -ms-transform: rotate(35deg);
+  -o-transform: rotate(35deg);
+  transform: rotate(35deg);
+}
+/* line 277, ../../SASS/itempage.sass */
+.main .right span.star.yellow:before {
+  border-bottom: 12px solid yellow;
+  border-left: 4.5px solid transparent;
+  border-right: 4.5px solid transparent;
+  position: absolute;
+  height: 0;
+  width: 0;
+  top: -6.75px;
+  left: -9.75px;
+  display: block;
+  content: "";
+  -webkit-transform: rotate(-35deg);
+  -moz-transform: rotate(-35deg);
+  -ms-transform: rotate(-35deg);
+  -o-transform: rotate(-35deg);
+  transform: rotate(-35deg);
+}
+/* line 290, ../../SASS/itempage.sass */
+.main .right span.star.yellow:after {
+  position: absolute;
+  display: block;
+  color: yellow;
+  top: 0.75px;
+  left: -15.75px;
+  width: 0px;
+  height: 0px;
+  border-right: 15px solid transparent;
+  border-bottom: 10.5px solid yellow;
+  border-left: 15px solid transparent;
+  -webkit-transform: rotate(-70deg);
+  -moz-transform: rotate(-70deg);
+  -ms-transform: rotate(-70deg);
+  -o-transform: rotate(-70deg);
+  transform: rotate(-70deg);
+  content: "";
+}
+/* line 304, ../../SASS/itempage.sass */
+.main .right span.rating {
+  position: relative;
+  display: inline-block;
+  margin-bottom: 10px;
+}
+/* line 309, ../../SASS/itempage.sass */
+.main .right span.rating h5 {
+  margin: 0 6px;
+  text-align: left;
+  font-size: 16pt;
+}
+/* line 314, ../../SASS/itempage.sass */
+.main .right span.rating p {
+  font-size: 10pt;
+  margin: 0 6px;
+  text-align: left;
+}
+/* line 319, ../../SASS/itempage.sass */
+.main .right .testimony {
+  background: white;
+  width: 90%;
+  float: center;
+  margin: 10px 0;
+  border-radius: 5px;
+  border: 1px solid #888888;
+}
+/* line 327, ../../SASS/itempage.sass */
+.main .right .testimony img.mini-profile-pic {
+  width: 15%;
+  height: 15%;
+  display: inline-block;
+  margin: 15px 0 0 8px;
+}
+/* line 333, ../../SASS/itempage.sass */
+.main .right .testimony p.first {
+  width: 90%;
+  padding: 5px;
+  text-align: left;
+  background: #cccccc;
+  font-size: 10pt;
+  border-radius: 5px;
+}
+/* line 341, ../../SASS/itempage.sass */
+.main .right .testimony p.more {
+  text-align: left;
+  font-size: 10pt;
+  padding: 0 10px;
+}
+/* line 346, ../../SASS/itempage.sass */
+.main .right .stars {
+  display: inline-block;
+  position: relative;
+  margin: 0 15px;
+  top: -8px;
 }

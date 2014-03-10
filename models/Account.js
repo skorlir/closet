@@ -3,10 +3,10 @@ var mongoose = require('mongoose')
 		, passportLocalMongoose = require('passport-local-mongoose');
 
 var account = Schema({
-	realName: { 
-							firstName: String,
-						  lastName: String 
-						},
+	name: { 
+				first: String,
+				last: String 
+				},
 	location: { type: String, default: 'unknown'},
 	age: Number,
 	hobbies: [String],
@@ -17,7 +17,8 @@ var account = Schema({
 	//TODO: denormalize item schema
 	myCollection: [Schema.mixed],
 	favorites: [Schema.mixed],
-	friends: [{ username: String, profileURL: String, profilePicture: String }]
+	friends: [Schema.ObjectId],
+	isAdmin: { type: Boolean, default: false }
 });
 
 account.plugin(passportLocalMongoose);

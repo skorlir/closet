@@ -2,9 +2,9 @@ extends layout
 
 block content
 	include top
+	include mixins
 	
 	.main
 		.stories
-	
-	script(src="../../script/dashboard.js")
+			mixin dashItems(items)
 	
