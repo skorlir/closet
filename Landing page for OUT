@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    
+    <title>Come outdoors with us</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="assets/css/bootstrap.min.css" rel="stylesheet">
+    <link href="assets/css/font-awesome.min.css" rel="stylesheet">
+
+
+    <!-- Custom styles for this template -->
+    <link href="assets/css/main.css" rel="stylesheet">
+    
+    <link href='http://fonts.googleapis.com/css?family=Oswald:400,300,700' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=EB+Garamond' rel='stylesheet' type='text/css'>
+    
+
+    <!-- Just for debugging purposes. Don't actually copy this line! -->
+    <!--[if lt IE 9]><script src="../../docs-assets/js/ie8-responsive-file-warning.js"></script><![endif]-->
+
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+      <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
+    <![endif]-->
+  </head>
+
+  <body>
+
+
+    <div class="container">
+    	<div class="logo">
+	    	<img src="assets/img/logo.png" width="100" alt="logo">
+    	</div>
+		<div class="row centered">
+			<div class="col-lg-8 col-lg-offset-2 w">
+				<h1>OUT<br/>Come out with us</h1>
+			</div>
+		</div>
+		<div class="row centered">
+			<div class="col-lg-8 col-lg-offset-2 w tooltip-demo">
+				
+				<a data-toggle="tooltip" title="Facebook"  href="https://www.facebook.com/Out.in.fields" ><i class="fa fa-facebook"></i></a>
+				<a data-toggle="tooltip" title="Outdoor gears for rent"><i class="fa fa-briefcase"></i></a>
+				<a data-toggle="tooltip" title="About us"><i class="fa fa-user"></i></a>
+				<a data-toggle="tooltip" title="Videos"><i class="fa fa-camera"></i></a>
+				<a data-toggle="tooltip" title="Email Us!""><i class="fa fa-envelope"></i></a>
+				<a data-toggle="tooltip" title="OUT Stories"><i class="fa fa-coffee"></i></a>
+			</div>
+		</div>
+    </div><!-- /.container -->
+    
+    <div class="container">
+    	<div class="row w centered">
+    		<br>		
+    		<div class="col-lg-6 col-lg-offset-3">
+    			<p>"I felt my lungs inflate with the onrush of scenery - air, mountains, trees, people. I thought this is what it is to be happy."</p>
+    		</div>
+    	</div>
+    </div>
+
+
+    <!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="https://code.jquery.com/jquery-1.10.2.min.js"></script>
+    <script src="assets/js/bootstrap.min.js"></script>
+
+    <script>
+    $('.tooltip-demo').tooltip({
+      selector: "[data-toggle=tooltip]",
+      container: "body"
+    })
+	</script>
+
+
+    <!--BACKSTRETCH-->
+    <!-- You can use an image of whatever size. This script will stretch to fit in any screen size.-->
+    <script type="text/javascript" src="assets/js/jquery.backstretch.min.js"></script>
+    <script>
+        $.backstretch("assets/img/bg.jpg", {speed: 500});
+    </script>
+
+  </body>
+</html>
