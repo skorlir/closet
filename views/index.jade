@@ -38,28 +38,15 @@ head
   body
     //
       Large modal 
-    .modal.fade.mailing-list-modal-lg(tabindex='-1', role='dialog', aria-labelledby='myLargeModalLabel', aria-hidden='true')
-      .modal-dialog.modal-lg
-        .modal-content#mc_embed_signup
-          .modal-header
-            button.close(type='button', data-dismiss='modal', aria-hidden='true') ×
-            h4.modal-title(style="font-size: 150%") Subscribe for Updates!
-          .modal-body
-                //
-                  Begin MailChimp Signup Form 
-                form#mc-embedded-subscribe-form.validate(action='http://herokuapp.us8.list-manage1.com/subscribe/post?u=14b0b0e0a73a3857153980900&id=ea3be0eb05', method='post', name='mc-embedded-subscribe-form', target='_blank', novalidate='novalidate')
-                  label(for='mce-EMAIL') Subscribe for updates
-                  input.email(type='email', value='', name='EMAIL', placeholder='email address', required='required')
-                  //
-                    real people should not fill this in and expect good things - do not remove this or risk form bot signups
-                  div(style='position: absolute; left: -5000px;')
-                    input(type='text', name='b_14b0b0e0a73a3857153980900_ea3be0eb05', value='')
-                  .clear
-                  //
-                    End mc_embed_signup
-          .modal-footer
-            button.btn.btn-default(type='button', data-dismiss='modal') Close
-            input#mc-embedded-subscribe.btn.btn-primary(value='Subscribe', name='subscribe', data-dismiss='modal', style="border: 1px solid transparent")
+      .modal.fade.mailing-list-modal-lg(tabindex='-1', role='dialog', aria-labelledby='myLargeModalLabel', aria-hidden='true')
+        .modal-dialog.modal-lg
+          .modal-content#mc_embed_signup
+            .modal-header
+              button.close(type='button', data-dismiss='modal', aria-hidden='true') ×
+              h4.modal-title(style="font-size: 150%") Subscribe for Updates!
+            .modal-body
+            .modal-footer
+              button.btn.btn-default(type='button', data-dismiss='modal') Close
 
     .container(style="background: rgba(255,255,255,0.5)")
       .logo
@@ -71,13 +58,26 @@ head
             br
             | come outdoors with us
       .row.centered
+        //
+          Begin MailChimp Signup Form 
+        form#mc-embedded-subscribe-form.validate(action='http://herokuapp.us8.list-manage1.com/subscribe/post?u=14b0b0e0a73a3857153980900&id=ea3be0eb05', method='post', name='mc-embedded-subscribe-form', target='_blank', novalidate='novalidate' style="margin-top: 50px;")
+          label(for='mce-EMAIL') Subscribe for updates &nbsp;&nbsp;&nbsp;&nbsp;
+          input.email(type='email', value='', name='EMAIL', placeholder='email address', required='required')
+          //
+            real people should not fill this in and expect good things - do not remove this or risk form bot signups
+          div(style='position: absolute; left: -5000px;')
+            input(type='text', name='b_14b0b0e0a73a3857153980900_ea3be0eb05', value='')
+          .clear
+            input#mc-embedded-subscribe.btn.btn-warning(value='Subscribe', name='subscribe', data-dismiss='modal', style="border: 1px solid transparent; margin-top: 10px")
+          //
+            End mc_embed_signup
         .col-lg-8.col-lg-offset-2.w.tooltip-demo
           a(data-tooltip='tooltip', title='Facebook', href='https://www.facebook.com/Out.in.fields')
             i.fa.fa-facebook
           //a(data-toggle='tooltip', title='Outdoor gear for rent')
             i.fa.fa-briefcase
-          a(data-tooltip='tooltip', id="subscribeLink", title='Subscribe for more info!', data-toggle='modal', data-target='.mailing-list-modal-lg', href='javascript:void(0)')
-            i.fa.fa-user
+            a(data-tooltip='tooltip', id="subscribeLink", title='Subscribe for more info!', data-toggle='modal', data-target='.mailing-list-modal-lg', href='javascript:void(0)')
+              i.fa.fa-user
           a(data-tooltip='tooltip', title='Videos (Coming soon!)')
             i.fa.fa-camera
           a(data-tooltip='tooltip', title='Email Us!' href="mailto:nuventioncloset@gmail.com")
