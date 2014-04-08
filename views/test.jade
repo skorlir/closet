@@ -1,0 +1,41 @@
+extends layout
+
+block content
+  include top
+  script(type='text/javascript', src='https://cdn.firebase.com/js/simple-login/1.3.2/firebase-simple-login.js')    
+  script(type='text/javascript', src='https://cdn.firebase.com/js/client/1.0.11/firebase.js')
+  button#fbLogin Login to Facebook
+  button#logout.hide Log out
+  
+  script.
+    var firebase = new Firebase('https://sweltering-fire-110.firebaseio.com');
+    
+    var fbLogin = $('#fbLogin');
+    var logout = $('#logout');
+    var userHeader = $('#loggedInData');
+    var auth = new FirebaseSimpleLogin(firebase, function(error, user) {
+      if(user.provider == 'facebook') {
+        //user.uid provides provider and fbuid
+        //user.accessToken
+        //user.displayName
+        userHeader.find('h3').text(user.displayName);
+        userHeader.find('img.profile').attr('src', 'http://graph.facebook.com/'+user.id+'/picture?type=small');
+        userHeader.removeClass('hide').show();
+        fbLogin.hide();
+        logout.removeClass('hide').show();
+      }
+    });
+    
+    fbLogin.click(function() {
+      auth.login('facebook', {
+        rememberMe: true,
+        scope: 'email, publish_actions'
+      });
+    });
+    
+    logout.click(function() {
+      auth.logout();
+      fbLogin.show();
+      logout.hide();
+      userHeader.hide();
+    });

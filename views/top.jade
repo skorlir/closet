@@ -1,17 +1,12 @@
 header
-	a(href='/profile')
-		if(user)
-			img.profile(src=user.profilePicture)
-			h3=user.name.first
+	#loggedInData(class='hide')
+		img.profile
+		h3
 	a(href='/')
-		span.centeredLogo Out Side
-	button.searchButton Search
-	input(type='search', placeholder='search for a user', name='searchField')
+		span.centeredLogo Out
 nav
 	ul
-		li#my-hobbies
-			h3 MY HOBBIES
 		li#my-closet
-			h3 MY CLOSET
+			h3 ACTIVITY
 		li#explore
-			h3 EXPLORE
+			h3 MARKETPLACE
