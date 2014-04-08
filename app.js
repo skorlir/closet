@@ -52,6 +52,7 @@ app.use(app.router);
 
 //declare routing
 app.get('/', routes.index);
+app.get('/test', httpAuth, routes.test);
 
 //start listening
 http.createServer(app).listen(app.get('port'), function() {
