@@ -2,27 +2,73 @@ extends layout
 
 block content
   include top
-  script(type='text/javascript', src='https://cdn.firebase.com/js/simple-login/1.3.2/firebase-simple-login.js')    
+  script(type='text/javascript', src='https://cdn.firebase.com/js/simple-login/1.3.2/firebase-simple-login.js')
   script(type='text/javascript', src='https://cdn.firebase.com/js/client/1.0.11/firebase.js')
+  script.
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+      })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+    ga('create', 'UA-49584452-1', 'closet-landing-page.herokuapp.com');
+    ga('send', 'pageview');
+  
+  
   button#fbLogin Login to Facebook
   button#logout.hide Log out
   
+  
   script.
+    //firebase session script
     var firebase = new Firebase('https://sweltering-fire-110.firebaseio.com');
     
     var fbLogin = $('#fbLogin');
     var logout = $('#logout');
     var userHeader = $('#loggedInData');
     var auth = new FirebaseSimpleLogin(firebase, function(error, user) {
-      if(user.provider == 'facebook') {
-        //user.uid provides provider and fbuid
-        //user.accessToken
-        //user.displayName
-        userHeader.find('h3').text(user.displayName);
-        userHeader.find('img.profile').attr('src', 'http://graph.facebook.com/'+user.id+'/picture?type=small');
-        userHeader.removeClass('hide').show();
-        fbLogin.hide();
-        logout.removeClass('hide').show();
+      if(error) console.log(error);
+      else {
+        if(user) {
+          var userData = firebase.child('users/' + user.uid);
+          userData.on('value', function(snapshot) {
+            if(snapshot.val() === null) {
+              //user doesn't exist
+              //add new user to database
+              userData.set(user.displayName);
+            }
+          });
+          
+          var userConnections = userData.child('connections');
+          var lastOnline = userData.child('lastOnline');
+          
+          var authenticated = firebase.child('.info/authenticated');
+          var con;
+          authenticated.on('value', function(snap) {
+            if (snap.val() === true) {
+              var UA = navigator.userAgent;
+              var time = Firebase.ServerValue.TIMESTAMP;
+              if(!con) con = userConnections.push({agent: UA, timestamp: time});
+            }
+            if (snap.val() === false) {
+              if(con) {
+                con.remove();
+              }
+              lastOnline.set(Firebase.ServerValue.TIMESTAMP);
+            }
+            console.log(con);
+          });
+          
+          if(user.provider == 'facebook') {
+            //user.uid provides provider and fbuid
+            //user.accessToken
+            //user.displayName
+            userHeader.find('h3').text(user.displayName);
+            userHeader.find('img.profile').attr('src', 'http://graph.facebook.com/'+user.id+'/picture?type=small');
+            userHeader.removeClass('hide').show();
+            fbLogin.hide();
+            logout.removeClass('hide').show();
+          }
+        }
       }
     });
     
@@ -38,4 +84,8 @@ block content
       fbLogin.show();
       logout.hide();
       userHeader.hide();
+      firebase.unauth();
     });
+    
+    window.onunload = function() { firebase.unauth(); }
+
