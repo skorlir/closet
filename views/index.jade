@@ -1,16 +1,107 @@
-extends layout
+doctype html
+html(lang='en')
+head
+    title Come OUTdoors With Us
+    //
+       Bootstrap core CSS 
+    link(href='landing-assets/css/bootstrap.min.css', rel='stylesheet')
+    link(href='landing-assets/css/font-awesome.min.css', rel='stylesheet')
+    //
+       Custom styles for this template 
+    link(href='landing-assets/css/main.css', rel='stylesheet')
+    link(href='http://fonts.googleapis.com/css?family=Oswald:400,300,700', rel='stylesheet', type='text/css')
+    link(href='http://fonts.googleapis.com/css?family=EB+Garamond', rel='stylesheet', type='text/css')    
+    link(href='//cdn-images.mailchimp.com/embedcode/slim-081711.css', rel='stylesheet', type='text/css')
+    style(type='text/css').
+      #mc_embed_signup{background:#fff; clear:left; font:14px Helvetica,Arial,sans-serif; }
+      /* 
+          Add your own MailChimp form style overrides in your site stylesheet or in this style block.
+          We recommend moving this block and the preceding CSS link to the HEAD of your HTML file. */
+    //
+       Just for debugging purposes. Don't actually copy this line! 
+    //if lt IE 9
+      script(src='../../docs-assets/js/ie8-responsive-file-warning.js')
+    //
+       HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries 
+    //if lt IE 9
+      script(src='https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js')
+      script(src='https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js')
+  body
+    //
+      Large modal 
+    .modal.fade.mailing-list-modal-lg(tabindex='-1', role='dialog', aria-labelledby='myLargeModalLabel', aria-hidden='true')
+      .modal-dialog.modal-lg
+        .modal-content#mc_embed_signup
+          .modal-header
+            button.close(type='button', data-dismiss='modal', aria-hidden='true') ×
+            h4.modal-title(style="font-size: 150%") Subscribe for Updates!
+          .modal-body
+                //
+                  Begin MailChimp Signup Form 
+                form#mc-embedded-subscribe-form.validate(action='http://herokuapp.us8.list-manage1.com/subscribe/post?u=14b0b0e0a73a3857153980900&id=ea3be0eb05', method='post', name='mc-embedded-subscribe-form', target='_blank', novalidate='novalidate')
+                  label(for='mce-EMAIL') Subscribe for updates
+                  input.email(type='email', value='', name='EMAIL', placeholder='email address', required='required')
+                  //
+                    real people should not fill this in and expect good things - do not remove this or risk form bot signups
+                  div(style='position: absolute; left: -5000px;')
+                    input(type='text', name='b_14b0b0e0a73a3857153980900_ea3be0eb05', value='')
+                  .clear
+                  //
+                    End mc_embed_signup
+          .modal-footer
+            button.btn.btn-default(type='button', data-dismiss='modal') Close
+            input#mc-embedded-subscribe.btn.btn-primary(value='Subscribe', name='subscribe', data-dismiss='modal', style="border: 1px solid transparent")
 
-block content
-	link(href="./stylesheets/landing.css" rel="stylesheet" type="text/css")
-	body.landing
-	h1 Closet
-	div.banner
-		div.form--vertically-centered
-			p.heavyShadow Meet Hobbyists, join hobbies, and explore the marketplace.
-			
-			input.subscribe(type='text' placeholder='email' required)
-			input.subscribe(type='password' placeholder='password' required)
-			p#add-msg(style="margin: 0; display: none") Logging you in...
-			button.button--3d Open your Closet
-		
-	script(src='./script/index.js')
+    .container(style="background: rgba(255,255,255,0.5)")
+      .logo
+        img(src='landing-assets/img/logo.png', width='100', alt='logo')
+      .row.centered
+        .col-lg-8.col-lg-offset-2.w
+          h1
+            | OUT
+            br
+            | come outdoors with us
+      .row.centered
+        .col-lg-8.col-lg-offset-2.w.tooltip-demo
+          a(data-tooltip='tooltip', title='Facebook', href='https://www.facebook.com/Out.in.fields')
+            i.fa.fa-facebook
+          //a(data-toggle='tooltip', title='Outdoor gear for rent')
+            i.fa.fa-briefcase
+          a(data-tooltip='tooltip', id="subscribeLink", title='Subscribe for more info!', data-toggle='modal', data-target='.mailing-list-modal-lg', href='javascript:void(0)')
+            i.fa.fa-user
+          a(data-tooltip='tooltip', title='Videos (Coming soon!)')
+            i.fa.fa-camera
+          a(data-tooltip='tooltip', title='Email Us!' href="mailto:nuventioncloset@gmail.com")
+            i.fa.fa-envelope
+          a(data-tooltip='tooltip', title='OUT Stories (Coming soon!)')
+            i.fa.fa-coffee
+    //
+       /.container 
+    .container(style="background: rgba(255,255,255,0.5)")
+      .row.w.centered
+        br
+        .col-lg-6.col-lg-offset-3
+          p
+            | "I felt my lungs inflate with the onrush of scenery - air, mountains, trees, people. I thought this is what it is to be happy."
+    //
+       Bootstrap core JavaScript
+          ================================================== 
+    //
+       Placed at the end of the document so the pages load faster 
+    script(src='https://code.jquery.com/jquery-1.10.2.min.js')
+    script(src='landing-assets/js/bootstrap.min.js')
+    script.
+      $('.tooltip-demo').tooltip({
+        selector: "[data-tooltip=tooltip]",
+        container: "body"
+      });
+      $('#mc-embedded-subscribe').click(function() {
+        $('#mc-embedded-subscribe-form').submit();
+      });
+    //
+      BACKSTRETCH
+    //
+       You can use an image of whatever size. This script will stretch to fit in any screen size.
+    script(type='text/javascript', src='landing-assets/js/jquery.backstretch.min.js')
+    script.
+      $.backstretch("landing-assets/img/demo_bg.jpg", {speed: 500});
