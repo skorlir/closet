@@ -1,7 +1,7 @@
 doctype html
 html(lang='en')
 head
-    title Come OUTdoors With Us
+    title OUTROVERT
     //
        Bootstrap core CSS 
     link(href='landing-assets/css/bootstrap.min.css', rel='stylesheet')
@@ -48,20 +48,20 @@ head
             .modal-footer
               button.btn.btn-default(type='button', data-dismiss='modal') Close
 
-    .container(style="background: rgba(255,255,255,0.5)")
+    .container
       .logo
         img(src='landing-assets/img/logo.png', width='100', alt='logo')
       .row.centered
         .col-lg-8.col-lg-offset-2.w
           h1
-            | OUT
+            | OUTROVERT
             br
           h2
             | a scenic route to outdoor gear rental
       .row.centered
         //
           Begin MailChimp Signup Form 
-        form#mc-embedded-subscribe-form.validate(action='http://herokuapp.us8.list-manage1.com/subscribe/post?u=14b0b0e0a73a3857153980900&id=ea3be0eb05', method='post', name='mc-embedded-subscribe-form', target='_blank', novalidate='novalidate' style="margin-top: 50px;")
+        form#mc-embedded-subscribe-form.validate(action='http://herokuapp.us8.list-manage1.com/subscribe/post?u=14b0b0e0a73a3857153980900&id=ea3be0eb05', method='post', name='mc-embedded-subscribe-form', target='_blank', novalidate='novalidate' style="margin-top: 10px;")
           label(for='mce-EMAIL') Subscribe for updates &nbsp;&nbsp;&nbsp;&nbsp;
           input.email(type='email', value='', name='EMAIL', placeholder='email address', required='required')
           //
@@ -83,16 +83,18 @@ head
             i.fa.fa-camera
           a(data-tooltip='tooltip', title='Email Us!' href="mailto:nuventioncloset@gmail.com")
             i.fa.fa-envelope
-          a(data-tooltip='tooltip', title='OUT Stories (Coming soon!)')
+          a(data-tooltip='tooltip', title='Stories (Coming soon!)')
             i.fa.fa-coffee
+        .col-lg-8.col-lg-offset-2
+          p.quote
+            | "I felt my lungs inflate with the onrush of scenery - air, mountains, trees, people. I thought this is what it is to be happy."
+          p.cite
+            | - Samantha Plath, American Poet
+      
     //
        /.container 
-    .container(style="background: rgba(255,255,255,0.5)")
-      .row.w.centered
-        br
-        .col-lg-6.col-lg-offset-3
-          p
-            | "I felt my lungs inflate with the onrush of scenery - air, mountains, trees, people. I thought this is what it is to be happy."
+    //- .container(style="background: rgba(255,255,255,0.8)")
+      
     //
        Bootstrap core JavaScript
           ================================================== 
@@ -114,4 +116,4 @@ head
        You can use an image of whatever size. This script will stretch to fit in any screen size.
     script(type='text/javascript', src='landing-assets/js/jquery.backstretch.min.js')
     script.
-      $.backstretch("landing-assets/img/demo_bg.jpg", {speed: 500});
+      $.backstretch("landing-assets/img/new_bg.jpg", {speed: 500});
