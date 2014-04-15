@@ -7,7 +7,9 @@
   position: relative;
   top: 0;
   color: white;
-  text-shadow: 0px 0px 5px rgba(0, 0, 0, 0.5);
+  background: #8CCF4B;
+  border: none;
+  /*text-shadow: 0px 0px 5px rgba(0, 0, 0, 0.5);
   font-size: 1.2em;
   border: 1px solid rgba(103, 147, 232, 0.5);
   border-bottom: 1px solid #1670a0;
@@ -16,7 +18,7 @@
   background: -webkit-linear-gradient(#59a8e5 0%, #1d86c6 97%, #7ab3ff 100%);
   background: -moz-linear-gradient(#59a8e5 0%, #1d86c6 97%, #7ab3ff 100%);
   background: -o-linear-gradient(#59a8e5 0%, #1d86c6 97%, #7ab3ff 100%);
-  background: linear-gradient(#59a8e5 0%, #1d86c6 97%, #7ab3ff 100%);
+  background: linear-gradient(#59a8e5 0%, #1d86c6 97%, #7ab3ff 100%);*/
 }
 
 /* line 27, ../../SASS/formElements.scss */
