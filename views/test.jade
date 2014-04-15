@@ -12,25 +12,35 @@ block content
     #loginButtons.col-xs-5
       button#fbLogin.custom-button.pull-right(ng-click='fbLogin()', ng-hide='loggedIn') Login to Facebook
       button#logout.custom-button.pull-right(ng-click='logout()', ng-show='loggedIn') Log out
+      
+  nav.col-md-3.col-sm-2.col-xs-12
+    ul
+      li 
+        a
+          strong Activity Feed
+      li 
+        a Marketplace
+      li 
+        a My Stuff
 
-  .container(ng-controller='activityFeed')
+  .col-md-9.col-sm-10(ng-controller='activityFeed')
 
-    form.col-sm-8.col-sm-offset-2.col-xs-12(ng-submit='publishActivity()')
+    form.col-md-8.col-sm-10.col-xs-12(ng-submit='publishActivity()')
       label Post your most recent excursion!
       textarea.col-xs-12(ng-model='activityForm.message')
       input.button--3d.col-xs-12(type='submit', value='Post')
     
-    .message-preview.col-sm-8.col-sm-offset-2
+    .message-preview.col-md-8.col-sm-10
       img.profile.col-xs-2(src='{{profilePictureM}}', style='max-width: 80px')
       .col-xs-10 {{displayName}}
         small &nbsp;&nbsp;says
         p.col-xs-12(style='margin-top: 5px; border: 1px solid rgba(0,0,0,0.2); padding: 5px; border-radius: 2px;') {{activityForm.message}}
         
-    hr.col-xs-6.col-xs-offset-3(style='margin-top: 20px;')
+    hr.col-xs-6.col-xs-offset-1(style='margin-top: 20px;')
     
     p.col-xs-12.text-center.text-warning {{flashMessage}}
     
-    .activityFeed.col-sm-8.col-sm-offset-2.col-xs-12(ng-repeat='post in feed | orderBy:timestamp', ng-show='{{!!feed.length}}')
+    .activityFeed.col-md-8.col-sm-10.col-xs-12(ng-repeat='post in feed | orderBy:timestamp', ng-show='{{!!feed.length}}')
       .message.col-xs-12
         img.profile.col-xs-2(src='{{post.profilePictureM}}', style='max-width: 80px')
         .col-xs-10 {{post.displayName}}
