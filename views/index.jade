@@ -48,27 +48,27 @@ head
             .modal-footer
               button.btn.btn-default(type='button', data-dismiss='modal') Close
 
-    .container(style="background: rgba(255,255,255,0.5)")
+    .container
       .logo
-        img(src='landing-assets/img/logo.png', width='100', alt='logo')
+        img(src='landing-assets/img/new_logo.png', width='100', alt='logo')
       .row.centered
         .col-lg-8.col-lg-offset-2.w
-          h1
-            | OUTROVERT
-            br
-            | come outdoors with us
+          //- h1
+          //-   | OUTROVERT
+          //-   br
+          h2
+            | swap gear and stories with other outroverts
       .row.centered
         //
           Begin MailChimp Signup Form 
-        form#mc-embedded-subscribe-form.validate(action='http://herokuapp.us8.list-manage1.com/subscribe/post?u=14b0b0e0a73a3857153980900&id=ea3be0eb05', method='post', name='mc-embedded-subscribe-form', target='_blank', novalidate='novalidate' style="margin-top: 50px;")
-          label(for='mce-EMAIL') Subscribe for updates &nbsp;&nbsp;&nbsp;&nbsp;
+        form#mc-embedded-subscribe-form.validate(action='http://herokuapp.us8.list-manage1.com/subscribe/post?u=14b0b0e0a73a3857153980900&id=ea3be0eb05', method='post', name='mc-embedded-subscribe-form', target='_blank', novalidate='novalidate' style="margin-top: 10px;")
           input.email(type='email', value='', name='EMAIL', placeholder='email address', required='required')
           //
             real people should not fill this in and expect good things - do not remove this or risk form bot signups
           div(style='position: absolute; left: -5000px;')
             input(type='text', name='b_14b0b0e0a73a3857153980900_ea3be0eb05', value='')
           .clear
-            input#mc-embedded-subscribe.btn.btn-warning(value='Subscribe', name='subscribe', data-dismiss='modal', style="border: 1px solid transparent; margin-top: 10px")
+            input#mc-embedded-subscribe.btn.btn-warning(value='Subscribe', name='subscribe', data-dismiss='modal')
           //
             End mc_embed_signup
         .col-lg-8.col-lg-offset-2.w.tooltip-demo
@@ -78,20 +78,24 @@ head
             i.fa.fa-briefcase
             a(data-tooltip='tooltip', id="subscribeLink", title='Subscribe for more info!', data-toggle='modal', data-target='.mailing-list-modal-lg', href='javascript:void(0)')
               i.fa.fa-user
-          a(data-tooltip='tooltip', title='Videos (Coming soon!)')
-            i.fa.fa-camera
+          //- a(data-tooltip='tooltip', title='Videos (Coming soon!)')
+          //-   i.fa.fa-camera
+          a(data-tooltip='tooltip', title='Twitter' href="https://twitter.com/OUTrovert")
+            i.fa.fa-twitter
           a(data-tooltip='tooltip', title='Email Us!' href="mailto:nuventioncloset@gmail.com")
             i.fa.fa-envelope
-          a(data-tooltip='tooltip', title='OUT Stories (Coming soon!)')
-            i.fa.fa-coffee
+          //- a(data-tooltip='tooltip', title='Stories (Coming soon!)')
+            //- i.fa.fa-coffee
+        .col-lg-8.col-lg-offset-2
+          p.quote
+            | "I felt my lungs inflate with the onrush of scenery - air, mountains, trees, people. I thought this is what it is to be happy."
+          p.cite
+            | - Samantha Plath, American Poet
+      
     //
        /.container 
-    .container(style="background: rgba(255,255,255,0.5)")
-      .row.w.centered
-        br
-        .col-lg-6.col-lg-offset-3
-          p
-            | "I felt my lungs inflate with the onrush of scenery - air, mountains, trees, people. I thought this is what it is to be happy."
+    //- .container(style="background: rgba(255,255,255,0.8)")
+      
     //
        Bootstrap core JavaScript
           ================================================== 
@@ -113,4 +117,4 @@ head
        You can use an image of whatever size. This script will stretch to fit in any screen size.
     script(type='text/javascript', src='landing-assets/js/jquery.backstretch.min.js')
     script.
-      $.backstretch("landing-assets/img/demo_bg.jpg", {speed: 500});
+      $.backstretch("landing-assets/img/new_bg.jpg", {speed: 500});
