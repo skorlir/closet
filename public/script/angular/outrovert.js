@@ -122,7 +122,7 @@ angular.module('outrovert', ['firebase'])
     session.getUser().then(function(user) {
       if (user === null) $scope.flashMessage = 'Error: Not logged in. Please refresh.';
       else {
-        $scope.activity.$add({user: user.id, textContent: msg, timestamp: db.timestamp(), profilePictureM: $scope.profilePictureM, displayName: $scope.displayName});
+        $scope.activity.$add({user: user.uid, textContent: msg, timestamp: db.timestamp(), profilePictureM: $scope.profilePictureM, displayName: $scope.displayName});
       }
     });
   }

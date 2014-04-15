@@ -131,6 +131,6 @@ body header span.centeredLogo {
   display: inline-block;
 }
 /* line 60, ../../SASS/base.scss */
-body .message-preview {
+body .message-preview, body .message {
   margin-top: 15px;
 }
