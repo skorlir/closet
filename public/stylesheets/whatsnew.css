@@ -8,7 +8,6 @@ body, .head, .logo, .nav {
   padding: 0;
   margin-bottom: 0;
   background: #EEE;
-  border: none;
 }
 
 /* line 15, ../../sass/whatsnew.scss */
@@ -71,4 +70,21 @@ h4.profile {
   font-size: 12pt;
   position: absolute;
   right: -55px;
+}
+
+.mainfeed {
+  position: absolute;
+  left: 300px;
+  top: 20px;
+}
+
+#write form, #pic form, .message, .message-preview {
+  padding: 2%;
+  border-radius: 5px;
+  background: #FFF;
+}
+
+#posttabs a {
+  color: #000;
+  font-weight: bold;
 }

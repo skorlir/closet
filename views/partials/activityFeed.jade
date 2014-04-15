@@ -1,0 +1,23 @@
+.col-md-9.col-sm-10
+  form.col-md-8.col-sm-10.col-xs-12(ng-submit='publishActivity()', ng-show='loggedIn')
+    label Post your most recent excursion!
+    textarea.col-xs-12(ng-model='activityForm.message')
+    input.button--3d.col-xs-12(type='submit', value='Post')
+
+  .message-preview.col-md-8.col-sm-10(ng-show='!!activityForm.message')
+    img.profile.col-xs-2(ng-src='{{profilePictureM}}', style='max-width: 80px')
+    .col-xs-10 {{displayName}}
+      small &nbsp;&nbsp;says
+      p.col-xs-12(style='margin-top: 5px; border: 1px solid rgba(0,0,0,0.2); padding: 5px; border-radius: 2px;') {{activityForm.message}}
+
+  hr.col-xs-6.col-xs-offset-1(style='margin-top: 20px;')
+
+  p.col-xs-12.text-center.text-warning {{flashMessage}}
+
+  .activityFeed.col-md-8.col-sm-10.col-xs-12(ng-repeat='post in feed | orderBy:timestamp', ng-show='{{!!feed.length}}')
+    .message.col-xs-12
+      img.profile.col-xs-2(ng-src='{{post.profilePictureM}}', style='max-width: 80px')
+      .col-xs-10 {{post.displayName}}
+        small &nbsp;&nbsp; says
+        p.pull-right {{Date(post.timestamp).toLocaleDateString()}}
+        .col-xs-12(style='margin-top: 5px; border: 1px solid rgba(0,0,0,0.2); padding: 5px; border-radius: 2px;') {{post.textContent}}
