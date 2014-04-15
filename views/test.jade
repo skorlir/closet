@@ -25,7 +25,7 @@ block content
 
   .col-md-9.col-sm-10(ng-controller='activityFeed')
 
-    form.col-md-8.col-sm-10.col-xs-12(ng-submit='publishActivity()')
+    form.col-md-8.col-sm-10.col-xs-12(ng-submit='publishActivity()', ng-show='loggedIn')
       label Post your most recent excursion!
       textarea.col-xs-12(ng-model='activityForm.message')
       input.button--3d.col-xs-12(type='submit', value='Post')
