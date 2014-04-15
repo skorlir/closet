@@ -105,6 +105,7 @@ angular.module('outrovert', ['firebase'])
 }])
 
 .controller('activityFeed', ['$firebase', '$scope', 'sessionService', '$window', '$http', 'firebaseService', function($firebase, $scope, session, $window, $http, db) {
+  
   $scope.activity = db.get$firebase().$child('/activity');
   $scope.feed = [];
   

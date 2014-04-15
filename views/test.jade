@@ -5,7 +5,7 @@ block content
   header.col-xs-12(ng-controller='base')
     #loggedInData.col-xs-7
       .group(ng-show='loggedIn')
-        img.profile.pull-left(src='{{profilePicture}}')
+        img.profile.pull-left(ng-src='{{profilePicture}}')
         h4.col-xs-6.pull-left {{displayName}}
       span.col-xs-3.centeredLogo.pull-right Outrovert
     
@@ -30,8 +30,8 @@ block content
       textarea.col-xs-12(ng-model='activityForm.message')
       input.button--3d.col-xs-12(type='submit', value='Post')
     
-    .message-preview.col-md-8.col-sm-10
-      img.profile.col-xs-2(src='{{profilePictureM}}', style='max-width: 80px')
+    .message-preview.col-md-8.col-sm-10(ng-show='!!activityForm.message')
+      img.profile.col-xs-2(ng-src='{{profilePictureM}}', style='max-width: 80px')
       .col-xs-10 {{displayName}}
         small &nbsp;&nbsp;says
         p.col-xs-12(style='margin-top: 5px; border: 1px solid rgba(0,0,0,0.2); padding: 5px; border-radius: 2px;') {{activityForm.message}}
@@ -42,7 +42,7 @@ block content
     
     .activityFeed.col-md-8.col-sm-10.col-xs-12(ng-repeat='post in feed | orderBy:timestamp', ng-show='{{!!feed.length}}')
       .message.col-xs-12
-        img.profile.col-xs-2(src='{{post.profilePictureM}}', style='max-width: 80px')
+        img.profile.col-xs-2(ng-src='{{post.profilePictureM}}', style='max-width: 80px')
         .col-xs-10 {{post.displayName}}
           small &nbsp;&nbsp; says
           p.pull-right {{Date(post.timestamp).toLocaleDateString()}}
