@@ -1,4 +1,15 @@
-angular.module('outrovert', ['firebase'])
+var router = function($routeProvider) {
+  $routeProvider.when('/', {
+    templateUrl: '/partials/activityFeed',
+    controller: 'activityFeed'
+  });
+  $routeProvider.when('/marketplace', {
+    templateUrl: '/partials/marketplace',
+    controller: 'marketplace'
+  });
+}
+
+angular.module('outrovert', ['firebase', 'ngRoute'], router)
 .factory('firebaseService', ['$firebase', function($firebase) {
   var root = new Firebase('https://sweltering-fire-110.firebaseio.com');
   var firebase = $firebase(root);
@@ -104,7 +115,10 @@ angular.module('outrovert', ['firebase'])
 
 }])
 
-.controller('activityFeed', ['$firebase', '$scope', 'sessionService', '$window', '$http', 'firebaseService', function($firebase, $scope, session, $window, $http, db) {
+.controller('activityFeed', ['$scope', 'sessionService', '$window', '$http', 'firebaseService', function($scope, session, $window, $http, db) {
+  
+  $scope.activityForm = {};
+  $scope.activityForm.message = '';
   
   $scope.activity = db.get$firebase().$child('/activity');
   $scope.feed = [];
@@ -122,9 +136,12 @@ angular.module('outrovert', ['firebase'])
     session.getUser().then(function(user) {
       if (user === null) $scope.flashMessage = 'Error: Not logged in. Please refresh.';
       else {
-        $scope.activity.$add({user: user.id, textContent: msg, timestamp: db.timestamp(), profilePictureM: $scope.profilePictureM, displayName: $scope.displayName});
+        $scope.activity.$add({user: user.uid, textContent: msg, timestamp: db.timestamp(), profilePictureM: $scope.profilePictureM, displayName: $scope.displayName});
       }
     });
   }
+}])
+
+.controller('marketplace', ['$scope', 'sessionService', '$window', '$http', 'firebaseService', function($scope, session, $window, $http, db) {
   
 }]);

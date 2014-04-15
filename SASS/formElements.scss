@@ -35,7 +35,7 @@
 
 	@include border-radius(3px);
 
-	@include single-transition(all, 0.3s, ease);
+	@include single-transition(all, 0.15s, ease);
 
 	&:hover {
 		@include box-shadow(
