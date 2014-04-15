@@ -1,99 +1,77 @@
-/* line 3, ../../SASS/formElements.sass */
-.form--vertically-centered {
-  display: table-cell;
-  vertical-align: middle;
-}
+/*
+Syntax error: Undefined mixin 'background'.
+        on line 24 of c:/users/j/documents/NUvention-closet-app/SASS/formElements.scss, in `background'
+        from line 24 of c:/users/j/documents/NUvention-closet-app/SASS/formElements.scss
 
-/* line 7, ../../SASS/formElements.sass */
-input, button, textarea {
-  margin: 15px 0;
-}
-/* line 9, ../../SASS/formElements.sass */
-input:focus, button:focus, textarea:focus {
-  outline: none;
-}
-
-/* line 12, ../../SASS/formElements.sass */
-input {
-  font-size: inherit;
-  font-family: inherit;
-  text-align: center;
-  margin: 10px auto 50px auto;
-  padding: 5px 15px;
-  display: block;
-  background: rgba(255, 255, 255, 0.85);
-  -webkit-box-shadow: inset 0px 1px 2px rgba(0, 0, 0, 0.2), 0px 2px 2px rgba(20, 20, 100, 0.2);
-  -moz-box-shadow: inset 0px 1px 2px rgba(0, 0, 0, 0.2), 0px 2px 2px rgba(20, 20, 100, 0.2);
-  box-shadow: inset 0px 1px 2px rgba(0, 0, 0, 0.2), 0px 2px 2px rgba(20, 20, 100, 0.2);
-  -webkit-border-radius: 5px;
-  -moz-border-radius: 5px;
-  -ms-border-radius: 5px;
-  -o-border-radius: 5px;
-  border-radius: 5px;
-  border-width: thin;
-}
-/* line 31, ../../SASS/formElements.sass */
-input:focus {
-  outline: none;
-  background-color: white;
-}
-
-/* line 37, ../../SASS/formElements.sass */
-::-webkit-input-placeholder {
-  color: rgba(0, 0, 0, 0.55);
-}
-
-/* line 40, ../../SASS/formElements.sass */
-::-moz-placeholder {
-  color: rgba(0, 0, 0, 0.55);
-}
-
-/* line 43, ../../SASS/formElements.sass */
-input[type="button"], .button, .button--3d {
-  display: block;
-  margin: 1% auto;
-  padding: 10px 2%;
-  position: relative;
-  top: 0;
-  color: white;
-  text-shadow: 0px 0px 5px rgba(0, 0, 0, 0.5);
-  font-size: 1.2em;
-  border: 1px solid rgba(103, 147, 232, 0.5);
-  border-bottom: 1px solid #1670a0;
-  border-top: none;
-  background: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #59a8e5), color-stop(97%, #1d86c6), color-stop(100%, #7ab3ff));
-  background: -webkit-linear-gradient(#59a8e5 0%, #1d86c6 97%, #7ab3ff 100%);
-  background: -moz-linear-gradient(#59a8e5 0%, #1d86c6 97%, #7ab3ff 100%);
-  background: -o-linear-gradient(#59a8e5 0%, #1d86c6 97%, #7ab3ff 100%);
-  background: linear-gradient(#59a8e5 0%, #1d86c6 97%, #7ab3ff 100%);
-}
-
-/* line 62, ../../SASS/formElements.sass */
-.button--3d {
-  -webkit-box-shadow: inset 1px 1px rgba(20, 20, 100, 0.55), inset -1px -1px rgba(20, 20, 100, 0.55), 0px 10px #1374a8, 0px 15px 12px -3px black;
-  -moz-box-shadow: inset 1px 1px rgba(20, 20, 100, 0.55), inset -1px -1px rgba(20, 20, 100, 0.55), 0px 10px #1374a8, 0px 15px 12px -3px black;
-  box-shadow: inset 1px 1px rgba(20, 20, 100, 0.55), inset -1px -1px rgba(20, 20, 100, 0.55), 0px 10px #1374a8, 0px 15px 12px -3px black;
-  -webkit-border-radius: 3px;
-  -moz-border-radius: 3px;
-  -ms-border-radius: 3px;
-  -o-border-radius: 3px;
-  border-radius: 3px;
-  -webkit-transition: all 0.3s ease;
-  -moz-transition: all 0.3s ease;
-  -o-transition: all 0.3s ease;
-  transition: all 0.3s ease;
-}
-/* line 71, ../../SASS/formElements.sass */
-.button--3d:hover {
-  -webkit-box-shadow: inset 1px 1px rgba(20, 20, 100, 0.55), inset -1px -1px rgba(20, 20, 100, 0.55), 0px 13px #0e6491, 0px 15px 12px -3px black;
-  -moz-box-shadow: inset 1px 1px rgba(20, 20, 100, 0.55), inset -1px -1px rgba(20, 20, 100, 0.55), 0px 13px #0e6491, 0px 15px 12px -3px black;
-  box-shadow: inset 1px 1px rgba(20, 20, 100, 0.55), inset -1px -1px rgba(20, 20, 100, 0.55), 0px 13px #0e6491, 0px 15px 12px -3px black;
-  top: -3px;
-}
-/* line 75, ../../SASS/formElements.sass */
-.button--3d:active {
-  -webkit-box-shadow: inset 1px 1px rgba(20, 20, 100, 0.55), inset -1px -1px rgba(20, 20, 100, 0.55), 0px 0px #10618d;
-  -moz-box-shadow: inset 1px 1px rgba(20, 20, 100, 0.55), inset -1px -1px rgba(20, 20, 100, 0.55), 0px 0px #10618d;
-  box-shadow: inset 1px 1px rgba(20, 20, 100, 0.55), inset -1px -1px rgba(20, 20, 100, 0.55), 0px 0px #10618d;
-  top: 10px;
-}
+Backtrace:
+c:/users/j/documents/NUvention-closet-app/SASS/formElements.scss:24:in `background'
+c:/users/j/documents/NUvention-closet-app/SASS/formElements.scss:24
+c:/Ruby200/lib/ruby/gems/2.0.0/gems/sass-3.2.9/lib/sass/tree/visitors/perform.rb:253:in `visit_mixin'
+c:/Ruby200/lib/ruby/gems/2.0.0/gems/sass-3.2.9/lib/sass/tree/visitors/base.rb:37:in `visit'
+c:/Ruby200/lib/ruby/gems/2.0.0/gems/sass-3.2.9/lib/sass/tree/visitors/perform.rb:100:in `visit'
+c:/Ruby200/lib/ruby/gems/2.0.0/gems/sass-3.2.9/lib/sass/tree/visitors/base.rb:53:in `block in visit_children'
+c:/Ruby200/lib/ruby/gems/2.0.0/gems/sass-3.2.9/lib/sass/tree/visitors/base.rb:53:in `map'
+c:/Ruby200/lib/ruby/gems/2.0.0/gems/sass-3.2.9/lib/sass/tree/visitors/base.rb:53:in `visit_children'
+c:/Ruby200/lib/ruby/gems/2.0.0/gems/sass-3.2.9/lib/sass/tree/visitors/perform.rb:109:in `block in visit_children'
+c:/Ruby200/lib/ruby/gems/2.0.0/gems/sass-3.2.9/lib/sass/tree/visitors/perform.rb:121:in `with_environment'
+c:/Ruby200/lib/ruby/gems/2.0.0/gems/sass-3.2.9/lib/sass/tree/visitors/perform.rb:108:in `visit_children'
+c:/Ruby200/lib/ruby/gems/2.0.0/gems/sass-3.2.9/lib/sass/tree/visitors/base.rb:37:in `block in visit'
+c:/Ruby200/lib/ruby/gems/2.0.0/gems/sass-3.2.9/lib/sass/tree/visitors/perform.rb:320:in `visit_rule'
+c:/Ruby200/lib/ruby/gems/2.0.0/gems/sass-3.2.9/lib/sass/tree/visitors/base.rb:37:in `visit'
+c:/Ruby200/lib/ruby/gems/2.0.0/gems/sass-3.2.9/lib/sass/tree/visitors/perform.rb:100:in `visit'
+c:/Ruby200/lib/ruby/gems/2.0.0/gems/sass-3.2.9/lib/sass/tree/visitors/base.rb:53:in `block in visit_children'
+c:/Ruby200/lib/ruby/gems/2.0.0/gems/sass-3.2.9/lib/sass/tree/visitors/base.rb:53:in `map'
+c:/Ruby200/lib/ruby/gems/2.0.0/gems/sass-3.2.9/lib/sass/tree/visitors/base.rb:53:in `visit_children'
+c:/Ruby200/lib/ruby/gems/2.0.0/gems/sass-3.2.9/lib/sass/tree/visitors/perform.rb:109:in `block in visit_children'
+c:/Ruby200/lib/ruby/gems/2.0.0/gems/sass-3.2.9/lib/sass/tree/visitors/perform.rb:121:in `with_environment'
+c:/Ruby200/lib/ruby/gems/2.0.0/gems/sass-3.2.9/lib/sass/tree/visitors/perform.rb:108:in `visit_children'
+c:/Ruby200/lib/ruby/gems/2.0.0/gems/sass-3.2.9/lib/sass/tree/visitors/base.rb:37:in `block in visit'
+c:/Ruby200/lib/ruby/gems/2.0.0/gems/sass-3.2.9/lib/sass/tree/visitors/perform.rb:128:in `visit_root'
+c:/Ruby200/lib/ruby/gems/2.0.0/gems/sass-3.2.9/lib/sass/tree/visitors/base.rb:37:in `visit'
+c:/Ruby200/lib/ruby/gems/2.0.0/gems/sass-3.2.9/lib/sass/tree/visitors/perform.rb:100:in `visit'
+c:/Ruby200/lib/ruby/gems/2.0.0/gems/sass-3.2.9/lib/sass/tree/visitors/perform.rb:7:in `visit'
+c:/Ruby200/lib/ruby/gems/2.0.0/gems/sass-3.2.9/lib/sass/tree/root_node.rb:20:in `render'
+c:/Ruby200/lib/ruby/gems/2.0.0/gems/sass-3.2.9/lib/sass/engine.rb:315:in `_render'
+c:/Ruby200/lib/ruby/gems/2.0.0/gems/sass-3.2.9/lib/sass/engine.rb:262:in `render'
+c:/Ruby200/lib/ruby/gems/2.0.0/gems/compass-0.12.2/lib/compass/compiler.rb:140:in `block (2 levels) in compile'
+c:/Ruby200/lib/ruby/gems/2.0.0/gems/compass-0.12.2/lib/compass/compiler.rb:126:in `timed'
+c:/Ruby200/lib/ruby/gems/2.0.0/gems/compass-0.12.2/lib/compass/compiler.rb:139:in `block in compile'
+c:/Ruby200/lib/ruby/gems/2.0.0/gems/compass-0.12.2/lib/compass/logger.rb:45:in `red'
+c:/Ruby200/lib/ruby/gems/2.0.0/gems/compass-0.12.2/lib/compass/compiler.rb:138:in `compile'
+c:/Ruby200/lib/ruby/gems/2.0.0/gems/compass-0.12.2/lib/compass/compiler.rb:118:in `compile_if_required'
+c:/Ruby200/lib/ruby/gems/2.0.0/gems/compass-0.12.2/lib/compass/compiler.rb:103:in `block (2 levels) in run'
+c:/Ruby200/lib/ruby/gems/2.0.0/gems/compass-0.12.2/lib/compass/compiler.rb:101:in `each'
+c:/Ruby200/lib/ruby/gems/2.0.0/gems/compass-0.12.2/lib/compass/compiler.rb:101:in `block in run'
+c:/Ruby200/lib/ruby/gems/2.0.0/gems/compass-0.12.2/lib/compass/compiler.rb:126:in `timed'
+c:/Ruby200/lib/ruby/gems/2.0.0/gems/compass-0.12.2/lib/compass/compiler.rb:100:in `run'
+c:/Ruby200/lib/ruby/gems/2.0.0/gems/compass-0.12.2/lib/compass/commands/watch_project.rb:147:in `recompile'
+c:/Ruby200/lib/ruby/gems/2.0.0/gems/fssm-0.2.10/lib/fssm/path.rb:73:in `call'
+c:/Ruby200/lib/ruby/gems/2.0.0/gems/fssm-0.2.10/lib/fssm/path.rb:73:in `run_callback'
+c:/Ruby200/lib/ruby/gems/2.0.0/gems/fssm-0.2.10/lib/fssm/path.rb:55:in `callback_action'
+c:/Ruby200/lib/ruby/gems/2.0.0/gems/fssm-0.2.10/lib/fssm/path.rb:35:in `update'
+c:/Ruby200/lib/ruby/gems/2.0.0/gems/fssm-0.2.10/lib/fssm/state/directory.rb:39:in `block in modified'
+c:/Ruby200/lib/ruby/gems/2.0.0/gems/fssm-0.2.10/lib/fssm/state/directory.rb:37:in `each'
+c:/Ruby200/lib/ruby/gems/2.0.0/gems/fssm-0.2.10/lib/fssm/state/directory.rb:37:in `modified'
+c:/Ruby200/lib/ruby/gems/2.0.0/gems/fssm-0.2.10/lib/fssm/state/directory.rb:18:in `refresh'
+c:/Ruby200/lib/ruby/gems/2.0.0/gems/fssm-0.2.10/lib/fssm/backends/polling.rb:17:in `block (2 levels) in run'
+c:/Ruby200/lib/ruby/gems/2.0.0/gems/fssm-0.2.10/lib/fssm/backends/polling.rb:17:in `each'
+c:/Ruby200/lib/ruby/gems/2.0.0/gems/fssm-0.2.10/lib/fssm/backends/polling.rb:17:in `block in run'
+c:/Ruby200/lib/ruby/gems/2.0.0/gems/fssm-0.2.10/lib/fssm/backends/polling.rb:15:in `loop'
+c:/Ruby200/lib/ruby/gems/2.0.0/gems/fssm-0.2.10/lib/fssm/backends/polling.rb:15:in `run'
+c:/Ruby200/lib/ruby/gems/2.0.0/gems/fssm-0.2.10/lib/fssm/monitor.rb:26:in `run'
+c:/Ruby200/lib/ruby/gems/2.0.0/gems/fssm-0.2.10/lib/fssm.rb:70:in `monitor'
+c:/Ruby200/lib/ruby/gems/2.0.0/gems/compass-0.12.2/lib/compass/commands/watch_project.rb:87:in `perform'
+c:/Ruby200/lib/ruby/gems/2.0.0/gems/compass-0.12.2/lib/compass/commands/base.rb:18:in `execute'
+c:/Ruby200/lib/ruby/gems/2.0.0/gems/compass-0.12.2/lib/compass/commands/project_base.rb:19:in `execute'
+c:/Ruby200/lib/ruby/gems/2.0.0/gems/compass-0.12.2/lib/compass/exec/sub_command_ui.rb:43:in `perform!'
+c:/Ruby200/lib/ruby/gems/2.0.0/gems/compass-0.12.2/lib/compass/exec/sub_command_ui.rb:15:in `run!'
+c:/Ruby200/lib/ruby/gems/2.0.0/gems/compass-0.12.2/bin/compass:30:in `block in <top (required)>'
+c:/Ruby200/lib/ruby/gems/2.0.0/gems/compass-0.12.2/bin/compass:44:in `call'
+c:/Ruby200/lib/ruby/gems/2.0.0/gems/compass-0.12.2/bin/compass:44:in `<top (required)>'
+c:/Ruby200/bin/compass:23:in `load'
+c:/Ruby200/bin/compass:23:in `<main>'
+*/
+body:before {
+  white-space: pre;
+  font-family: monospace;
+  content: "Syntax error: Undefined mixin 'background'.\A         on line 24 of c:/users/j/documents/NUvention-closet-app/SASS/formElements.scss, in `background'\A         from line 24 of c:/users/j/documents/NUvention-closet-app/SASS/formElements.scss"; }

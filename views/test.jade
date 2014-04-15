@@ -1,89 +1,39 @@
 extends layout
 
-block content
-  include top
-  
-  
-  .main(ng-app='outrovert' ng-controller='activityFeed')
-    button#fbLogin(ng-click='fbLogin()', ng-hide='loggedIn') Login to Facebook
-    button#logout(ng-click='logout()', ng-show='loggedIn') Log out
+block content  
 
-    input(type='text', ng-model='userMessage')
-  
-  
-  script.
-    //firebase session script
-    var firebase = new Firebase('https://sweltering-fire-110.firebaseio.com');
+  header.col-xs-12(ng-controller='base')
+    #loggedInData.col-xs-7
+      .group(ng-show='loggedIn')
+        img.profile.pull-left(src='{{profilePicture}}')
+        h4.col-xs-6.pull-left {{displayName}}
+      span.col-xs-3.centeredLogo.pull-right Outrovert
     
-    var fbLogin = $('#fbLogin');
-    var logout = $('#logout');
-    var userHeader = $('#loggedInData');
-    //var auth = new FirebaseSimpleLogin(firebase, onAuthenticated);
-    
-    //fbLogin.click(function() {
-    //  auth.login('facebook', {
-    //    rememberMe: true,
-    //    scope: 'email, publish_actions'
-    //  });
-    //});
-    
-    //logout.click(function() {
-    //  auth.logout();
-    //  fbLogin.show();
-    //  logout.hide();
-    //  userHeader.hide();
-    //  firebase.unauth();
-    //});
-    
-    window.onunload = function() { firebase.unauth(); }
-    
-    var onAuthenticated = function(error, user) {
-      if(error) console.log(error);
-      else {
-        if(user) {
-          manageSession(user);
-          
-          if(user.provider === 'facebook') {
-            //user.accessToken
-            userHeader.find('h3').text(user.displayName);
-            userHeader.find('img.profile').attr('src', 'http://graph.facebook.com/'+user.id+'/picture?type=small');
-            userHeader.removeClass('hide').show();
-            fbLogin.hide();
-            logout.removeClass('hide').show();
-          }
-        }
-      }
-    }
-    
-    var manageSession = function(user) {
-      var userData = firebase.child('users/' + user.uid);
-      userData.on('value', function(snapshot) {
-        if(snapshot.val() === null) {
-          //user doesn't exist
-          //add new user to database
-          userData.set({displayName: user.displayName});
-        }
-      });
+    #loginButtons.col-xs-5
+      button#fbLogin.custom-button.pull-right(ng-click='fbLogin()', ng-hide='loggedIn') Login to Facebook
+      button#logout.custom-button.pull-right(ng-click='logout()', ng-show='loggedIn') Log out
 
-      var userConnections = userData.child('connections');
-      var lastOnline = userData.child('lastOnline');
+  .container(ng-controller='activityFeed')
 
-      var authenticated = firebase.child('.info/authenticated');
-      var con;
-      authenticated.on('value', function(snap) {
-        if (snap.val() === true) {
-          var UA = navigator.userAgent;
-          var time = Firebase.ServerValue.TIMESTAMP;
-          if(!con) con = userConnections.push({agent: UA, timestamp: time});
-        }
-        if (snap.val() === false) {
-          if(con) {
-            con.remove();
-          }
-          lastOnline.set(Firebase.ServerValue.TIMESTAMP);
-        }
-        console.log(con);
-      });
-    }
-  //import angular stuff after this script
-  script(src='/script/angular/outrovert.js')
+    form.col-sm-8.col-sm-offset-2.col-xs-12(ng-submit='publishActivity()')
+      label Post your most recent excursion!
+      textarea.col-xs-12(ng-model='activityForm.message')
+      input.button--3d.col-xs-12(type='submit', value='Post')
+    
+    .message-preview.col-sm-8.col-sm-offset-2
+      img.profile.col-xs-2(src='{{profilePictureM}}', style='max-width: 80px')
+      .col-xs-10 {{displayName}}
+        small &nbsp;&nbsp;says
+        p.col-xs-12(style='margin-top: 5px; border: 1px solid rgba(0,0,0,0.2); padding: 5px; border-radius: 2px;') {{activityForm.message}}
+        
+    hr.col-xs-6.col-xs-offset-3(style='margin-top: 20px;')
+    
+    p.col-xs-12.text-center.text-warning {{flashMessage}}
+    
+    .activityFeed.col-sm-8.col-sm-offset-2.col-xs-12(ng-repeat='post in feed | orderBy:timestamp', ng-show='{{!!feed.length}}')
+      .message.col-xs-12
+        img.profile.col-xs-2(src='{{post.profilePictureM}}', style='max-width: 80px')
+        .col-xs-10 {{post.displayName}}
+          small &nbsp;&nbsp; says
+          p.pull-right {{Date(post.timestamp).toLocaleDateString()}}
+          .col-xs-12(style='margin-top: 5px; border: 1px solid rgba(0,0,0,0.2); padding: 5px; border-radius: 2px;') {{post.textContent}}
