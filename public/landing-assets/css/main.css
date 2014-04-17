@@ -10,7 +10,7 @@ body {
 }
 
 .container {
-    background: rgba(255,255,255,0.6);
+    background: rgba(255,255,255,0.7);
     margin-top: 2%;
     width: 75%;
 }
@@ -81,10 +81,36 @@ a:after {
 .logo {
 	text-align: center;
 	margin-top: 6%;
+    padding: 0;
 }
 
 .logo img {
-    width: 50%;
+    width: 80%;
+}
+
+.logo .def {
+    background: #FFF;
+    border-radius: 10px;
+    padding: 2%;
+    padding-left: 2.5%;
+    margin-top: 4%;
+    display: none;
+}
+
+.logo p {
+    text-align: left;
+    font-size: 200%;
+    margin: 0;
+    line-height: 100%;
+    vertical-align: top;
+}
+
+.logo .arrow {
+    position: absolute;
+    top: 88px;
+    left: 90px;
+    color: #FFF;
+    font-size: 250%;
 }
 
 .email, .clear {
@@ -92,15 +118,18 @@ a:after {
     display: inline-block;
 }
 
-#mc-embedded-subscribe {
-    font-size: 100%;
-    vertical-align: baseline;
+.email {
+    position: relative;
+    left: 20px;
 }
 
 #mc-embedded-subscribe {
+    font-size: 100%;
+    vertical-align: baseline;
     border: 1px solid transparent;
     margin-top: 10px;
     background-color: #8CCF4B;
+    width: 80%;
 }
 
 h1 {
@@ -132,3 +161,20 @@ i.fa-facebook:focus,
 i.fa-twitter:hover,
 i.fa-twitter:focus {
     color: #7b7b7b;
+}
+
+.scroll-down {
+    padding: 0 19%;
+}
+
+.fa-arrow-down {
+    color: #8CCF4B;
+    display: inline-block;
+    margin: 11% 5%;
+}
+
+.scroll-down h2 {
+    color: #FFF;
+    text-align: center;
+    display: inline-block;
+}
