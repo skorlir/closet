@@ -10,7 +10,7 @@ body {
 }
 
 .container {
-    background: rgba(255,255,255,0.8);
+    background: rgba(255,255,255,0.7);
     margin-top: 2%;
     width: 75%;
 }
@@ -45,7 +45,6 @@ p.cite {
 
 /* Links */
 a {
-    color: #f39c12;
     word-wrap: break-word;
     font-size: 125%;
     -webkit-transition: color 0.1s ease-in, background 0.1s ease-in;
@@ -81,11 +80,56 @@ a:after {
 
 .logo {
 	text-align: center;
-	margin-top: 2%;
+	margin-top: 6%;
+    padding: 0;
 }
 
-label, .email, #mc-embedded-subscribe {
+.logo img {
+    width: 80%;
+}
+
+.logo .def {
+    background: #FFF;
+    border-radius: 10px;
+    padding: 2%;
+    padding-left: 2.5%;
+    margin-top: 4%;
+    display: none;
+}
+
+.logo p {
+    text-align: left;
     font-size: 200%;
+    margin: 0;
+    line-height: 100%;
+    vertical-align: top;
+}
+
+.logo .arrow {
+    position: absolute;
+    top: 88px;
+    left: 90px;
+    color: #FFF;
+    font-size: 250%;
+}
+
+.email, .clear {
+    font-size: 200%;
+    display: inline-block;
+}
+
+.email {
+    position: relative;
+    left: 20px;
+}
+
+#mc-embedded-subscribe {
+    font-size: 100%;
+    vertical-align: baseline;
+    border: 1px solid transparent;
+    margin-top: 10px;
+    background-color: #8CCF4B;
+    width: 80%;
 }
 
 h1 {
@@ -97,9 +141,40 @@ h1 {
     margin-bottom: 2%;
 }
 .w i {
-	font-size: 160%;
+	font-size: 180%;
 	padding: 2%;
 }
 .tooltip {
-    font-size:160%;
+    font-size: 160%;
+}
+
+i.fa-facebook {
+    color: #3B5998;
+}
+
+i.fa-twitter {
+    color: #00aced;
+}
+
+i.fa-facebook:hover,
+i.fa-facebook:focus,
+i.fa-twitter:hover,
+i.fa-twitter:focus {
+    color: #7b7b7b;
+}
+
+.scroll-down {
+    padding: 0 19%;
+}
+
+.fa-arrow-down {
+    color: #8CCF4B;
+    display: inline-block;
+    margin: 11% 5%;
+}
+
+.scroll-down h2 {
+    color: #FFF;
+    text-align: center;
+    display: inline-block;
 }
