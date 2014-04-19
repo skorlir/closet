@@ -126,9 +126,11 @@ angular.module('outrovert', ['firebase', 'ngRoute'], router)
   $scope.activity.$on('child_added', function(postSnap) {
     console.log(postSnap);
     if(postSnap.snapshot.value === null) return;
-    if($.inArray(postSnap.snapshot.value, $scope.feed) > -1) return;
+    //if($.inArray(postSnap.snapshot.value, $scope.feed) > -1) return;
     $scope.feed.unshift(postSnap.snapshot.value);
   });
+  
+  //also what about removed?
   
   $scope.publishActivity = function() {
     var msg = $scope.activityForm.message;
@@ -143,5 +145,22 @@ angular.module('outrovert', ['firebase', 'ngRoute'], router)
 }])
 
 .controller('marketplace', ['$scope', 'sessionService', '$window', '$http', 'firebaseService', function($scope, session, $window, $http, db) {
+  //item.image item.poster.profilePicture item.poster.uid item.price item.description.name item.description.quality item.description.tags item.description.categories item.action item.location
+  
+  $scope.marketdb = db.get$firebase().$child('/marketplace');
+  
+  $scope.marketplace = [];
+  $scope.filterForm  = {};
+  
+  //https://maps.googleapis.com/maps/api/geocode/json?address=Mountain+View,+CA&sensor=true_or_false&key=API_KEY
+  //key - AIzaSyAcDx9pk4zK3vgneoV0Dv-81memVX3TOtM
+  
+  $scope.marketdb.$on('child_added', function(itemSnap) {
+    console.log(itemSnap);
+    if(itemSnap.snapshot.value === null) return;
+    $scope.marketplace.unshift(itemSnap.snapshot.value);
+  });
+  
+  
   
 }]);
