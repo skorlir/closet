@@ -54,10 +54,13 @@ body, .head, .logo, .nav {
 }
 
 #loggedInData {
+	
 	img.profile {
-		padding: 5%;
 		position: absolute;
-		right: -95px;
+		right: -90px;
+		top: 3px;
+		border: 2px inset #888;
+		border-radius: 10px;
 	}
 
 	h4.profile {
@@ -65,4 +68,21 @@ body, .head, .logo, .nav {
 		position: absolute;
 		right: -55px;
 	}
+}
+
+.mainfeed {
+  position: absolute;
+  left: 300px;
+  top: 20px;
+}
+
+#write form, #pic form, .message, .message-preview {
+  padding: 2%;
+  border-radius: 5px;
+  background: #FFF;
+}
+
+#posttabs a {
+  color: #000;
+  font-weight: bold;
 }

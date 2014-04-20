@@ -1,4 +1,4 @@
-.col-md-7.col-sm-8.mainfeed(ng-controller='activityFeed')
+.col-md-7.col-sm-8.mainfeed
   #tabs
     ul.nav.nav-tabs#posttabs
       li.active
@@ -20,8 +20,6 @@
     .col-xs-10 {{displayName}}
       small &nbsp;&nbsp;says
       p.col-xs-12(style='margin-top: 5px; border: 1px solid rgba(0,0,0,0.2); padding: 5px; border-radius: 2px;') {{activityForm.message}}
-
-  //- hr.col-xs-6.col-xs-offset-1(style='margin-top: 20px;')
 
   p.col-xs-12.text-center.text-warning {{flashMessage}}
 
