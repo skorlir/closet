@@ -13,7 +13,7 @@ var router = function($routeProvider) {
   });
 }
 
-angular.module('outrovert', ['firebase', 'ngRoute'], router)
+angular.module('outrovert', ['firebase', 'ngRoute', 'ui.bootstrap'], router)
 .factory('firebaseService', ['$firebase', function($firebase) {
   var root = new Firebase('https://sweltering-fire-110.firebaseio.com');
   var firebase = $firebase(root);
