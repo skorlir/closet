@@ -61,4 +61,13 @@ body {
 		margin-top: 15px;
 	}
 	
+	.gear, .marketplace-item {
+		float: left;
+		.profile {
+			display: inline-block;
+			max-width: 30px;
+			float: left;
+		}
+	}
+	
 }

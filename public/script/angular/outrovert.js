@@ -7,6 +7,10 @@ var router = function($routeProvider) {
     templateUrl: '/partials/marketplace',
     controller: 'marketplace'
   });
+  $routeProvider.when('/mygear', {
+    templateUrl: '/partials/myGear',
+    controller: 'myGear'
+  });
 }
 
 angular.module('outrovert', ['firebase', 'ngRoute'], router)
@@ -32,7 +36,7 @@ angular.module('outrovert', ['firebase', 'ngRoute'], router)
     var userData = firebase.$child('users/' + user.uid);
 
     userData.$on('value', function(snapshot) {
-      if(!snapshot.name === user.displayName) 
+      if(!snapshot.snapshot.value.displayName === user.displayName) 
         userData.$update({displayName: user.displayName});
     });
 
@@ -151,6 +155,7 @@ angular.module('outrovert', ['firebase', 'ngRoute'], router)
   
   $scope.marketplace = [];
   $scope.filterForm  = {};
+  $scope.itemForm = {};
   
   //https://maps.googleapis.com/maps/api/geocode/json?address=Mountain+View,+CA&sensor=true_or_false&key=API_KEY
   //key - AIzaSyAcDx9pk4zK3vgneoV0Dv-81memVX3TOtM
@@ -161,6 +166,42 @@ angular.module('outrovert', ['firebase', 'ngRoute'], router)
     $scope.marketplace.unshift(itemSnap.snapshot.value);
   });
   
-  
+}])
+
+.controller('myGear', ['$scope', 'sessionService', 'firebaseService', function($scope, session, db) {
+  session.getUser().then(function(user) {
+    if(user === null) {
+      console.log("not logged in");
+      return;
+    }
+    $scope.myGear = [];
+    $scope.addGearForm = {};
+
+    var myGearDB = db.get$firebase().$child('/users/'+user.uid + '/gear');
+    var marketDB = db.get$firebase().$child('/marketplace');
+
+    myGearDB.$on('child_added', function(gearSnap) {
+      console.log(gearSnap);
+      if(gearSnap.snapshot.value === null) return;
+      $scope.myGear.unshift(gearSnap.snapshot.value);
+    });
+
+    $scope.addGear = function() {
+      var item = {
+        name: $scope.addGearForm.name,
+        description: $scope.addGearForm.description,
+        quality: $scope.addGearForm.quality,
+        price: $scope.addGearForm.price,
+        rentOrBuy: $scope.addGearForm.rentalOrSale === 'Sell' ? 'Rent' : 'Buy'
+      }
+      var poster = {
+        uid: user.uid,
+        profilePicture: 'http://graph.facebook.com/'+user.id+'/picture?type=small'
+      }
+      myGearDB.$add(item);
+      marketDB.$add({item: item, poster: poster});
+    }
+  });
   
 }]);
+

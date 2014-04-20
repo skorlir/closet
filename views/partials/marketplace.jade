@@ -13,27 +13,20 @@
       p San Francisco and the Bay Area
       p.text-warning change location
       
-  .modal.fade(tabindex='-1', role='dialog', aria-hidden='true')
-        .modal-dialog.modal-lg
-          .modal-content#mc_embed_signup
-            .modal-header
-              button.close(type='button', data-dismiss='modal', aria-hidden='true') ×
-              h4.modal-title(style="font-size: 150%") Subscribe for Updates!
-            .modal-body
-            .modal-footer
-              button.btn.btn-default(type='button', data-dismiss='modal') Close
+  //bootstrap modal for add item
+  // OR just redirect to /mygear
   
-  .col-xs-12.marketplace-content(ng-repeat='item in marketplace')
-    .col-lg-3.col-md-4.col-xs-6.marketplace-item
-      img.col-xs-12.img-rounded(ng-src='{{item.image}}')
+  .col-xs-12.marketplace-content
+    .col-lg-3.col-md-4.col-xs-6.marketplace-item(ng-repeat='result in marketplace')
+      img.col-xs-12.img-rounded(ng-src='{{result.item.image || "images/default.png"}}')
       .star
       .col-xs-12
-        img.profile(ng-src='{{item.poster.profilePicture}}').col-xs-1
+        img.profile.img-responsive(ng-src='{{result.poster.profilePicture}}')
         .description.col-xs-6
-          span.name {{item.description.name}}
+          span.name {{result.item.name}}
           br
-          span.quality {{item.description.quality}}
+          span.quality {{result.item.quality}}
         .col-xs-4
-          span.cost.text-center {{item.price}}
+          span.cost.text-center {{result.item.price}}
           br
-          button.buy {{item.action}}
+          button.buy {{result.item.rentOrBuy}}

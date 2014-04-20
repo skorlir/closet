@@ -134,3 +134,13 @@ body header span.centeredLogo {
 body .message-preview, body .message {
   margin-top: 15px;
 }
+/* line 64, ../../SASS/base.scss */
+body .gear, body .marketplace-item {
+  float: left;
+}
+/* line 66, ../../SASS/base.scss */
+body .gear .profile, body .marketplace-item .profile {
+  display: inline-block;
+  max-width: 30px;
+  float: left;
+}
