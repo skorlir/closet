@@ -27,6 +27,6 @@
           br
           span.quality {{result.item.quality}}
         .col-xs-4
-          span.cost.text-center {{result.item.price}}
+          span.cost.text-center {{result.item.price | currency}}
           br
           button.buy {{result.item.rentOrBuy}}
