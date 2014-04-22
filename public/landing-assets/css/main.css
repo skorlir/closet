@@ -79,6 +79,7 @@ a:after {
 }
 
 .logo {
+    display: relative;
 	text-align: center;
 	margin-top: 6%;
     padding: 0;
@@ -94,7 +95,7 @@ a:after {
     padding: 2%;
     padding-left: 2.5%;
     margin-top: 4%;
-    display: none;
+    /*display: none;*/
 }
 
 .logo p {
@@ -107,8 +108,8 @@ a:after {
 
 .logo .arrow {
     position: absolute;
-    top: 88px;
-    left: 90px;
+    top: 51%;
+    left: 15%;
     color: #FFF;
     font-size: 250%;
 }
