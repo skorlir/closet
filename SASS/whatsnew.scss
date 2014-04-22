@@ -55,14 +55,15 @@ body, .head, .logo, .nav {
 
 #loggedInData {
 	img.profile {
-		padding: 5%;
+		padding: 3%;
 		position: absolute;
-		right: -95px;
+		right: -90px;
 	}
 
 	h4.profile {
 		font-size: 12pt;
 		position: absolute;
 		right: -55px;
+		top: 2px;
 	}
 }

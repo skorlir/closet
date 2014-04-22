@@ -55,20 +55,24 @@ a.location:hover {
   padding: 0;
 }
 /* line 50, ../../sass/marketplace.scss */
-.marketplace-item .description {
-  margin-top: 2%;
+.marketplace-item img.img-rounded {
+  margin-top: 3%;
 }
 /* line 54, ../../sass/marketplace.scss */
+.marketplace-item .description {
+  margin: 2% 0 0 3%;
+}
+/* line 58, ../../sass/marketplace.scss */
 .marketplace-item img.profile {
   margin: 3% 1%;
   width: 20%;
 }
-/* line 59, ../../sass/marketplace.scss */
+/* line 63, ../../sass/marketplace.scss */
 .marketplace-item .rent {
-  font-size: 150%;
+  font-size: 140%;
   margin-top: 2%;
 }
-/* line 63, ../../sass/marketplace.scss */
+/* line 67, ../../sass/marketplace.scss */
 .marketplace-item .rent .buy {
   padding: 0 10%;
 }

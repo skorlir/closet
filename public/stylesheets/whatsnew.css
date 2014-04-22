@@ -61,13 +61,14 @@ body, .head, .logo, .nav {
 
 /* line 57, ../../sass/whatsnew.scss */
 #loggedInData img.profile {
-  padding: 5%;
+  padding: 3%;
   position: absolute;
-  right: -95px;
+  right: -90px;
 }
 /* line 63, ../../sass/whatsnew.scss */
 #loggedInData h4.profile {
   font-size: 12pt;
   position: absolute;
   right: -55px;
+  top: 2px;
 }
