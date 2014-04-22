@@ -3,11 +3,11 @@
     .form-group.col-xs-12
       label.col-xs-1 Search
       input.col-xs-10.col-lg-6(type='text', ng-model='search', placeholder='backpacks, boots, sleeping bags...')
-    .form-group.col-lg-4.col-xs-12
+    .form-group.col-lg-4.col-xs-12(ng-init='showBuy = true; showRent = true')
       label.col-xs-3 Type
       br
-      button.custom-button.col-xs-4 Buy
-      button.custom-button.col-xs-4 Rent
+      button.custom-button.col-xs-4(ng-click='showBuy = !showBuy', ng-class='{"inactive": !showBuy}') Buy
+      button.custom-button.col-xs-4(ng-click='showRent = !showRent', ng-class='{"inactive": !showRent}') Rent
     .form-group.col-lg-4.col-xs-12
       label Location
       p San Francisco and the Bay Area
@@ -17,7 +17,7 @@
   // OR just redirect to /mygear
   
   .col-xs-12.marketplace-content
-    .col-lg-3.col-md-4.col-xs-6.marketplace-item(ng-repeat='result in marketplace')
+    .col-lg-3.col-md-4.col-xs-6.marketplace-item(ng-repeat='result in marketplace | filter:search:strict', ng-show='showHide(result.item.rentOrBuy)')
       img.col-xs-12.img-rounded(ng-src='{{result.item.image || "images/default.png"}}')
       .star
       .col-xs-12

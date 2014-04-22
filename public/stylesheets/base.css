@@ -1,4 +1,4 @@
-/* line 1, ../../sass/formElements.scss */
+/* line 1, ../../SASS/formElements.scss */
 .custom-button, .button--3d {
   display: block;
   margin: 1% auto;
@@ -9,19 +9,13 @@
   color: white;
   background: #8CCF4B;
   border: none;
-  /*text-shadow: 0px 0px 5px rgba(0, 0, 0, 0.5);
-  font-size: 1.2em;
-  border: 1px solid rgba(103, 147, 232, 0.5);
-  border-bottom: 1px solid #1670a0;
-  border-top: none;
-  background: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #59a8e5), color-stop(97%, #1d86c6), color-stop(100%, #7ab3ff));
-  background: -webkit-linear-gradient(#59a8e5 0%, #1d86c6 97%, #7ab3ff 100%);
-  background: -moz-linear-gradient(#59a8e5 0%, #1d86c6 97%, #7ab3ff 100%);
-  background: -o-linear-gradient(#59a8e5 0%, #1d86c6 97%, #7ab3ff 100%);
-  background: linear-gradient(#59a8e5 0%, #1d86c6 97%, #7ab3ff 100%);*/
+}
+/* line 12, ../../SASS/formElements.scss */
+.custom-button.inactive, .inactive.button--3d {
+  background: #66a22b;
 }
 
-/* line 27, ../../sass/formElements.scss */
+/* line 17, ../../SASS/formElements.scss */
 .button--3d {
   -webkit-box-shadow: inset 1px 1px rgba(20, 20, 100, 0.55), inset -1px -1px rgba(20, 20, 100, 0.55), 0px 5px #1374a8, 0px 7px 7px -3px black;
   -moz-box-shadow: inset 1px 1px rgba(20, 20, 100, 0.55), inset -1px -1px rgba(20, 20, 100, 0.55), 0px 5px #1374a8, 0px 7px 7px -3px black;
@@ -36,14 +30,14 @@
   -o-transition: all 0.15s ease;
   transition: all 0.15s ease;
 }
-/* line 40, ../../sass/formElements.scss */
+/* line 30, ../../SASS/formElements.scss */
 .button--3d:hover {
   -webkit-box-shadow: inset 1px 1px rgba(20, 20, 100, 0.55), inset -1px -1px rgba(20, 20, 100, 0.55), 0px 8px #0e6491, 0px 10px 7px -3px black;
   -moz-box-shadow: inset 1px 1px rgba(20, 20, 100, 0.55), inset -1px -1px rgba(20, 20, 100, 0.55), 0px 8px #0e6491, 0px 10px 7px -3px black;
   box-shadow: inset 1px 1px rgba(20, 20, 100, 0.55), inset -1px -1px rgba(20, 20, 100, 0.55), 0px 8px #0e6491, 0px 10px 7px -3px black;
   top: -5px;
 }
-/* line 49, ../../sass/formElements.scss */
+/* line 39, ../../SASS/formElements.scss */
 .button--3d:active {
   -webkit-box-shadow: inset 1px 1px rgba(20, 20, 100, 0.55), inset -1px -1px rgba(20, 20, 100, 0.55), 0px 0px #10618d;
   -moz-box-shadow: inset 1px 1px rgba(20, 20, 100, 0.55), inset -1px -1px rgba(20, 20, 100, 0.55), 0px 0px #10618d;
@@ -51,12 +45,12 @@
   top: 10px;
 }
 
-/* line 59, ../../sass/formElements.scss */
+/* line 49, ../../SASS/formElements.scss */
 textarea {
   resize: none;
   border-color: rgba(0, 0, 0, 0.2);
 }
-/* line 62, ../../sass/formElements.scss */
+/* line 52, ../../SASS/formElements.scss */
 textarea:focus {
   outline: none;
   -webkit-box-shadow: rgba(50, 200, 50, 0.5);
@@ -64,13 +58,13 @@ textarea:focus {
   box-shadow: rgba(50, 200, 50, 0.5);
 }
 
-/* line 4, ../../sass/base.scss */
+/* line 4, ../../SASS/base.scss */
 html, body {
   height: 100%;
   margin: 0;
 }
 
-/* line 9, ../../sass/base.scss */
+/* line 9, ../../SASS/base.scss */
 h1, h2 {
   font-family: pacifico, 'Lucida Grande', 'Lucida Sans', 'helvetica neue', helvetica, sans-serif;
   -webkit-transform: rotate(-5deg);
@@ -82,39 +76,39 @@ h1, h2 {
   text-shadow: -6px 4px white, 2px 1px 7px black;
 }
 
-/* line 16, ../../sass/base.scss */
+/* line 16, ../../SASS/base.scss */
 h1 {
   font-size: 4em;
 }
 
-/* line 20, ../../sass/base.scss */
+/* line 20, ../../SASS/base.scss */
 h2 {
   font-size: 3.5em;
   margin: 1% 0;
 }
 
-/* line 25, ../../sass/base.scss */
+/* line 25, ../../SASS/base.scss */
 p {
   margin: 0.7em auto;
   width: auto;
 }
-/* line 28, ../../sass/base.scss */
+/* line 28, ../../SASS/base.scss */
 p.heavyShadow {
   text-shadow: -1px 1px 3px rgba(0, 0, 0, 0.8);
 }
 
-/* line 33, ../../sass/base.scss */
+/* line 33, ../../SASS/base.scss */
 a {
   color: #00B7FF;
 }
 
-/* line 37, ../../sass/base.scss */
+/* line 37, ../../SASS/base.scss */
 body {
   font-family: "Lucida Grande", Helvetica, Arial, sans-serif;
   font-size: 18px;
   background: #fbfbfb;
 }
-/* line 44, ../../sass/base.scss */
+/* line 44, ../../SASS/base.scss */
 body header {
   height: 60px;
   padding: 15px 0;
@@ -124,7 +118,7 @@ body header {
   box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.1);
   background: #fff;
 }
-/* line 51, ../../sass/base.scss */
+/* line 51, ../../SASS/base.scss */
 body header span.centeredLogo {
   font-family: pacifico, 'Lucida Grande', 'Lucida Sans', 'helvetica neue', helvetica, sans-serif;
   color: #5cafff;
@@ -132,7 +126,7 @@ body header span.centeredLogo {
   font-size: 1.9em;
   display: inline-block;
 }
-/* line 60, ../../sass/base.scss */
+/* line 60, ../../SASS/base.scss */
 body .message-preview, body .message {
   margin-top: 15px;
 }

@@ -166,6 +166,10 @@ angular.module('outrovert', ['firebase', 'ngRoute', 'ui.bootstrap'], router)
     $scope.marketplace.unshift(itemSnap.snapshot.value);
   });
   
+  $scope.showHide = function(type) {
+    return (type == "Buy" && $scope.showBuy) || (type == "Rent" && $scope.showRent);
+  }
+  
 }])
 
 .controller('myGear', ['$scope', 'sessionService', 'firebaseService', function($scope, session, db) {
@@ -192,7 +196,7 @@ angular.module('outrovert', ['firebase', 'ngRoute', 'ui.bootstrap'], router)
         description: $scope.addGearForm.description,
         quality: $scope.addGearForm.quality,
         price: $scope.addGearForm.price,
-        rentOrBuy: $scope.addGearForm.rentalOrSale === 'Sell' ? 'Rent' : 'Buy'
+        rentOrBuy: $scope.addGearForm.rentalOrSale === 'Sell' ? 'Buy' : 'Rent'
       }
       var poster = {
         uid: user.uid,
