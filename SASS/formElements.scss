@@ -1,0 +1,66 @@
+.custom-button {
+
+	display: block;
+	margin: 1% auto;
+	padding: 2px 2%;
+	height: 100%;
+
+	position: relative;
+	top: 0;
+
+	color: white;
+	text-shadow: 0px 0px 5px rgba(0,0,0,0.5);
+	font-size: 1.2em;
+
+	border: 1px solid rgba(103, 147, 232, 0.5);
+	border-bottom: 1px solid #1670a0;
+	border-top: none;
+
+	@include background(
+		linear-gradient(
+			#59a8e5 0%, 
+			#1d86c6 97%, 
+			#7ab3ff 100%)
+		);
+}
+
+.button--3d {
+	@extend .custom-button;
+
+	@include box-shadow( 
+		inset 1px 1px rgba(20,20,100,0.55), 
+		inset -1px -1px rgba(20,20,100,0.55), 
+		0px 5px #1374a8, 
+		0px 7px 7px -3px black);
+
+	@include border-radius(3px);
+
+	@include single-transition(all, 0.3s, ease);
+
+	&:hover {
+		@include box-shadow(
+			inset 1px 1px rgba(20,20,100,0.55), 
+			inset -1px -1px rgba(20,20,100,0.55), 
+			0px 8px #0e6491,	
+			0px 10px 7px -3px black);
+		top: -5px;
+	}
+
+	&:active { 
+		@include box-shadow(
+			inset 1px 1px rgba(20,20,100,0.55),	
+			inset -1px -1px rgba(20,20,100,0.55),	
+			0px 0px #10618d);
+
+		top: 10px;
+	}
+}
+
+textarea {
+	resize: none;
+	border-color: rgba(0,0,0,0.2);
+	&:focus {
+		outline: none;
+		@include box-shadow(rgba(50,200,50,0.5));
+	}
+}
