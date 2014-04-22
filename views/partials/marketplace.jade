@@ -1,17 +1,16 @@
 .col-md-10.col-sm-11
   form
     .form-group.col-xs-12
-      label.col-xs-1 Search
-      input.col-xs-10.col-lg-6(type='text', ng-model='search', placeholder='backpacks, boots, sleeping bags...')
-    .form-group.col-lg-4.col-xs-12
-      label.col-xs-3 Type
-      br
-      button.custom-button.col-xs-4 Buy
-      button.custom-button.col-xs-4 Rent
-    .form-group.col-lg-4.col-xs-12
-      label Location
-      p San Francisco and the Bay Area
-      p.text-warning change location
+      label.col-xs-1.search Search
+      input.col-xs-10.col-lg-6.search(type='text', ng-model='search', placeholder='backpacks, boots, sleeping bags...')
+    .form-group.col-lg-12.col-xs-12
+      label.col-xs-1.type Type
+      button.custom-button.col-xs-2.type Buy
+      button.custom-button.col-xs-2.type Rent
+    .form-group.col-lg-12.col-xs-12
+      label.col-xs-1.loc Location
+      p.loc San Francisco and the Bay Area
+      a.loc change location
       
   //bootstrap modal for add item
   // OR just redirect to /mygear

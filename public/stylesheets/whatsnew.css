@@ -1,9 +1,9 @@
-/* line 1, ../../SASS/whatsnew.scss */
+/* line 1, ../../sass/whatsnew.scss */
 .logo img {
   width: 100%;
 }
 
-/* line 8, ../../SASS/whatsnew.scss */
+/* line 8, ../../sass/whatsnew.scss */
 body, .head, .logo, .nav {
   padding: 0;
   margin-bottom: 0;
@@ -11,19 +11,19 @@ body, .head, .logo, .nav {
   border: none;
 }
 
-/* line 15, ../../SASS/whatsnew.scss */
+/* line 15, ../../sass/whatsnew.scss */
 .pages {
   padding: 0;
 }
 
-/* line 20, ../../SASS/whatsnew.scss */
+/* line 20, ../../sass/whatsnew.scss */
 .pages li {
   padding: 5% 20%;
   list-style: none;
   background: #FFF;
 }
 
-/* line 26, ../../SASS/whatsnew.scss */
+/* line 26, ../../sass/whatsnew.scss */
 .pages li a {
   text-decoration: none;
   color: #000;
@@ -31,41 +31,41 @@ body, .head, .logo, .nav {
   padding: 5%;
 }
 
-/* line 33, ../../SASS/whatsnew.scss */
+/* line 33, ../../sass/whatsnew.scss */
 .pages #here {
   background: #8CCF4B;
 }
 
-/* line 37, ../../SASS/whatsnew.scss */
+/* line 37, ../../sass/whatsnew.scss */
 .pages #here a {
   color: #FFF;
 }
 
-/* line 41, ../../SASS/whatsnew.scss */
+/* line 41, ../../sass/whatsnew.scss */
 .pages li a:hover {
   cursor: pointer;
   color: #8CCF4B;
 }
 
-/* line 46, ../../SASS/whatsnew.scss */
+/* line 46, ../../sass/whatsnew.scss */
 .userinfo {
   float: right;
 }
 
-/* line 50, ../../SASS/whatsnew.scss */
+/* line 50, ../../sass/whatsnew.scss */
 #loginButtons button {
   top: 13px;
   padding: 5px 15px;
   margin: 0;
 }
 
-/* line 57, ../../SASS/whatsnew.scss */
+/* line 57, ../../sass/whatsnew.scss */
 #loggedInData img.profile {
   padding: 5%;
   position: absolute;
   right: -95px;
 }
-/* line 63, ../../SASS/whatsnew.scss */
+/* line 63, ../../sass/whatsnew.scss */
 #loggedInData h4.profile {
   font-size: 12pt;
   position: absolute;
