@@ -18,7 +18,7 @@
   
   .col-xs-12.marketplace-content
     .col-lg-3.col-md-4.col-xs-6.marketplace-item(ng-repeat='result in marketplace | filter:search:strict', ng-show='showHide(result.item.rentOrBuy)')
-      img.col-xs-12.img-rounded(ng-src='{{result.item.image || "images/default.png"}}')
+      .item-image.col-xs-12.img-rounded(style='background-image: url("{{result.item.image || "images/default.png"}}")')
       .star
       .col-xs-12
         img.profile.img-responsive(ng-src='{{result.poster.profilePicture}}')

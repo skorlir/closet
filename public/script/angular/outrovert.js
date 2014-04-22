@@ -172,7 +172,7 @@ angular.module('outrovert', ['firebase', 'ngRoute', 'ui.bootstrap'], router)
   
 }])
 
-.controller('myGear', ['$scope', 'sessionService', 'firebaseService', function($scope, session, db) {
+.controller('myGear', ['$scope', 'sessionService', '$http', 'firebaseService', function($scope, session, $http, db) {
   session.getUser().then(function(user) {
     if(user === null) {
       console.log("not logged in");
@@ -196,7 +196,8 @@ angular.module('outrovert', ['firebase', 'ngRoute', 'ui.bootstrap'], router)
         description: $scope.addGearForm.description,
         quality: $scope.addGearForm.quality,
         price: $scope.addGearForm.price,
-        rentOrBuy: $scope.addGearForm.rentalOrSale === 'Sell' ? 'Buy' : 'Rent'
+        rentOrBuy: $scope.addGearForm.rentalOrSale === 'Sell' ? 'Buy' : 'Rent',
+        image: $scope.addGearForm.image
       }
       var poster = {
         uid: user.uid,
@@ -205,6 +206,24 @@ angular.module('outrovert', ['firebase', 'ngRoute', 'ui.bootstrap'], router)
       myGearDB.$add(item);
       marketDB.$add({item: item, poster: poster});
     }
+    
+    $scope.uploadFile = function(files) {
+      var fd = new FormData();
+      //Take the first selected file
+      fd.append("file", files[0]);
+
+      $http.post('/upload', fd, {
+          withCredentials: true,
+          headers: {'Content-Type': undefined },
+          transformRequest: angular.identity
+        })
+      .success( function(name) {
+        $scope.addGearForm.image = '/uploads/' + name;
+      })
+      .error( function(err) {
+        console.log(err);
+      });
+    };
   });
   
 }]);

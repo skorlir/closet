@@ -56,6 +56,7 @@ app.get('/home', httpAuth, routes.test);
 app.get('/partials/:partial', function(req, res) {
   res.render('partials/'+req.params.partial);
 });
+app.post('/upload', routes.upload);
 
 //start listening
 http.createServer(app).listen(app.get('port'), function() {
