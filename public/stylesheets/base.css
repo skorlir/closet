@@ -1,25 +1,16 @@
 /* line 1, ../../sass/formElements.scss */
 .custom-button, .button--3d {
   display: block;
-  margin: 1% auto;
-  padding: 2px 2%;
   height: 100%;
+  background: #8CCF4B;
   position: relative;
   top: 0;
   color: white;
-  text-shadow: 0px 0px 5px rgba(0, 0, 0, 0.5);
   font-size: 1.2em;
-  border: 1px solid rgba(103, 147, 232, 0.5);
-  border-bottom: 1px solid #1670a0;
-  border-top: none;
-  background: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #59a8e5), color-stop(97%, #1d86c6), color-stop(100%, #7ab3ff));
-  background: -webkit-linear-gradient(#59a8e5 0%, #1d86c6 97%, #7ab3ff 100%);
-  background: -moz-linear-gradient(#59a8e5 0%, #1d86c6 97%, #7ab3ff 100%);
-  background: -o-linear-gradient(#59a8e5 0%, #1d86c6 97%, #7ab3ff 100%);
-  background: linear-gradient(#59a8e5 0%, #1d86c6 97%, #7ab3ff 100%);
+  border: none;
 }
 
-/* line 27, ../../sass/formElements.scss */
+/* line 17, ../../sass/formElements.scss */
 .button--3d {
   -webkit-box-shadow: inset 1px 1px rgba(20, 20, 100, 0.55), inset -1px -1px rgba(20, 20, 100, 0.55), 0px 5px #1374a8, 0px 7px 7px -3px black;
   -moz-box-shadow: inset 1px 1px rgba(20, 20, 100, 0.55), inset -1px -1px rgba(20, 20, 100, 0.55), 0px 5px #1374a8, 0px 7px 7px -3px black;
@@ -34,14 +25,14 @@
   -o-transition: all 0.15s ease;
   transition: all 0.15s ease;
 }
-/* line 40, ../../sass/formElements.scss */
+/* line 30, ../../sass/formElements.scss */
 .button--3d:hover {
   -webkit-box-shadow: inset 1px 1px rgba(20, 20, 100, 0.55), inset -1px -1px rgba(20, 20, 100, 0.55), 0px 8px #0e6491, 0px 10px 7px -3px black;
   -moz-box-shadow: inset 1px 1px rgba(20, 20, 100, 0.55), inset -1px -1px rgba(20, 20, 100, 0.55), 0px 8px #0e6491, 0px 10px 7px -3px black;
   box-shadow: inset 1px 1px rgba(20, 20, 100, 0.55), inset -1px -1px rgba(20, 20, 100, 0.55), 0px 8px #0e6491, 0px 10px 7px -3px black;
   top: -5px;
 }
-/* line 49, ../../sass/formElements.scss */
+/* line 39, ../../sass/formElements.scss */
 .button--3d:active {
   -webkit-box-shadow: inset 1px 1px rgba(20, 20, 100, 0.55), inset -1px -1px rgba(20, 20, 100, 0.55), 0px 0px #10618d;
   -moz-box-shadow: inset 1px 1px rgba(20, 20, 100, 0.55), inset -1px -1px rgba(20, 20, 100, 0.55), 0px 0px #10618d;
@@ -49,12 +40,12 @@
   top: 10px;
 }
 
-/* line 59, ../../sass/formElements.scss */
+/* line 49, ../../sass/formElements.scss */
 textarea {
   resize: none;
   border-color: rgba(0, 0, 0, 0.2);
 }
-/* line 62, ../../sass/formElements.scss */
+/* line 52, ../../sass/formElements.scss */
 textarea:focus {
   outline: none;
   -webkit-box-shadow: rgba(50, 200, 50, 0.5);
@@ -134,13 +125,12 @@ body header span.centeredLogo {
 body .message-preview, body .message {
   margin-top: 15px;
 }
-/* line 64, ../../SASS/base.scss */
+/* line 64, ../../sass/base.scss */
 body .gear, body .marketplace-item {
   float: left;
 }
-/* line 66, ../../SASS/base.scss */
+/* line 66, ../../sass/base.scss */
 body .gear .profile, body .marketplace-item .profile {
   display: inline-block;
-  max-width: 30px;
   float: left;
 }

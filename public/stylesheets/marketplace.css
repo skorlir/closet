@@ -49,10 +49,26 @@ a.location:hover {
   border: 1px outset #888;
   padding: 0;
 }
-/* line 48, ../../sass/marketplace.scss */
-.marketplace-item img.img-rounded,
-.marketplace-item .description,
-.marketplace-item .info,
-.marketplace-item .price {
+/* line 46, ../../sass/marketplace.scss */
+.marketplace-item img.img-rounded, .marketplace-item .bottom,
+.marketplace-item .description, .marketplace-item .cost, .marketplace-item .rent {
   padding: 0;
+}
+/* line 50, ../../sass/marketplace.scss */
+.marketplace-item .description {
+  margin-top: 2%;
+}
+/* line 54, ../../sass/marketplace.scss */
+.marketplace-item img.profile {
+  margin: 3% 1%;
+  width: 20%;
+}
+/* line 59, ../../sass/marketplace.scss */
+.marketplace-item .rent {
+  font-size: 150%;
+  margin-top: 2%;
+}
+/* line 63, ../../sass/marketplace.scss */
+.marketplace-item .rent .buy {
+  padding: 0 10%;
 }
