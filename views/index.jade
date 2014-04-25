@@ -49,8 +49,12 @@ head
               button.btn.btn-default(type='button', data-dismiss='modal') Close
 
     .container
-      .logo
+      .logo.col-lg-8.col-lg-offset-2
         img(src='landing-assets/img/new_logo.png', width='100', alt='logo')
+        .def
+          p.arrow &#x25B2;
+          p Outraˌvərt/ noun
+          p &emsp;&emsp;&emsp;1.&emsp;Lover of outdoor activities, shares their passion of the outdoors out loud
       .row.centered
         .col-lg-8.col-lg-offset-2.w
           //- h1
@@ -62,7 +66,7 @@ head
         //
           Begin MailChimp Signup Form 
         form#mc-embedded-subscribe-form.validate(action='http://herokuapp.us8.list-manage1.com/subscribe/post?u=14b0b0e0a73a3857153980900&id=ea3be0eb05', method='post', name='mc-embedded-subscribe-form', target='_blank', novalidate='novalidate' style="margin-top: 10px;")
-          input.email(type='email', value='', name='EMAIL', placeholder='email address', required='required')
+          input.email(type='email', value='', name='EMAIL', placeholder=' email address', required='required')
           //
             real people should not fill this in and expect good things - do not remove this or risk form bot signups
           div(style='position: absolute; left: -5000px;')
@@ -91,6 +95,10 @@ head
             | "I felt my lungs inflate with the onrush of scenery - air, mountains, trees, people. I thought this is what it is to be happy."
           p.cite
             | - Sylvia Plath, American Poet
+    //.scroll-down.col-lg-8.col-lg-offset-2
+      .fa.fa-arrow-down.fa-4x
+      h2 Scroll down for more
+      .fa.fa-arrow-down.fa-4x
       
     //
        /.container 
@@ -102,6 +110,7 @@ head
     //
        Placed at the end of the document so the pages load faster 
     script(src='https://code.jquery.com/jquery-1.10.2.min.js')
+    script(src='https://code.jquery.com/ui/1.10.4/jquery-ui.min.js')
     script(src='landing-assets/js/bootstrap.min.js')
     script.
       $('.tooltip-demo').tooltip({
@@ -111,6 +120,9 @@ head
       $('#mc-embedded-subscribe').click(function() {
         $('#mc-embedded-subscribe-form').submit();
       });
+      //- $('.logo').hover(function() {
+      //-   $('.def').slideToggle();
+      //- });
     //
       BACKSTRETCH
     //
