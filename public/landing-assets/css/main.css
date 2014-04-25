@@ -101,6 +101,7 @@ a:after {
     border: 1px solid transparent;
     margin-top: 10px;
     background-color: #8CCF4B;
+    margin-left: 10px;
 }
 
 h1 {
@@ -132,3 +133,4 @@ i.fa-facebook:focus,
 i.fa-twitter:hover,
 i.fa-twitter:focus {
     color: #7b7b7b;
+}

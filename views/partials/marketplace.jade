@@ -20,13 +20,12 @@
     .col-lg-3.col-md-4.col-xs-6.marketplace-item(ng-repeat='result in marketplace | filter:search:strict', ng-show='showHide(result.item.rentOrBuy)')
       .item-image.col-xs-12.img-rounded(style='background-image: url("{{result.item.image || "images/default.png"}}")')
       .star
-      .col-xs-12
+      .bottom.col-xs-12
         img.profile.img-responsive(ng-src='{{result.poster.profilePicture}}')
         .description.col-xs-6
           span.name {{result.item.name}}
           br
           span.quality {{result.item.quality}}
-        .col-xs-4
-          span.cost.text-center {{result.item.price | currency}}
-          br
-          button.buy {{result.item.rentOrBuy}}
+        .rent.pull-right.col-xs-3
+          span.cost.text-center.pull-right {{result.item.price | currency}}
+          button.buy.custom-button.pull-right {{result.item.rentOrBuy}}

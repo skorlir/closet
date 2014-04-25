@@ -56,17 +56,16 @@ body, .head, .logo, .nav {
 #loggedInData {
 	
 	img.profile {
+		padding: 3%;
 		position: absolute;
 		right: -90px;
-		top: 3px;
-		border: 2px inset #888;
-		border-radius: 10px;
 	}
 
 	h4.profile {
 		font-size: 12pt;
 		position: absolute;
 		right: -55px;
+		top: 2px;
 	}
 }
 

@@ -61,34 +61,33 @@ body, .head, .logo, .nav {
 
 /* line 58, ../../SASS/whatsnew.scss */
 #loggedInData img.profile {
+  padding: 3%;
   position: absolute;
   right: -90px;
-  top: 3px;
-  border: 2px inset #888;
-  border-radius: 10px;
 }
-/* line 66, ../../SASS/whatsnew.scss */
+/* line 64, ../../SASS/whatsnew.scss */
 #loggedInData h4.profile {
   font-size: 12pt;
   position: absolute;
   right: -55px;
+  top: 2px;
 }
 
-/* line 73, ../../SASS/whatsnew.scss */
+/* line 72, ../../SASS/whatsnew.scss */
 .mainfeed {
   position: absolute;
   left: 300px;
   top: 20px;
 }
 
-/* line 79, ../../SASS/whatsnew.scss */
+/* line 78, ../../SASS/whatsnew.scss */
 #write form, #pic form, .message, .message-preview {
   padding: 2%;
   border-radius: 5px;
   background: #FFF;
 }
 
-/* line 85, ../../SASS/whatsnew.scss */
+/* line 84, ../../SASS/whatsnew.scss */
 #posttabs a {
   color: #000;
   font-weight: bold;

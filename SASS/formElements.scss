@@ -1,17 +1,21 @@
 .custom-button {
 	display: block;
-	margin: 1% auto;
-	padding: 2px 2%;
+	// margin: 1% auto;
+	// padding: 2px 2%;
 	height: 100%;
+	
 	position: relative;
 	top: 0;
 	color: white;
 	background: #8CCF4B;
+	font-size: 1.2em;
 	border: none;
 	
 	&.inactive {
 		background: darken(#8CCF4b, 15%);
 	}
+	
+	border: none;
 }
 
 .button--3d {

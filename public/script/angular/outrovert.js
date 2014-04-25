@@ -191,6 +191,7 @@ angular.module('outrovert', ['firebase', 'ngRoute', 'ui.bootstrap'], router)
     });
 
     $scope.addGear = function() {
+      console.log($scope.addGearForm.rentalOrSale);
       var item = {
         name: $scope.addGearForm.name,
         description: $scope.addGearForm.description,
@@ -201,7 +202,7 @@ angular.module('outrovert', ['firebase', 'ngRoute', 'ui.bootstrap'], router)
       }
       var poster = {
         uid: user.uid,
-        profilePicture: 'http://graph.facebook.com/'+user.id+'/picture?type=small'
+        profilePicture: 'http://graph.facebook.com/' + user.id + '/picture?type=small'
       }
       myGearDB.$add(item);
       marketDB.$add({item: item, poster: poster});
@@ -218,6 +219,8 @@ angular.module('outrovert', ['firebase', 'ngRoute', 'ui.bootstrap'], router)
           transformRequest: angular.identity
         })
       .success( function(name) {
+        // use createObjectURL to make preview,
+        // then only onsubmit save to server
         $scope.addGearForm.image = '/uploads/' + name;
       })
       .error( function(err) {

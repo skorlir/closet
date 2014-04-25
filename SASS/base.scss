@@ -69,8 +69,9 @@ body {
 		float: left;
 		.profile {
 			display: inline-block;
-			max-width: 30px;
 			float: left;
+			max-width: 40px;
+			max-height: 40px;
 		}
 		.item-image {
 			height: 200px;
@@ -78,6 +79,13 @@ body {
 			background-size: contain;
 			background-repeat: no-repeat;
 			background-position: center center;
+		}
+	}
+	
+	form {
+		label {
+			text-transform: uppercase;
+			color: #8CCF4B;
 		}
 	}
 	

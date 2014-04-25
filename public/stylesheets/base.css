@@ -1,21 +1,21 @@
 /* line 1, ../../SASS/formElements.scss */
 .custom-button, .button--3d {
   display: block;
-  margin: 1% auto;
-  padding: 2px 2%;
   height: 100%;
   position: relative;
   top: 0;
   color: white;
   background: #8CCF4B;
+  font-size: 1.2em;
+  border: none;
   border: none;
 }
-/* line 12, ../../SASS/formElements.scss */
+/* line 14, ../../SASS/formElements.scss */
 .custom-button.inactive, .inactive.button--3d {
   background: #66a22b;
 }
 
-/* line 17, ../../SASS/formElements.scss */
+/* line 21, ../../SASS/formElements.scss */
 .button--3d {
   -webkit-box-shadow: inset 1px 1px rgba(20, 20, 100, 0.55), inset -1px -1px rgba(20, 20, 100, 0.55), 0px 5px #1374a8, 0px 7px 7px -3px black;
   -moz-box-shadow: inset 1px 1px rgba(20, 20, 100, 0.55), inset -1px -1px rgba(20, 20, 100, 0.55), 0px 5px #1374a8, 0px 7px 7px -3px black;
@@ -30,14 +30,14 @@
   -o-transition: all 0.15s ease;
   transition: all 0.15s ease;
 }
-/* line 30, ../../SASS/formElements.scss */
+/* line 34, ../../SASS/formElements.scss */
 .button--3d:hover {
   -webkit-box-shadow: inset 1px 1px rgba(20, 20, 100, 0.55), inset -1px -1px rgba(20, 20, 100, 0.55), 0px 8px #0e6491, 0px 10px 7px -3px black;
   -moz-box-shadow: inset 1px 1px rgba(20, 20, 100, 0.55), inset -1px -1px rgba(20, 20, 100, 0.55), 0px 8px #0e6491, 0px 10px 7px -3px black;
   box-shadow: inset 1px 1px rgba(20, 20, 100, 0.55), inset -1px -1px rgba(20, 20, 100, 0.55), 0px 8px #0e6491, 0px 10px 7px -3px black;
   top: -5px;
 }
-/* line 39, ../../SASS/formElements.scss */
+/* line 43, ../../SASS/formElements.scss */
 .button--3d:active {
   -webkit-box-shadow: inset 1px 1px rgba(20, 20, 100, 0.55), inset -1px -1px rgba(20, 20, 100, 0.55), 0px 0px #10618d;
   -moz-box-shadow: inset 1px 1px rgba(20, 20, 100, 0.55), inset -1px -1px rgba(20, 20, 100, 0.55), 0px 0px #10618d;
@@ -45,12 +45,12 @@
   top: 10px;
 }
 
-/* line 49, ../../SASS/formElements.scss */
+/* line 53, ../../SASS/formElements.scss */
 textarea {
   resize: none;
   border-color: rgba(0, 0, 0, 0.2);
 }
-/* line 52, ../../SASS/formElements.scss */
+/* line 56, ../../SASS/formElements.scss */
 textarea:focus {
   outline: none;
   -webkit-box-shadow: rgba(50, 200, 50, 0.5);
@@ -141,14 +141,20 @@ body .gear, body .marketplace-item {
 /* line 70, ../../SASS/base.scss */
 body .gear .profile, body .marketplace-item .profile {
   display: inline-block;
-  max-width: 30px;
   float: left;
+  max-width: 40px;
+  max-height: 40px;
 }
-/* line 75, ../../SASS/base.scss */
+/* line 76, ../../SASS/base.scss */
 body .gear .item-image, body .marketplace-item .item-image {
   height: 200px;
   background-color: gainsboro;
   background-size: contain;
   background-repeat: no-repeat;
   background-position: center center;
+}
+/* line 86, ../../SASS/base.scss */
+body form label {
+  text-transform: uppercase;
+  color: #8CCF4B;
 }
