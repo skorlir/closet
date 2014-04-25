@@ -16,8 +16,8 @@ exports.test = function(req, res) {
 };
 
 exports.upload = function(req, res) {
-	console.log(req);
-	var name = req.files.file.path.split('\\').slice(-1);
+	var name = req.files.file.path.split('/').slice(-1);
+	console.log(name);
 	var newPath = path.join(__dirname, '../public/uploads/' + name);
 	console.log(newPath);
 	fs.rename(req.files.file.path, newPath, function(err) {
