@@ -64,11 +64,13 @@ body, .head, .logo, .nav {
   padding: 3%;
   position: absolute;
   right: -90px;
+  width: 60px;
+  height: 60px;
 }
-/* line 63, ../../sass/whatsnew.scss */
+/* line 65, ../../sass/whatsnew.scss */
 #loggedInData h4.profile {
   font-size: 12pt;
   position: absolute;
-  right: -55px;
-  top: 2px;
+  right: -45px;
+  top: 12px;
 }
