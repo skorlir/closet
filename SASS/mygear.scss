@@ -2,7 +2,7 @@
 	background: #FFF;
 	padding-top: 2%;
 	border-radius: 15px;
-	display: none;
+	// display: none;	
 
 	label {
 	text-transform: uppercase;
@@ -15,7 +15,10 @@
 		display: inline-block;
 	}
 
-	input {
+	input:focus {
+    outline-style: auto;
+    outline-width: 3px;
+    outline-color: #8CCF4B;
 	}
 
 	.price {
@@ -36,6 +39,12 @@
 
 	textarea {
 		box-shadow: 0 1px 1px #DDD inset
+	}
+
+	textarea:focus {
+    outline-style: auto;
+    outline-width: 3px;
+    outline-color: #8CCF4B;
 	}
 
 	.fileinput {
@@ -62,24 +71,24 @@
 		padding: 0;
 
 		input {
-			margin: 1% auto;
+			text-transform: uppercase;
+			background: #FFF;
+			border: 2px solid #8CCF4B;
+			color: #000;
+			margin: auto;
 			padding: 2px 2%;
 			height: 100%;
 			position: relative;
 			top: 0;
-			color: white;
-			background: #8CCF4B;
-			border: none;
-			cursor: pointer;
+			cursor: pointer !important;
 		}	
 	}
 
 	input.post {
 		font-size: 140%;
-		text-transform: uppercase;
-		background: #FFF;
-		border: 2px solid #8CCF4B;
-		color: #000;
+		color: white;
+		background: #8CCF4B;
+		border: none;
 	}
 
 	button.cancel {
@@ -98,35 +107,28 @@
 	}
 
 	.gear {
-		background: #FFF;
-		border: 1px outset #888;
-		padding: 0;
+		background: #FFF;	
+		border: 10px solid #EEE;
+		padding: 0 !important;
 
-		img.img-rounded, .bottom, 
-		.description, .cost, .rent {
+		img.img-rounded, .description, .cost, .rent {
 			padding: 0;
-		}
-
-		img.img-rounded {
-			margin-top: 3%;
 		}
 
 		.description {
 			margin: 2% 0 0 3%;
+			font-size: 80%;
 		}
 
 		img.profile {
 			margin: 3% 1%;
-			width: 20%;
+			width: 40px;
+			height: 40px;
 		}
 
 		.rent {
 			font-size: 140%;
 			margin-top: 2%;
-
-			.buy {
-				padding: 0 10%;
-			}
 		}
 	}
 }

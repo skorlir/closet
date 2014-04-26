@@ -3,7 +3,6 @@
   background: #FFF;
   padding-top: 2%;
   border-radius: 15px;
-  display: none;
 }
 /* line 7, ../../sass/mygear.scss */
 .uploadform label {
@@ -16,32 +15,44 @@
 .uploadform p {
   display: inline-block;
 }
-/* line 21, ../../sass/mygear.scss */
+/* line 18, ../../sass/mygear.scss */
+.uploadform input:focus {
+  outline-style: auto;
+  outline-width: 3px;
+  outline-color: #8CCF4B;
+}
+/* line 24, ../../sass/mygear.scss */
 .uploadform .price {
   position: relative;
 }
-/* line 24, ../../sass/mygear.scss */
+/* line 27, ../../sass/mygear.scss */
 .uploadform .price span {
   position: absolute;
   padding: 1%;
   pointer-events: none;
   z-index: 1;
 }
-/* line 32, ../../sass/mygear.scss */
+/* line 35, ../../sass/mygear.scss */
 .uploadform select {
   background: #FFF;
   border: 1px solid #8CCF4B;
 }
-/* line 37, ../../sass/mygear.scss */
+/* line 40, ../../sass/mygear.scss */
 .uploadform textarea {
   box-shadow: 0 1px 1px #dddddd inset;
 }
-/* line 41, ../../sass/mygear.scss */
+/* line 44, ../../sass/mygear.scss */
+.uploadform textarea:focus {
+  outline-style: auto;
+  outline-width: 3px;
+  outline-color: #8CCF4B;
+}
+/* line 50, ../../sass/mygear.scss */
 .uploadform .fileinput {
   position: relative;
   padding: 0;
 }
-/* line 45, ../../sass/mygear.scss */
+/* line 54, ../../sass/mygear.scss */
 .uploadform .fileinput input.file {
   padding: 0;
   position: relative;
@@ -52,7 +63,7 @@
   z-index: 2;
   cursor: pointer;
 }
-/* line 57, ../../sass/mygear.scss */
+/* line 66, ../../sass/mygear.scss */
 .uploadform .fakeinput {
   position: absolute;
   top: 0px;
@@ -60,69 +71,62 @@
   z-index: 1;
   padding: 0;
 }
-/* line 64, ../../sass/mygear.scss */
+/* line 73, ../../sass/mygear.scss */
 .uploadform .fakeinput input {
-  margin: 1% auto;
-  padding: 2px 2%;
-  height: 100%;
-  position: relative;
-  top: 0;
-  color: white;
-  background: #8CCF4B;
-  border: none;
-  cursor: pointer;
-}
-/* line 77, ../../sass/mygear.scss */
-.uploadform input.post {
-  font-size: 140%;
   text-transform: uppercase;
   background: #FFF;
   border: 2px solid #8CCF4B;
   color: #000;
+  margin: auto;
+  padding: 2px 2%;
+  height: 100%;
+  position: relative;
+  top: 0;
+  cursor: pointer !important;
 }
-/* line 85, ../../sass/mygear.scss */
+/* line 87, ../../sass/mygear.scss */
+.uploadform input.post {
+  font-size: 140%;
+  color: white;
+  background: #8CCF4B;
+  border: none;
+}
+/* line 94, ../../sass/mygear.scss */
 .uploadform button.cancel {
   padding: 0 5%;
 }
 
-/* line 92, ../../sass/mygear.scss */
+/* line 101, ../../sass/mygear.scss */
 .mygear h3 {
   margin: 1.2% 0% 5% 0;
 }
-/* line 96, ../../sass/mygear.scss */
+/* line 105, ../../sass/mygear.scss */
 .mygear button.uploadnew {
   font-size: 150%;
 }
-/* line 100, ../../sass/mygear.scss */
+/* line 109, ../../sass/mygear.scss */
 .mygear .gear {
   background: #FFF;
-  border: 1px outset #888;
-  padding: 0;
-}
-/* line 106, ../../sass/mygear.scss */
-.mygear .gear img.img-rounded, .mygear .gear .bottom,
-.mygear .gear .description, .mygear .gear .cost, .mygear .gear .rent {
-  padding: 0;
-}
-/* line 110, ../../sass/mygear.scss */
-.mygear .gear img.img-rounded {
-  margin-top: 3%;
+  border: 10px solid #EEE;
+  padding: 0 !important;
 }
 /* line 114, ../../sass/mygear.scss */
-.mygear .gear .description {
-  margin: 2% 0 0 3%;
+.mygear .gear img.img-rounded, .mygear .gear .description, .mygear .gear .cost, .mygear .gear .rent {
+  padding: 0;
 }
 /* line 118, ../../sass/mygear.scss */
-.mygear .gear img.profile {
-  margin: 3% 1%;
-  width: 20%;
+.mygear .gear .description {
+  margin: 2% 0 0 3%;
+  font-size: 80%;
 }
 /* line 123, ../../sass/mygear.scss */
+.mygear .gear img.profile {
+  margin: 3% 1%;
+  width: 40px;
+  height: 40px;
+}
+/* line 129, ../../sass/mygear.scss */
 .mygear .gear .rent {
   font-size: 140%;
   margin-top: 2%;
-}
-/* line 127, ../../sass/mygear.scss */
-.mygear .gear .rent .buy {
-  padding: 0 10%;
 }

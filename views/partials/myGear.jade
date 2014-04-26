@@ -1,3 +1,12 @@
+nav.col-md-2.col-sm-2.col-xs-12.nav
+    ul.pages
+      li
+        a(href='#/activityfeed') What's New
+      li 
+        a(href='#/marketplace') Marketplace
+      li#here
+        a My Gear
+
 .col-md-10.col-sm-11(ng-show='loggedIn')
   form.col-xs-6.uploadform.col-xs-offset-1(ng-submit='addGear()')
     .form-group.col-xs-12
@@ -36,7 +45,7 @@
       input.col-xs-4.col-xs-offset-4.post(type='submit', value='Post Item')
   .mygear.col-xs-12
     h3.col-xs-2 My Gear:
-    button.col-xs-2.uploadnew.custom-button Add Item
+    //- button.col-xs-2.uploadnew.custom-button Add Item
     
     .col-xs-12.my-gear
       .col-lg-4.col-md-4.col-xs-6.gear(ng-repeat='item in myGear')
@@ -49,5 +58,4 @@
             span.quality {{item.quality}}
           .rent.pull-right.col-xs-3
             span.cost.text-center.pull-right {{item.price | currency}}
-            button.buy.custom-button.pull-right {{item.rentOrBuy}}
 
