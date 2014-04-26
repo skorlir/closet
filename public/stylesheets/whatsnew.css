@@ -42,24 +42,29 @@ body, .head, .logo, .nav {
 }
 
 /* line 41, ../../sass/whatsnew.scss */
+.pages #here a:hover {
+  cursor: default;
+}
+
+/* line 45, ../../sass/whatsnew.scss */
 .pages li a:hover {
   cursor: pointer;
   color: #8CCF4B;
 }
 
-/* line 46, ../../sass/whatsnew.scss */
+/* line 50, ../../sass/whatsnew.scss */
 .userinfo {
   float: right;
 }
 
-/* line 50, ../../sass/whatsnew.scss */
+/* line 54, ../../sass/whatsnew.scss */
 #loginButtons button {
   top: 13px;
   padding: 5px 15px;
   margin: 0;
 }
 
-/* line 57, ../../sass/whatsnew.scss */
+/* line 61, ../../sass/whatsnew.scss */
 #loggedInData img.profile {
   padding: 3%;
   position: absolute;
@@ -67,7 +72,7 @@ body, .head, .logo, .nav {
   width: 60px;
   height: 60px;
 }
-/* line 65, ../../sass/whatsnew.scss */
+/* line 69, ../../sass/whatsnew.scss */
 #loggedInData h4.profile {
   font-size: 12pt;
   position: absolute;

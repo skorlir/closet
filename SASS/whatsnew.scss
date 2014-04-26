@@ -38,6 +38,10 @@ body, .head, .logo, .nav {
 	color: #FFF;
 }
 
+.pages #here a:hover {
+	cursor: default;
+}
+
 .pages li a:hover {
 	cursor: pointer;
 	color: #8CCF4B;

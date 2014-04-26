@@ -12,6 +12,13 @@ input.search {
 }
 
 /* line 12, ../../sass/marketplace.scss */
+input.search:focus {
+  outline-style: auto;
+  outline-width: 3px;
+  outline-color: #8CCF4B;
+}
+
+/* line 18, ../../sass/marketplace.scss */
 button.type {
   margin: 0 0 0 28px;
   display: inline-block;
@@ -23,13 +30,13 @@ button.type {
   color: #000;
 }
 
-/* line 23, ../../sass/marketplace.scss */
+/* line 29, ../../sass/marketplace.scss */
 p.loc {
   display: inline-block;
   margin-left: 28px;
 }
 
-/* line 28, ../../sass/marketplace.scss */
+/* line 34, ../../sass/marketplace.scss */
 a.loc {
   display: inline-block;
   color: #888;
@@ -37,45 +44,43 @@ a.loc {
   margin-left: 20px;
 }
 
-/* line 35, ../../sass/marketplace.scss */
+/* line 41, ../../sass/marketplace.scss */
 a.loc:hover {
   color: #547C2D;
   cursor: pointer;
 }
 
-/* line 40, ../../sass/marketplace.scss */
+/* line 46, ../../sass/marketplace.scss */
 .marketplace-item {
-  border: none;
-  margin: 0.5%;
+  border: 10px solid #EEE;
   background: #FFF;
-  padding-left: 0;
-  padding-right: 0;
-}
-/* line 49, ../../sass/marketplace.scss */
-.marketplace-item img.img-rounded, .marketplace-item .bottom,
-.marketplace-item .description, .marketplace-item .cost, .marketplace-item .rent {
-  padding: 0;
+  padding: 0 !important;
 }
 /* line 53, ../../sass/marketplace.scss */
-.marketplace-item img.img-rounded {
-  margin-top: 3%;
+.marketplace-item img.img-rounded, .marketplace-item .description, .marketplace-item .cost, .marketplace-item .rent {
+  padding: 0;
 }
 /* line 57, ../../sass/marketplace.scss */
 .marketplace-item .description {
   margin: 2% 0 0 3%;
+  font-size: 80%;
 }
-/* line 61, ../../sass/marketplace.scss */
+/* line 62, ../../sass/marketplace.scss */
 .marketplace-item img.profile {
   margin: 3% 1%;
   width: 40px;
   height: 40px;
 }
-/* line 67, ../../sass/marketplace.scss */
+/* line 68, ../../sass/marketplace.scss */
 .marketplace-item .rent {
   font-size: 100%;
   margin-top: 2%;
 }
-/* line 71, ../../sass/marketplace.scss */
+/* line 72, ../../sass/marketplace.scss */
 .marketplace-item .rent .buy {
   padding: 0 10%;
+}
+/* line 76, ../../sass/marketplace.scss */
+.marketplace-item .rent .buy:hover {
+  background-color: #BAE293;
 }

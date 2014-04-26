@@ -9,6 +9,12 @@ input.search {
 	margin-left: 28px;
 }
 
+input.search:focus {
+    outline-style: auto;
+    outline-width: 3px;
+    outline-color: #8CCF4B;
+}
+
 button.type {
 	margin: 0 0 0 28px;
 	display: inline-block;
@@ -38,24 +44,19 @@ a.loc:hover {
 }
 
 .marketplace-item {
-	border: none;
-	margin: 0.5%;
+	border: 10px solid #EEE;
+	// margin: 2% 1% 0 0;
 	background: #FFF;
 	// border: 1px outset #888;
-	padding-left: 0;
-	padding-right: 0;
+	padding: 0 !important;
 
-	img.img-rounded, .bottom, 
-	.description, .cost, .rent {
+	img.img-rounded, .description, .cost, .rent {
 		padding: 0;
-	}
-
-	img.img-rounded {
-		margin-top: 3%;
 	}
 
 	.description {
 		margin: 2% 0 0 3%;
+		font-size: 80%;	
 	}
 
 	img.profile {
@@ -70,6 +71,10 @@ a.loc:hover {
 
 		.buy {
 			padding: 0 10%;
+		}
+
+		.buy:hover {
+	    background-color: #BAE293;
 		}
 	}
 }
