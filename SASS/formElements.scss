@@ -9,19 +9,10 @@
 	top: 0;
 
 	color: white;
-	text-shadow: 0px 0px 5px rgba(0,0,0,0.5);
-	font-size: 1.2em;
+	font-size: 100%;
 
-	border: 1px solid rgba(103, 147, 232, 0.5);
-	border-bottom: 1px solid #1670a0;
-	border-top: none;
-
-	@include background(
-		linear-gradient(
-			#59a8e5 0%, 
-			#1d86c6 97%, 
-			#7ab3ff 100%)
-		);
+	border: none;
+	background: #8CCF4B;
 }
 
 .button--3d {

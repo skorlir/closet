@@ -18,8 +18,6 @@ block content
         a(href='#/') What's New
       li 
         a(href='#/marketplace') Marketplace
-      li
-        a People
       li 
         a My Gear
 
@@ -35,17 +33,18 @@ block content
         #write.tab-pane.active
           form.col-md-10.col-sm-12.col-xs-12(ng-submit='publishActivity()', ng-show='loggedIn')
             textarea.col-xs-12(ng-model='activityForm.message', placeholder="What's your new adventure?")
-            input.custom-button.col-xs-12(type='submit', value='Post')
+            .col-xs-3.pull-right.post
+              input.custom-button.col-xs-12(type='submit', value='Post')
         #pic.tab-pane
           form.col-md-10.col-sm-12.col-xs-12(ng-submit='publishActivity()', ng-show='loggedIn')
             textarea.col-xs-12(ng-model='activityForm.message', placeholder="Choose photo/video")
             input.custom-button.col-xs-12(type='submit', value='Post')
 
-    .message-preview.col-md-10.col-sm-12(ng-show='!!activityForm.message')
-      img.profilefeed.col-xs-2(ng-src='{{profilePictureM}}', style='max-width: 80px')
-      .col-xs-10 {{displayName}}
-        small &nbsp;&nbsp;says
-        p.col-xs-12(style='margin-top: 5px; border: 1px solid rgba(0,0,0,0.2); padding: 5px; border-radius: 2px;') {{activityForm.message}}
+    //- .message-preview.col-md-10.col-sm-12(ng-show='!!activityForm.message')
+    //-   img.profilefeed.col-xs-2(ng-src='{{profilePictureM}}', style='max-width: 80px')
+    //-   .col-xs-10 {{displayName}}
+    //-     small &nbsp;&nbsp;says
+    //-     p.col-xs-12 {{activityForm.message}}
         
     //- hr.col-xs-6.col-xs-offset-1(style='margin-top: 20px;')
     
@@ -57,5 +56,5 @@ block content
         .col-xs-10 {{post.displayName}}
           small &nbsp;&nbsp; says
           p.pull-right {{Date(post.timestamp).toLocaleDateString()}}
-          .col-xs-12(style='margin-top: 5px; border: 1px solid rgba(0,0,0,0.2); padding: 5px; border-radius: 2px;') {{post.textContent}}
+          .col-xs-12.message-content {{post.textContent}}
 

@@ -94,3 +94,18 @@ h4.profile {
   color: #000;
   font-weight: bold;
 }
+
+/* line 87, ../../sass/whatsnew.scss */
+.post {
+  margin-top: 5px;
+}
+
+/* line 91, ../../sass/whatsnew.scss */
+.message-content {
+  border: none;
+}
+
+/* line 95, ../../sass/whatsnew.scss */
+.message {
+  margin-top: 2%;
+}
