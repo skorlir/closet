@@ -1,4 +1,19 @@
-angular.module('outrovert', ['firebase'])
+var router = function($routeProvider) {
+  $routeProvider.when('/', {
+    templateUrl: '/partials/activityFeed',
+    controller: 'activityFeed'
+  });
+  $routeProvider.when('/marketplace', {
+    templateUrl: '/partials/marketplace',
+    controller: 'marketplace'
+  });
+  $routeProvider.when('/mygear', {
+    templateUrl: '/partials/myGear',
+    controller: 'myGear'
+  });
+}
+
+angular.module('outrovert', ['firebase', 'ngRoute', 'ui.bootstrap'], router)
 .factory('firebaseService', ['$firebase', function($firebase) {
   var root = new Firebase('https://sweltering-fire-110.firebaseio.com');
   var firebase = $firebase(root);
@@ -21,7 +36,7 @@ angular.module('outrovert', ['firebase'])
     var userData = firebase.$child('users/' + user.uid);
 
     userData.$on('value', function(snapshot) {
-      if(!snapshot.name === user.displayName) 
+      if(!snapshot.snapshot.value.displayName === user.displayName) 
         userData.$update({displayName: user.displayName});
     });
 
@@ -104,7 +119,10 @@ angular.module('outrovert', ['firebase'])
 
 }])
 
-.controller('activityFeed', ['$firebase', '$scope', 'sessionService', '$window', '$http', 'firebaseService', function($firebase, $scope, session, $window, $http, db) {
+.controller('activityFeed', ['$scope', 'sessionService', '$window', '$http', 'firebaseService', function($scope, session, $window, $http, db) {
+  
+  $scope.activityForm = {};
+  $scope.activityForm.message = '';
   
   $scope.activity = db.get$firebase().$child('/activity');
   $scope.feed = [];
@@ -112,9 +130,11 @@ angular.module('outrovert', ['firebase'])
   $scope.activity.$on('child_added', function(postSnap) {
     console.log(postSnap);
     if(postSnap.snapshot.value === null) return;
-    if($.inArray(postSnap.snapshot.value, $scope.feed) > -1) return;
+    //if($.inArray(postSnap.snapshot.value, $scope.feed) > -1) return;
     $scope.feed.unshift(postSnap.snapshot.value);
   });
+  
+  //also what about removed?
   
   $scope.publishActivity = function() {
     var msg = $scope.activityForm.message;
@@ -126,5 +146,88 @@ angular.module('outrovert', ['firebase'])
       }
     });
   }
+}])
+
+.controller('marketplace', ['$scope', 'sessionService', '$window', '$http', 'firebaseService', function($scope, session, $window, $http, db) {
+  //item.image item.poster.profilePicture item.poster.uid item.price item.description.name item.description.quality item.description.tags item.description.categories item.action item.location
+  
+  $scope.marketdb = db.get$firebase().$child('/marketplace');
+  
+  $scope.marketplace = [];
+  $scope.filterForm  = {};
+  $scope.itemForm = {};
+  
+  //https://maps.googleapis.com/maps/api/geocode/json?address=Mountain+View,+CA&sensor=true_or_false&key=API_KEY
+  //key - AIzaSyAcDx9pk4zK3vgneoV0Dv-81memVX3TOtM
+  
+  $scope.marketdb.$on('child_added', function(itemSnap) {
+    console.log(itemSnap);
+    if(itemSnap.snapshot.value === null) return;
+    $scope.marketplace.unshift(itemSnap.snapshot.value);
+  });
+  
+  $scope.showHide = function(type) {
+    return (type == "Buy" && $scope.showBuy) || (type == "Rent" && $scope.showRent);
+  }
+  
+}])
+
+.controller('myGear', ['$scope', 'sessionService', '$http', 'firebaseService', function($scope, session, $http, db) {
+  session.getUser().then(function(user) {
+    if(user === null) {
+      console.log("not logged in");
+      return;
+    }
+    $scope.myGear = [];
+    $scope.addGearForm = {};
+
+    var myGearDB = db.get$firebase().$child('/users/'+user.uid + '/gear');
+    var marketDB = db.get$firebase().$child('/marketplace');
+
+    myGearDB.$on('child_added', function(gearSnap) {
+      console.log(gearSnap);
+      if(gearSnap.snapshot.value === null) return;
+      $scope.myGear.unshift(gearSnap.snapshot.value);
+    });
+
+    $scope.addGear = function() {
+      console.log($scope.addGearForm.rentalOrSale);
+      var item = {
+        name: $scope.addGearForm.name,
+        description: $scope.addGearForm.description,
+        quality: $scope.addGearForm.quality,
+        price: $scope.addGearForm.price,
+        rentOrBuy: $scope.addGearForm.rentalOrSale === 'Sell' ? 'Buy' : 'Rent',
+        image: $scope.addGearForm.image
+      }
+      var poster = {
+        uid: user.uid,
+        profilePicture: 'http://graph.facebook.com/' + user.id + '/picture?type=small'
+      }
+      myGearDB.$add(item);
+      marketDB.$add({item: item, poster: poster});
+    }
+    
+    $scope.uploadFile = function(files) {
+      var fd = new FormData();
+      //Take the first selected file
+      fd.append("file", files[0]);
+
+      $http.post('/upload', fd, {
+          withCredentials: true,
+          headers: {'Content-Type': undefined },
+          transformRequest: angular.identity
+        })
+      .success( function(name) {
+        // use createObjectURL to make preview,
+        // then only onsubmit save to server
+        $scope.addGearForm.image = '/uploads/' + name;
+      })
+      .error( function(err) {
+        console.log(err);
+      });
+    };
+  });
   
 }]);
+

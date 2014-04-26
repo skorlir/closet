@@ -1,25 +1,21 @@
 /* line 1, ../../SASS/formElements.scss */
 .custom-button, .button--3d {
   display: block;
-  margin: 1% auto;
-  padding: 2px 2%;
   height: 100%;
   position: relative;
   top: 0;
   color: white;
-  text-shadow: 0px 0px 5px rgba(0, 0, 0, 0.5);
+  background: #8CCF4B;
   font-size: 1.2em;
-  border: 1px solid rgba(103, 147, 232, 0.5);
-  border-bottom: 1px solid #1670a0;
-  border-top: none;
-  background: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #59a8e5), color-stop(97%, #1d86c6), color-stop(100%, #7ab3ff));
-  background: -webkit-linear-gradient(#59a8e5 0%, #1d86c6 97%, #7ab3ff 100%);
-  background: -moz-linear-gradient(#59a8e5 0%, #1d86c6 97%, #7ab3ff 100%);
-  background: -o-linear-gradient(#59a8e5 0%, #1d86c6 97%, #7ab3ff 100%);
-  background: linear-gradient(#59a8e5 0%, #1d86c6 97%, #7ab3ff 100%);
+  border: none;
+  border: none;
+}
+/* line 14, ../../SASS/formElements.scss */
+.custom-button.inactive, .inactive.button--3d {
+  background: #66a22b;
 }
 
-/* line 27, ../../SASS/formElements.scss */
+/* line 21, ../../SASS/formElements.scss */
 .button--3d {
   -webkit-box-shadow: inset 1px 1px rgba(20, 20, 100, 0.55), inset -1px -1px rgba(20, 20, 100, 0.55), 0px 5px #1374a8, 0px 7px 7px -3px black;
   -moz-box-shadow: inset 1px 1px rgba(20, 20, 100, 0.55), inset -1px -1px rgba(20, 20, 100, 0.55), 0px 5px #1374a8, 0px 7px 7px -3px black;
@@ -29,19 +25,19 @@
   -ms-border-radius: 3px;
   -o-border-radius: 3px;
   border-radius: 3px;
-  -webkit-transition: all 0.3s ease;
-  -moz-transition: all 0.3s ease;
-  -o-transition: all 0.3s ease;
-  transition: all 0.3s ease;
+  -webkit-transition: all 0.15s ease;
+  -moz-transition: all 0.15s ease;
+  -o-transition: all 0.15s ease;
+  transition: all 0.15s ease;
 }
-/* line 40, ../../SASS/formElements.scss */
+/* line 34, ../../SASS/formElements.scss */
 .button--3d:hover {
   -webkit-box-shadow: inset 1px 1px rgba(20, 20, 100, 0.55), inset -1px -1px rgba(20, 20, 100, 0.55), 0px 8px #0e6491, 0px 10px 7px -3px black;
   -moz-box-shadow: inset 1px 1px rgba(20, 20, 100, 0.55), inset -1px -1px rgba(20, 20, 100, 0.55), 0px 8px #0e6491, 0px 10px 7px -3px black;
   box-shadow: inset 1px 1px rgba(20, 20, 100, 0.55), inset -1px -1px rgba(20, 20, 100, 0.55), 0px 8px #0e6491, 0px 10px 7px -3px black;
   top: -5px;
 }
-/* line 49, ../../SASS/formElements.scss */
+/* line 43, ../../SASS/formElements.scss */
 .button--3d:active {
   -webkit-box-shadow: inset 1px 1px rgba(20, 20, 100, 0.55), inset -1px -1px rgba(20, 20, 100, 0.55), 0px 0px #10618d;
   -moz-box-shadow: inset 1px 1px rgba(20, 20, 100, 0.55), inset -1px -1px rgba(20, 20, 100, 0.55), 0px 0px #10618d;
@@ -49,12 +45,12 @@
   top: 10px;
 }
 
-/* line 59, ../../SASS/formElements.scss */
+/* line 53, ../../SASS/formElements.scss */
 textarea {
   resize: none;
   border-color: rgba(0, 0, 0, 0.2);
 }
-/* line 62, ../../SASS/formElements.scss */
+/* line 56, ../../SASS/formElements.scss */
 textarea:focus {
   outline: none;
   -webkit-box-shadow: rgba(50, 200, 50, 0.5);
@@ -110,9 +106,13 @@ a {
 body {
   font-family: "Lucida Grande", Helvetica, Arial, sans-serif;
   font-size: 18px;
-  background: #fbfbfb;
+  background: #fafafa;
 }
 /* line 44, ../../SASS/base.scss */
+body hr {
+  border-color: #ddd;
+}
+/* line 48, ../../SASS/base.scss */
 body header {
   height: 60px;
   padding: 15px 0;
@@ -122,7 +122,7 @@ body header {
   box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.1);
   background: #fff;
 }
-/* line 51, ../../SASS/base.scss */
+/* line 55, ../../SASS/base.scss */
 body header span.centeredLogo {
   font-family: pacifico, 'Lucida Grande', 'Lucida Sans', 'helvetica neue', helvetica, sans-serif;
   color: #5cafff;
@@ -130,7 +130,31 @@ body header span.centeredLogo {
   font-size: 1.9em;
   display: inline-block;
 }
-/* line 60, ../../SASS/base.scss */
+/* line 64, ../../SASS/base.scss */
 body .message-preview, body .message {
   margin-top: 15px;
+}
+/* line 68, ../../SASS/base.scss */
+body .gear, body .marketplace-item {
+  float: left;
+}
+/* line 70, ../../SASS/base.scss */
+body .gear .profile, body .marketplace-item .profile {
+  display: inline-block;
+  float: left;
+  max-width: 40px;
+  max-height: 40px;
+}
+/* line 76, ../../SASS/base.scss */
+body .gear .item-image, body .marketplace-item .item-image {
+  height: 200px;
+  background-color: gainsboro;
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center center;
+}
+/* line 86, ../../SASS/base.scss */
+body form label {
+  text-transform: uppercase;
+  color: #8CCF4B;
 }

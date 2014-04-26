@@ -1,0 +1,87 @@
+.logo img {
+	width: 100%;
+	// position: absolute;
+	// top: 0;
+	// left: 0;
+}
+
+body, .head, .logo, .nav {
+	padding: 0;
+	margin-bottom: 0;
+	background: #EEE;
+	border: none;
+}
+
+.pages {
+	padding: 0;
+	// margin-top: 7%;
+}
+
+.pages li {
+	padding: 5% 20%;
+	list-style: none;
+	background: #FFF;
+}
+
+.pages li a {
+	text-decoration: none;
+	color: #000;
+	text-transform: uppercase;
+	padding: 5%;
+}
+
+.pages #here {
+	background: #8CCF4B;
+}
+
+.pages #here a {
+	color: #FFF;
+}
+
+.pages li a:hover {
+	cursor: pointer;
+	color: #8CCF4B;
+}
+
+.userinfo {
+	float: right;
+}
+
+#loginButtons button {
+	top: 13px;
+	padding: 5px 15px;
+	margin: 0;
+}
+
+#loggedInData {
+	
+	img.profile {
+		padding: 3%;
+		position: absolute;
+		right: -90px;
+	}
+
+	h4.profile {
+		font-size: 12pt;
+		position: absolute;
+		right: -55px;
+		top: 2px;
+	}
+}
+
+.mainfeed {
+  position: absolute;
+  left: 300px;
+  top: 20px;
+}
+
+#write form, #pic form, .message, .message-preview {
+  padding: 2%;
+  border-radius: 5px;
+  background: #FFF;
+}
+
+#posttabs a {
+  color: #000;
+  font-weight: bold;
+}

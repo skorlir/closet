@@ -1,49 +1,25 @@
 extends layout
-
-block content  
-
-  header.col-xs-12(ng-controller='base')
-    #loggedInData.col-xs-7
-      .group(ng-show='loggedIn')
-        img.profile.pull-left(ng-src='{{profilePicture}}')
-        h4.col-xs-6.pull-left {{displayName}}
-      span.col-xs-3.centeredLogo.pull-right Outrovert
-    
-    #loginButtons.col-xs-5
-      button#fbLogin.custom-button.pull-right(ng-click='fbLogin()', ng-hide='loggedIn') Login to Facebook
-      button#logout.custom-button.pull-right(ng-click='logout()', ng-show='loggedIn') Log out
+block content
+  header.col-xs-12.head(ng-controller='base')
+    span.logo.col-xs-2
+      img(src='images/logoAssets/cornerlogo.png')
+    span.col-xs-4.pull-right
+      #loginButtons.col-xs-6.pull-right
+        button#fbLogin.custom-button.pull-right(ng-click='fbLogin()', ng-hide='loggedIn') Login to Facebook
+        button#logout.custom-button.pull-right(ng-click='logout()', ng-show='loggedIn') Log out
+      #loggedInData.col-xs-6.pull-right
+        .group(ng-show='loggedIn')
+          img.profile(ng-src='{{profilePicture}}')
+          h4.col-xs-6.profile {{displayName}}
       
-  nav.col-md-3.col-sm-2.col-xs-12
-    ul
+  nav.col-md-2.col-sm-2.col-xs-12.nav
+    ul.pages
+      li#here
+        a(href='#/') What's New
       li 
-        a
-          strong Activity Feed
+        a(href='#/marketplace') Marketplace
       li 
-        a Marketplace
-      li 
-        a My Stuff
+        a(href='#/mygear') My Gear
 
-  .col-md-9.col-sm-10(ng-controller='activityFeed')
+  ng-view
 
-    form.col-md-8.col-sm-10.col-xs-12(ng-submit='publishActivity()', ng-show='loggedIn')
-      label Post your most recent excursion!
-      textarea.col-xs-12(ng-model='activityForm.message')
-      input.button--3d.col-xs-12(type='submit', value='Post')
-    
-    .message-preview.col-md-8.col-sm-10(ng-show='!!activityForm.message')
-      img.profile.col-xs-2(ng-src='{{profilePictureM}}', style='max-width: 80px')
-      .col-xs-10 {{displayName}}
-        small &nbsp;&nbsp;says
-        p.col-xs-12(style='margin-top: 5px; border: 1px solid rgba(0,0,0,0.2); padding: 5px; border-radius: 2px;') {{activityForm.message}}
-        
-    hr.col-xs-6.col-xs-offset-1(style='margin-top: 20px;')
-    
-    p.col-xs-12.text-center.text-warning {{flashMessage}}
-    
-    .activityFeed.col-md-8.col-sm-10.col-xs-12(ng-repeat='post in feed | orderBy:timestamp', ng-show='{{!!feed.length}}')
-      .message.col-xs-12
-        img.profile.col-xs-2(ng-src='{{post.profilePictureM}}', style='max-width: 80px')
-        .col-xs-10 {{post.displayName}}
-          small &nbsp;&nbsp; says
-          p.pull-right {{Date(post.timestamp).toLocaleDateString()}}
-          .col-xs-12(style='margin-top: 5px; border: 1px solid rgba(0,0,0,0.2); padding: 5px; border-radius: 2px;') {{post.textContent}}

@@ -1,0 +1,94 @@
+/* line 1, ../../SASS/whatsnew.scss */
+.logo img {
+  width: 100%;
+}
+
+/* line 8, ../../SASS/whatsnew.scss */
+body, .head, .logo, .nav {
+  padding: 0;
+  margin-bottom: 0;
+  background: #EEE;
+  border: none;
+}
+
+/* line 15, ../../SASS/whatsnew.scss */
+.pages {
+  padding: 0;
+}
+
+/* line 20, ../../SASS/whatsnew.scss */
+.pages li {
+  padding: 5% 20%;
+  list-style: none;
+  background: #FFF;
+}
+
+/* line 26, ../../SASS/whatsnew.scss */
+.pages li a {
+  text-decoration: none;
+  color: #000;
+  text-transform: uppercase;
+  padding: 5%;
+}
+
+/* line 33, ../../SASS/whatsnew.scss */
+.pages #here {
+  background: #8CCF4B;
+}
+
+/* line 37, ../../SASS/whatsnew.scss */
+.pages #here a {
+  color: #FFF;
+}
+
+/* line 41, ../../SASS/whatsnew.scss */
+.pages li a:hover {
+  cursor: pointer;
+  color: #8CCF4B;
+}
+
+/* line 46, ../../SASS/whatsnew.scss */
+.userinfo {
+  float: right;
+}
+
+/* line 50, ../../SASS/whatsnew.scss */
+#loginButtons button {
+  top: 13px;
+  padding: 5px 15px;
+  margin: 0;
+}
+
+/* line 58, ../../SASS/whatsnew.scss */
+#loggedInData img.profile {
+  padding: 3%;
+  position: absolute;
+  right: -90px;
+}
+/* line 64, ../../SASS/whatsnew.scss */
+#loggedInData h4.profile {
+  font-size: 12pt;
+  position: absolute;
+  right: -55px;
+  top: 2px;
+}
+
+/* line 72, ../../SASS/whatsnew.scss */
+.mainfeed {
+  position: absolute;
+  left: 300px;
+  top: 20px;
+}
+
+/* line 78, ../../SASS/whatsnew.scss */
+#write form, #pic form, .message, .message-preview {
+  padding: 2%;
+  border-radius: 5px;
+  background: #FFF;
+}
+
+/* line 84, ../../SASS/whatsnew.scss */
+#posttabs a {
+  color: #000;
+  font-weight: bold;
+}
