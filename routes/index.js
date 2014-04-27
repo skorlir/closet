@@ -7,6 +7,10 @@ var Items = require('../models/Item.js');
 var fs = require('fs');
 var path = require('path');
 
+var AWS_ACCESS_KEY = process.env.OUTROVERT_AWS_ACCESS_KEY_ID;
+var AWS_SECRET_KEY = process.env.OUTROVERT_AWS_SECRET_ACCESS_KEY;
+var S3_BUCKET	   = process.env.S3_BUCKET_NAME;
+
 exports.index = function(req, res) {
 	res.render('index');
 };
@@ -16,12 +20,36 @@ exports.test = function(req, res) {
 };
 
 exports.upload = function(req, res) {
-	var name = req.files.file.path.split('/').slice(-1);
-	console.log(name);
+	console.log(req);
+	var name = req.files.file.path.split('\\').slice(-1);
 	var newPath = path.join(__dirname, '../public/uploads/' + name);
 	console.log(newPath);
 	fs.rename(req.files.file.path, newPath, function(err) {
 		if(err) console.log(err), res.send(err);
 		else res.send(name);
 	});
+};
+
+exports.aws0signature = function(req, res) {
+	var object_name = req.query.s3_object_name;
+	var mime_type = req.query.s3_object_type;
+
+	var now = new Date();
+	var expires = Math.ceil((now.getTime() + 10000)/1000); // 10 seconds from now
+	var amz_headers = "x-amz-acl:public-read";
+
+	var put_request = "PUT\n\n"+mime_type+"\n"+expires+"\n"+amz_headers+"\n/"+S3_BUCKET+"/"+object_name;
+
+	var signature = crypto.createHmac('sha1', AWS_SECRET_KEY).update(put_request).digest('base64');
+	signature = encodeURIComponent(signature.trim());
+	signature = signature.replace('%2B','+');
+
+	var url = 'https://'+S3_BUCKET+'.s3.amazonaws.com/'+object_name;
+
+	var credentials = {
+		signed_request: url+"?AWSAccessKeyId="+AWS_ACCESS_KEY+"&Expires="+expires+"&Signature="+signature,
+		url: url
+	};
+	res.write(JSON.stringify(credentials));
+	res.end();
 };

@@ -172,12 +172,14 @@ angular.module('outrovert', ['firebase', 'ngRoute', 'ui.bootstrap'], router)
   
 }])
 
-.controller('myGear', ['$scope', 'sessionService', '$http', 'firebaseService', function($scope, session, $http, db) {
+.controller('myGear', ['$scope', 'sessionService', '$http', 'firebaseService', '$window', function($scope, session, $http, db, $window) {
   session.getUser().then(function(user) {
+    
     if(user === null) {
       console.log("not logged in");
       return;
     }
+    
     $scope.myGear = [];
     $scope.addGearForm = {};
 
@@ -191,40 +193,32 @@ angular.module('outrovert', ['firebase', 'ngRoute', 'ui.bootstrap'], router)
     });
 
     $scope.addGear = function() {
-      console.log($scope.addGearForm.rentalOrSale);
-      var item = {
-        name: $scope.addGearForm.name,
-        description: $scope.addGearForm.description,
-        quality: $scope.addGearForm.quality,
-        price: $scope.addGearForm.price,
-        rentOrBuy: $scope.addGearForm.rentalOrSale === 'Sell' ? 'Buy' : 'Rent',
-        image: $scope.addGearForm.image
-      }
-      var poster = {
-        uid: user.uid,
-        profilePicture: 'http://graph.facebook.com/' + user.id + '/picture?type=small'
-      }
-      myGearDB.$add(item);
-      marketDB.$add({item: item, poster: poster});
+      $scope.s3upload.onFinishS3Put(function(public_url) {
+          var item = {
+          name: $scope.addGearForm.name,
+          description: $scope.addGearForm.description,
+          quality: $scope.addGearForm.quality,
+          price: $scope.addGearForm.price,
+          rentOrBuy: $scope.addGearForm.rentalOrSale === 'Sell' ? 'Buy' : 'Rent',
+          image: public_url
+        }
+        var poster = {
+          uid: user.uid,
+          profilePicture: 'http://graph.facebook.com/' + user.id + '/picture?type=small'
+        }
+        myGearDB.$add(item);
+        marketDB.$add({item: item, poster: poster});
+      });
+      $scope.s3upload.uploadFile($scope.imgToUpload);
     }
     
     $scope.uploadFile = function(files) {
-      var fd = new FormData();
-      //Take the first selected file
-      fd.append("file", files[0]);
-
-      $http.post('/upload', fd, {
-          withCredentials: true,
-          headers: {'Content-Type': undefined },
-          transformRequest: angular.identity
-        })
-      .success( function(name) {
-        // use createObjectURL to make preview,
-        // then only onsubmit save to server
-        $scope.addGearForm.image = '/uploads/' + name;
-      })
-      .error( function(err) {
-        console.log(err);
+      //send s3_object_name and s3_object_type as GET params
+      $scope.imgToUpload = files[0];
+      $scope.s3upload = new $window.S3Upload({
+        s3_object_name: user.uid + '_' + $scope.imgToUpload.name,
+        s3_sign_put_url: 'aws0signature',
+        file_dom_selector: null
       });
     };
   });
