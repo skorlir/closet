@@ -1,29 +1,37 @@
-.col-md-7.col-sm-8.mainfeed
-  tabset
-    tab
-      tab-heading
-        i.fa.fa-edit | Share a story
-      form.col-md-10.col-sm-12.col-xs-12(ng-submit='publishActivity()', ng-show='loggedIn')
-        textarea.col-xs-12(ng-model='activityForm.message', placeholder="What's your new adventure?")
-        input.custom-button.col-xs-12(type='submit', value='Post')
-    tab
-      tab-heading
-        i.fa.fa-camera | Upload photo/video
-      form.col-md-10.col-sm-12.col-xs-12(ng-submit='publishActivity()', ng-show='loggedIn')
-        textarea.col-xs-12(ng-model='activityForm.message', placeholder="Choose photo/video")
-        input.custom-button.col-xs-12(type='submit', value='Post')
-        
-  //- form.col-md-8.col-sm-10.col-xs-12(ng-submit='publishActivity()', ng-show='loggedIn')
-  //-   label Post your most recent excursion!
-  //-   textarea.col-xs-12(ng-model='activityForm.message')
-  //-   input.button--3d.col-xs-12(type='submit', value='Post')
 
-  .message-preview.col-md-10.col-sm-12(ng-show='false')
-    img.profilefeed.col-xs-2(ng-src='{{profilePictureM}}', style='max-width: 80px')
-    .col-xs-10 {{displayName}}
-      small &nbsp;&nbsp;says
-      p.col-xs-12(style='margin-top: 5px; border: 1px solid rgba(0,0,0,0.2); padding: 5px; border-radius: 2px;') {{activityForm.message}}
+nav.col-md-2.col-sm-2.col-xs-12.nav
+  ul.pages
+    li#here
+      a What's New
+    li 
+      a(href='#/marketplace') Marketplace
+    li 
+      a(href='#/mygear') My Gear
 
+.col-md-7.col-sm-8.mainfeed(ng-controller='activityFeed')
+  #tabs
+    ul.nav.nav-tabs#posttabs
+      li.active
+        a(href='#write').fa.fa-edit | Share a story
+      li
+        a(href='#pic').fa.fa-camera | Upload photo/video
+    .tab-content
+      #write.tab-pane.active
+        form.col-md-10.col-sm-12.col-xs-12(ng-submit='publishActivity()', ng-show='loggedIn')
+          textarea.col-xs-12(ng-model='activityForm.message', placeholder="What's your new adventure?")
+          .col-xs-3.pull-right.post
+            input.custom-button.col-xs-12(type='submit', value='Post')
+      #pic.tab-pane
+        form.col-md-10.col-sm-12.col-xs-12(ng-submit='publishActivity()', ng-show='loggedIn')
+          textarea.col-xs-12(ng-model='activityForm.message', placeholder="Choose photo/video")
+          input.custom-button.col-xs-12(type='submit', value='Post')
+
+  //- .message-preview.col-md-10.col-sm-12(ng-show='!!activityForm.message')
+  //-   img.profilefeed.col-xs-2(ng-src='{{profilePictureM}}', style='max-width: 80px')
+  //-   .col-xs-10 {{displayName}}
+  //-     small &nbsp;&nbsp;says
+  //-     p.col-xs-12 {{activityForm.message}}
+      
   //- hr.col-xs-6.col-xs-offset-1(style='margin-top: 20px;')
 
   p.col-xs-12.text-center.text-warning {{flashMessage}}
@@ -34,4 +42,4 @@
       .col-xs-10 {{post.displayName}}
         small &nbsp;&nbsp; says
         p.pull-right {{Date(post.timestamp).toLocaleDateString()}}
-        .col-xs-12(style='margin-top: 5px; border: 1px solid rgba(0,0,0,0.2); padding: 5px; border-radius: 2px;') {{post.textContent}}
+        .col-xs-12.message-content {{post.textContent}}
