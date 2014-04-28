@@ -5,7 +5,7 @@ html(ng-app='outrovert')
   body(ng-controller='base')
     header.col-xs-12.head
       span.logo.col-xs-2
-        img(src='images/logoAssets/cornerlogo.png')
+        img(src='images/logoAssets/cornerlogo.png', ng-show="loggedIn")
       span.col-xs-4.pull-right
         #loginButtons.col-xs-6.pull-right
           button#logout.custom-button.pull-right(ng-click='logout()', ng-show='loggedIn') Log out
