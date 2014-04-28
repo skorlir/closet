@@ -41,36 +41,63 @@ body, .head, .logo, .nav {
   color: #FFF;
 }
 
+<<<<<<< HEAD
 /* line 41, ../../SASS/whatsnew.scss */
+=======
+/* line 41, ../../sass/whatsnew.scss */
+.pages #here a:hover {
+  cursor: default;
+}
+
+/* line 45, ../../sass/whatsnew.scss */
+>>>>>>> 64e57da3b39e36cd22c0c8a3f93bc87f5d363458
 .pages li a:hover {
   cursor: pointer;
   color: #8CCF4B;
 }
 
+<<<<<<< HEAD
 /* line 46, ../../SASS/whatsnew.scss */
+=======
+/* line 50, ../../sass/whatsnew.scss */
+>>>>>>> 64e57da3b39e36cd22c0c8a3f93bc87f5d363458
 .userinfo {
   float: right;
 }
 
+<<<<<<< HEAD
 /* line 50, ../../SASS/whatsnew.scss */
+=======
+/* line 54, ../../sass/whatsnew.scss */
+>>>>>>> 64e57da3b39e36cd22c0c8a3f93bc87f5d363458
 #loginButtons button {
   top: 13px;
   padding: 5px 15px;
   margin: 0;
 }
 
+<<<<<<< HEAD
 /* line 58, ../../SASS/whatsnew.scss */
+=======
+/* line 61, ../../sass/whatsnew.scss */
+>>>>>>> 64e57da3b39e36cd22c0c8a3f93bc87f5d363458
 #loggedInData img.profile {
   padding: 3%;
   position: absolute;
   right: -90px;
+  width: 60px;
+  height: 60px;
 }
+<<<<<<< HEAD
 /* line 64, ../../SASS/whatsnew.scss */
+=======
+/* line 69, ../../sass/whatsnew.scss */
+>>>>>>> 64e57da3b39e36cd22c0c8a3f93bc87f5d363458
 #loggedInData h4.profile {
   font-size: 12pt;
   position: absolute;
-  right: -55px;
-  top: 2px;
+  right: -45px;
+  top: 12px;
 }
 
 /* line 72, ../../SASS/whatsnew.scss */

@@ -9,6 +9,12 @@ input.search {
 	margin-left: 28px;
 }
 
+input.search:focus {
+    outline-style: auto;
+    outline-width: 3px;
+    outline-color: #8CCF4B;
+}
+
 button.type {
 	margin: 0 0 0 28px;
 	display: inline-block;
@@ -32,40 +38,43 @@ a.loc {
 	margin-left: 20px;
 }
 
-a.location:hover {
-	color: #339933;
+a.loc:hover {
+	color: #547C2D;
 	cursor: pointer;
 }
 
-//.marketplace-item {
-//	background: #FFF;
-//	border: 1px outset #888;
-//	padding: 0;
-//
-//	img.img-rounded, .bottom, 
-//	.description, .cost, .rent {
-//		padding: 0;
-//	}
-//
-//	img.img-rounded {
-//		margin-top: 3%;
-//	}
-//
-//	.description {
-//		margin: 2% 0 0 3%;
-//	}
-//
-//	img.profile {
-//		margin: 3% 1%;
-//		width: 20%;
-//	}
-//
-//	.rent {
-//		font-size: 140%;
-//		margin-top: 2%;
-//
-//		.buy {
-//			padding: 0 10%;
-//		}
-//	}
-// }
+.marketplace-item {
+	border: 10px solid #EEE;
+	// margin: 2% 1% 0 0;
+	background: #FFF;
+	// border: 1px outset #888;
+	padding: 0 !important;
+
+	img.img-rounded, .description, .cost, .rent {
+		padding: 0;
+	}
+
+	.description {
+		margin: 2% 0 0 3%;
+		font-size: 80%;	
+	}
+
+	img.profile {
+		margin: 3% 1%;
+		width: 40px;
+		height: 40px;
+	}
+
+	.rent {
+		font-size: 100%;
+		margin-top: 2%;
+
+		.buy {
+			padding: 0 10%;
+		}
+
+		.buy:hover {
+	    background-color: #BAE293;
+		}
+	}
+}

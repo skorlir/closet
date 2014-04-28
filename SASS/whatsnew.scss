@@ -38,6 +38,10 @@ body, .head, .logo, .nav {
 	color: #FFF;
 }
 
+.pages #here a:hover {
+	cursor: default;
+}
+
 .pages li a:hover {
 	cursor: pointer;
 	color: #8CCF4B;
@@ -59,13 +63,15 @@ body, .head, .logo, .nav {
 		padding: 3%;
 		position: absolute;
 		right: -90px;
+		width: 60px;
+		height: 60px;
 	}
 
 	h4.profile {
 		font-size: 12pt;
 		position: absolute;
-		right: -55px;
-		top: 2px;
+		right: -45px;
+		top: 12px;
 	}
 }
 
