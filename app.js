@@ -26,7 +26,7 @@ app.get('/home', httpAuth, routes.test);
 app.get('/partials/:partial', function(req, res) {
   res.render('partials/'+req.params.partial);
 });
-app.get('aws0signature', routes.aws0signature);
+app.get('/aws0signature', routes.aws0signature);
 
 //start listening
 http.createServer(app).listen(app.get('port'), function() {

@@ -25,7 +25,7 @@
       for (option in options) {
         this[option] = options[option];
       }
-      this.handleFileSelect(document.getElementById(this.file_dom_selector));
+      //this.handleFileSelect(document.getElementById(this.file_dom_selector));
     }
 
     S3Upload.prototype.handleFileSelect = function(file_element) {

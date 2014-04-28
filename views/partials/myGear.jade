@@ -31,15 +31,15 @@
   
   hr
   .col-xs-12.my-gear
-    .col-lg-3.col-md-4.col-xs-6.gear(ng-repeat='item in myGear')
+    .col-lg-4.col-sm-6.col-xs-12.gear(ng-repeat='item in myGear')
       .item-image.col-xs-12.img-rounded(style='background-image: url("{{item.image || "images/default.png"}}")')
       .col-xs-12
         img.profile.img-responsive(ng-src='{{profilePicture}}')
-        .description.col-xs-6
+        .description.col-xs-7
           span.name {{item.name}}
           br
           span.quality {{item.quality}}
-        .col-xs-4
-          span.cost.text-center {{item.price | currency}}
+        .rent.col-xs-3
+          span.cost.text-center.pull-right {{item.price | currency}}
           br
-          button.buy {{item.rentOrBuy}}
+          button.buy.custom-button.pull-right {{item.rentOrBuy}}

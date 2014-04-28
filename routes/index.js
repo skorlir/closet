@@ -6,10 +6,11 @@
 var Items = require('../models/Item.js');
 var fs = require('fs');
 var path = require('path');
+var crypto = require('crypto');
 
-var AWS_ACCESS_KEY = process.env.OUTROVERT_AWS_ACCESS_KEY_ID;
-var AWS_SECRET_KEY = process.env.OUTROVERT_AWS_SECRET_ACCESS_KEY;
-var S3_BUCKET	   = process.env.S3_BUCKET_NAME;
+var AWS_ACCESS_KEY = process.env.OUTROVERT_AWS_ACCESS_KEY_ID || 'AKIAIL4CN36DNKF2J6MQ';
+var AWS_SECRET_KEY = process.env.OUTROVERT_AWS_SECRET_ACCESS_KEY || '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';
+var S3_BUCKET	   = process.env.S3_BUCKET_NAME || 'outrovert-uploads';
 
 exports.index = function(req, res) {
 	res.render('index');

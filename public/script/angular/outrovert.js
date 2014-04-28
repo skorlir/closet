@@ -14,6 +14,7 @@ var router = function($routeProvider) {
 }
 
 angular.module('outrovert', ['firebase', 'ngRoute', 'ui.bootstrap'], router)
+
 .factory('firebaseService', ['$firebase', function($firebase) {
   var root = new Firebase('https://sweltering-fire-110.firebaseio.com');
   var firebase = $firebase(root);
@@ -24,6 +25,7 @@ angular.module('outrovert', ['firebase', 'ngRoute', 'ui.bootstrap'], router)
     timestamp: function() { return Firebase.ServerValue.TIMESTAMP; }
   }
 }])
+
 .factory('sessionService',  ['firebaseService', '$firebaseSimpleLogin', '$rootScope', function(db, $firebaseSimpleLogin, $rootScope) {
 
   var root = db.root();
@@ -34,11 +36,14 @@ angular.module('outrovert', ['firebase', 'ngRoute', 'ui.bootstrap'], router)
   $rootScope.$on('$firebaseSimpleLogin:login', function(e, user) {
 
     var userData = firebase.$child('users/' + user.uid);
-
-    userData.$on('value', function(snapshot) {
-      if(!snapshot.snapshot.value.displayName === user.displayName) 
-        userData.$update({displayName: user.displayName});
-    });
+    console.log(user);
+    
+    if(user.displayName)
+      userData.$update({displayName: user.displayName});
+    if(user.thirdPartyUserData.location)
+      userData.$update({location: user.thirdPartyUserData.location.name});
+    if(user.thirdPartyUserData.hometown)
+      userData.$update({hometown: user.thirdPartyUserData.hometown.name});
 
     var userConnections = userData.$child('connections');
     var lastOnline = userData.$child('lastOnline');
@@ -56,6 +61,8 @@ angular.module('outrovert', ['firebase', 'ngRoute', 'ui.bootstrap'], router)
       $rootScope.displayName = user.displayName;
       $rootScope.profilePicture = 'http://graph.facebook.com/'+user.id+'/picture?type=small';
       $rootScope.profilePictureM = 'http://graph.facebook.com/'+user.id+'/picture';
+      $rootScope.location = user.location;
+      $rootScope.hometown = user.hometown;
     });
 
     $rootScope.disconnect = function() {
@@ -64,13 +71,13 @@ angular.module('outrovert', ['firebase', 'ngRoute', 'ui.bootstrap'], router)
     }
 
     $rootScope.$on('$firebaseSimpleLogin:logout', function() {
-      console.log('remove connection pls', con);
       $rootScope.disconnect();
-      console.log('set lastonline pls');        
       $rootScope.loggedIn = false;
       $rootScope.displayName = '';
       $rootScope.profilePicture = '';
       $rootScope.profilePictureM = '';
+      $rootScope.location = '';
+      $rootScope.hometown = '';
     });
   });
 
@@ -78,7 +85,7 @@ angular.module('outrovert', ['firebase', 'ngRoute', 'ui.bootstrap'], router)
     fbLogin: function(next) {
       return function() {
         auth.$login('facebook', {
-          scope: 'email, publish_actions',
+          scope: 'email, publish_actions, user_location',
           rememberMe: true
         }).then(function(user) {
           next(user);
@@ -130,7 +137,6 @@ angular.module('outrovert', ['firebase', 'ngRoute', 'ui.bootstrap'], router)
   $scope.activity.$on('child_added', function(postSnap) {
     console.log(postSnap);
     if(postSnap.snapshot.value === null) return;
-    //if($.inArray(postSnap.snapshot.value, $scope.feed) > -1) return;
     $scope.feed.unshift(postSnap.snapshot.value);
   });
   
@@ -142,7 +148,13 @@ angular.module('outrovert', ['firebase', 'ngRoute', 'ui.bootstrap'], router)
     session.getUser().then(function(user) {
       if (user === null) $scope.flashMessage = 'Error: Not logged in. Please refresh.';
       else {
-        $scope.activity.$add({user: user.uid, textContent: msg, timestamp: db.timestamp(), profilePictureM: $scope.profilePictureM, displayName: $scope.displayName});
+        $scope.activity.$add({
+          user: user.uid, 
+          textContent: msg, 
+          timestamp: db.timestamp(), 
+          profilePictureM: $scope.profilePictureM, 
+          displayName: $scope.displayName
+        });
       }
     });
   }
@@ -157,8 +169,11 @@ angular.module('outrovert', ['firebase', 'ngRoute', 'ui.bootstrap'], router)
   $scope.filterForm  = {};
   $scope.itemForm = {};
   
-  //https://maps.googleapis.com/maps/api/geocode/json?address=Mountain+View,+CA&sensor=true_or_false&key=API_KEY
-  //key - AIzaSyAcDx9pk4zK3vgneoV0Dv-81memVX3TOtM
+  $scope.filterNames = function(expected, given) {
+    console.log(expected);
+    console.log(given);
+    return true;
+  };
   
   $scope.marketdb.$on('child_added', function(itemSnap) {
     console.log(itemSnap);
@@ -166,17 +181,24 @@ angular.module('outrovert', ['firebase', 'ngRoute', 'ui.bootstrap'], router)
     $scope.marketplace.unshift(itemSnap.snapshot.value);
   });
   
+  $scope.toggleBtns = function(which) {
+    which === "showBuy" ? 
+      $scope.showRent = $scope.showBuy === true ? true : false 
+    : $scope.showBuy = $scope.showRent === true ? true : false;
+  };
+  
   $scope.showHide = function(type) {
     return (type == "Buy" && $scope.showBuy) || (type == "Rent" && $scope.showRent);
-  }
+  };
   
 }])
 
-.controller('myGear', ['$scope', 'sessionService', '$http', 'firebaseService', '$window', function($scope, session, $http, db, $window) {
+.controller('myGear', ['$scope', 'sessionService', '$http', 'firebaseService', '$window', '$location', function($scope, session, $http, db, $window, $location) {
   session.getUser().then(function(user) {
     
     if(user === null) {
       console.log("not logged in");
+      $location.path('/');
       return;
     }
     
@@ -193,8 +215,8 @@ angular.module('outrovert', ['firebase', 'ngRoute', 'ui.bootstrap'], router)
     });
 
     $scope.addGear = function() {
-      $scope.s3upload.onFinishS3Put(function(public_url) {
-          var item = {
+      $scope.s3upload.onFinishS3Put = function(public_url) {
+        var item = {
           name: $scope.addGearForm.name,
           description: $scope.addGearForm.description,
           quality: $scope.addGearForm.quality,
@@ -208,12 +230,12 @@ angular.module('outrovert', ['firebase', 'ngRoute', 'ui.bootstrap'], router)
         }
         myGearDB.$add(item);
         marketDB.$add({item: item, poster: poster});
-      });
+        
+      };
       $scope.s3upload.uploadFile($scope.imgToUpload);
     }
     
     $scope.uploadFile = function(files) {
-      //send s3_object_name and s3_object_type as GET params
       $scope.imgToUpload = files[0];
       $scope.s3upload = new $window.S3Upload({
         s3_object_name: user.uid + '_' + $scope.imgToUpload.name,
