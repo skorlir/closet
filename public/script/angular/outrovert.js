@@ -36,14 +36,6 @@ angular.module('outrovert', ['firebase', 'ngRoute', 'ui.bootstrap'], router)
   $rootScope.$on('$firebaseSimpleLogin:login', function(e, user) {
 
     var userData = firebase.$child('users/' + user.uid);
-    console.log(user);
-    
-    if(user.displayName)
-      userData.$update({displayName: user.displayName});
-    if(user.thirdPartyUserData.location)
-      userData.$update({location: user.thirdPartyUserData.location.name});
-    if(user.thirdPartyUserData.hometown)
-      userData.$update({hometown: user.thirdPartyUserData.hometown.name});
 
     var userConnections = userData.$child('connections');
     var lastOnline = userData.$child('lastOnline');
@@ -57,6 +49,18 @@ angular.module('outrovert', ['firebase', 'ngRoute', 'ui.bootstrap'], router)
 
     if(!con) userConnections.$add({agent: UA, timestamp: time}).then(function(ref) {
       con = ref.name();
+      
+      console.log(user);
+    
+      if(user.displayName)
+        userData.$update({displayName: user.displayName});
+      if(user.thirdPartyUserData.location)
+        userData.$update({location: user.thirdPartyUserData.location.name});
+      if(user.thirdPartyUserData.hometown)
+        userData.$update({hometown: user.thirdPartyUserData.hometown.name});
+      if(user.thirdPartyUserData.email)
+        userData.$update({email: user.thirdPartyUserData.email});
+      
       $rootScope.loggedIn = true;
       $rootScope.displayName = user.displayName;
       $rootScope.profilePicture = 'http://graph.facebook.com/'+user.id+'/picture?type=small';
@@ -120,6 +124,7 @@ angular.module('outrovert', ['firebase', 'ngRoute', 'ui.bootstrap'], router)
   });
 
   //don't log out on leave, but do disconnect
+  //FIXME: doesn't effectively close connection in all cases
   angular.element($window).bind('unload', function() {
     if($scope.disconnect) $scope.disconnect();
   });
@@ -192,7 +197,7 @@ angular.module('outrovert', ['firebase', 'ngRoute', 'ui.bootstrap'], router)
   }
 }])
 
-.controller('marketplace', ['$scope', 'sessionService', '$window', '$http', 'firebaseService', function($scope, session, $window, $http, db) {
+.controller('marketplace', ['$scope', 'sessionService', '$window', '$http', 'firebaseService', '$modal', function($scope, session, $window, $http, db, $modal) {
   //item.image item.poster.profilePicture item.poster.uid item.price item.description.name item.description.quality item.description.tags item.description.categories item.action item.location
   
   $scope.marketdb = db.get$firebase().$child('/marketplace');
@@ -201,12 +206,6 @@ angular.module('outrovert', ['firebase', 'ngRoute', 'ui.bootstrap'], router)
   $scope.filterForm  = {};
   $scope.itemForm = {};
   
-  $scope.filterNames = function(expected, given) {
-    console.log(expected);
-    console.log(given);
-    return true;
-  };
-  
   $scope.marketdb.$on('child_added', function(itemSnap) {
     console.log(itemSnap);
     if(itemSnap.snapshot.value === null) return;
@@ -214,18 +213,60 @@ angular.module('outrovert', ['firebase', 'ngRoute', 'ui.bootstrap'], router)
   });
   
   $scope.toggleBtns = function(which) {
-    which === "showBuy" ? 
-      $scope.showRent = $scope.showBuy === true ? true : false 
-    : $scope.showBuy = $scope.showRent === true ? true : false;
+    if ( which === 'buy' ) {
+      $scope.showBuy = true;
+      $scope.showRent = !$scope.showRent;
+    }
+    else {
+      $scope.showRent = true; 
+      $scope.showBuy  = !$scope.showBuy;
+    }
+    if(! ($scope.showBuy || $scope.showRent) ) $scope.showBuy = $scope.showRent = true;
   };
   
   $scope.showHide = function(type) {
     return (type == "Buy" && $scope.showBuy) || (type == "Rent" && $scope.showRent);
   };
   
+  var modalController = function($scope, $modalInstance) {
+    $scope.ok = function() {
+      $modalInstance.close();
+    };
+    
+    $scope.cancel = function() {
+      $modalInstance.dismiss('cancel');
+    };
+  };
+  
+  $scope.openTransaction = function(r) {
+    var modal = $modal.open({
+      templateUrl: 'modal.html',
+      controller:  modalController
+    });
+    
+    modal.result.then(function() {
+      //confirmation == whatever is passed in. So nothing?
+      //send an email with node-mailer
+      session.getUser().then(function(user) {
+        $http.post('/transaction', {user: user, r: r})
+        .success(function(res) {
+          console.log("the transaction was committed.");
+          //should do something to prevent double transactions
+        })
+        .error(function(error) {
+          console.log(error);
+        });
+      });
+      
+    }, function(cancellation) {
+      //nothing needs done here...
+      console.log("cancel!");
+    });
+  };
+  
 }])
 
-.controller('myGear', ['$scope', 'sessionService', '$http', 'firebaseService', '$window', '$location', function($scope, session, $http, db, $window, $location) {
+.controller('myGear', ['$scope', 'sessionService', 'firebaseService', '$window', '$location', function($scope, session, db, $window, $location) {
   session.getUser().then(function(user) {
     
     if(user === null) {
@@ -260,13 +301,21 @@ angular.module('outrovert', ['firebase', 'ngRoute', 'ui.bootstrap'], router)
           uid: user.uid,
           profilePicture: 'http://graph.facebook.com/' + user.id + '/picture?type=small'
         }
-        var baseid = myGearDB.$add(item);
-        marketDB.$child(baseid).$set({item: item, poster: poster});
+        var idPromise = myGearDB.$add(item);
+        idPromise.then(function(gear) {
+          marketDB.$child(gear.name()).$set({item: item, poster: poster});
+        });
         
         $scope.addGearForm = {};
         $scope.fileElement.value = '';
       };
       $scope.s3upload.uploadFile($scope.imgToUpload);
+    }
+  
+    $scope.deleteGear = function (key) {
+      myGearDB.$remove(key);
+      marketDB.$remove(key);
+      $scope.myGear.splice($scope.myGear.indexOf($scope.myGear.filter(function(el) { return el[0] === key; })[0]), 1);
     }
   });
   

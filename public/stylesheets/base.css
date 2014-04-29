@@ -22,23 +22,23 @@ body .custom-button {
   border: none;
   border-radius: 3px;
 }
-/* line 27, ../../sass/base.scss */
+/* line 26, ../../sass/base.scss */
 body .custom-button:hover {
   background-color: #BAE293;
   cursor: pointer;
 }
-/* line 32, ../../sass/base.scss */
+/* line 31, ../../sass/base.scss */
 body .custom-button.inactive {
   background: #66a22b;
 }
-/* line 36, ../../sass/base.scss */
+/* line 35, ../../sass/base.scss */
 body header {
   height: 60px;
   padding: 15px 0;
   margin-bottom: 20px;
   background: #fff;
 }
-/* line 44, ../../sass/base.scss */
+/* line 43, ../../sass/base.scss */
 body form label {
   text-transform: uppercase;
   color: #8CCF4B;

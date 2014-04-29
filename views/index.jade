@@ -54,11 +54,27 @@ head
       .row.centered
         //
           Begin MailChimp Signup Form 
+<<<<<<< HEAD
         form#mc-embedded-subscribe-form.validate.col-lg-8.col-lg-offset-2(action='http://herokuapp.us8.list-manage1.com/subscribe/post?u=14b0b0e0a73a3857153980900&id=ea3be0eb05', method='post', name='mc-embedded-subscribe-form', target='_blank', novalidate='novalidate' style="margin-top: 10px;")
           .col-xs-7
             input.email.pull-right(type='email', value='', name='EMAIL', placeholder=' enter your email address to join', required='required')
           .col-xs-5
             input#mc-embedded-subscribe.custom-button(value="I'm an Outrovert!", name='subscribe', data-dismiss='modal')
+=======
+        form#mc-embedded-subscribe-form.validate(action='http://herokuapp.us8.list-manage1.com/subscribe/post?u=14b0b0e0a73a3857153980900&id=ea3be0eb05', method='post', name='mc-embedded-subscribe-form', target='_blank', novalidate='novalidate' style="margin-top: 10px;")
+          input.email(type='email', value='', name='EMAIL', placeholder=' email address', required='required')
+          //
+            real people should not fill this in and expect good things - do not remove this or risk form bot signups
+          div(style='position: absolute; left: -5000px;')
+            input(type='text', name='b_14b0b0e0a73a3857153980900_ea3be0eb05', value='')
+          .clear
+            input#mc-embedded-subscribe.btn.btn-warning(value='Subscribe and Join Us!', name='subscribe', data-dismiss='modal')
+        br
+        //.clear
+          p Or, if you already have an account, you can
+          a(href='/home') 
+            button.btn.btn-warning(style='background-color: #8CCF4B; border-color: transparent;') Log in
+>>>>>>> c24728252e81fe521d682c2bbd151d0bf9727e25
           //
             End mc_embed_signup
         .col-lg-8.col-lg-offset-2.w.tooltip-demo

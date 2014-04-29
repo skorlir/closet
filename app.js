@@ -28,6 +28,8 @@ app.get('/partials/:partial', function(req, res) {
 });
 app.get('/aws0signature', routes.aws0signature);
 
+app.post('/transaction', routes.commitTransaction);
+
 //start listening
 http.createServer(app).listen(app.get('port'), function() {
   console.log('Express server listening on port ' + app.get('port'));

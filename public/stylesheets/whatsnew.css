@@ -107,40 +107,44 @@ textarea:focus {
 }
 
 /* line 97, ../../sass/whatsnew.scss */
-.tabcontent form, .message, .message-preview {
+.tab-content form, .message {
   padding: 2%;
   border-radius: 5px;
   background: #FFF;
 }
 
 /* line 103, ../../sass/whatsnew.scss */
-#posttabs a {
+.nav-tabs > li a {
+  color: #444;
+  cursor: pointer;
+}
+/* line 106, ../../sass/whatsnew.scss */
+.nav-tabs > li a:hover {
   color: #000;
-  font-weight: bold;
 }
 
-/* line 108, ../../sass/whatsnew.scss */
+/* line 111, ../../sass/whatsnew.scss */
 .nav li {
   left: 15px;
   cursor: pointer;
 }
-/* line 112, ../../sass/whatsnew.scss */
+/* line 115, ../../sass/whatsnew.scss */
 .nav li a {
   color: #888;
 }
 
-/* line 117, ../../sass/whatsnew.scss */
+/* line 120, ../../sass/whatsnew.scss */
 .post {
   margin-top: 5px;
   font-size: 1.4em !important;
 }
 
-/* line 122, ../../sass/whatsnew.scss */
+/* line 125, ../../sass/whatsnew.scss */
 .message-content {
   border: none;
 }
 
-/* line 126, ../../sass/whatsnew.scss */
+/* line 129, ../../sass/whatsnew.scss */
 .message {
   margin-top: 2%;
 }
