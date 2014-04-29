@@ -49,6 +49,8 @@ angular.module('outrovert', ['firebase', 'ngRoute', 'ui.bootstrap'], router)
 
     if(!con) userConnections.$add({agent: UA, timestamp: time}).then(function(ref) {
       con = ref.name();
+      
+      console.log(user);
     
       if(user.displayName)
         userData.$update({displayName: user.displayName});
@@ -195,7 +197,7 @@ angular.module('outrovert', ['firebase', 'ngRoute', 'ui.bootstrap'], router)
   }
 }])
 
-.controller('marketplace', ['$scope', 'sessionService', '$window', '$http', 'firebaseService', '$modal', '$modalInstance', function($scope, session, $window, $http, db, $modal, $modalInstance) {
+.controller('marketplace', ['$scope', 'sessionService', '$window', '$http', 'firebaseService', '$modal', function($scope, session, $window, $http, db, $modal) {
   //item.image item.poster.profilePicture item.poster.uid item.price item.description.name item.description.quality item.description.tags item.description.categories item.action item.location
   
   $scope.marketdb = db.get$firebase().$child('/marketplace');
@@ -203,12 +205,6 @@ angular.module('outrovert', ['firebase', 'ngRoute', 'ui.bootstrap'], router)
   $scope.marketplace = [];
   $scope.filterForm  = {};
   $scope.itemForm = {};
-  
-  $scope.filterNames = function(expected, given) {
-    console.log(expected);
-    console.log(given);
-    return true;
-  };
   
   $scope.marketdb.$on('child_added', function(itemSnap) {
     console.log(itemSnap);
@@ -242,7 +238,7 @@ angular.module('outrovert', ['firebase', 'ngRoute', 'ui.bootstrap'], router)
     };
   };
   
-  $scope.openTransaction = function(item) {
+  $scope.openTransaction = function(r) {
     var modal = $modal.open({
       templateUrl: 'modal.html',
       controller:  modalController
@@ -250,15 +246,27 @@ angular.module('outrovert', ['firebase', 'ngRoute', 'ui.bootstrap'], router)
     
     modal.result.then(function() {
       //confirmation == whatever is passed in. So nothing?
+      //send an email with node-mailer
+      session.getUser().then(function(user) {
+        $http.post('/transaction', {user: user, r: r})
+        .success(function(res) {
+          console.log("the transaction was committed.");
+          //should do something to prevent double transactions
+        })
+        .error(function(error) {
+          console.log(error);
+        });
+      });
       
     }, function(cancellation) {
       //nothing needs done here...
+      console.log("cancel!");
     });
   };
   
 }])
 
-.controller('myGear', ['$scope', 'sessionService', '$http', 'firebaseService', '$window', '$location', function($scope, session, $http, db, $window, $location) {
+.controller('myGear', ['$scope', 'sessionService', 'firebaseService', '$window', '$location', function($scope, session, db, $window, $location) {
   session.getUser().then(function(user) {
     
     if(user === null) {
@@ -295,8 +303,6 @@ angular.module('outrovert', ['firebase', 'ngRoute', 'ui.bootstrap'], router)
         }
         var idPromise = myGearDB.$add(item);
         idPromise.then(function(gear) {
-          console.log(gear);
-          console.log(gear.name());
           marketDB.$child(gear.name()).$set({item: item, poster: poster});
         });
         

@@ -7,10 +7,23 @@ var Items = require('../models/Item.js');
 var fs = require('fs');
 var path = require('path');
 var crypto = require('crypto');
+var nodemailer = require('nodemailer');
 
 var AWS_ACCESS_KEY = process.env.OUTROVERT_AWS_ACCESS_KEY_ID || 'AKIAIL4CN36DNKF2J6MQ';
 var AWS_SECRET_KEY = process.env.OUTROVERT_AWS_SECRET_ACCESS_KEY || '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';
 var S3_BUCKET	   = process.env.S3_BUCKET_NAME || 'outrovert-uploads';
+
+var smtpTransport = nodemailer.createTransport("SMTP", {
+  service: 'Mandrill',
+  auth: {
+    user: 'skorlir@gmail.com',
+    pass: 'BIT8tELthNj7CAObeJ_M4Q'
+  }
+});
+
+var toOutrovert = "User ### has opened a transaction on (var dump): %%%";
+
+var toUser      = "<p>Hi ###,<br><p>Thank you for using Outrovert's marketplace!<br><p>Your transaction on %%% has been opened, and we'll update you as soon as the seller has accepted the offer with further details.<br><br><p>If you have any questions, please feel free to reply to this email or chat with us in the Olark window on outrovert.co! <br><p>Thanks!<p>The Outrovert Team";
 
 exports.index = function(req, res) {
 	res.render('index');
@@ -60,4 +73,27 @@ exports.aws0signature = function(req, res) {
 	};
 	res.write(JSON.stringify(credentials));
 	res.end();
+};
+
+exports.commitTransaction = function(req, res) { 
+    var user = req.body.user;
+    var r = req.body.r;
+	
+    var outmsg = toOutrovert.split('###').join(user.displayName);
+	outmsg  = outmsg.split('%%%').join(JSON.stringify(r));
+	
+	var usrmsg = toUser.split('###').join(user.displayName);
+	usrmsg  = usrmsg.split('%%%').join(r.item.name + ' for $' + r.item.price);
+	
+	var userConf = {to: user.thirdPartyUserData.email, from: 'The Outrovert Team <nuventioncloset@gmail.com>', subject: 'Your Transaction has been Received and is in Processing!', html: usrmsg};
+	
+    var newmsg = {to: 'nuventioncloset@gmail.com', from: 'AUTOMATED TRANSACTION MSG <dne@outrovert.co>', subject: "TRANSACTION COMMITTED", html: outmsg};
+    smtpTransport.sendMail(newmsg, function(error, resp) {
+      if(error) console.log(error);
+      else console.log(user.displayName + " TRANSACTION COMMIT SUCCESS");
+  	});
+	smtpTransport.sendMail(userConf, function(error, resp) {
+			if(error) console.log(error);
+			else console.log("sent transaction conf to " + user.displayName);
+		});
 };
