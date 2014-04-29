@@ -7,7 +7,7 @@ nav.col-md-2.col-sm-2.col-xs-12.nav
     li 
       a(href='#/mygear') My Gear
 
-.col-lg-8.col-md-10.col-sm-11
+.col-lg-8.col-md-10.col-sm-11(style='padding-bottom: 200px;')
   .col-xs-2
     a(href='#/mygear').custom-button.col-xs-12.text-center Add item
   form
@@ -34,7 +34,7 @@ nav.col-md-2.col-sm-2.col-xs-12.nav
       .bottom.col-xs-12
         img.profile.img-responsive(ng-src='{{result.poster.profilePicture}}')
         .description.col-xs-6
-          span.name {{result.item.name}}
+          span.name(popover-placement='bottom', popover-title='Description', popover-trigger='mouseenter', popover='{{result.item.description}}') {{result.item.name}}
           br
           span.quality {{result.item.condition}}
         .col-xs-3

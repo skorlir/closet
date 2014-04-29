@@ -109,7 +109,7 @@ angular.module('outrovert', ['firebase', 'ngRoute', 'ui.bootstrap'], router)
   }
 }])
 
-.controller('base', ['$scope', 'sessionService', '$window', function($scope, session, $window) {
+.controller('base', ['$scope', 'sessionService', '$window', '$position', function($scope, session, $window) {
 
   $scope.fbLogin = session.fbLogin(function(user) {
     console.log('logged in as', user.uid, user.displayName);

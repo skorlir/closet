@@ -7,7 +7,7 @@ nav.col-md-2.col-sm-2.col-xs-12.nav
       li#here
         a My Gear
 
-.col-md-10.col-sm-11(ng-show='loggedIn')
+.col-md-10.col-sm-11(ng-show='loggedIn', style='padding-bottom: 200px;')
   form.col-xs-6.uploadform.col-xs-offset-1(ng-submit='addGear()')
     .form-group.col-xs-12
       label.col-xs-4 Item Name
@@ -53,7 +53,7 @@ nav.col-md-2.col-sm-2.col-xs-12.nav
         .col-xs-12
           img.profile.img-responsive(ng-src='{{profilePicture}}')
           .description.col-xs-6
-            span.name {{item[1].name}}
+            span.name(popover-placement='bottom', popover-title='Description', popover-trigger='mouseenter', popover='{{item[1].description}}') {{item[1].name}}
             br
             span.quality {{item[1].condition}}
           .rent.pull-right.col-xs-3
