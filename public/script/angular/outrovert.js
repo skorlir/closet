@@ -36,14 +36,6 @@ angular.module('outrovert', ['firebase', 'ngRoute', 'ui.bootstrap'], router)
   $rootScope.$on('$firebaseSimpleLogin:login', function(e, user) {
 
     var userData = firebase.$child('users/' + user.uid);
-    console.log(user);
-    
-    if(user.displayName)
-      userData.$update({displayName: user.displayName});
-    if(user.thirdPartyUserData.location)
-      userData.$update({location: user.thirdPartyUserData.location.name});
-    if(user.thirdPartyUserData.hometown)
-      userData.$update({hometown: user.thirdPartyUserData.hometown.name});
 
     var userConnections = userData.$child('connections');
     var lastOnline = userData.$child('lastOnline');
@@ -57,6 +49,16 @@ angular.module('outrovert', ['firebase', 'ngRoute', 'ui.bootstrap'], router)
 
     if(!con) userConnections.$add({agent: UA, timestamp: time}).then(function(ref) {
       con = ref.name();
+    
+      if(user.displayName)
+        userData.$update({displayName: user.displayName});
+      if(user.thirdPartyUserData.location)
+        userData.$update({location: user.thirdPartyUserData.location.name});
+      if(user.thirdPartyUserData.hometown)
+        userData.$update({hometown: user.thirdPartyUserData.hometown.name});
+      if(user.thirdPartyUserData.email)
+        userData.$update({email: user.thirdPartyUserData.email});
+      
       $rootScope.loggedIn = true;
       $rootScope.displayName = user.displayName;
       $rootScope.profilePicture = 'http://graph.facebook.com/'+user.id+'/picture?type=small';
@@ -120,6 +122,7 @@ angular.module('outrovert', ['firebase', 'ngRoute', 'ui.bootstrap'], router)
   });
 
   //don't log out on leave, but do disconnect
+  //FIXME: doesn't effectively close connection in all cases
   angular.element($window).bind('unload', function() {
     if($scope.disconnect) $scope.disconnect();
   });
@@ -192,7 +195,7 @@ angular.module('outrovert', ['firebase', 'ngRoute', 'ui.bootstrap'], router)
   }
 }])
 
-.controller('marketplace', ['$scope', 'sessionService', '$window', '$http', 'firebaseService', function($scope, session, $window, $http, db) {
+.controller('marketplace', ['$scope', 'sessionService', '$window', '$http', 'firebaseService', '$modal', '$modalInstance', function($scope, session, $window, $http, db, $modal, $modalInstance) {
   //item.image item.poster.profilePicture item.poster.uid item.price item.description.name item.description.quality item.description.tags item.description.categories item.action item.location
   
   $scope.marketdb = db.get$firebase().$child('/marketplace');
@@ -227,6 +230,30 @@ angular.module('outrovert', ['firebase', 'ngRoute', 'ui.bootstrap'], router)
   
   $scope.showHide = function(type) {
     return (type == "Buy" && $scope.showBuy) || (type == "Rent" && $scope.showRent);
+  };
+  
+  var modalController = function($scope, $modalInstance) {
+    $scope.ok = function() {
+      $modalInstance.close();
+    };
+    
+    $scope.cancel = function() {
+      $modalInstance.dismiss('cancel');
+    };
+  };
+  
+  $scope.openTransaction = function(item) {
+    var modal = $modal.open({
+      templateUrl: 'modal.html',
+      controller:  modalController
+    });
+    
+    modal.result.then(function() {
+      //confirmation == whatever is passed in. So nothing?
+      
+    }, function(cancellation) {
+      //nothing needs done here...
+    });
   };
   
 }])

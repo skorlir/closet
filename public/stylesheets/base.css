@@ -105,21 +105,20 @@ a {
 /* line 37, ../../SASS/base.scss */
 body {
   font-family: "Lucida Grande", Helvetica, Arial, sans-serif;
-  font-size: 18px;
   background: #fafafa;
 }
-/* line 44, ../../SASS/base.scss */
+/* line 43, ../../SASS/base.scss */
 body hr {
   border-color: #ddd;
 }
-/* line 48, ../../SASS/base.scss */
+/* line 47, ../../SASS/base.scss */
 body header {
   height: 60px;
   padding: 15px 0;
   margin-bottom: 20px;
   background: #fff;
 }
-/* line 55, ../../SASS/base.scss */
+/* line 54, ../../SASS/base.scss */
 body header span.centeredLogo {
   font-family: pacifico, 'Lucida Grande', 'Lucida Sans', 'helvetica neue', helvetica, sans-serif;
   color: #5cafff;
@@ -127,7 +126,7 @@ body header span.centeredLogo {
   font-size: 1.9em;
   display: inline-block;
 }
-/* line 64, ../../SASS/base.scss */
+/* line 63, ../../SASS/base.scss */
 body .photo {
   height: 200px;
   background-color: gainsboro;
@@ -135,18 +134,18 @@ body .photo {
   background-repeat: no-repeat;
   background-position: center center;
 }
-/* line 72, ../../SASS/base.scss */
+/* line 71, ../../SASS/base.scss */
 body .gear, body .marketplace-item {
   float: left;
 }
-/* line 74, ../../SASS/base.scss */
+/* line 73, ../../SASS/base.scss */
 body .gear .profile, body .marketplace-item .profile {
   display: inline-block;
   float: left;
   max-width: 40px;
   max-height: 40px;
 }
-/* line 83, ../../SASS/base.scss */
+/* line 82, ../../SASS/base.scss */
 body form label {
   text-transform: uppercase;
   color: #8CCF4B;

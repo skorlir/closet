@@ -40,4 +40,6 @@ nav.col-md-2.col-sm-2.col-xs-12.nav
         .col-xs-3
           span.cost.text-center.pull-right {{result.item.price | currency}}
           br
-          button.buy.custom-button.pull-right {{result.item.rentOrBuy}}
+          button.buy.custom-button.pull-right(ng-click='openTransaction(result.item)') {{result.item.rentOrBuy}}
+          
+script(type="text/ng-template", id="modal.html", src="/script/modal.js")
