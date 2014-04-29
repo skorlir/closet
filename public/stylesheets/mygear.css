@@ -55,55 +55,55 @@
   border: none;
 }
 /* line 57, ../../sass/mygear.scss */
-.uploadform button.cancel {
-  padding: 0 5%;
+.uploadform .fakeinput input {
+  top: 0px;
 }
 
-/* line 62, ../../sass/mygear.scss */
+/* line 66, ../../sass/mygear.scss */
 .mygear {
   margin-top: 40px;
 }
-/* line 65, ../../sass/mygear.scss */
+/* line 69, ../../sass/mygear.scss */
 .mygear h3 {
   margin: 0;
 }
-/* line 69, ../../sass/mygear.scss */
+/* line 73, ../../sass/mygear.scss */
 .mygear button.uploadnew {
   font-size: 150%;
 }
-/* line 73, ../../sass/mygear.scss */
+/* line 77, ../../sass/mygear.scss */
 .mygear .gear {
   background: #FFF;
   border: 10px solid #EEE;
   padding: 0 !important;
 }
-/* line 78, ../../sass/mygear.scss */
+/* line 82, ../../sass/mygear.scss */
 .mygear .gear img.img-rounded, .mygear .gear .description, .mygear .gear .cost, .mygear .gear .rent {
   padding: 0;
 }
-/* line 82, ../../sass/mygear.scss */
+/* line 86, ../../sass/mygear.scss */
 .mygear .gear .description {
   margin: 2% 0 0 3%;
   font-size: 80%;
 }
-/* line 87, ../../sass/mygear.scss */
+/* line 91, ../../sass/mygear.scss */
 .mygear .gear img.profile {
   margin: 3% 1%;
   width: 40px;
   height: 40px;
 }
-/* line 93, ../../sass/mygear.scss */
+/* line 97, ../../sass/mygear.scss */
 .mygear .gear .rent {
   font-size: 140%;
   margin-top: 2%;
 }
 
-/* line 100, ../../sass/mygear.scss */
+/* line 104, ../../sass/mygear.scss */
 .fileinput {
   position: relative;
   padding: 0;
 }
-/* line 104, ../../sass/mygear.scss */
+/* line 108, ../../sass/mygear.scss */
 .fileinput input.file {
   padding: 0;
   position: relative;
@@ -115,7 +115,7 @@
   cursor: pointer;
 }
 
-/* line 116, ../../sass/mygear.scss */
+/* line 120, ../../sass/mygear.scss */
 .fakeinput {
   position: absolute;
   top: 0px;
@@ -123,7 +123,7 @@
   z-index: 1;
   padding: 0;
 }
-/* line 123, ../../sass/mygear.scss */
+/* line 127, ../../sass/mygear.scss */
 .fakeinput input {
   text-transform: uppercase;
   background: #FFF;
@@ -134,6 +134,5 @@
   height: 100%;
   position: relative;
   font-size: 1.2em !important;
-  top: -24px;
   cursor: pointer !important;
 }
