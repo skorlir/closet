@@ -5,7 +5,8 @@ html(ng-app='outrovert')
   body(ng-controller='base')
     header.col-xs-12.head
       span.logo.col-xs-2
-        img(src='images/logoAssets/cornerlogo.png', ng-show="loggedIn")
+        a(href='/')
+          img(src='images/logoAssets/cornerlogo.png', ng-show="loggedIn")
       span.col-xs-4.pull-right
         #loginButtons.col-xs-6.pull-right
           button#logout.custom-button.pull-right(ng-click='logout()', ng-show='loggedIn') Log out
@@ -15,7 +16,8 @@ html(ng-app='outrovert')
             h4.col-xs-6.profile {{displayName}}
 
     .login.col-xs-6.col-xs-offset-3(ng-hide='loggedIn')
-      img.img-responsive.col-xs-12(src='/landing-assets/img/new_logo.png', style='margin: 50px 0')
+      a(href='/')
+        img.img-responsive.col-xs-12(src='/landing-assets/img/new_logo.png', style='margin: 50px 0')
       button#fbLogin.custom-button.col-xs-6.col-xs-offset-3(ng-click='fbLogin()', ng-hide='loggedIn') Login with Facebook
 
     //nav.col-md-2.col-sm-2.col-xs-12.nav(ng-show='loggedIn')

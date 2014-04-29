@@ -10,7 +10,7 @@ var app = express();
 
 //HTTP authentication scheme
 var httpAuth = express.basicAuth(function(user, pass) {
- 		return user === 'admin' && pass === 'granular crafty gidget';
+ 		return (user === 'admin' && pass === 'granular crafty gidget') || (user === 'beta' && pass === "I'm an Outrovert");
 	});
 
 //set up the basic environment
