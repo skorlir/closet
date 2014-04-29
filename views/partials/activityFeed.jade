@@ -43,6 +43,7 @@ nav.col-md-2.col-sm-2.col-xs-2.nav.navigation(ng-show='loggedIn')
       .col-xs-10 {{post[1].displayName}}
         small &nbsp;&nbsp; {{!!post[1].photo ? 'posted a photo' : 'says'}}
         .col-xs-12.message-picture(ng-show='!!post[1].photo')
-          .photo(style='background-image: url("{{post[1].photo}}")').img-rounded.col-lg-8.col-lg-offset-0.col-xs-10.col-xs-offset-1
+          hr.col-lg-8.col-xs-10
+          img.photo(src="{{post[1].photo}}").img-rounded.col-lg-8.col-lg-offset-0.col-xs-10.col-xs-offset-1
           hr.col-lg-8.col-xs-10
         .col-xs-12.message-content {{post[1].textContent}}
