@@ -154,8 +154,6 @@ angular.module('outrovert', ['firebase', 'ngRoute', 'ui.bootstrap'], router)
     $scope.feed.unshift([postSnap.snapshot.name, postSnap.snapshot.value]);
   });
   
-  //also what about removed?
-  
   $scope.publishActivity = function() {
     var msg = $scope.activityForm.message;
     if (!msg) { $scope.flashMessage = 'Nothing to post!'; return; }
