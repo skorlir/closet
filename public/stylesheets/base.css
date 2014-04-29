@@ -128,25 +128,25 @@ body header span.centeredLogo {
   display: inline-block;
 }
 /* line 64, ../../SASS/base.scss */
-body .gear, body .marketplace-item {
-  float: left;
-}
-/* line 66, ../../SASS/base.scss */
-body .gear .profile, body .marketplace-item .profile {
-  display: inline-block;
-  float: left;
-  max-width: 40px;
-  max-height: 40px;
-}
-/* line 72, ../../SASS/base.scss */
-body .gear .item-image, body .marketplace-item .item-image {
+body .photo {
   height: 200px;
   background-color: gainsboro;
   background-size: contain;
   background-repeat: no-repeat;
   background-position: center center;
 }
-/* line 82, ../../SASS/base.scss */
+/* line 72, ../../SASS/base.scss */
+body .gear, body .marketplace-item {
+  float: left;
+}
+/* line 74, ../../SASS/base.scss */
+body .gear .profile, body .marketplace-item .profile {
+  display: inline-block;
+  float: left;
+  max-width: 40px;
+  max-height: 40px;
+}
+/* line 83, ../../SASS/base.scss */
 body form label {
   text-transform: uppercase;
   color: #8CCF4B;

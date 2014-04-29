@@ -36,14 +36,21 @@ exports.aws0signature = function(req, res) {
 	var mime_type = req.query.s3_object_type;
 
 	var now = new Date();
-	var expires = Math.ceil((now.getTime() + 10000)/1000); // 10 seconds from now
+	var expires = Math.ceil((now.getTime() + 10000)/1000); // 90 seconds from now
 	var amz_headers = "x-amz-acl:public-read";
 
-	var put_request = "PUT\n\n"+mime_type+"\n"+expires+"\n"+amz_headers+"\n/"+S3_BUCKET+"/"+object_name;
+	//MUST encode ONLY the filename in object_name (AKA encode the spaces, apparently, but not the rest???)
+	var put_request = "PUT\n\n"+mime_type+"\n"+expires+"\n"+amz_headers+"\n/"+S3_BUCKET+"/"+object_name.split('_')[0] + '_' + encodeURIComponent(object_name.split('_')[1]);
+	
+	console.log(put_request);
 
 	var signature = crypto.createHmac('sha1', AWS_SECRET_KEY).update(put_request).digest('base64');
 	signature = encodeURIComponent(signature.trim());
-	signature = signature.replace('%2B','+');
+	//AWS musta fixed + encoding problems; this breaks
+	//signature = signature.replace(/%2B/g,'+');
+	//signature = signature.replace('%3D','=');
+	
+	console.log(signature);
 
 	var url = 'https://'+S3_BUCKET+'.s3.amazonaws.com/'+object_name;
 

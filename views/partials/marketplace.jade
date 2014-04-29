@@ -27,7 +27,7 @@ nav.col-md-2.col-sm-2.col-xs-12.nav
   
   .col-xs-12.marketplace-content
     .col-lg-4.col-sm-6.col-xs-12.marketplace-item(ng-repeat='result in marketplace | filter:search', ng-show='showHide(result.item.rentOrBuy)')
-      .item-image.col-xs-12.img-rounded(style='background-image: url("{{result.item.image || "images/default.png"}}")')
+      .photo.col-xs-12.img-rounded(style='background-image: url("{{result.item.image || "images/default.png"}}")')
       .star
       .bottom.col-xs-12
         img.profile.img-responsive(ng-src='{{result.poster.profilePicture}}')

@@ -90,7 +90,7 @@
             this_s3upload.onProgress(100, 'Upload completed.');
             return this_s3upload.onFinishS3Put(public_url);
           } else {
-            return this_s3upload.onError('Upload error: ' + xhr.status);
+            return this_s3upload.onError('Upload error: ' + xhr.status + ', ' + xhr.responseText);
           }
         };
         xhr.onerror = function() {

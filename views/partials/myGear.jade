@@ -49,7 +49,7 @@ nav.col-md-2.col-sm-2.col-xs-12.nav
     
     .col-xs-12.my-gear
       .col-lg-4.col-md-4.col-xs-6.gear(ng-repeat='item in myGear')
-        .item-image.col-xs-12.img-rounded(style='background-image: url("{{item.image || "images/default.png"}}")')
+        .photo.col-xs-12.img-rounded(style='background-image: url("{{item.image || "images/default.png"}}")')
         .col-xs-12
           img.profile.img-responsive(ng-src='{{profilePicture}}')
           .description.col-xs-6

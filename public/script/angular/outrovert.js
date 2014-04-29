@@ -123,7 +123,21 @@ angular.module('outrovert', ['firebase', 'ngRoute', 'ui.bootstrap'], router)
   angular.element($window).bind('unload', function() {
     if($scope.disconnect) $scope.disconnect();
   });
-
+  
+  session.getUser().then(function(user) {
+    $scope.uploadFile = function(el) {
+      $scope.imgToUpload = el.files[0];
+      $scope.s3upload = new $window.S3Upload({
+        //NOTE: encodeURIComponent is key here: if the object_name is all
+        //  escaped, that causes errors
+        //  only the imgToUpload.name MUST be escaped
+        s3_object_name: user.uid + '_' + $scope.imgToUpload.name,
+        s3_sign_put_url: 'aws0signature',
+        file_dom_selector: null
+      });
+      $scope.fileElement = el;
+    };
+  });
 }])
 
 .controller('activityFeed', ['$scope', 'sessionService', '$window', '$http', 'firebaseService', function($scope, session, $window, $http, db) {
@@ -137,7 +151,7 @@ angular.module('outrovert', ['firebase', 'ngRoute', 'ui.bootstrap'], router)
   $scope.activity.$on('child_added', function(postSnap) {
     console.log(postSnap);
     if(postSnap.snapshot.value === null) return;
-    $scope.feed.unshift(postSnap.snapshot.value);
+    $scope.feed.unshift([postSnap.snapshot.name, postSnap.snapshot.value]);
   });
   
   //also what about removed?
@@ -148,14 +162,34 @@ angular.module('outrovert', ['firebase', 'ngRoute', 'ui.bootstrap'], router)
     session.getUser().then(function(user) {
       if (user === null) $scope.flashMessage = 'Error: Not logged in. Please refresh.';
       else {
-        $scope.activity.$add({
-          user: user.uid, 
-          textContent: msg, 
-          timestamp: db.timestamp(), 
-          profilePictureM: $scope.profilePictureM, 
-          displayName: $scope.displayName
-        });
+        var post = {
+            user: user.uid, 
+            textContent: msg, 
+            timestamp: db.timestamp(), 
+            profilePictureM: $scope.profilePictureM, 
+            displayName: $scope.displayName
+        };
+        if($scope.s3upload) {
+          $scope.s3upload.onFinishS3Put = function(public_url) {
+            post.photo = public_url;
+            $scope.activity.$add(post);
+            $scope.fileElement.value = '';
+            $scope.activityForm = {};
+          };
+          $scope.s3upload.uploadFile($scope.imgToUpload);
+        } else {
+          $scope.activity.$add(post);
+          $scope.activityForm = {};
+        }
       }
+    });
+  }
+  
+  $scope.deletePost = function(postid) {
+    console.log(postid);
+    $scope.activity.$remove(postid).then(function(res) {
+      console.log(res, 'removed');
+      $scope.feed.splice($scope.feed.indexOf($scope.feed.filter(function(el) {  return el[0] === postid; })[0]), 1);
     });
   }
 }])
@@ -231,18 +265,11 @@ angular.module('outrovert', ['firebase', 'ngRoute', 'ui.bootstrap'], router)
         myGearDB.$add(item);
         marketDB.$add({item: item, poster: poster});
         
+        $scope.addGearForm = {};
+        $scope.fileElement.value = '';
       };
       $scope.s3upload.uploadFile($scope.imgToUpload);
     }
-    
-    $scope.uploadFile = function(files) {
-      $scope.imgToUpload = files[0];
-      $scope.s3upload = new $window.S3Upload({
-        s3_object_name: user.uid + '_' + $scope.imgToUpload.name,
-        s3_sign_put_url: 'aws0signature',
-        file_dom_selector: null
-      });
-    };
   });
   
 }]);
