@@ -61,8 +61,8 @@ angular.module('outrovert', ['firebase', 'ngRoute', 'ui.bootstrap'], router)
       $rootScope.displayName = user.displayName;
       $rootScope.profilePicture = 'http://graph.facebook.com/'+user.id+'/picture?type=small';
       $rootScope.profilePictureM = 'http://graph.facebook.com/'+user.id+'/picture';
-      $rootScope.location = user.location;
-      $rootScope.hometown = user.hometown;
+      $rootScope.location = user.thirdPartyUserData.location ? user.thirdPartyUserData.location.name : null;
+      $rootScope.hometown = user.thirdPartyUserData.hometown ? user.thirdPartyUserData.hometown.name : null;
     });
 
     $rootScope.disconnect = function() {
@@ -243,7 +243,7 @@ angular.module('outrovert', ['firebase', 'ngRoute', 'ui.bootstrap'], router)
     myGearDB.$on('child_added', function(gearSnap) {
       console.log(gearSnap);
       if(gearSnap.snapshot.value === null) return;
-      $scope.myGear.unshift(gearSnap.snapshot.value);
+      $scope.myGear.unshift([gearSnap.snapshot.name, gearSnap.snapshot.value]);
     });
 
     $scope.addGear = function() {
@@ -251,7 +251,7 @@ angular.module('outrovert', ['firebase', 'ngRoute', 'ui.bootstrap'], router)
         var item = {
           name: $scope.addGearForm.name,
           description: $scope.addGearForm.description,
-          quality: $scope.addGearForm.quality,
+          condition: $scope.addGearForm.condition,
           price: $scope.addGearForm.price,
           rentOrBuy: $scope.addGearForm.rentalOrSale === 'Sell' ? 'Buy' : 'Rent',
           image: public_url
@@ -260,8 +260,8 @@ angular.module('outrovert', ['firebase', 'ngRoute', 'ui.bootstrap'], router)
           uid: user.uid,
           profilePicture: 'http://graph.facebook.com/' + user.id + '/picture?type=small'
         }
-        myGearDB.$add(item);
-        marketDB.$add({item: item, poster: poster});
+        var baseid = myGearDB.$add(item);
+        marketDB.$child(baseid).$set({item: item, poster: poster});
         
         $scope.addGearForm = {};
         $scope.fileElement.value = '';
