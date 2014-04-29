@@ -41,46 +41,30 @@ body, .head, .logo, .nav {
   color: #FFF;
 }
 
-<<<<<<< HEAD
 /* line 41, ../../SASS/whatsnew.scss */
-=======
-/* line 41, ../../sass/whatsnew.scss */
 .pages #here a:hover {
   cursor: default;
 }
 
-/* line 45, ../../sass/whatsnew.scss */
->>>>>>> 64e57da3b39e36cd22c0c8a3f93bc87f5d363458
+/* line 45, ../../SASS/whatsnew.scss */
 .pages li a:hover {
   cursor: pointer;
   color: #8CCF4B;
 }
 
-<<<<<<< HEAD
-/* line 46, ../../SASS/whatsnew.scss */
-=======
-/* line 50, ../../sass/whatsnew.scss */
->>>>>>> 64e57da3b39e36cd22c0c8a3f93bc87f5d363458
+/* line 50, ../../SASS/whatsnew.scss */
 .userinfo {
   float: right;
 }
 
-<<<<<<< HEAD
-/* line 50, ../../SASS/whatsnew.scss */
-=======
-/* line 54, ../../sass/whatsnew.scss */
->>>>>>> 64e57da3b39e36cd22c0c8a3f93bc87f5d363458
+/* line 54, ../../SASS/whatsnew.scss */
 #loginButtons button {
   top: 13px;
   padding: 5px 15px;
   margin: 0;
 }
 
-<<<<<<< HEAD
-/* line 58, ../../SASS/whatsnew.scss */
-=======
-/* line 61, ../../sass/whatsnew.scss */
->>>>>>> 64e57da3b39e36cd22c0c8a3f93bc87f5d363458
+/* line 62, ../../SASS/whatsnew.scss */
 #loggedInData img.profile {
   padding: 3%;
   position: absolute;
@@ -88,11 +72,7 @@ body, .head, .logo, .nav {
   width: 60px;
   height: 60px;
 }
-<<<<<<< HEAD
-/* line 64, ../../SASS/whatsnew.scss */
-=======
-/* line 69, ../../sass/whatsnew.scss */
->>>>>>> 64e57da3b39e36cd22c0c8a3f93bc87f5d363458
+/* line 70, ../../SASS/whatsnew.scss */
 #loggedInData h4.profile {
   font-size: 12pt;
   position: absolute;
@@ -100,37 +80,41 @@ body, .head, .logo, .nav {
   top: 12px;
 }
 
-/* line 72, ../../SASS/whatsnew.scss */
+/* line 78, ../../SASS/whatsnew.scss */
 .mainfeed {
   position: absolute;
   left: 300px;
   top: 20px;
 }
 
-/* line 78, ../../SASS/whatsnew.scss */
-#write form, #pic form, .message, .message-preview {
+/* line 84, ../../SASS/whatsnew.scss */
+.tab-content form, .message {
   padding: 2%;
   border-radius: 5px;
   background: #FFF;
 }
 
-/* line 84, ../../SASS/whatsnew.scss */
-#posttabs a {
+/* line 90, ../../SASS/whatsnew.scss */
+.nav-tabs > li a {
+  color: #444;
+  cursor: pointer;
+}
+/* line 93, ../../SASS/whatsnew.scss */
+.nav-tabs > li a:hover {
   color: #000;
-  font-weight: bold;
 }
 
-/* line 87, ../../sass/whatsnew.scss */
+/* line 98, ../../SASS/whatsnew.scss */
 .post {
   margin-top: 5px;
 }
 
-/* line 91, ../../sass/whatsnew.scss */
+/* line 102, ../../SASS/whatsnew.scss */
 .message-content {
   border: none;
 }
 
-/* line 95, ../../sass/whatsnew.scss */
+/* line 106, ../../SASS/whatsnew.scss */
 .message {
   margin-top: 2%;
 }

@@ -81,15 +81,18 @@ body, .head, .logo, .nav {
   top: 20px;
 }
 
-#write form, #pic form, .message, .message-preview {
+.tab-content form, .message {
   padding: 2%;
   border-radius: 5px;
   background: #FFF;
 }
 
-#posttabs a {
-  color: #000;
-  font-weight: bold;
+.nav-tabs>li a {
+  color: #444;
+  cursor: pointer;
+  &:hover {
+    color: #000;
+  }
 }
 
 .post {

@@ -214,9 +214,15 @@ angular.module('outrovert', ['firebase', 'ngRoute', 'ui.bootstrap'], router)
   });
   
   $scope.toggleBtns = function(which) {
-    which === "showBuy" ? 
-      $scope.showRent = $scope.showBuy === true ? true : false 
-    : $scope.showBuy = $scope.showRent === true ? true : false;
+    if ( which === 'buy' ) {
+      $scope.showBuy = true;
+      $scope.showRent = !$scope.showRent;
+    }
+    else {
+      $scope.showRent = true; 
+      $scope.showBuy  = !$scope.showBuy;
+    }
+    if(! ($scope.showBuy || $scope.showRent) ) $scope.showBuy = $scope.showRent = true;
   };
   
   $scope.showHide = function(type) {
@@ -260,13 +266,23 @@ angular.module('outrovert', ['firebase', 'ngRoute', 'ui.bootstrap'], router)
           uid: user.uid,
           profilePicture: 'http://graph.facebook.com/' + user.id + '/picture?type=small'
         }
-        var baseid = myGearDB.$add(item);
-        marketDB.$child(baseid).$set({item: item, poster: poster});
+        var idPromise = myGearDB.$add(item);
+        idPromise.then(function(gear) {
+          console.log(gear);
+          console.log(gear.name());
+          marketDB.$child(gear.name()).$set({item: item, poster: poster});
+        });
         
         $scope.addGearForm = {};
         $scope.fileElement.value = '';
       };
       $scope.s3upload.uploadFile($scope.imgToUpload);
+    }
+  
+    $scope.deleteGear = function (key) {
+      myGearDB.$remove(key);
+      marketDB.$remove(key);
+      $scope.myGear.splice($scope.myGear.indexOf($scope.myGear.filter(function(el) { return el[0] === key; })[0]), 1);
     }
   });
   

@@ -6,7 +6,7 @@ nav.col-md-2.col-sm-2.col-xs-12.nav(ng-show='loggedIn')
         a(href='#/marketplace') Marketplace
       li
         a(href='#/mygear') My Gear
-.col-md-7.col-sm-8.mainfeed( style='padding-bottom: 200px;')
+.col-md-7.col-sm-8.mainfeed(style='padding-bottom: 200px;')
   tabset(ng-show='loggedIn')
     tab
       tab-heading
@@ -18,10 +18,7 @@ nav.col-md-2.col-sm-2.col-xs-12.nav(ng-show='loggedIn')
       tab-heading
         i.fa.fa-camera | Upload photo
       form.col-md-10.col-sm-12.col-xs-12(ng-submit='publishActivity()')
-        .fileinput.col-xs-3
-          input.col-xs-12(type="file", name="file", class='file', onchange="angular.element(this).scope().uploadFile(this)", required)
-          .fakeinput.col-xs-12
-            input.custom-button.col-xs-12(type='button', value='Choose Photo')
+        input.col-xs-12(type="file", name="file", class='file', onchange="angular.element(this).scope().uploadFile(this)", style='padding: 10px;')
         textarea.col-xs-12(ng-model='activityForm.message', placeholder="What's your new adventure?")  
         input.custom-button.col-xs-12(type='submit', value='Post')    
         
