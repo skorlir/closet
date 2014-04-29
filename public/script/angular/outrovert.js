@@ -294,7 +294,7 @@ angular.module('outrovert', ['firebase', 'ngRoute', 'ui.bootstrap'], router)
           description: $scope.addGearForm.description,
           condition: $scope.addGearForm.condition,
           price: $scope.addGearForm.price,
-          rentOrBuy: $scope.addGearForm.rentalOrSale === 'Sell' ? 'Buy' : 'Rent',
+          rentOrBuy: $scope.addGearForm.rentalOrSale === 'Sale' ? 'Buy' : 'Rent',
           image: public_url
         }
         var poster = {
