@@ -78,32 +78,26 @@
   padding: 0 !important;
 }
 /* line 82, ../../sass/mygear.scss */
-.mygear .gear img.img-rounded, .mygear .gear .description, .mygear .gear .cost, .mygear .gear .rent {
+.mygear .gear img.photo, .mygear .gear .description, .mygear .gear .cost, .mygear .gear .rent {
   padding: 0;
 }
 /* line 86, ../../sass/mygear.scss */
 .mygear .gear .description {
-  margin: 2% 0 0 3%;
-  font-size: 80%;
+  margin-top: 1%;
 }
-/* line 91, ../../sass/mygear.scss */
+/* line 90, ../../sass/mygear.scss */
 .mygear .gear img.profile {
-  margin: 3% 1%;
+  margin: 15% 0;
   width: 40px;
   height: 40px;
 }
-/* line 97, ../../sass/mygear.scss */
-.mygear .gear .rent {
-  font-size: 140%;
-  margin-top: 2%;
-}
 
-/* line 104, ../../sass/mygear.scss */
+/* line 98, ../../sass/mygear.scss */
 .fileinput {
   position: relative;
   padding: 0;
 }
-/* line 108, ../../sass/mygear.scss */
+/* line 102, ../../sass/mygear.scss */
 .fileinput input.file {
   padding: 0;
   position: relative;
@@ -115,7 +109,7 @@
   cursor: pointer;
 }
 
-/* line 120, ../../sass/mygear.scss */
+/* line 114, ../../sass/mygear.scss */
 .fakeinput {
   position: absolute;
   top: 0px;
@@ -123,7 +117,7 @@
   z-index: 1;
   padding: 0;
 }
-/* line 127, ../../sass/mygear.scss */
+/* line 121, ../../sass/mygear.scss */
 .fakeinput input {
   text-transform: uppercase;
   background: #FFF;
