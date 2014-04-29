@@ -97,3 +97,19 @@ exports.commitTransaction = function(req, res) {
 			else console.log("sent transaction conf to " + user.displayName);
 		});
 };
+
+exports.nonfeature = function(req, res) {
+	var feature = req.body.data;
+	
+	var msg = {
+		to: 'nuventioncloset@gmail.com',
+		from: 'non feature reporter <fdne@outrovert.co>',
+		subject: 'someone tried to use a non feature: ' + feature,
+		html: 'non feature ' + feature
+	};
+	
+	smtpTransport.sendMail(msg, function(error, resp) {
+		if(error) console.log(error);
+		else console.log(resp);
+	});
+};

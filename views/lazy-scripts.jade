@@ -8,6 +8,18 @@ script(src="//netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js")
     s3 uploader
 script(src='/script/s3upload.js')
 //
+    nonfeature modal
+script(type="text/ng-template", id="nonfeature.html").
+  <div class="modal-header">
+    <h3>Hey! We don't have that yet. :(</h3>
+  </div>
+  <div class="modal-body">
+    You've got the right idea, though. We'll be sure to keep you updated when this feature becomes available!
+  </div>
+  <div class="modal-footer">
+    <button class="btn btn-primary" ng-click="ok()">OK, good to know!</button>
+  </div>
+//
     olark code
 script(data-cfasync="false", type='text/javascript').
     /*<![CDATA[*/window.olark||(function(c){var f=window,d=document,l=f.location.protocol=="https:"?"https:":"http:",z=c.name,r="load";var nt=function(){

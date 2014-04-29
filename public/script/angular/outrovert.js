@@ -113,7 +113,7 @@ angular.module('outrovert', ['firebase', 'ngRoute', 'ui.bootstrap'], router)
   }
 }])
 
-.controller('base', ['$scope', 'sessionService', '$window', '$position', function($scope, session, $window) {
+.controller('base', ['$scope', 'sessionService', '$window', '$modal', '$http', '$position', function($scope, session, $window, $modal, $http) {
 
   $scope.fbLogin = session.fbLogin(function(user) {
     console.log('logged in as', user.uid, user.displayName);
@@ -143,6 +143,23 @@ angular.module('outrovert', ['firebase', 'ngRoute', 'ui.bootstrap'], router)
       $scope.fileElement = el;
     };
   });
+  
+  var nonfeatureController = function($scope, $modalInstance) {
+    $scope.ok = function() {
+      $modalInstance.close();
+    };
+  };
+  
+  $scope.warnNonFeature = function(thing) {
+    var modal = $modal.open({
+      templateUrl: 'nonfeature.html',
+      controller: nonfeatureController
+    });
+    
+    modal.result.then(function() {
+      $http.post('/nonfeature', {data: thing});
+    });
+  }
 }])
 
 .controller('activityFeed', ['$scope', 'sessionService', '$window', '$http', 'firebaseService', function($scope, session, $window, $http, db) {
@@ -231,10 +248,6 @@ angular.module('outrovert', ['firebase', 'ngRoute', 'ui.bootstrap'], router)
   var modalController = function($scope, $modalInstance) {
     $scope.ok = function() {
       $modalInstance.close();
-    };
-    
-    $scope.cancel = function() {
-      $modalInstance.dismiss('cancel');
     };
   };
   
