@@ -105,16 +105,21 @@ body, .head, .logo, .nav {
 }
 
 /* line 98, ../../SASS/whatsnew.scss */
+.nav {
+  background: none;
+}
+
+/* line 102, ../../SASS/whatsnew.scss */
 .post {
   margin-top: 5px;
 }
 
-/* line 102, ../../SASS/whatsnew.scss */
+/* line 106, ../../SASS/whatsnew.scss */
 .message-content {
   border: none;
 }
 
-/* line 106, ../../SASS/whatsnew.scss */
+/* line 110, ../../SASS/whatsnew.scss */
 .message {
   margin-top: 2%;
 }
