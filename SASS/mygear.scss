@@ -47,43 +47,6 @@
     outline-color: #8CCF4B;
 	}
 
-	.fileinput {
-		position: relative;
-		padding: 0;
-
-		input.file {
-			padding: 0;
-			position: relative;
-			text-align: right;
-			-moz-opacity:0 ;
-			opacity: 0;
-			opacity: 0;
-			z-index: 2;
-	    cursor: pointer;
-	  }
-	}
-
-	.fakeinput {
-		position: absolute;
-		top: 0px;
-		left: 0px;
-		z-index: 1;
-		padding: 0;
-
-		input {
-			text-transform: uppercase;
-			background: #FFF;
-			border: 2px solid #8CCF4B;
-			color: #000;
-			margin: auto;
-			padding: 2px 2%;
-			height: 100%;
-			position: relative;
-			top: 0;
-			cursor: pointer !important;
-		}	
-	}
-
 	input.post {
 		font-size: 140%;
 		color: white;
@@ -97,9 +60,10 @@
 }
 
 .mygear {
+	margin-top: 40px;
 
 	h3 {
-		margin: 1.2% 0% 5% 0;
+		margin: 0;
 	}
 
 	button.uploadnew {
@@ -131,4 +95,42 @@
 			margin-top: 2%;
 		}
 	}
+}
+
+.fileinput {
+	position: relative;
+	padding: 0;
+
+	input.file {
+		padding: 0;
+		position: relative;
+		text-align: right;
+		-moz-opacity:0 ;
+		opacity: 0;
+		opacity: 0;
+		z-index: 2;
+    cursor: pointer;
+  }
+}
+
+.fakeinput {
+	position: absolute;
+	top: 0px;
+	left: 0px;
+	z-index: 1;
+	padding: 0;
+
+	input {
+		text-transform: uppercase;
+		background: #FFF;
+		border: 2px solid #8CCF4B;
+		color: #000;
+		margin: auto;
+		padding: 2px 2%;
+		height: 100%;
+		position: relative;
+		font-size: 1.2em !important;
+		top: -24px;
+		cursor: pointer !important;
+	}	
 }

@@ -8,6 +8,7 @@ head
     link(href='landing-assets/css/font-awesome.min.css', rel='stylesheet')
     //
        Custom styles for this template 
+    link(href='stylesheets/base.css', rel='stylesheet')
     link(href='landing-assets/css/main.css', rel='stylesheet')
     link(href='http://fonts.googleapis.com/css?family=Oswald:400,300,700', rel='stylesheet', type='text/css')
     link(href='http://fonts.googleapis.com/css?family=EB+Garamond', rel='stylesheet', type='text/css')    
@@ -36,63 +37,43 @@ head
       ga('send', 'pageview');
 
   body
-    //
-      Large modal 
-      .modal.fade.mailing-list-modal-lg(tabindex='-1', role='dialog', aria-labelledby='myLargeModalLabel', aria-hidden='true')
-        .modal-dialog.modal-lg
-          .modal-content#mc_embed_signup
-            .modal-header
-              button.close(type='button', data-dismiss='modal', aria-hidden='true') ×
-              h4.modal-title(style="font-size: 150%") Subscribe for Updates!
-            .modal-body
-            .modal-footer
-              button.btn.btn-default(type='button', data-dismiss='modal') Close
+    .col-xs-2.pull-right
+      a.login(href='/home') 
+        button.custom-button Log in
 
     .container
       .logo.col-lg-8.col-lg-offset-2
         img(src='landing-assets/img/new_logo.png', width='100', alt='logo')
-        .def
-          //p.arrow &#x25B2;
-          p Outraˌvərt/ noun
-          p &emsp;&emsp;&emsp;1.&emsp;Lover of outdoor activities, shares their passion of the outdoors out loud
       .row.centered
-        .col-lg-8.col-lg-offset-2.w
-          //- h1
-          //-   | OUTROVERT
-          //-   br
+        .col-lg-8.col-lg-offset-2
           h2
             | swap gear and stories with other outroverts
       .row.centered
+        .def.col-lg-8.col-lg-offset-2
+          p Outrovert /aʊtrəˌvɜrt/ noun: Lover of outdoor activities, shares their passion of the outdoors out loud
+      .row.centered
         //
           Begin MailChimp Signup Form 
-        form#mc-embedded-subscribe-form.validate(action='http://herokuapp.us8.list-manage1.com/subscribe/post?u=14b0b0e0a73a3857153980900&id=ea3be0eb05', method='post', name='mc-embedded-subscribe-form', target='_blank', novalidate='novalidate' style="margin-top: 10px;")
-          input.email(type='email', value='', name='EMAIL', placeholder=' email address', required='required')
-          //
-            real people should not fill this in and expect good things - do not remove this or risk form bot signups
-          div(style='position: absolute; left: -5000px;')
-            input(type='text', name='b_14b0b0e0a73a3857153980900_ea3be0eb05', value='')
-          .clear
-            input#mc-embedded-subscribe.btn.btn-warning(value='Subscribe and Join Us!', name='subscribe', data-dismiss='modal')
-        br
-        .clear
-          p Or, if you already have an account, you can
-          a(href='/home') 
-            button.btn.btn-warning(style='background-color: #8CCF4B; border-color: transparent;') Log in
+        form#mc-embedded-subscribe-form.validate.col-lg-8.col-lg-offset-2(action='http://herokuapp.us8.list-manage1.com/subscribe/post?u=14b0b0e0a73a3857153980900&id=ea3be0eb05', method='post', name='mc-embedded-subscribe-form', target='_blank', novalidate='novalidate' style="margin-top: 10px;")
+          .col-xs-7
+            input.email.pull-right(type='email', value='', name='EMAIL', placeholder=' enter your email address to join', required='required')
+          .col-xs-5
+            input#mc-embedded-subscribe.custom-button(value="I'm an Outrovert!", name='subscribe', data-dismiss='modal')
           //
             End mc_embed_signup
         .col-lg-8.col-lg-offset-2.w.tooltip-demo
           a(data-tooltip='tooltip', title='Facebook', href='https://www.facebook.com/outrovert')
             i.fa.fa-facebook
-          //a(data-toggle='tooltip', title='Outdoor gear for rent')
-            i.fa.fa-briefcase
-            a(data-tooltip='tooltip', id="subscribeLink", title='Subscribe for more info!', data-toggle='modal', data-target='.mailing-list-modal-lg', href='javascript:void(0)')
-              i.fa.fa-user
-          //- a(data-tooltip='tooltip', title='Videos (Coming soon!)')
-          //-   i.fa.fa-camera
           a(data-tooltip='tooltip', title='Twitter' href="https://twitter.com/OUTrovert")
             i.fa.fa-twitter
           a(data-tooltip='tooltip', title='Email Us!' href="mailto:nuventioncloset@gmail.com")
             i.fa.fa-envelope
+          //- a(data-toggle='tooltip', title='Outdoor gear for rent')
+          //-   i.fa.fa-briefcase
+          //- a(data-tooltip='tooltip', id="subscribeLink", title='Subscribe for more info!', data-toggle='modal', data-target='.mailing-list-modal-lg', href='javascript:void(0)')
+          //-   i.fa.fa-user
+          //- a(data-tooltip='tooltip', title='Videos (Coming soon!)')
+          //-   i.fa.fa-camera
           //- a(data-tooltip='tooltip', title='Stories (Coming soon!)')
             //- i.fa.fa-coffee
         .col-lg-8.col-lg-offset-2
@@ -100,13 +81,16 @@ head
             | "I felt my lungs inflate with the onrush of scenery - air, mountains, trees, people. I thought this is what it is to be happy."
           p.cite
             | - Sylvia Plath, American Poet
-    //.scroll-down.col-lg-8.col-lg-offset-2
-      .fa.fa-arrow-down.fa-4x
-      h2 Scroll down for more
-      .fa.fa-arrow-down.fa-4x
-      
-    //
-       /.container 
+      //- .scroll-down.col-lg-8.col-lg-offset-2
+      //- .fa.fa-arrow-down.fa-4x
+      //- h2 Scroll down for more
+      //- .fa.fa-arrow-down.fa-4x
+    
+          a(data-tooltip='tooltip', title='Twitter' href="https://twitter.com/OUTrovert")
+            i.fa.fa-twitter
+          a(data-tooltip='tooltip', title='Email Us!' href="mailto:nuventioncloset@gmail.com")
+            i.fa.fa-envelope  
+    //- .container 
     //- .container(style="background: rgba(255,255,255,0.8)")
       
     //

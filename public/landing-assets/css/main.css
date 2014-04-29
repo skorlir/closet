@@ -1,25 +1,25 @@
 body {
-  background-color: #f2f2f2;
-    font-family: 'EB Garamond', serif;
+    background-color: #f2f2f2;
+    font-family: 'Tahoma', sans-serif;
     font-weight: 300;
     font-size: 100%;
-    color: #555;
+    color: #333;
 
     -webkit-font-smoothing: antialiased;
     -webkit-overflow-scrolling: touch;
 }
 
 .container {
-    background: rgba(255,255,255,0.7);
+    background: rgba(255,255,255,0.6);
     margin-top: 2%;
     width: 75%;
 }
 
 /* Titles */
 h1, h2, h3, h4, h5, h6 {
-    font-family: 'Oswald', sans-serif;
+    font-family: 'Tahoma', sans-serif;
     font-weight: 300;
-    color: #333;
+    /*text-shadow: 1px 1px #777;*/
 }
 
 
@@ -28,7 +28,9 @@ p.quote {
     text-align: center;
     line-height: 130%;
     padding: 0 2%;
-    font-size: 200%;
+    font-size: 170%;
+    font-weight: 300;
+    /*text-shadow: 1px 1px #777;*/
 }
 
 p.cite {
@@ -36,7 +38,10 @@ p.cite {
     margin-bottom: 7%;
     line-height: 120%;
     padding: 0 1.5%;
-    font-size: 200%;
+    font-size: 170%;
+    font-weight: 300;
+    color: #333;
+    /*text-shadow: 1px 1px #777;*/
 }
 
 .centered {
@@ -52,6 +57,16 @@ a {
     -ms-transition: color 0.1s ease-in, background 0.1s ease-in;
     -o-transition: color 0.1s ease-in, background 0.1s ease-in;
     transition: color 0.1s ease-in, background 0.1s ease-in;
+}
+
+a.login {
+    position: absolute;
+    right: 50px;
+}
+
+a.login button {
+    padding: 5px 15px;
+    font-size: 1.6em;
 }
 
 a:hover,
@@ -89,13 +104,17 @@ a:after {
     width: 80%;
 }
 
-.logo .def {
-    background: #FFF;
-    border-radius: 10px;
+.def {
     padding: 2%;
     padding-left: 2.5%;
     margin-top: 4%;
-    /*display: none;*/
+}
+
+.def p {
+    text-align: center;
+    font-weight: 300;
+    font-size: 170%;
+    /*text-shadow: 1px 1px #777;*/
 }
 
 .logo p {
@@ -106,32 +125,21 @@ a:after {
     vertical-align: top;
 }
 
-.logo .arrow {
-    position: absolute;
-    top: 51%;
-    left: 15%;
-    color: #FFF;
-    font-size: 250%;
-}
-
 .email, .clear {
-    font-size: 200%;
+    font-size: 1.8em;
     display: inline-block;
 }
 
 .email {
     position: relative;
     left: 20px;
+    width: 53%;
 }
 
-#mc-embedded-subscribe {
-    font-size: 100%;
-    vertical-align: baseline;
-    border: 1px solid transparent;
-    margin-top: 10px;
-    background-color: #8CCF4B;
-    margin-left: 10px;
-    width: 80%;
+.email:focus {
+    outline-style: auto;
+    outline-width: 5px;
+    outline-color: #8CCF4B;
 }
 
 h1 {

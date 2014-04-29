@@ -1,4 +1,4 @@
-nav.col-md-2.col-sm-2.col-xs-12.nav
+nav.col-md-2.col-sm-2.col-xs-2.nav.navigation
     ul.pages
       li
         a(href='#/') What's New
@@ -7,7 +7,7 @@ nav.col-md-2.col-sm-2.col-xs-12.nav
       li#here
         a My Gear
 
-.col-md-10.col-sm-11(ng-show='loggedIn', style='padding-bottom: 200px;')
+.col-md-10.col-sm-10.col-xs-offset-2(ng-show='loggedIn', style='padding-bottom: 200px;')
   form.col-xs-6.uploadform.col-xs-offset-1(ng-submit='addGear()')
     .form-group.col-xs-12
       label.col-xs-4 Item Name
@@ -22,7 +22,8 @@ nav.col-md-2.col-sm-2.col-xs-12.nav
         option New
     .form-group.col-xs-12
       label.col-xs-4 Item For:
-      select.col-xs-3(ng-model='addGearForm.rentalOrSale', required)
+      span Sale
+      //- select.col-xs-3(ng-model='addGearForm.rentalOrSale', required)
         option(selected='selected') Sale
         option Rent
     .form-group.col-xs-12.price
@@ -40,12 +41,14 @@ nav.col-md-2.col-sm-2.col-xs-12.nav
         input.col-xs-12(type="file", name="file", class='file', onchange="angular.element(this).scope().uploadFile(this)", required)
         .fakeinput.col-xs-12
           input.custom-button.col-xs-12(type='button', value='Choose File')
-    br
     .form-group.col-xs-12
       input.col-xs-4.col-xs-offset-4.post(type='submit', value='Post Item')
+
+  br
   .mygear.col-xs-12
+
     h3.col-xs-2 My Gear:
-    
+    //- button.col-xs-2.uploadnew.custom-button Add Item    
     .col-xs-12.my-gear
       .col-lg-4.col-md-4.col-xs-6.gear(ng-repeat='item in myGear')
         .photo.col-xs-12.img-rounded(style='background-image: url("{{item[1].image || "images/default.png"}}")')
