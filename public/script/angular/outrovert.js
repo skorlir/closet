@@ -249,6 +249,10 @@ angular.module('outrovert', ['firebase', 'ngRoute', 'ui.bootstrap'], router)
     $scope.ok = function() {
       $modalInstance.close();
     };
+    
+    $scope.cancel = function() {
+      $modalInstance.dismiss();
+    };
   };
   
   $scope.openTransaction = function(r) {
