@@ -178,7 +178,7 @@ angular.module('outrovert', ['firebase', 'ngRoute', 'ui.bootstrap'], router)
   
   $scope.publishActivity = function() {
     var msg = $scope.activityForm.message;
-    if (!msg) { $scope.flashMessage = 'Nothing to post!'; return; }
+    if (!msg || !$scope.acitivtyForm.image) { $scope.flashMessage = 'Nothing to post!'; return; }
     session.getUser().then(function(user) {
       if (user === null) $scope.flashMessage = 'Error: Not logged in. Please refresh.';
       else {
