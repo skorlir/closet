@@ -113,6 +113,8 @@
       var this_s3upload;
       this_s3upload = this;
       return this.executeOnSignedUrl(file, function(signedURL, publicURL) {
+        signedURL = signedURL.replace(/[+]/g, '%2B');
+        //FIXME: pluses aren't getting encoded; potentially that is the problem
         return this_s3upload.uploadToS3(file, signedURL, publicURL);
       });
     };

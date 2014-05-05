@@ -53,17 +53,11 @@ exports.aws0signature = function(req, res) {
 	var amz_headers = "x-amz-acl:public-read";
 
 	//MUST encode ONLY the filename in object_name (AKA encode the spaces, apparently, but not the rest???)
-	var put_request = "PUT\n\n"+mime_type+"\n"+expires+"\n"+amz_headers+"\n/"+S3_BUCKET+"/"+object_name.split('_')[0] + '_' + encodeURIComponent(object_name.split('_')[1]);
+	var put_request = "PUT\n\n"+mime_type+"\n"+expires+"\n"+amz_headers+"\n/"+S3_BUCKET+"/"+object_name.split('_')[0] + encodeURIComponent(object_name.slice(object_name.indexOf('_')));
 	
 	console.log(put_request);
 
-	var signature = crypto.createHmac('sha1', AWS_SECRET_KEY).update(put_request).digest('base64');
-	signature = encodeURIComponent(signature.trim());
-	//AWS musta fixed + encoding problems; this breaks
-	//signature = signature.replace(/%2B/g,'+');
-	//signature = signature.replace('%3D','=');
-	
-	console.log(signature);
+	var signature = generateSignature(put_request);
 
 	var url = 'https://'+S3_BUCKET+'.s3.amazonaws.com/'+object_name;
 
@@ -113,3 +107,13 @@ exports.nonfeature = function(req, res) {
 		else console.log(resp);
 	});
 };
+
+function generateSignature(put_request) {
+	var signature = crypto.createHmac('sha1', AWS_SECRET_KEY).update(put_request).digest('base64');
+	signature = encodeURIComponent(signature.trim());
+	//AWS musta fixed + encoding problems; this breaks
+	//signature = signature.replace(/[+]/g,'+');
+	//signature = signature.replace('%3D','=');
+	//No they didn't but their uploader was broken
+	return signature;
+}
