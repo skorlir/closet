@@ -129,18 +129,6 @@ angular.module('outrovert', ['firebase', 'ngRoute', 'ui.bootstrap'], router)
     if($scope.disconnect) $scope.disconnect();
   });
   
-  session.getUser().then(function(user) {
-    $scope.uploadFile = function(el) {
-      $scope.imgToUpload = el.files[0];
-      $scope.s3upload = new $window.S3Upload({
-        s3_object_name: user.uid + '_' + $scope.imgToUpload.name,
-        s3_sign_put_url: 'aws0signature',
-        file_dom_selector: null
-      });
-      $scope.fileElement = el;
-    };
-  });
-  
   var nonfeatureController = function($scope, $modalInstance) {
     $scope.ok = function() {
       $modalInstance.close();
@@ -171,6 +159,18 @@ angular.module('outrovert', ['firebase', 'ngRoute', 'ui.bootstrap'], router)
     console.log(postSnap);
     if(postSnap.snapshot.value === null) return;
     $scope.feed.unshift([postSnap.snapshot.name, postSnap.snapshot.value]);
+  });
+  
+  session.getUser().then(function(user) {
+    $scope.uploadFile = function(el) {
+      $scope.imgToUpload = el.files[0];
+      $scope.s3upload = new $window.S3Upload({
+        s3_object_name: user.uid + '_' + $scope.imgToUpload.name,
+        s3_sign_put_url: 'aws0signature',
+        file_dom_selector: null
+      });
+      $scope.fileElement = el;
+    };
   });
   
   $scope.publishActivity = function() {
@@ -288,6 +288,17 @@ angular.module('outrovert', ['firebase', 'ngRoute', 'ui.bootstrap'], router)
       $location.path('/');
       return;
     }
+    session.getUser().then(function(user) {
+      $scope.uploadFile = function(el) {
+        $scope.imgToUpload = el.files[0];
+        $scope.s3upload = new $window.S3Upload({
+          s3_object_name: user.uid + '_' + $scope.imgToUpload.name,
+          s3_sign_put_url: 'aws0signature',
+          file_dom_selector: null
+        });
+        $scope.fileElement = el;
+      };
+    });
     
     $scope.myGear = [];
     $scope.addGearForm = {};
