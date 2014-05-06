@@ -265,7 +265,7 @@ angular.module('outrovert', ['firebase', 'ngRoute', 'ui.bootstrap'], router)
         $http.post('/transaction', {user: user, r: r})
         .success(function(res) {
           console.log("the transaction was committed.");
-          //should do something to prevent double transactions
+          //should do something to prevent double transactions?!
         })
         .error(function(error) {
           console.log(error);
