@@ -15,6 +15,11 @@ body {
     width: 75%;
 }
 
+.container.scroll-down {
+    background: rgba(0,0,0,0);
+    margin-top: 0;
+}
+
 /* Titles */
 h1, h2, h3, h4, h5, h6 {
     font-family: 'Tahoma', sans-serif;
@@ -60,7 +65,7 @@ a {
 }
 
 a.login {
-    position: absolute;
+    position: fixed;
     right: 50px;
 }
 
@@ -180,11 +185,12 @@ i.fa-twitter:focus {
 .fa-arrow-down {
     color: #8CCF4B;
     display: inline-block;
-    margin: 11% 5%;
+    margin: 11% 2%;
 }
 
 .scroll-down h2 {
     color: #FFF;
     text-align: center;
     display: inline-block;
+    font-size: 2em;
 }
