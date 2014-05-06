@@ -48,8 +48,16 @@
 	border: 10px solid #EEE;
 	padding: 0 !important;
 
+	.bottom {
+		padding: 0 !important;
+	}
+
 	img.photo, .description, .cost, .rent {
 		padding: 0;
+	}
+
+	img.photo {
+		height: 15em !important;
 	}
 
 	.description {
@@ -58,8 +66,8 @@
 
 	img.profile {
 		margin: 15% 0;
-		width: 40px;
-		height: 40px;
+		width: 2.5em !important;
+		height: 2.5em !important;
 	}
 
 	.buy {

@@ -12,8 +12,8 @@ html(ng-app='outrovert')
         #loggedInData.col-xs-6.pull-right
           .group(ng-show='loggedIn')
             img.profile(ng-src='{{profilePicture}}')
-            .col-xs-12
-              h4.profile.pull-right {{displayName}}
+            //- .col-xs-12
+            h4.profile.pull-right {{displayName}}
 
     .login.col-xs-6.col-xs-offset-3(ng-hide='loggedIn')
       img.img-responsive.col-xs-12(src='/landing-assets/img/new_logo.png', style='margin: 50px 0')
