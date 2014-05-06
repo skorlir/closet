@@ -16,7 +16,7 @@ var router = function($routeProvider) {
 angular.module('outrovert', ['firebase', 'ngRoute', 'ui.bootstrap'], router)
 
 .factory('firebaseService', ['$firebase', function($firebase) {
-  var root = new Firebase('https://sweltering-fire-110.firebaseio.com');
+  var root = new Firebase('https://outrovert-testing.firebaseio.com');
   var firebase = $firebase(root);
   
   return {
@@ -50,7 +50,7 @@ angular.module('outrovert', ['firebase', 'ngRoute', 'ui.bootstrap'], router)
     if(!con) userConnections.$add({agent: UA, timestamp: time}).then(function(ref) {
       con = ref.name();
       
-      console.log(user);
+      console.log(userData);
     
       if(user.displayName)
         userData.$update({displayName: user.displayName});
@@ -59,14 +59,16 @@ angular.module('outrovert', ['firebase', 'ngRoute', 'ui.bootstrap'], router)
       if(user.thirdPartyUserData.hometown)
         userData.$update({hometown: user.thirdPartyUserData.hometown.name});
       if(user.thirdPartyUserData.email)
-        userData.$update({email: user.thirdPartyUserData.email});
+        //userData.$update({email: user.thirdPartyUserData.email});
       
       $rootScope.loggedIn = true;
-      $rootScope.displayName = user.displayName;
-      $rootScope.profilePicture = 'http://graph.facebook.com/'+user.id+'/picture?type=small';
-      $rootScope.profilePictureM = 'http://graph.facebook.com/'+user.id+'/picture';
-      $rootScope.location = user.thirdPartyUserData.location ? user.thirdPartyUserData.location.name : null;
-      $rootScope.hometown = user.thirdPartyUserData.hometown ? user.thirdPartyUserData.hometown.name : null;
+      $rootScope.user = {};
+      $rootScope.user.displayName = user.displayName;
+      $rootScope.user.profilePicture = 'http://graph.facebook.com/'+user.id+'/picture?type=small';
+      $rootScope.user.profilePictureM = 'http://graph.facebook.com/'+user.id+'/picture';
+      $rootScope.user.location = user.location;
+      $rootScope.user.hometown = user.hometown;
+      $rootScope.user.email    = user.email;
     });
 
     $rootScope.disconnect = function() {
@@ -77,11 +79,7 @@ angular.module('outrovert', ['firebase', 'ngRoute', 'ui.bootstrap'], router)
     $rootScope.$on('$firebaseSimpleLogin:logout', function() {
       $rootScope.disconnect();
       $rootScope.loggedIn = false;
-      $rootScope.displayName = '';
-      $rootScope.profilePicture = '';
-      $rootScope.profilePictureM = '';
-      $rootScope.location = '';
-      $rootScope.hometown = '';
+      $rootScope.user = {};
     });
   });
 

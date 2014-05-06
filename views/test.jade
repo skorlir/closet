@@ -12,8 +12,8 @@ html(ng-app='outrovert')
           button#logout.custom-button.pull-right(ng-click='logout()', ng-show='loggedIn') Log out
         #loggedInData.col-xs-6.pull-right
           .group(ng-show='loggedIn')
-            img.profile(ng-src='{{profilePicture}}')
-            h4.col-xs-6.profile {{displayName}}
+            img.profile(ng-src='{{user.profilePicture}}')
+            h4.col-xs-6.profile {{user.displayName}}
 
     .login.col-xs-6.col-xs-offset-3(ng-hide='loggedIn')
       a(href='/')

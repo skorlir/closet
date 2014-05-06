@@ -50,7 +50,7 @@ nav.col-md-2.col-sm-2.col-xs-12.nav
         .photo.col-xs-12.img-rounded(style='background-image: url("{{item[1].image || "images/default.png"}}")')
         a.delete.pull-right(href='javascript:void(0)', ng-click='deleteGear(item[0])') x (delete)
         .col-xs-12
-          img.profile.img-responsive(ng-src='{{profilePicture}}')
+          img.profile.img-responsive(ng-src='{{user.profilePicture}}')
           .description.col-xs-6
             span.name(popover-placement='bottom', popover-title='Description', popover-trigger='mouseenter', popover='{{item[1].description}}') {{item[1].name}}
             br

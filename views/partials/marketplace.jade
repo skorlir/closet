@@ -21,9 +21,9 @@ nav.col-md-2.col-sm-2.col-xs-12.nav
       button.custom-button.col-xs-4(ng-click='toggleBtns("rent")', ng-class='{"inactive": !showRent}') Rent
     .form-group.col-lg-4.col-xs-12
       label Location
-      p {{location || hometown}}
+      p {{user.location || user.hometown}}
       p.text-warning(ng-click='warnNonFeature("change location")') change location
-    input(type='hidden', value='{{email.split("@")[1]}}', ng-model='search.item.restrictions.domain')
+    input(type='hidden', value='{{user.email.split("@")[1]}}', ng-model='search.item.restrictions.domain')
       
   //bootstrap modal for add item
   // OR just redirect to /mygear
