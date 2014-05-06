@@ -14,15 +14,16 @@ html(ng-app='outrovert')
           .group(ng-show='loggedIn')
             img.profile(ng-src='{{user.profilePicture}}')
             h4.col-xs-6.profile {{user.displayName}}
-    //[if lt IE 11]-->
-      <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> before using Outrovert in order to get the most out of your experience.</p>
-      <input type="hidden" ng-init="loggedIn = false">
-    //<![endif]
 
     .login.col-xs-6.col-xs-offset-3(ng-hide='loggedIn')
       a(href='/')
         img.img-responsive.col-xs-12(src='/landing-assets/img/new_logo.png', style='margin: 50px 0')
       button#fbLogin.custom-button.col-xs-6.col-xs-offset-3(ng-click='fbLogin()', ng-hide='loggedIn') Login with Facebook
+    
+    //[if lt IE 11]-->
+      <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> before using Outrovert in order to get the most out of your experience.</p>
+      <input type="hidden" ng-init="loggedIn = false">
+    //<![endif]
 
     //nav.col-md-2.col-sm-2.col-xs-12.nav(ng-show='loggedIn')
       ul.pages

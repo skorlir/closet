@@ -70,6 +70,7 @@ exports.aws0signature = function(req, res) {
 };
 
 exports.commitTransaction = function(req, res) { 
+	//FIXME: Add purchaser email to email to outrovert team
     var user = req.body.user;
     var r = req.body.r;
 	
