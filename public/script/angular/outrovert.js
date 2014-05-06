@@ -163,7 +163,7 @@ angular.module('outrovert', ['firebase', 'ngRoute', 'ui.bootstrap'], router)
     $scope.uploadFile = function(el) {
       $scope.imgToUpload = el.files[0];
       $scope.s3upload = new $window.S3Upload({
-        s3_object_name: user.uid + '_' + $scope.imgToUpload.name,
+        s3_object_name: user.uid + '_' + el.files[0].name,
         s3_sign_put_url: 'aws0signature',
         file_dom_selector: null
       });
