@@ -79,11 +79,15 @@
   height: 2.5em !important;
 }
 /* line 73, ../../sass/marketplace.scss */
+.marketplace-item .transact {
+  margin-bottom: 5%;
+}
+/* line 77, ../../sass/marketplace.scss */
 .marketplace-item .buy {
   padding: 3px 15px;
   font-size: 1.2em !important;
 }
-/* line 78, ../../sass/marketplace.scss */
+/* line 82, ../../sass/marketplace.scss */
 .marketplace-item .buy:hover {
   background-color: #BAE293;
 }

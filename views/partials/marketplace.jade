@@ -36,7 +36,7 @@ nav.col-md-2.col-sm-2.col-xs-2.nav.navigation
           span.name(popover-placement='bottom', popover-title='Description', popover-trigger='mouseenter', popover='{{result.item.description}}') {{result.item.name}}
           br
           span.quality {{result.item.condition}}
-        .col-xs-3.pull-right
+        .col-xs-3.pull-right.transact
           span.cost.text-center.pull-right {{result.item.price | currency}}
           br
           button.buy.custom-button.pull-right(ng-click='openTransaction(result)') {{result.item.rentOrBuy}}
