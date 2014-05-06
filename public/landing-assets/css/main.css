@@ -194,3 +194,11 @@ i.fa-twitter:focus {
     display: inline-block;
     font-size: 2em;
 }
+
+.about .img, .about .desc {
+    margin: 30px 0;
+}
+
+.about img {
+    width: 100%;
+}
