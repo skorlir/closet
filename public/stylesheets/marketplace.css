@@ -61,33 +61,29 @@
   padding: 0 !important;
 }
 /* line 55, ../../sass/marketplace.scss */
-.marketplace-item img.photo, .marketplace-item .description, .marketplace-item .cost, .marketplace-item .rent {
+.marketplace-item .photo, .marketplace-item .description, .marketplace-item .cost, .marketplace-item .rent {
   padding: 0;
 }
 /* line 59, ../../sass/marketplace.scss */
-.marketplace-item img.photo {
-  height: 15em !important;
-}
-/* line 63, ../../sass/marketplace.scss */
 .marketplace-item .description {
   margin-top: 1%;
 }
-/* line 67, ../../sass/marketplace.scss */
+/* line 63, ../../sass/marketplace.scss */
 .marketplace-item img.profile {
   margin: 15% 0;
   width: 2.5em !important;
   height: 2.5em !important;
 }
-/* line 73, ../../sass/marketplace.scss */
+/* line 69, ../../sass/marketplace.scss */
 .marketplace-item .transact {
   margin-bottom: 5%;
 }
-/* line 77, ../../sass/marketplace.scss */
+/* line 73, ../../sass/marketplace.scss */
 .marketplace-item .buy {
   padding: 3px 15px;
   font-size: 1.2em !important;
 }
-/* line 82, ../../sass/marketplace.scss */
+/* line 78, ../../sass/marketplace.scss */
 .marketplace-item .buy:hover {
   background-color: #BAE293;
 }

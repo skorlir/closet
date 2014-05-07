@@ -46,3 +46,23 @@ body {
 		}
 	}
 }
+
+.photo {
+	height: 200px;
+	background-color: rgb(220, 220, 220);
+	background-size: contain;
+	background-repeat: no-repeat;
+	background-position: center center;
+}
+
+.gear, .marketplace-item {
+	float: left;
+	.profile {
+		display: inline-block;
+		float: left;
+		max-width: 40px;
+		max-height: 40px;
+	}
+}
+
+

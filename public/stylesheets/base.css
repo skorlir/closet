@@ -43,3 +43,24 @@ body form label {
   text-transform: uppercase;
   color: #8CCF4B;
 }
+
+/* line 50, ../../sass/base.scss */
+.photo {
+  height: 200px;
+  background-color: gainsboro;
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center center;
+}
+
+/* line 58, ../../sass/base.scss */
+.gear, .marketplace-item {
+  float: left;
+}
+/* line 60, ../../sass/base.scss */
+.gear .profile, .marketplace-item .profile {
+  display: inline-block;
+  float: left;
+  max-width: 40px;
+  max-height: 40px;
+}
