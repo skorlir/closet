@@ -1,3 +1,4 @@
+
 nav.col-md-2.col-sm-2.col-xs-12.nav(ng-show='loggedIn', style='z-index: 1000')
     ul.pages
       li#here
@@ -6,21 +7,28 @@ nav.col-md-2.col-sm-2.col-xs-12.nav(ng-show='loggedIn', style='z-index: 1000')
         a(href='#/marketplace') Marketplace
       li
         a(href='#/mygear') My Gear
+
 .col-md-7.col-sm-8(style='padding-bottom: 200px;')
   tabset(ng-show='loggedIn').col-md-10.col-md-offset-1
+
     tab
       tab-heading
-        i.fa.fa-edit | Share a story
-      form.col-md-10.col-sm-12.col-xs-12(ng-submit='publishActivity()')
-        textarea.col-xs-12(ng-model='activityForm.message', placeholder="What's your new adventure?")
-        input.custom-button.col-xs-12(type='submit', value='Post')
+        i.fa.fa-edit Share a story
+      .col-xs-12.tabcontent
+        form.col-md-10.col-sm-12.col-xs-12(ng-submit='publishActivity()')
+          textarea.col-xs-12(ng-model='activityForm.message', placeholder="What's your new adventure?")
+          input.custom-button.col-xs-2.pull-right.post(type='submit', value='Post')
     tab
       tab-heading
-        i.fa.fa-camera | Upload photo
-      form.col-md-10.col-sm-12.col-xs-12(ng-submit='publishActivity()')
-        input.col-xs-12(type="file", name="file", class='file', onchange="angular.element(this).scope().uploadFile(this)", style='padding: 10px;')
-        textarea.col-xs-12(ng-model='activityForm.message', placeholder="What's your new adventure?")  
-        input.custom-button.col-xs-12(type='submit', value='Post')    
+        i.fa.fa-camera Upload photo
+      .col-xs-12.tabcontent
+        form.col-md-10.col-sm-12.col-xs-12(ng-submit='publishActivity()')
+          .fileinput.col-xs-3
+            input.col-xs-12(type="file", name="file", class='file', onchange="angular.element(this).scope().uploadFile(this)", required)
+            .fakeinput.col-xs-12
+              input.custom-button.photoupload.col-xs-12(type='button', value='Choose Photo')
+          textarea.col-xs-9(ng-model='activityForm.message', placeholder="What's your new adventure?")  
+          input.custom-button.col-xs-2.pull-right.post(type='submit', value='Post')
         
   //- form.col-md-8.col-sm-10.col-xs-12(ng-submit='publishActivity()', ng-show='loggedIn')
   //-   label Post your most recent excursion!
@@ -37,6 +45,7 @@ nav.col-md-2.col-sm-2.col-xs-12.nav(ng-show='loggedIn', style='z-index: 1000')
       .col-xs-10 {{post[1].displayName}}
         small &nbsp;&nbsp; {{!!post[1].photo ? 'posted a photo' : 'says'}}
         .col-xs-12.message-picture(ng-show='!!post[1].photo')
-          .photo(style='background-image: url("{{post[1].photo}}")').img-rounded.col-lg-8.col-lg-offset-0.col-xs-10.col-xs-offset-1
+          hr.col-lg-8.col-xs-10
+          img.photo(src="{{post[1].photo}}").img-rounded.col-lg-8.col-lg-offset-0.col-xs-10.col-xs-offset-1
           hr.col-lg-8.col-xs-10
         .col-xs-12.message-content {{post[1].textContent}}

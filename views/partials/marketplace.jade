@@ -1,4 +1,4 @@
-nav.col-md-2.col-sm-2.col-xs-12.nav
+nav.col-md-2.col-sm-2.col-xs-2.nav.navigation
   ul.pages
     li
       a(href='#/') What's New
@@ -7,11 +7,12 @@ nav.col-md-2.col-sm-2.col-xs-12.nav
     li 
       a(href='#/mygear') My Gear
 
-.col-lg-8.col-md-10.col-sm-11
+.col-lg-8.col-md-10.col-sm-10.col-xs-offset-2
   .col-xs-2.col-xs-offset-1(style='margin: 15px;')
     a(href='#/mygear').custom-button.col-xs-12.text-center Add item
+
   form
-    .form-group.col-xs-12
+    .form-group.col-xs-12.search
       label.col-xs-1 Search
       input.col-xs-10.col-lg-6(type='text', ng-model='search.item.name', placeholder='backpacks, boots, sleeping bags...')
     .form-group.col-lg-4.col-xs-12(ng-init='showBuy = true; showRent = true')
@@ -29,16 +30,17 @@ nav.col-md-2.col-sm-2.col-xs-12.nav
   // OR just redirect to /mygear
   
   .col-xs-12.marketplace-content
-    .col-lg-4.col-sm-6.col-xs-12.marketplace-item(ng-repeat='result in marketplace | filter:search', ng-show='showHide(result.item.rentOrBuy)')
-      .photo.col-xs-12.img-rounded(style='background-image: url("{{result.item.image || "images/default.png"}}")')
+    .col-lg-5.col-sm-4.col-xs-6.marketplace-item(ng-repeat='result in marketplace | filter:search', ng-show='showHide(result.item.rentOrBuy)')
+      .photo.col-xs-12.img-rounded(style="background-image: url('{{result.item.image}}')")
       .star
       .bottom.col-xs-12
-        img.profile.img-responsive(ng-src='{{result.poster.profilePicture}}')
+        .col-xs-3
+          img.profile.img-responsive(ng-src='{{result.poster.profilePicture}}')
         .description.col-xs-6
           span.name(popover-placement='bottom', popover-title='Description', popover-trigger='mouseenter', popover='{{result.item.description}}') {{result.item.name}}
           br
           span.quality {{result.item.condition}}
-        .col-xs-3
+        .col-xs-3.pull-right.transact
           span.cost.text-center.pull-right {{result.item.price | currency}}
           br
           button.buy.custom-button.pull-right(ng-click='openTransaction(result)') {{result.item.rentOrBuy}}

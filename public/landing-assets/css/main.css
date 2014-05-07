@@ -15,6 +15,11 @@ body {
     width: 75%;
 }
 
+.container.scroll-down {
+    background: rgba(0,0,0,0);
+    margin-top: 0;
+}
+
 /* Titles */
 h1, h2, h3, h4, h5, h6 {
     font-family: 'Tahoma', sans-serif;
@@ -57,6 +62,16 @@ a {
     -ms-transition: color 0.1s ease-in, background 0.1s ease-in;
     -o-transition: color 0.1s ease-in, background 0.1s ease-in;
     transition: color 0.1s ease-in, background 0.1s ease-in;
+}
+
+a.login {
+    position: fixed;
+    right: 50px;
+}
+
+a.login button {
+    padding: 5px 15px;
+    font-size: 1.6em;
 }
 
 a:hover,
@@ -116,34 +131,20 @@ a:after {
 }
 
 .email, .clear {
-    font-size: 160%;
+    font-size: 1.8em;
     display: inline-block;
 }
 
 .email {
     position: relative;
     left: 20px;
-    width: 25%;
+    width: 75%;
 }
 
 .email:focus {
     outline-style: auto;
     outline-width: 5px;
     outline-color: #8CCF4B;
-}
-
-#mc-embedded-subscribe {
-    font-size: 100%;
-    vertical-align: baseline;
-    border: 1px solid transparent;
-    margin: 10px 0 0 20px;
-    background-color: #8CCF4B;
-    margin-left: 10px;
-    width: 80%;
-}
-
-#mc-embedded-subscribe:hover {
-    background-color: #BAE293;
 }
 
 h1 {
@@ -184,11 +185,28 @@ i.fa-twitter:focus {
 .fa-arrow-down {
     color: #8CCF4B;
     display: inline-block;
-    margin: 11% 5%;
+    margin: 11% 2%;
 }
 
 .scroll-down h2 {
     color: #FFF;
     text-align: center;
     display: inline-block;
+    font-size: 2em;
+}
+
+.aboutpage {
+    width: 100%;
+    background: #333;
+    color: #FFF;
+    border-top: 3px #8CCF4B double;
+}
+
+.about .img {
+    margin: 15px 0;
+}
+
+.about img {
+    height: 300px;
+    width: 380px;
 }

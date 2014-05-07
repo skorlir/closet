@@ -1,21 +1,21 @@
-label.search, label.type, label.loc {
+.search label, .type label, .location label {
 	text-transform: uppercase;
 	color: #8CCF4B;
 	display: inline-block;
 	vertical-align: bottom;
 }
 
-input.search {
+.search input {
 	margin-left: 28px;
 }
 
-input.search:focus {
-    outline-style: auto;
-    outline-width: 3px;
-    outline-color: #8CCF4B;
+.search input:focus {
+  outline-style: auto;
+  outline-width: 3px;
+  outline-color: #8CCF4B;
 }
 
-button.type {
+.type button {
 	margin: 0 0 0 28px;
 	display: inline-block;
 	font-size: 90%;
@@ -26,55 +26,56 @@ button.type {
 	color: #000;
 }
 
-p.loc {
+.location p {
 	display: inline-block;
 	margin-left: 28px;
 }
 
-a.loc {
+.location a {
 	display: inline-block;
 	color: #888;
 	text-decoration: none;
 	margin-left: 20px;
 }
 
-a.loc:hover {
-	color: #547C2D;
+.location a:hover {
+	color: #339933;
 	cursor: pointer;
 }
 
 .marketplace-item {
-	border: 10px solid #EEE;
-	// margin: 2% 1% 0 0;
 	background: #FFF;
-	// border: 1px outset #888;
+	border: 10px solid #EEE;
 	padding: 0 !important;
 
-	img.img-rounded, .description, .cost, .rent {
+	.bottom {
+		padding: 0 !important;
+	}
+
+	.photo, .description, .cost, .rent {
 		padding: 0;
 	}
 
 	.description {
-		margin: 2% 0 0 3%;
-		font-size: 80%;	
+		margin-top: 1%;
 	}
 
 	img.profile {
-		margin: 3% 1%;
-		width: 40px;
-		height: 40px;
+		margin: 15% 0;
+		width: 2.5em !important;
+		height: 2.5em !important;
 	}
 
-	.rent {
-		font-size: 100%;
-		margin-top: 2%;
+	.transact {
+		margin-bottom: 5%;
+	}
 
-		.buy {
-			padding: 0 10%;
-		}
+	.buy {
+		padding: 3px 15px;
+		font-size: 1.2em !important;
+	}
 
-		.buy:hover {
-	    background-color: #BAE293;
-		}
+	.buy:hover {
+    background-color: #BAE293;
 	}
 }
