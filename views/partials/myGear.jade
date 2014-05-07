@@ -1,4 +1,4 @@
-nav.col-md-2.col-sm-2.col-xs-12.nav
+nav.col-md-2.col-sm-2.col-xs-2.nav.navigation
     ul.pages
       li
         a(href='#/') What's New
@@ -22,7 +22,8 @@ nav.col-md-2.col-sm-2.col-xs-12.nav
         option New
     .form-group.col-xs-12
       label.col-xs-4 Item For:
-      select.col-xs-3(ng-model='addGearForm.rentalOrSale', required)
+      span Sale
+      //- select.col-xs-3(ng-model='addGearForm.rentalOrSale', required)
         option(selected='selected') Sale
     .form-group.col-xs-12.price
       label.col-xs-4 Price
@@ -39,21 +40,27 @@ nav.col-md-2.col-sm-2.col-xs-12.nav
         input.col-xs-12(type="file", name="file", class='file', onchange="angular.element(this).scope().uploadFile(this)", required)
         .fakeinput.col-xs-12
           input.custom-button.col-xs-12(type='button', value='Choose File')
-    br
     .form-group.col-xs-12
       input.col-xs-4.col-xs-offset-4.post(type='submit', value='Post Item')
+
+  br
   .mygear.col-xs-12
+
     h3.col-xs-2 My Gear:
-    
+    //- button.col-xs-2.uploadnew.custom-button Add Item    
     .col-xs-12.my-gear
-      .col-lg-4.col-md-4.col-xs-6.gear(ng-repeat='item in myGear')
-        .photo.col-xs-12.img-rounded(style='background-image: url("{{item[1].image || "images/default.png"}}")')
-        a.delete.pull-right(href='javascript:void(0)', ng-click='deleteGear(item[0])') x (delete)
-        .col-xs-12
-          img.profile.img-responsive(ng-src='{{profilePicture}}')
+      .col-lg-4.col-sm-4.col-xs-6.gear(ng-repeat='item in myGear')
+        img.photo.col-xs-12.img-rounded(src="{{item[1].image}}") 
+        //- || "images/default.png"}}")')
+        .bottom.col-xs-12
+          .col-xs-3
+            img.profile.img-responsive(ng-src='{{profilePicture}}')
           .description.col-xs-6
             span.name(popover-placement='bottom', popover-title='Description', popover-trigger='mouseenter', popover='{{item[1].description}}') {{item[1].name}}
             br
             span.quality {{item[1].condition}}
           .rent.pull-right.col-xs-3
             span.cost.text-center.pull-right {{item[1].price | currency}}
+            br
+            a.delete.pull-right(href='javascript:void(0)', ng-click='deleteGear(item[0])') x (delete)
+

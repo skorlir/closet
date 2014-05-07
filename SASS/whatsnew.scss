@@ -1,8 +1,5 @@
 .logo img {
 	width: 100%;
-	// position: absolute;
-	// top: 0;
-	// left: 0;
 }
 
 body, .head, .logo, .nav {
@@ -10,6 +7,11 @@ body, .head, .logo, .nav {
 	margin-bottom: 0;
 	background: #EEE;
 	border: none;
+}
+
+.navigation {
+	position: absolute;
+	top: 59px;
 }
 
 .pages {
@@ -52,9 +54,9 @@ body, .head, .logo, .nav {
 }
 
 #loginButtons button {
-	top: 13px;
-	padding: 5px 15px;
-	margin: 0;
+	padding: 3px 15px;
+	margin: 15px 0;
+	font-size: 1.2em !important;
 }
 
 #loggedInData {
@@ -62,7 +64,7 @@ body, .head, .logo, .nav {
 	img.profile {
 		padding: 3%;
 		position: absolute;
-		right: -90px;
+		right: -15px;
 		width: 60px;
 		height: 60px;
 	}
@@ -70,15 +72,26 @@ body, .head, .logo, .nav {
 	h4.profile {
 		font-size: 12pt;
 		position: absolute;
-		right: -45px;
+		right: 45px;
 		top: 12px;
 	}
 }
 
+textarea:focus {
+  outline-style: auto;
+  outline-width: 3px;
+  outline-color: #8CCF4B;
+}
+
+.photoupload {
+	font-size: 1.2em !important;
+}
+
 .mainfeed {
   position: absolute;
-  left: 300px;
-  top: 20px;
+  left: 20%;
+  top: 5%;
+  padding-bottom: 200px;
 }
 
 .tab-content form, .message {
@@ -95,12 +108,23 @@ body, .head, .logo, .nav {
   }
 }
 
+
 .nav {
   background: none;
 }
 
+.nav li {
+	left: 15px;
+	cursor: pointer;
+
+	a {
+		color: #888;
+	}
+}
+
 .post {
 	margin-top: 5px;
+	font-size: 1.4em !important;
 }
 
 .message-content {
