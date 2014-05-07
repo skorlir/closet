@@ -7,10 +7,10 @@ html(ng-app='outrovert')
       span.logo.col-xs-2
         a(href='/')
           img(src='images/logoAssets/cornerlogo.png', ng-show="loggedIn")
-      span.col-xs-4.col-md-3.pull-right
-        #loginButtons.col-xs-6.col-md-5.pull-right
+      span.col-xs-5.col-md-4.pull-right
+        #loginButtons.col-xs-4.pull-right
           button#logout.custom-button.pull-right(ng-click='logout()', ng-show='loggedIn') Log out
-        #loggedInData.col-xs-6.pull-right
+        #loggedInData.col-xs-8.pull-right
           .group(ng-show='loggedIn')
             img.profile(ng-src='{{profilePicture}}')
             //- .col-xs-12

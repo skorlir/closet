@@ -74,7 +74,7 @@ body, .head, .logo, .nav {
 #loggedInData img.profile {
   padding: 3%;
   position: absolute;
-  right: -15px;
+  right: -20px;
   width: 60px;
   height: 60px;
 }
