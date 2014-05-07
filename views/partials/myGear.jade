@@ -49,7 +49,7 @@ nav.col-md-2.col-sm-2.col-xs-2.nav.navigation
     h3.col-xs-2 My Gear:
     //- button.col-xs-2.uploadnew.custom-button Add Item    
     .col-xs-12.my-gear
-      .col-lg-4.col-md-4.col-xs-6.gear(ng-repeat='item in myGear')
+      .col-lg-3.col-md-4.col-xs-6.gear(ng-repeat='item in myGear')
         .photo.col-xs-12.img-rounded(style='background-image: url("{{item[1].image || "images/default.png"}}")')
         a.delete.pull-right(href='javascript:void(0)', ng-click='deleteGear(item[0])') x (delete)
         .col-xs-12
