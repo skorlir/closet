@@ -30,7 +30,7 @@ nav.col-md-2.col-sm-2.col-xs-2.nav.navigation
   // OR just redirect to /mygear
   
   .col-xs-12.marketplace-content
-    .col-lg-3.col-sm-4.col-xs-6.marketplace-item(ng-repeat='result in marketplace | filter:search', ng-show='showHide(result.item.rentOrBuy)')
+    .col-sm-4.col-xs-6.marketplace-item(ng-repeat='result in marketplace | filter:search', ng-show='showHide(result.item.rentOrBuy)')
       .photo.col-xs-12.img-rounded(style="background-image: url('{{result.item.image}}')")
       .star
       .bottom.col-xs-12
