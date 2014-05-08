@@ -40,7 +40,7 @@ nav.col-md-2.col-sm-2.col-xs-12.nav(ng-show='loggedIn', style='z-index: 1000')
 
   .activityFeed.col-md-10.col-md-offset-1.col-sm-12.col-xs-12(ng-repeat='post in feed', ng-show='{{!!feed.length}}')
     .message.col-xs-12
-      a.delete.pull-right(href='javascript:void(0)', ng-show='post[1].displayName === displayName', ng-click='deletePost(post[0])') x (delete)
+      a.delete.pull-right(href='javascript:void(0)', ng-show='post[1].displayName === user.displayName', ng-click='deletePost(post[0])') x (delete)
       img.profilefeed.col-xs-2(ng-src='{{post[1].profilePictureM}}', style='max-width: 80px')
       .col-xs-10 {{post[1].displayName}}
         small &nbsp;&nbsp; {{!!post[1].photo ? 'posted a photo' : 'says'}}

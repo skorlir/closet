@@ -177,12 +177,13 @@ angular.module('outrovert', ['firebase', 'ngRoute', 'ui.bootstrap'], router)
     session.getUser().then(function(user) {
       if (user === null) $scope.flashMessage = 'Error: Not logged in. Please refresh.';
       else {
+        console.log(user);
         var post = {
-            user: user.uid, 
+            user: $scope.user.uid, 
             textContent: msg, 
             timestamp: db.timestamp(), 
-            profilePictureM: $scope.profilePictureM, 
-            displayName: $scope.displayName
+            profilePictureM: $scope.user.profilePictureM,
+            displayName: $scope.user.displayName
         };
         if($scope.s3upload) {
           $scope.s3upload.onFinishS3Put = function(public_url) {
