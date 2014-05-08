@@ -16,7 +16,7 @@ var router = function($routeProvider) {
 angular.module('outrovert', ['firebase', 'ngRoute', 'ui.bootstrap'], router)
 
 .factory('firebaseService', ['$firebase', function($firebase) {
-  var root = new Firebase('https://outrovert-testing.firebaseio.com');
+  var root = new Firebase('https://sweltering-fire-110.firebaseio.com');
   var firebase = $firebase(root);
   
   return {
