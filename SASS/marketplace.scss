@@ -16,14 +16,7 @@
 }
 
 .type button {
-	margin: 0 0 0 28px;
-	display: inline-block;
-	font-size: 90%;
-	text-transform: uppercase;
-	background: #FFF;
-	border: 2px solid #8CCF4B;
-	text-shadow: none;
-	color: #000;
+	margin: 5px 0 0 20px;
 }
 
 .location p {
@@ -41,6 +34,24 @@
 .location a:hover {
 	color: #339933;
 	cursor: pointer;
+}
+
+a.add {
+	font-size: 1.6em !important;
+}
+
+.change {
+	color: #003300;
+}
+
+.change:hover {
+	text-decoration: underline;
+	cursor: pointer;
+	color: #003300;
+}
+
+a.add:hover {
+	text-decoration: none !important;
 }
 
 .marketplace-item {

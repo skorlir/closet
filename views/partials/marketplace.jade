@@ -8,23 +8,24 @@ nav.col-sm-2.col-xs-12.nav.navigation
       a(href='#/mygear') My Gear
 
 .col-lg-9.col-sm-10.col-xs-12
-  .col-xs-2.col-xs-offset-1(style='margin: 15px;')
-    a(href='#/mygear').custom-button.col-xs-12.text-center Add item
+  .col-xs-2.col-xs-offset-1.pull-right
+    
 
   form
     .form-group.col-xs-12.search
       label.col-xs-1 Search
       input.col-xs-10.col-lg-6(type='text', ng-model='search.item.name', placeholder='backpacks, boots, sleeping bags...')
-    .form-group.col-lg-4.col-xs-12(ng-init='showBuy = true; showRent = true')
-      label.col-xs-3 Type
-      br
-      button.custom-button.col-xs-4(ng-click='toggleBtns("buy")', ng-class='{"inactive": !showBuy}') Buy
-      button.custom-button.col-xs-4(ng-click='toggleBtns("rent")', ng-class='{"inactive": !showRent}') Rent
+    .form-group.col-lg-4.col-xs-12.type(ng-init='showBuy = true; showRent = true')
+      label.col-xs-12 Show items for
+      button.local-button.col-xs-4(ng-click='toggleBtns("buy")', ng-class='{"inactive": !showBuy}') Sale
+      button.local-button.col-xs-4(ng-click='toggleBtns("rent")', ng-class='{"inactive": !showRent}') Rent
     .form-group.col-lg-4.col-xs-12
-      label Location
+      label Show items in
       p {{user.location || user.hometown}}
-      p.text-warning(ng-click='warnNonFeature("change location")') change location
+      p.text-warning.change(ng-click='warnNonFeature("change location")') change location
     input(type='hidden', value='{{user.email.split("@")[1]}}', ng-model='search.item.restrictions.domain')
+    .col-lg-2.col-xs-2.pull-right
+      a(href='#/mygear').custom-button.col-xs-12.text-center.add Add item
       
   //bootstrap modal for add item
   // OR just redirect to /mygear

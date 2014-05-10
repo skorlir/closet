@@ -31,6 +31,23 @@ body {
 	.custom-button.inactive {
 	  background: #66a22b;
 	}
+
+	.local-button {
+		text-transform: uppercase;
+		background: #FFF;
+		border: 2px solid #8CCF4B;
+		color: #000;
+		margin: auto;
+		padding: 2px 2%;
+		height: 100%;
+		position: relative;
+		font-size: 1em !important;
+		cursor: pointer !important;
+	}
+
+	.local-button.inactive {
+		background: #DDD;
+	}
 	
 	header {
 		height: 60px;
