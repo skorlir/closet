@@ -210,3 +210,8 @@ i.fa-twitter:focus {
     height: 300px;
     width: 380px;
 }
+
+.about p {
+    line-height: 130%;
+    font-size: 1.8em;
+}
