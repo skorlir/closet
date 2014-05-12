@@ -40,7 +40,7 @@ app.factory('firebaseService', ['$firebase', function($firebase) {
       userRef.$update({'displayName': user.displayName});
       userRef.$update({'location': (providerData.location ? providerData.location.name : null)});
       userRef.$update({'hometown': (providerData.hometown ? providerData.hometown.name : null)});
-      //userRef.$update({'email': providerData.email});
+      userRef.$update({'email': providerData.email});
       userRef.$update({'profilePictureM': profilePicture});
       userRef.$update({'profilePicture': profilePicture + '?type=small'});
       

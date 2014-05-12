@@ -32,7 +32,6 @@ app.controller('marketplace', ['$scope', 'sessionService', '$window', '$http', '
     
   $scope.showHide = function(item) {
     if(item.restrictions) {
-      console.log(item.restrictions);
       for (var r in item.restrictions) 
         if(!restrictionService.check(item.restrictions[r][0], item.restrictions[r][1])) 
           return false;
