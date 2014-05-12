@@ -16,7 +16,8 @@ var router = function($routeProvider) {
 angular.module('outrovert', ['firebase', 'ngRoute', 'ui.bootstrap'], router)
 
 .factory('firebaseService', ['$firebase', function($firebase) {
-  var root = new Firebase('https://sweltering-fire-110.firebaseio.com');
+  //sweltering-fire-110
+  var root = new Firebase('https://outrovert-testing.firebaseio.com');
   var firebase = $firebase(root);
   
   return {
@@ -59,16 +60,16 @@ angular.module('outrovert', ['firebase', 'ngRoute', 'ui.bootstrap'], router)
       if(user.thirdPartyUserData.hometown)
         userData.$update({hometown: user.thirdPartyUserData.hometown.name});
       if(user.thirdPartyUserData.email)
-        //userData.$update({email: user.thirdPartyUserData.email});
+        userData.$update({email: user.thirdPartyUserData.email});
       
       $rootScope.loggedIn = true;
       $rootScope.user = {};
       $rootScope.user.displayName = user.displayName;
       $rootScope.user.profilePicture = 'http://graph.facebook.com/'+user.id+'/picture?type=small';
       $rootScope.user.profilePictureM = 'http://graph.facebook.com/'+user.id+'/picture';
-      $rootScope.user.location = user.location;
-      $rootScope.user.hometown = user.hometown;
-      $rootScope.user.email    = user.email;
+      $rootScope.user.location = userData.location;
+      $rootScope.user.hometown = userData.hometown;
+      $rootScope.user.email    = userData.email;
     });
 
     $rootScope.disconnect = function() {
@@ -87,7 +88,7 @@ angular.module('outrovert', ['firebase', 'ngRoute', 'ui.bootstrap'], router)
     fbLogin: function(next) {
       return function() {
         auth.$login('facebook', {
-          scope: 'email, publish_actions, user_location',
+          scope: 'email, user_location',
           rememberMe: true
         }).then(function(user) {
           next(user);
@@ -99,14 +100,14 @@ angular.module('outrovert', ['firebase', 'ngRoute', 'ui.bootstrap'], router)
 
     logout: function(next) {
       return function() {
-        console.log('logging out...?');
+        console.log('logging out');
         auth.$logout();
         next();
       }
     },
 
-    getUser: function() {
-      return auth.$getCurrentUser();
+    getUser: function(next) {
+      return $rootScope.user !== undefined ? next($rootScope.user) : auth.$getCurrentUser().then(function(user) { next(user) });
     }
   }
 }])
@@ -159,11 +160,11 @@ angular.module('outrovert', ['firebase', 'ngRoute', 'ui.bootstrap'], router)
     $scope.feed.unshift([postSnap.snapshot.name, postSnap.snapshot.value]);
   });
   
-  session.getUser().then(function(user) {
+  session.getUser(function(user) {
     $scope.uploadFile = function(el) {
       $scope.imgToUpload = el.files[0];
       $scope.s3upload = new $window.S3Upload({
-        s3_object_name: "item" in el.files ? user.uid + '_' + el.files.item(0).name : user.uid + '_' + el.files[0].name,
+        s3_object_name: user.uid + '_' + el.files[0].name,
         s3_sign_put_url: 'aws0signature',
         file_dom_selector: null
       });
@@ -174,16 +175,16 @@ angular.module('outrovert', ['firebase', 'ngRoute', 'ui.bootstrap'], router)
   $scope.publishActivity = function() {
     var msg = $scope.activityForm.message;
     if (!msg) { $scope.flashMessage = 'Nothing to post!'; return; }
-    session.getUser().then(function(user) {
+    session.getUser(function(user) {
       if (user === null) $scope.flashMessage = 'Error: Not logged in. Please refresh.';
       else {
         console.log(user);
         var post = {
-            user: $scope.user.uid, 
+            user: user.uid, 
             textContent: msg, 
             timestamp: db.timestamp(), 
-            profilePictureM: $scope.user.profilePictureM,
-            displayName: $scope.user.displayName
+            profilePictureM: user.profilePictureM,
+            displayName: user.displayName
         };
         if($scope.s3upload) {
           $scope.s3upload.onFinishS3Put = function(public_url) {
@@ -237,9 +238,23 @@ angular.module('outrovert', ['firebase', 'ngRoute', 'ui.bootstrap'], router)
     if(! ($scope.showBuy || $scope.showRent) ) $scope.showBuy = $scope.showRent = true;
   };
   
-  $scope.showHide = function(type) {
-    return (type == "Buy" && $scope.showBuy) || (type == "Rent" && $scope.showRent);
-  };
+  session.getUser(function(user) {
+    
+    //Woo-hoo! SO falsely robust it may as well have been hardcoded! :(
+    //Need to turn this into a factory.
+    
+    $scope.showHide = function(item) {
+      $scope.restrictions = {
+        domain : function(user, given) {
+          console.log(user);
+          return (user.email || user.thirdPartyUserData.email).split('@')[1].indexOf(given) > -1;
+        }
+      }
+      if(item.restrictions)
+        for (var r in item.restrictions) if ( $scope.restrictions[r] && !$scope.restrictions[r](user, item.restrictions[r]) ) return false;
+      return (item.rentOrBuy == "Buy" && $scope.showBuy) || (item.rentOrBuy == "Rent" && $scope.showRent);
+    };
+  });
   
   var modalController = function($scope, $modalInstance) {
     $scope.ok = function() {
@@ -260,7 +275,7 @@ angular.module('outrovert', ['firebase', 'ngRoute', 'ui.bootstrap'], router)
     modal.result.then(function() {
       //confirmation == whatever is passed in. So nothing?
       //send an email with node-mailer
-      session.getUser().then(function(user) {
+      session.getUser(function(user) {
         $http.post('/transaction', {user: user, r: r})
         .success(function(res) {
           console.log("the transaction was committed.");
@@ -280,24 +295,23 @@ angular.module('outrovert', ['firebase', 'ngRoute', 'ui.bootstrap'], router)
 }])
 
 .controller('myGear', ['$scope', 'sessionService', 'firebaseService', '$window', '$location', function($scope, session, db, $window, $location) {
-  session.getUser().then(function(user) {
+  session.getUser(function(user) {
     
     if(user === null) {
       console.log("not logged in");
       $location.path('/');
       return;
     }
-    session.getUser().then(function(user) {
-      $scope.uploadFile = function(el) {
-        $scope.imgToUpload = el.files[0];
-        $scope.s3upload = new $window.S3Upload({
-          s3_object_name: user.uid + '_' + $scope.imgToUpload.name,
-          s3_sign_put_url: 'aws0signature',
-          file_dom_selector: null
-        });
-        $scope.fileElement = el;
-      };
-    });
+    
+    $scope.uploadFile = function(el) {
+      $scope.imgToUpload = el.files[0];
+      $scope.s3upload = new $window.S3Upload({
+        s3_object_name: user.uid + '_' + $scope.imgToUpload.name,
+        s3_sign_put_url: 'aws0signature',
+        file_dom_selector: null
+      });
+      $scope.fileElement = el;
+    };
     
     $scope.myGear = [];
     $scope.addGearForm = {};
@@ -325,8 +339,8 @@ angular.module('outrovert', ['firebase', 'ngRoute', 'ui.bootstrap'], router)
           uid: user.uid,
           profilePicture: 'http://graph.facebook.com/' + user.id + '/picture?type=small'
         }
-        var idPromise = myGearDB.$add(item);
-        idPromise.then(function(gear) {
+        var itemRef = myGearDB.$add(item);
+        itemRef.then(function(gear) {
           marketDB.$child(gear.name()).$set({item: item, poster: poster});
         });
         

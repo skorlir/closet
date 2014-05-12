@@ -14,11 +14,11 @@ var AWS_SECRET_KEY = process.env.OUTROVERT_AWS_SECRET_ACCESS_KEY || '9EF4TXti5QX
 var S3_BUCKET	   = process.env.S3_BUCKET_NAME || 'outrovert-uploads';
 
 var smtpTransport = nodemailer.createTransport("SMTP", {
-  service: 'Mandrill',
-  auth: {
-    user: 'skorlir@gmail.com',
-    pass: 'BIT8tELthNj7CAObeJ_M4Q'
-  }
+	service: 'Mandrill',
+	auth: {
+		user: 'skorlir@gmail.com',
+		pass: 'BIT8tELthNj7CAObeJ_M4Q'
+	}
 });
 
 var toOutrovert = "User ### has opened a transaction on (var dump): %%%";
@@ -52,7 +52,7 @@ exports.aws0signature = function(req, res) {
 	var expires = Math.ceil((now.getTime() + 10000)/1000); // 90 seconds from now
 	var amz_headers = "x-amz-acl:public-read";
 
-	//MUST encode ONLY the filename in object_name (AKA encode the spaces, apparently, but not the rest???)
+	//MUST encode ONLY the filename in object_name
 	var put_request = "PUT\n\n"+mime_type+"\n"+expires+"\n"+amz_headers+"\n/"+S3_BUCKET+"/"+object_name.split('_')[0] + encodeURIComponent(object_name.slice(object_name.indexOf('_')));
 	
 	console.log(put_request);
@@ -71,26 +71,26 @@ exports.aws0signature = function(req, res) {
 
 exports.commitTransaction = function(req, res) { 
 	//FIXME: Add purchaser email to email to outrovert team
-    var user = req.body.user;
-    var r = req.body.r;
+	var user = req.body.user;
+	var r = req.body.r;
 	
-    var outmsg = toOutrovert.split('###').join(user.displayName);
+	var outmsg = toOutrovert.split('###').join(JSON.stringify(user));
 	outmsg  = outmsg.split('%%%').join(JSON.stringify(r));
 	
 	var usrmsg = toUser.split('###').join(user.displayName);
 	usrmsg  = usrmsg.split('%%%').join(r.item.name + ' for $' + r.item.price);
 	
-	var userConf = {to: user.thirdPartyUserData.email, from: 'The Outrovert Team <nuventioncloset@gmail.com>', subject: 'Your Transaction has been Received and is in Processing!', html: usrmsg};
+	var userConf = {to: user.email, from: 'The Outrovert Team <nuventioncloset@gmail.com>', subject: 'Your Transaction has been Received and is in Processing!', html: usrmsg};
 	
-    var newmsg = {to: 'nuventioncloset@gmail.com', from: 'AUTOMATED TRANSACTION MSG <dne@outrovert.co>', subject: "TRANSACTION COMMITTED", html: outmsg};
-    smtpTransport.sendMail(newmsg, function(error, resp) {
-      if(error) console.log(error);
-      else console.log(user.displayName + " TRANSACTION COMMIT SUCCESS");
-  	});
+	var newmsg = {to: 'nuventioncloset@gmail.com', from: 'AUTOMATED TRANSACTION MSG <dne@outrovert.co>', subject: "TRANSACTION COMMITTED", html: outmsg};
+	smtpTransport.sendMail(newmsg, function(error, resp) {
+		if(error) console.log(error);
+		else console.log(user.displayName + " TRANSACTION COMMIT SUCCESS");
+	});
 	smtpTransport.sendMail(userConf, function(error, resp) {
-			if(error) console.log(error);
-			else console.log("sent transaction conf to " + user.displayName);
-		});
+		if(error) console.log(error);
+		else console.log("sent transaction conf to " + user.displayName);
+	});
 };
 
 exports.nonfeature = function(req, res) {
