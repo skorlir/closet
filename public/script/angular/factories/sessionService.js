@@ -19,8 +19,8 @@ app.factory('sessionService',  ['firebaseService', '$firebaseSimpleLogin', '$roo
     
       db.updateUserData(user);
       sessionUser = db.getUserData(user.uid);
-      $rootScope.loggedIn = true;
       $rootScope.user = sessionUser;
+      $rootScope.loggedIn = true;
       console.log(sessionUser);
     });
 

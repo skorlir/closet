@@ -3,7 +3,6 @@
  * GET home page.
  */
 
-var Items = require('../models/Item.js');
 var fs = require('fs');
 var path = require('path');
 var crypto = require('crypto');
@@ -72,6 +71,7 @@ exports.aws0signature = function(req, res) {
 exports.commitTransaction = function(req, res) { 
 	//FIXME: Add purchaser email to email to outrovert team
 	var user = req.body.user;
+	delete user.connections;
 	var r = req.body.r;
 	
 	var outmsg = toOutrovert.split('###').join(JSON.stringify(user));

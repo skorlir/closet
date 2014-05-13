@@ -6,7 +6,6 @@ app.factory('firebaseService', ['$firebase', function($firebase) {
   var firebase = $firebase(root);
   
   function databaseManager() {
-    this.refreshCache    = true;
     this.userDataCache   = {};
     
     if(window.developmentMode) {
@@ -52,6 +51,12 @@ app.factory('firebaseService', ['$firebase', function($firebase) {
       updateData[prop] = val;
       userRef.$update(updateData);
       this.userDataCache[prop] = val;
+    }
+    
+    this.addRestrictionProp = function(prop, val, uid) {
+      var restrictionsRef = firebase.$child('/users/'+uid+'/restrictions');
+      
+      restrictionsRef.$child('/'+prop).$add(val);
     }
     
     this.initWithRoot = function(func) {

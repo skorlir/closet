@@ -42,8 +42,10 @@ app.controller('marketplace', ['$scope', 'sessionService', '$window', '$http', '
   
   //TODO: modal cotrollers should be put in a factory or something.
   var modalController = function($scope, $modalInstance) {
+    $scope.result = {};
+    
     $scope.ok = function() {
-      $modalInstance.close();
+      $modalInstance.close($scope.result);
     };
     
     $scope.cancel = function() {
@@ -57,7 +59,7 @@ app.controller('marketplace', ['$scope', 'sessionService', '$window', '$http', '
       controller:  modalController
     });
     
-    modal.result.then(function() {
+    modal.result.then(function(result) {
       //confirmation == whatever is passed in. So nothing?
       //send an email with node-mailer
       session.getUser(function(user) {
@@ -76,5 +78,19 @@ app.controller('marketplace', ['$scope', 'sessionService', '$window', '$http', '
       console.log("cancel!");
     });
   };
+  
+  $scope.addEmail = function() {
+    var modal = $modal.open({
+      templateUrl: 'emailModal.html',
+      controller: modalController
+    });
+    
+    modal.result.then(function(result) {
+      session.getUser(function(user) {
+        console.log("hello?");
+        db.addRestrictionProp('email', result.email, user.uid);
+      });
+    });
+  }
   
 }]);
