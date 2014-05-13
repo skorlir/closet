@@ -12,18 +12,24 @@ html(ng-app='outrovert')
           button#logout.custom-button.pull-right(ng-click='logout()', ng-show='loggedIn') Log out
         #loggedInData.col-xs-8.pull-right
           .group(ng-show='loggedIn')
-            img.profile(ng-src='{{profilePicture}}')
+            img.profile(ng-src='{{user.profilePicture}}')
             //- .col-xs-12
-            h4.profile.pull-right {{displayName}}
+            h4.profile.pull-right {{user.displayName}}
 
     .login.col-xs-6.col-xs-offset-3(ng-hide='loggedIn')
       a(href='/')
         img.img-responsive.col-xs-12(src='/landing-assets/img/new_logo.png', style='margin: 50px 0')
       button#fbLogin.custom-button.col-xs-6.col-xs-offset-3(ng-click='fbLogin()', ng-hide='loggedIn') Login with Facebook
-
-    .col-xs-6.col-xs-offset-3(ng-hide='loggedIn')
       img.col-xs-6.col-xs-offset-3(src='/images/icons.png')
 
+    p.browsehappy.text-center.col-xs-12(ng-if='document.documentMode < 11')  
+      | You are using an 
+      strong outdated 
+      | browser. Please 
+      a(href="http://browsehappy.com/") upgrade your browser 
+      | before using Outrovert in order to get the most out of your experience. (We do not support your browser.)
+      input(type="hidden" ng-init="loggedIn = false")
+      
     //nav.col-md-2.col-sm-2.col-xs-12.nav(ng-show='loggedIn')
       ul.pages
         li#here
@@ -32,7 +38,6 @@ html(ng-app='outrovert')
           a(href='#/marketplace') Marketplace
         li
           a(href='#/mygear') My Gear
-
 
     ng-view(ng-show='loggedIn')
     
