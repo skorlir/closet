@@ -25,7 +25,7 @@ app.factory('sessionService',  ['firebaseService', '$firebaseSimpleLogin', '$roo
     });
 
     $rootScope.disconnect = function() {
-      if(con) userConnections.$remove(con);
+      if(con) (userConnections.$remove(con), con = null);
       lastOnline.$set(db.timestamp());
       
       $rootScope.loggedIn = false;
