@@ -1,103 +1,83 @@
-/* line 1, ../../sass/mygear.scss */
+/* line 1, ../../SASS/mygear.scss */
 .uploadform {
   background: #FFF;
   padding-top: 2%;
   border-radius: 15px;
 }
-/* line 7, ../../sass/mygear.scss */
+/* line 7, ../../SASS/mygear.scss */
 .uploadform label {
   text-transform: uppercase;
   color: #8CCF4B;
   display: inline-block;
   vertical-align: bottom;
 }
-/* line 14, ../../sass/mygear.scss */
+/* line 14, ../../SASS/mygear.scss */
 .uploadform p {
   display: inline-block;
 }
-/* line 18, ../../sass/mygear.scss */
+/* line 18, ../../SASS/mygear.scss */
 .uploadform input:focus {
   outline-style: auto;
   outline-width: 3px;
   outline-color: #8CCF4B;
 }
-/* line 24, ../../sass/mygear.scss */
+/* line 24, ../../SASS/mygear.scss */
 .uploadform .price {
   position: relative;
 }
-/* line 27, ../../sass/mygear.scss */
+/* line 27, ../../SASS/mygear.scss */
 .uploadform .price span {
   position: absolute;
   padding: 0.5% 1%;
   pointer-events: none;
   z-index: 1;
 }
-/* line 35, ../../sass/mygear.scss */
+/* line 35, ../../SASS/mygear.scss */
 .uploadform select {
   background: #FFF;
   border: 1px solid #8CCF4B;
 }
-/* line 40, ../../sass/mygear.scss */
+/* line 40, ../../SASS/mygear.scss */
 .uploadform textarea {
   box-shadow: 0 1px 1px #dddddd inset;
 }
-/* line 44, ../../sass/mygear.scss */
+/* line 44, ../../SASS/mygear.scss */
 .uploadform textarea:focus {
   outline-style: auto;
   outline-width: 3px;
   outline-color: #8CCF4B;
 }
-/* line 50, ../../sass/mygear.scss */
+/* line 50, ../../SASS/mygear.scss */
 .uploadform input.post {
   font-size: 140%;
   color: white;
   background: #8CCF4B;
   border: none;
 }
-/* line 57, ../../sass/mygear.scss */
+/* line 57, ../../SASS/mygear.scss */
 .uploadform .fakeinput input {
   top: 0px;
 }
 
-/* line 66, ../../sass/mygear.scss */
+/* line 66, ../../SASS/mygear.scss */
 .mygear {
   margin-top: 40px;
 }
-/* line 69, ../../sass/mygear.scss */
+/* line 69, ../../SASS/mygear.scss */
 .mygear h3 {
   margin: 0;
 }
-/* line 73, ../../sass/mygear.scss */
+/* line 73, ../../SASS/mygear.scss */
 .mygear button.uploadnew {
   font-size: 150%;
 }
-/* line 77, ../../sass/mygear.scss */
-.mygear .gear {
-  background: #FFF;
-  border: 10px solid #EEE;
-  padding: 0 !important;
-}
-/* line 82, ../../sass/mygear.scss */
-.mygear .gear img.photo, .mygear .gear .description, .mygear .gear .cost, .mygear .gear .rent {
-  padding: 0;
-}
-/* line 86, ../../sass/mygear.scss */
-.mygear .gear .description {
-  margin-top: 1%;
-}
-/* line 90, ../../sass/mygear.scss */
-.mygear .gear img.profile {
-  margin: 15% 0;
-  width: 40px;
-  height: 40px;
-}
 
-/* line 98, ../../sass/mygear.scss */
+/* line 78, ../../SASS/mygear.scss */
 .fileinput {
   position: relative;
   padding: 0;
 }
-/* line 102, ../../sass/mygear.scss */
+/* line 82, ../../SASS/mygear.scss */
 .fileinput input.file {
   padding: 0;
   position: relative;
@@ -109,7 +89,7 @@
   cursor: pointer;
 }
 
-/* line 114, ../../sass/mygear.scss */
+/* line 94, ../../SASS/mygear.scss */
 .fakeinput {
   position: absolute;
   top: 0px;
@@ -117,7 +97,7 @@
   z-index: 1;
   padding: 0;
 }
-/* line 121, ../../sass/mygear.scss */
+/* line 101, ../../SASS/mygear.scss */
 .fakeinput input {
   text-transform: uppercase;
   background: #FFF;

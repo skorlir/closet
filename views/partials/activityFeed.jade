@@ -8,7 +8,7 @@ nav.col-md-2.col-sm-2.col-xs-12.nav(ng-show='loggedIn', style='z-index: 1000')
       li
         a(href='#/mygear') My Gear
 
-.col-md-7.col-sm-8(style='padding-bottom: 200px;')
+.col-md-8.col-sm-9(style='padding-bottom: 200px;')
   tabset(ng-show='loggedIn').col-md-10.col-md-offset-1
 
     tab
@@ -40,12 +40,12 @@ nav.col-md-2.col-sm-2.col-xs-12.nav(ng-show='loggedIn', style='z-index: 1000')
 
   .activityFeed.col-md-10.col-md-offset-1.col-sm-12.col-xs-12(ng-repeat='post in feed', ng-show='{{!!feed.length}}')
     .message.col-xs-12
-      a.delete.pull-right(href='javascript:void(0)', ng-show='post[1].displayName === displayName', ng-click='deletePost(post[0])') x (delete)
+      a.delete.pull-right(href='javascript:void(0)', ng-show='post[1].displayName === user.displayName', ng-click='deletePost(post[0])') x (delete)
       img.profilefeed.col-xs-2(ng-src='{{post[1].profilePictureM}}', style='max-width: 80px')
       .col-xs-10 {{post[1].displayName}}
         small &nbsp;&nbsp; {{!!post[1].photo ? 'posted a photo' : 'says'}}
         .col-xs-12.message-picture(ng-show='!!post[1].photo')
           hr.col-lg-8.col-xs-10
-          img.photo(src="{{post[1].photo}}").img-rounded.col-lg-8.col-lg-offset-0.col-xs-10.col-xs-offset-1
+          .photo.col-lg-8.col-lg-offset-0.col-xs-10.col-xs-offset-1.img-rounded(style="background-image: url('{{post[1].photo}}')")
           hr.col-lg-8.col-xs-10
         .col-xs-12.message-content {{post[1].textContent}}

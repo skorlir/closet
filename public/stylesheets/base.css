@@ -32,19 +32,36 @@ body .custom-button.inactive {
   background: #66a22b;
 }
 /* line 35, ../../SASS/base.scss */
+body .local-button {
+  text-transform: uppercase;
+  background: #FFF;
+  border: 2px solid #8CCF4B;
+  color: #000;
+  margin: auto;
+  padding: 2px 2%;
+  height: 100%;
+  position: relative;
+  font-size: 1em !important;
+  cursor: pointer !important;
+}
+/* line 48, ../../SASS/base.scss */
+body .local-button.inactive {
+  background: #DDD;
+}
+/* line 52, ../../SASS/base.scss */
 body header {
   height: 60px;
   padding: 15px 0;
   margin-bottom: 20px;
   background: #fff;
 }
-/* line 43, ../../SASS/base.scss */
+/* line 60, ../../SASS/base.scss */
 body form label {
   text-transform: uppercase;
   color: #8CCF4B;
 }
 
-/* line 50, ../../SASS/base.scss */
+/* line 67, ../../SASS/base.scss */
 .photo {
   height: 200px;
   background-color: gainsboro;
@@ -53,11 +70,11 @@ body form label {
   background-position: center center;
 }
 
-/* line 58, ../../SASS/base.scss */
+/* line 75, ../../SASS/base.scss */
 .gear, .marketplace-item {
   float: left;
 }
-/* line 60, ../../SASS/base.scss */
+/* line 77, ../../SASS/base.scss */
 .gear .profile, .marketplace-item .profile {
   display: inline-block;
   float: left;

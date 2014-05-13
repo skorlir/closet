@@ -1,4 +1,4 @@
-nav.col-md-2.col-sm-2.col-xs-2.nav.navigation
+nav.col-sm-2.col-xs-12.nav.navigation
   ul.pages
     li
       a(href='#/') What's New
@@ -7,28 +7,27 @@ nav.col-md-2.col-sm-2.col-xs-2.nav.navigation
     li 
       a(href='#/mygear') My Gear
 
-.col-lg-8.col-md-10.col-sm-10.col-xs-offset-2
-  .col-xs-2.col-xs-offset-1(style='margin: 15px;')
-    a(href='#/mygear').custom-button.col-xs-12.text-center Add item
+.col-lg-9.col-sm-10.col-xs-12
+  .col-xs-2.col-xs-offset-1.pull-right
 
   form
+    
     .form-group.col-xs-12.search
       label.col-xs-1 Search
       input.col-xs-10.col-lg-6(type='text', ng-model='search.item.name', placeholder='backpacks, boots, sleeping bags...')
-    .form-group.col-xs-12.type(ng-init='showBuy = true; showRent = true')
-      label.col-xs-1 Type
-      button.custom-button.col-xs-2(ng-click='toggleBtns("showBuy")', ng-class='{"inactive": !showBuy}') Buy
-      button.custom-button.col-xs-2(ng-click='toggleBtns("showRent")', ng-class='{"inactive": !showRent}') Rent
-    .form-group.col-xs-12.location
-      label.col-xs-1 Location
-      p {{location || hometown}}
-      p.text-warning(ng-click='warnNonFeature("change location")') change location
-      
-  //bootstrap modal for add item
-  // OR just redirect to /mygear
+    .form-group.col-lg-4.col-xs-12.type(ng-init='showBuy = true; showRent = true')
+      label.col-xs-12 Show items for
+      button.local-button.col-xs-4(ng-click='toggleBtns("buy")', ng-class='{"inactive": !showBuy}') Sale
+      button.local-button.col-xs-4(ng-click='toggleBtns("rent")', ng-class='{"inactive": !showRent}') Rent
+    .form-group.col-lg-4.col-xs-12
+      label Show items in
+      p {{user.location || user.hometown}}
+      p.text-warning.change(ng-click='warnNonFeature("change location")') change location
+    .col-lg-2.col-xs-2.pull-right
+      a(href='#/mygear').custom-button.col-xs-12.text-center.add Add item
   
   .col-xs-12.marketplace-content
-    .col-lg-5.col-sm-4.col-xs-6.marketplace-item(ng-repeat='result in marketplace | filter:search', ng-show='showHide(result.item.rentOrBuy)')
+    .col-sm-4.col-xs-6.gear(ng-repeat='result in marketplace | filter:search', ng-show='showHide(result.item)')
       .photo.col-xs-12.img-rounded(style="background-image: url('{{result.item.image}}')")
       .star
       .bottom.col-xs-12
