@@ -79,18 +79,4 @@ app.controller('marketplace', ['$scope', 'sessionService', '$window', '$http', '
     });
   };
   
-  $scope.addEmail = function() {
-    var modal = $modal.open({
-      templateUrl: 'emailModal.html',
-      controller: modalController
-    });
-    
-    modal.result.then(function(result) {
-      session.getUser(function(user) {
-        console.log("hello?");
-        db.addRestrictionProp('email', result.email, user.uid);
-      });
-    });
-  }
-  
 }]);
