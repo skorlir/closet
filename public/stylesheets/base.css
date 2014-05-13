@@ -1,17 +1,17 @@
-/* line 3, ../../sass/base.scss */
+/* line 3, ../../SASS/base.scss */
 html, body {
   height: 100%;
   margin: 0;
 }
 
-/* line 8, ../../sass/base.scss */
+/* line 8, ../../SASS/base.scss */
 input:focus {
   outline-style: auto;
   outline-width: 3px;
   outline-color: #8CCF4B;
 }
 
-/* line 15, ../../sass/base.scss */
+/* line 15, ../../SASS/base.scss */
 body .custom-button {
   display: block;
   color: white;
@@ -22,29 +22,29 @@ body .custom-button {
   border: none;
   border-radius: 3px;
 }
-/* line 26, ../../sass/base.scss */
+/* line 26, ../../SASS/base.scss */
 body .custom-button:hover {
   background-color: #BAE293;
   cursor: pointer;
 }
-/* line 31, ../../sass/base.scss */
+/* line 31, ../../SASS/base.scss */
 body .custom-button.inactive {
   background: #66a22b;
 }
-/* line 35, ../../sass/base.scss */
+/* line 35, ../../SASS/base.scss */
 body header {
   height: 60px;
   padding: 15px 0;
   margin-bottom: 20px;
   background: #fff;
 }
-/* line 43, ../../sass/base.scss */
+/* line 43, ../../SASS/base.scss */
 body form label {
   text-transform: uppercase;
   color: #8CCF4B;
 }
 
-/* line 50, ../../sass/base.scss */
+/* line 50, ../../SASS/base.scss */
 .photo {
   height: 200px;
   background-color: gainsboro;
@@ -53,11 +53,11 @@ body form label {
   background-position: center center;
 }
 
-/* line 58, ../../sass/base.scss */
+/* line 58, ../../SASS/base.scss */
 .gear, .marketplace-item {
   float: left;
 }
-/* line 60, ../../sass/base.scss */
+/* line 60, ../../SASS/base.scss */
 .gear .profile, .marketplace-item .profile {
   display: inline-block;
   float: left;
