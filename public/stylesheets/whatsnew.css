@@ -3,7 +3,7 @@
   width: 100%;
 }
 
-/* line 8, ../../SASS/whatsnew.scss */
+/* line 5, ../../SASS/whatsnew.scss */
 body, .head, .logo, .nav {
   padding: 0;
   margin-bottom: 0;
@@ -11,19 +11,19 @@ body, .head, .logo, .nav {
   border: none;
 }
 
-/* line 15, ../../SASS/whatsnew.scss */
+/* line 12, ../../SASS/whatsnew.scss */
 .pages {
   padding: 0;
 }
 
-/* line 20, ../../SASS/whatsnew.scss */
+/* line 17, ../../SASS/whatsnew.scss */
 .pages li {
   padding: 5% 20%;
   list-style: none;
   background: #FFF;
 }
 
-/* line 26, ../../SASS/whatsnew.scss */
+/* line 23, ../../SASS/whatsnew.scss */
 .pages li a {
   text-decoration: none;
   color: #000;
@@ -31,65 +31,119 @@ body, .head, .logo, .nav {
   padding: 5%;
 }
 
-/* line 33, ../../SASS/whatsnew.scss */
+/* line 30, ../../SASS/whatsnew.scss */
 .pages #here {
   background: #8CCF4B;
 }
 
-/* line 37, ../../SASS/whatsnew.scss */
+/* line 34, ../../SASS/whatsnew.scss */
 .pages #here a {
   color: #FFF;
 }
 
-/* line 41, ../../SASS/whatsnew.scss */
+/* line 38, ../../SASS/whatsnew.scss */
+.pages #here a:hover {
+  cursor: default;
+}
+
+/* line 42, ../../SASS/whatsnew.scss */
 .pages li a:hover {
   cursor: pointer;
   color: #8CCF4B;
 }
 
-/* line 46, ../../SASS/whatsnew.scss */
+/* line 47, ../../SASS/whatsnew.scss */
 .userinfo {
   float: right;
 }
 
-/* line 50, ../../SASS/whatsnew.scss */
+/* line 51, ../../SASS/whatsnew.scss */
 #loginButtons button {
-  top: 13px;
-  padding: 5px 15px;
-  margin: 0;
+  padding: 3px 15px;
+  margin: 15px 0;
+  font-size: 1.2em !important;
 }
 
-/* line 58, ../../SASS/whatsnew.scss */
+/* line 59, ../../SASS/whatsnew.scss */
 #loggedInData img.profile {
+  padding: 3%;
   position: absolute;
-  right: -90px;
-  top: 3px;
-  border: 2px inset #888;
-  border-radius: 10px;
+  right: -20px;
+  width: 60px;
+  height: 60px;
 }
-/* line 66, ../../SASS/whatsnew.scss */
+/* line 67, ../../SASS/whatsnew.scss */
 #loggedInData h4.profile {
   font-size: 12pt;
   position: absolute;
-  right: -55px;
+  right: 45px;
+  top: 12px;
 }
 
-/* line 73, ../../SASS/whatsnew.scss */
+/* line 75, ../../SASS/whatsnew.scss */
+textarea:focus {
+  outline-style: auto;
+  outline-width: 3px;
+  outline-color: #8CCF4B;
+}
+
+/* line 81, ../../SASS/whatsnew.scss */
+.photoupload {
+  font-size: 1.2em !important;
+}
+
+/* line 85, ../../SASS/whatsnew.scss */
 .mainfeed {
   position: absolute;
-  left: 300px;
-  top: 20px;
+  left: 20%;
+  top: 5%;
+  padding-bottom: 200px;
 }
 
-/* line 79, ../../SASS/whatsnew.scss */
-#write form, #pic form, .message, .message-preview {
+/* line 92, ../../SASS/whatsnew.scss */
+.tab-content form, .message {
   padding: 2%;
   border-radius: 5px;
   background: #FFF;
 }
 
-/* line 85, ../../SASS/whatsnew.scss */
-#posttabs a {
+/* line 98, ../../SASS/whatsnew.scss */
+.nav-tabs > li a {
+  color: #444;
+  cursor: pointer;
+}
+/* line 101, ../../SASS/whatsnew.scss */
+.nav-tabs > li a:hover {
   color: #000;
-  font-weight: bold;
+}
+
+/* line 107, ../../SASS/whatsnew.scss */
+.nav {
+  background: none;
+}
+
+/* line 111, ../../SASS/whatsnew.scss */
+.nav li {
+  left: 15px;
+  cursor: pointer;
+}
+/* line 115, ../../SASS/whatsnew.scss */
+.nav li a {
+  color: #888;
+}
+
+/* line 120, ../../SASS/whatsnew.scss */
+.post {
+  margin-top: 5px;
+  font-size: 1.4em !important;
+}
+
+/* line 125, ../../SASS/whatsnew.scss */
+.message-content {
+  border: none;
+}
+
+/* line 129, ../../SASS/whatsnew.scss */
+.message {
+  margin-top: 2%;
 }

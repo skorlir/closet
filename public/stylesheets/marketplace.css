@@ -1,0 +1,104 @@
+/* line 1, ../../SASS/marketplace.scss */
+.search label, .type label, .location label {
+  text-transform: uppercase;
+  color: #8CCF4B;
+  display: inline-block;
+  vertical-align: bottom;
+}
+
+/* line 8, ../../SASS/marketplace.scss */
+.search input {
+  margin-left: 28px;
+}
+
+/* line 12, ../../SASS/marketplace.scss */
+.search input:focus {
+  outline-style: auto;
+  outline-width: 3px;
+  outline-color: #8CCF4B;
+}
+
+/* line 18, ../../SASS/marketplace.scss */
+.type button {
+  margin: 5px 0 0 20px;
+}
+
+/* line 22, ../../SASS/marketplace.scss */
+.location p {
+  display: inline-block;
+  margin-left: 28px;
+}
+
+/* line 27, ../../SASS/marketplace.scss */
+.location a {
+  display: inline-block;
+  color: #888;
+  text-decoration: none;
+  margin-left: 20px;
+}
+
+/* line 34, ../../SASS/marketplace.scss */
+.location a:hover {
+  color: #339933;
+  cursor: pointer;
+}
+
+/* line 39, ../../SASS/marketplace.scss */
+a.add {
+  font-size: 1.6em !important;
+}
+
+/* line 43, ../../SASS/marketplace.scss */
+.change {
+  color: #003300;
+}
+
+/* line 47, ../../SASS/marketplace.scss */
+.change:hover {
+  text-decoration: underline;
+  cursor: pointer;
+  color: #003300;
+}
+
+/* line 53, ../../SASS/marketplace.scss */
+a.add:hover {
+  text-decoration: none !important;
+}
+
+/* line 57, ../../SASS/marketplace.scss */
+.gear {
+  background: #FFF;
+  border: 10px solid #EEE;
+  padding: 0 !important;
+}
+/* line 62, ../../SASS/marketplace.scss */
+.gear .bottom {
+  padding: 0 !important;
+}
+/* line 66, ../../SASS/marketplace.scss */
+.gear .photo, .gear .description, .gear .cost, .gear .rent {
+  padding: 0;
+}
+/* line 70, ../../SASS/marketplace.scss */
+.gear .description {
+  margin-top: 1%;
+}
+/* line 74, ../../SASS/marketplace.scss */
+.gear img.profile {
+  margin: 15% 0;
+  width: 2.5em !important;
+  height: 2.5em !important;
+}
+/* line 80, ../../SASS/marketplace.scss */
+.gear .transact {
+  margin-bottom: 5%;
+}
+/* line 84, ../../SASS/marketplace.scss */
+.gear .buy {
+  padding: 3px 15px;
+  font-size: 1.2em !important;
+}
+/* line 89, ../../SASS/marketplace.scss */
+.gear .buy:hover {
+  background-color: #BAE293;
+}
