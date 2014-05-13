@@ -32,6 +32,7 @@ app.service('restrictionService', function() {
     // rPt1.split(" ")[1] in this.user //pretty much equivalent to checker with comparators
     //Or... dynamic regex? for key in this._comparators: rxArr.push(key); new RegEx(rxArr.join('|'))
     //this is probably the best stopgap
+    if(user.restrictions) user = user.restrictions;
     cmd = /in|is|like/.test(rPt1) ? (strArg = rPt1.split(" "), checkArg = rPt2, strArg  .pop()):
                                     (strArg = rPt2.split(" "), checkArg = rPt1, strArg.shift());
     userField = strArg.join();

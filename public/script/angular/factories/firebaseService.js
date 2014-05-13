@@ -45,6 +45,15 @@ app.factory('firebaseService', ['$firebase', function($firebase) {
       userRef.$update({'uid': user.uid});
     }
     
+    this.setUserProp = function(prop, val, uid) {
+      var userRef = firebase.$child('/users/'+uid);
+      
+      var updateData = {};
+      updateData[prop] = val;
+      userRef.$update(updateData);
+      this.userDataCache[prop] = val;
+    }
+    
     this.initWithRoot = function(func) {
       return func(root);
     }
