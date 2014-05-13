@@ -60,7 +60,7 @@ app.factory('sessionService',  ['firebaseService', '$firebaseSimpleLogin', '$roo
     },
 
     getUser: function(next) {
-      return next(sessionUser || db.getUserData());
+      auth.$getCurrentUser().then(function(user) {next(db.getUserData(user.uid))});
     }
   }
   

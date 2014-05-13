@@ -10,7 +10,7 @@ app.factory('firebaseService', ['$firebase', function($firebase) {
     this.userDataCache   = {};
     
     if(window.developmentMode) {
-      this.root = function()         { return root; };
+      this.root = function()         { return root;     };
       this.get$firebase = function() { return firebase; };
     }
     
@@ -20,15 +20,13 @@ app.factory('firebaseService', ['$firebase', function($firebase) {
     this.getActivityRef = function() { return firebase.$child('/activity'); }
     this.getMarketplaceRef = function() { return firebase.$child('/marketplace'); }
     
-    this.getUserData = function(uid) {
-      if(!this.refreshCache && this.userDataCache) return this.userDataCache;
-      
+    this.getUserData = function(uid) {      
       var userRef = firebase.$child('/users/'+uid);
       
       for (var prop in userRef)
         if (prop[0] !== '$') this.userDataCache[prop] = userRef[prop];
       
-      return (this.refreshCache = false, this.userDataCache);
+      return this.userDataCache;
     }
     
     this.updateUserData = function(user) {
@@ -40,11 +38,11 @@ app.factory('firebaseService', ['$firebase', function($firebase) {
       userRef.$update({'displayName': user.displayName});
       userRef.$update({'location': (providerData.location ? providerData.location.name : null)});
       userRef.$update({'hometown': (providerData.hometown ? providerData.hometown.name : null)});
-      userRef.$update({'email': providerData.email});
+      //userRef.$update({'email': providerData.email});
       userRef.$update({'profilePictureM': profilePicture});
       userRef.$update({'profilePicture': profilePicture + '?type=small'});
-      
-      this.refreshCache = true;
+      userRef.$update({'id': user.id});
+      userRef.$update({'uid': user.uid});
     }
     
     this.initWithRoot = function(func) {

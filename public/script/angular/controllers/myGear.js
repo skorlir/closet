@@ -1,13 +1,6 @@
 app.controller('myGear', ['$scope', 'sessionService', 'firebaseService', '$window', '$location', function($scope, session, db, $window, $location) {
   session.getUser(function(user) {
     
-    if(user === null) {
-      //this won't happen. So that's stupid.
-      console.log("not logged in");
-      $location.path('/');
-      return;
-    }
-    
     $scope.uploadFile = function(el) {
       $scope.imgToUpload = el.files[0];
       $scope.s3upload = new $window.S3Upload({
@@ -21,7 +14,8 @@ app.controller('myGear', ['$scope', 'sessionService', 'firebaseService', '$windo
     $scope.myGear = [];
     $scope.addGearForm = {};
 
-    var myGearDB = db.getUserRef().$child('/users/'+user.uid + '/gear');
+    var myGearDB = db.getUserRef(user.uid).$child('/gear');
+    console.log(myGearDB);
     var marketDB = db.getMarketplaceRef();
 
     myGearDB.$on('child_added', function(gearSnap) {
