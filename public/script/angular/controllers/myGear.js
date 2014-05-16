@@ -32,7 +32,8 @@ app.controller('myGear', ['$scope', 'sessionService', 'firebaseService', '$windo
           condition: $scope.addGearForm.condition,
           price: $scope.addGearForm.price,
           rentOrBuy: $scope.addGearForm.rentalOrSale === 'Sale' ? 'Buy' : 'Rent',
-          image: public_url
+          image: public_url,
+          location: user.location || user.hometown
         }
         
         var poster = {
