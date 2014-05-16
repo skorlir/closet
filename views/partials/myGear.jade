@@ -36,9 +36,9 @@ nav.col-sm-2.col-xs-12.nav.navigation
       textarea.col-xs-7(ng-model='addGearForm.description')
     .form-group.col-xs-12
       label.col-xs-4 Picture
-      .fileinput.col-xs-3
+      .fileinput.col-xs-4
         input.col-xs-12(type="file", name="file", class='file', onchange="angular.element(this).scope().uploadFile(this)", required)
-        .fakeinput.col-xs-12
+        //- .fakeinput.col-xs-12
           input.custom-button.col-xs-12(type='button', value='Choose File')
     .form-group.col-xs-12
       input.col-xs-4.col-xs-offset-4.post(type='submit', value='Post Item')
