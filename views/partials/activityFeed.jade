@@ -2,7 +2,7 @@
 nav.col-md-2.col-sm-2.col-xs-12.nav(ng-show='loggedIn', style='z-index: 1000')
     ul.pages
       li#here
-        a(href='#/') What's New
+        a(href='#/') Adventure Zone
       li 
         a(href='#/marketplace') Marketplace
       li
@@ -23,11 +23,11 @@ nav.col-md-2.col-sm-2.col-xs-12.nav(ng-show='loggedIn', style='z-index: 1000')
         i.fa.fa-camera Upload photo
       .col-xs-12.tabcontent
         form.col-md-10.col-sm-12.col-xs-12(ng-submit='publishActivity()')
-          .fileinput.col-xs-3
+          .fileinput.col-xs-5
             input.col-xs-12(type="file", name="file", class='file', onchange="angular.element(this).scope().uploadFile(this)", required)
-            .fakeinput.col-xs-12
+            //- .fakeinput.col-xs-12
               input.custom-button.photoupload.col-xs-12(type='button', value='Choose Photo')
-          textarea.col-xs-9(ng-model='activityForm.message', placeholder="What's your new adventure?")  
+          textarea.col-xs-7(ng-model='activityForm.message', placeholder="What's your new adventure?")  
           input.custom-button.col-xs-2.pull-right.post(type='submit', value='Post')
         
   //- form.col-md-8.col-sm-10.col-xs-12(ng-submit='publishActivity()', ng-show='loggedIn')
