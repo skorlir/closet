@@ -18,6 +18,7 @@ body {
 .container.scroll-down {
     background: rgba(0,0,0,0);
     margin-top: 0;
+    width: 100%;
 }
 
 /* Titles */
@@ -72,6 +73,15 @@ a.login {
 a.login button {
     padding: 5px 15px;
     font-size: 1.6em;
+}
+
+.signup a {
+    float: center;
+}
+
+.signup a button {
+    padding: 5px 25px;
+    font-size: 2em;
 }
 
 a:hover,
@@ -185,14 +195,17 @@ i.fa-twitter:focus {
 .fa-arrow-down {
     color: #8CCF4B;
     display: inline-block;
-    margin: 11% 2%;
+    margin: 20px 10px;
 }
 
-.scroll-down h2 {
-    color: #FFF;
+.text {
     text-align: center;
+}
+
+.scroll-down h1 {
+    color: #FFF;
     display: inline-block;
-    font-size: 2em;
+    font-size: 450%;
 }
 
 .aboutpage {

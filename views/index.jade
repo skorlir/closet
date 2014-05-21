@@ -74,13 +74,9 @@ body
     .row.centered
       //
         Begin MailChimp Signup Form 
-      form#mc-embedded-subscribe-form.validate.col-lg-8.col-lg-offset-1(action='http://herokuapp.us8.list-manage1.com/subscribe/post?u=14b0b0e0a73a3857153980900&id=ea3be0eb05', method='post', name='mc-embedded-subscribe-form', target='_blank', novalidate='novalidate' style="margin-top: 10px;")
-        .col-xs-8
-          input.email.pull-right(type='email', value='', name='EMAIL', placeholder=' enter your email address to join', required='required')
-        .col-xs-4
-          input#mc-embedded-subscribe.custom-button(value="I'm an Outrovert!", name='subscribe', data-dismiss='modal')
-        div(style='position: absolute; left: -5000px;')
-          input(type='text', name='b_14b0b0e0a73a3857153980900_ea3be0eb05', value='')
+      .col-lg-2.col-lg-offset-5.col-sm-6.col-sm-offset-3.signup
+          a(href='/home')
+            button.custom-button Sign Up Now!
         //
           End mc_embed_signup
       .col-lg-8.col-lg-offset-2.w.tooltip-demo
@@ -90,24 +86,18 @@ body
           i.fa.fa-twitter
         a(data-tooltip='tooltip', title='Email Us!' href="mailto:nuventioncloset@gmail.com")
           i.fa.fa-envelope
-        //- a(data-toggle='tooltip', title='Outdoor gear for rent')
-        //-   i.fa.fa-briefcase
-        //- a(data-tooltip='tooltip', id="subscribeLink", title='Subscribe for more info!', data-toggle='modal', data-target='.mailing-list-modal-lg', href='javascript:void(0)')
-        //-   i.fa.fa-user
-        //- a(data-tooltip='tooltip', title='Videos (Coming soon!)')
-        //-   i.fa.fa-camera
-        //- a(data-tooltip='tooltip', title='Stories (Coming soon!)')
-          //- i.fa.fa-coffee
       .col-lg-8.col-lg-offset-2
         p.quote
           | "I felt my lungs inflate with the onrush of scenery - air, mountains, trees, people. I thought this is what it is to be happy."
         p.cite
           | - Sylvia Plath, American Poet
   .container.scroll-down
-    .col-lg-9.col-lg-offset-2
-      .fa.fa-arrow-down.fa-3x
-      h2 Scroll down for more
-      .fa.fa-arrow-down.fa-3x
+    .col-lg-2
+      .fa.fa-arrow-down.fa-5x.pull-right
+    .col-lg-8.text
+      h1 Scroll down for more
+    .col-lg-2
+      .fa.fa-arrow-down.fa-5x
   .container.aboutpage
     .row.centered
       .col-lg-8.col-lg-offset-2
