@@ -59,7 +59,9 @@ head
 body
   .col-xs-2.pull-right
     a.login(href='/home') 
-      button.custom-button Log in
+      button.custom-button Log In
+    a.aboutus(href='#')
+      button.custom-button About Us
 
   .container
     .logo.col-lg-8.col-lg-offset-2
@@ -70,7 +72,7 @@ body
           | swap gear and stories with other outroverts
     .row.centered
       .def.col-lg-8.col-lg-offset-2
-        p Outrovert /aʊtrəˌvɜrt/ noun: Lover of outdoor activities, shares their passion of the outdoors out loud
+        p Outrovert /aʊtrəˌvɜrt/ noun: Lover of outdoor activities, shares their passion of the outdoors out loud.
     .row.centered
       //
         Begin MailChimp Signup Form 
@@ -88,12 +90,9 @@ body
         a(data-tooltip='tooltip', title='Email Us!' href="mailto:nuventioncloset@gmail.com")
           i.fa.fa-envelope
   .container.scroll-down
-    .col-lg-2
-      .fa.fa-arrow-down.fa-5x.pull-right
-    .col-lg-8.text
-      h1 Scroll down for more
-    .col-lg-2
+    .arrow
       .fa.fa-arrow-down.fa-5x
+      .fa.fa-arrow-down.fa-5x.pull-right
   .container.aboutpage
     .row.centered
       .col-lg-8.col-lg-offset-2
@@ -131,12 +130,6 @@ body
       selector: "[data-tooltip=tooltip]",
       container: "body"
     });
-    $('#mc-embedded-subscribe').click(function() {
-      $('#mc-embedded-subscribe-form').submit();
-    });
-    //- $('.logo').hover(function() {
-    //-   $('.def').slideToggle();
-    //- });
   //
     BACKSTRETCH
   //

@@ -77,6 +77,22 @@ a.login button {
     font-size: 1.6em;
 }
 
+a.aboutus {
+    position: fixed;
+    right: 36px;
+    top: 70px;
+}
+
+a.aboutus button {
+    padding: 5px 15px;
+    font-size: 1.6em;
+    background-color: #3399FF;
+}
+
+a.aboutus button:hover {
+    background-color: #99CCFF;
+}
+
 .signup {
     width: 100%;
     margin: 0 auto;
@@ -195,6 +211,10 @@ i.fa-twitter:focus {
 
 .scroll-down {
     padding: 0 19%;
+}
+
+.arrow {
+    float: center;
 }
 
 .fa-arrow-down {
