@@ -33,7 +33,7 @@ app.controller('myGear', ['$scope', 'sessionService', 'firebaseService', '$windo
           description: $scope.addGearForm.description,
           condition: $scope.addGearForm.condition,
           price: $scope.addGearForm.price,
-          rentOrBuy: $scope.addGearForm.rentalOrSale === 'Sale' ? 'Buy' : 'Rent',
+          rentOrBuy: 'Buy', //$scope.addGearForm.rentalOrSale === 'Sale' ? 'Buy' : 'Rent',
           image: public_url,
           location: user.location || user.hometown
         }
