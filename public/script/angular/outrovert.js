@@ -14,4 +14,4 @@ var router = function($routeProvider) {
 }
 
 var app = angular.module('outrovert', ['firebase', 'ngRoute', 'ui.bootstrap'], router);
-//window.developmentMode = true;
+window.developmentMode = true;

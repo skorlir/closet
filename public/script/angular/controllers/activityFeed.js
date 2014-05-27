@@ -12,18 +12,17 @@ app.controller('activityFeed', ['$scope', 'sessionService', '$window', '$http', 
     $scope.feed.unshift([postSnap.snapshot.name, postSnap.snapshot.value]);
   });
   
-  session.getUser(function(user) {
-    //TODO: file uploader factory.
-    $scope.uploadFile = function(el) {
-      $scope.imgToUpload = el.files[0];
+  $scope.uploadFile = function(el) {
+    $scope.imgToUpload = el.files[0];
+    session.getUser(function(user) {
       $scope.s3upload = new $window.S3Upload({
         s3_object_name: user.uid + '_' + el.files[0].name,
         s3_sign_put_url: 'aws0signature',
         file_dom_selector: null
       });
-      $scope.fileElement = el;
-    };
-  });
+    });
+    $scope.fileElement = el;
+  };
   
   $scope.publishActivity = function() {
     var msg = $scope.activityForm.message;

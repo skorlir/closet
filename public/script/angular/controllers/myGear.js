@@ -3,10 +3,12 @@ app.controller('myGear', ['$scope', 'sessionService', 'firebaseService', '$windo
     
     $scope.uploadFile = function(el) {
       $scope.imgToUpload = el.files[0];
-      $scope.s3upload = new $window.S3Upload({
-        s3_object_name: user.uid + '_' + $scope.imgToUpload.name,
-        s3_sign_put_url: 'aws0signature',
-        file_dom_selector: null
+      session.getUser(function(user) {
+        $scope.s3upload = new $window.S3Upload({
+          s3_object_name: user.uid + '_' + $scope.imgToUpload.name,
+          s3_sign_put_url: 'aws0signature',
+          file_dom_selector: null
+        });
       });
       $scope.fileElement = el;
     };
