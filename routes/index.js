@@ -20,7 +20,7 @@ var smtpTransport = nodemailer.createTransport("SMTP", {
 	}
 });
 
-var toOutrovert = "User ### has opened a transaction on (var dump): %%%";
+var toOutrovert = "User ### has opened a transaction on NORRIS.Ourtrovert (var dump): %%%";
 
 var toUser      = "<p>Hi ###,<br><p>Thank you for using Outrovert's marketplace!<br><p>Your transaction on %%% has been opened, and we'll update you as soon as the seller has accepted the offer with further details.<br><br><p>If you have any questions, please feel free to reply to this email or chat with us in the Olark window on outrovert.co! <br><p>Thanks!<p>The Outrovert Team";
 
