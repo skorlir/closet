@@ -1,4 +1,4 @@
-app.controller('marketplace', ['$scope', 'sessionService', '$window', '$http', 'firebaseService', '$modal', 'restrictionService', function($scope, session, $window, $http, db, $modal, restrictionService) {
+app.controller('marketplace', ['$scope', 'sessionService', '$window', '$http', 'firebaseService', '$modal', 'restrictionService', '$filter', function($scope, session, $window, $http, db, $modal, restrictionService, $filter) {
   //item.image item.poster.profilePicture item.poster.uid item.price item.description.name item.description.quality item.description.tags item.description.categories item.action item.location
   
   $scope.marketdb = db.getMarketplaceRef();
@@ -6,6 +6,23 @@ app.controller('marketplace', ['$scope', 'sessionService', '$window', '$http', '
   $scope.marketplace = [];
   $scope.filterForm  = {};
   $scope.itemForm = {};
+
+  session.getUser(function(user) {
+    $scope.hasNUEmail = function() {
+        var email = [];
+        if(user.restrictions) email = user.restrictions.email;
+        else email = [user.email];
+        email = $filter('orderByPriority')(email);
+        return !!email.filter(function(em) { return em.indexOf('northwestern.edu') > -1; }).length;
+    }
+  });
+  
+  $scope.addNorthwesternEmail = function(email) {
+    session.getUser(function(user) {
+      db.addRestrictionProp('email', email, user.uid);
+      restrictionService.setUser(user);
+    });
+  }
   
   $scope.marketdb.$on('child_added', function(itemSnap) {
     console.log(itemSnap);
@@ -36,8 +53,8 @@ app.controller('marketplace', ['$scope', 'sessionService', '$window', '$http', '
         if(!restrictionService.check(item.restrictions[r][0], item.restrictions[r][1])) 
           return false;
     }
-    return (item.rentOrBuy == "Buy" && $scope.showBuy) 
-                  || (item.rentOrBuy == "Rent" && $scope.showRent);
+    return (item.rentOrBuy.toLowerCase() == "buy" && $scope.showBuy) 
+                  || (item.rentOrBuy.toLowerCase() == "rent" && $scope.showRent);
   };
   
   //TODO: modal cotrollers should be put in a factory or something.
@@ -79,18 +96,18 @@ app.controller('marketplace', ['$scope', 'sessionService', '$window', '$http', '
     });
   };
   
-  $scope.addEmail = function() {
-    var modal = $modal.open({
-     templateUrl: 'emailModal.html',
-     controller: modalController
-    });
-
-    modal.result.then(function(result) {
-     session.getUser(function(user) {
-       console.log("hello?");
-       db.addRestrictionProp('email', result.email, user.uid);
-     });
-    });
-  };
+//  $scope.addEmail = function() {
+//    var modal = $modal.open({
+//     templateUrl: 'emailModal.html',
+//     controller: modalController
+//    });
+//
+//    modal.result.then(function(result) {
+//     session.getUser(function(user) {
+//       console.log("hello?");
+//       db.addRestrictionProp('email', result.email, user.uid);
+//     });
+//    });
+//  };
   
 }]);

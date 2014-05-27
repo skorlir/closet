@@ -3,11 +3,20 @@ nav.col-sm-2.col-xs-12.nav.navigation
     li
       a(href='#/') Adventure Zone
     li#here
-      a Marketplace
+      a NU Marketplace
     li 
       a(href='#/mygear') My Gear
+  p.text-center Featuring Items from Norris Outdoor!
+  p.text-center To find more Outroverts, go to 
+    a(href='http://outrovert.co') Outrovert.co
+    | !
 
-.col-lg-9.col-sm-10.col-xs-12
+.col-lg-9.col-sm-10.col-xs-12(ng-hide='hasNUEmail()')
+  form
+    label.col-xs-10 Add a Northwestern email Address to access the NU marketplace
+    input.col-xs-10(type='email', ng-model='northwesternEmail', placeholder='willie_wildcat@northwestern.edu')
+    button(ng-click='addNorthwesternEmail(northwesternEmail)').col-xs-10.custom-button Add Email
+.col-lg-9.col-sm-10.col-xs-12(ng-show='hasNUEmail()')
   .col-xs-2.col-xs-offset-1.pull-right
 
   form

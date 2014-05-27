@@ -1,4 +1,4 @@
-app.service('restrictionService', function() {
+app.service('restrictionService', ['$filter', function($filter) {
   //abstracted comparator
       //basic methods
       // is (direct), in (indexOf), like (wildcards/regex)
@@ -35,9 +35,9 @@ app.service('restrictionService', function() {
     cmd = /in|is|like/.test(rPt1) ? (strArg = rPt1.split(" "), checkArg = rPt2, strArg  .pop()):
                                     (strArg = rPt2.split(" "), checkArg = rPt1, strArg.shift());
     userField = strArg.join();
-    var userValues = this.user.restrictions ? $(this.user.restrictions[userField]).toArray() : [this.user[userField]];
+    var userValues = this.user.restrictions ? $filter('orderByPriority')(this.user.restrictions[userField]) : [this.user[userField]];
     console.log(userValues);
     var check_this = this;
     return this.user && this.user[userField] && userValues.some(function(v) { return check_this._comparators[cmd](v, checkArg) });
   }
-});
+}]);

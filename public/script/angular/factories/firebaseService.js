@@ -57,6 +57,13 @@ app.factory('firebaseService', ['$firebase', function($firebase) {
       var restrictionsRef = firebase.$child('/users/'+uid+'/restrictions');
       
       restrictionsRef.$child('/'+prop).$add(val);
+      if(!this.userDataCache.restrictions) this.userDataCache.restrictions = {};
+      for(var prop in restrictionsRef){
+        if(prop[0] !== '$') {
+          if(!this.userDataCache.restrictions[prop]) this.userDataCache.restrictions[prop] = [];
+          this.userDataCache.restrictions[prop] = restrictionsRef[prop];
+        }
+      }
     }
     
     this.initWithRoot = function(func) {
