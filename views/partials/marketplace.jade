@@ -11,8 +11,6 @@ nav.col-sm-2.col-xs-12.nav.navigation
   .col-xs-2.col-xs-offset-1.pull-right
 
   form
-    
-    .custom-button.col-xs-12.text-center(style='margin-bottom: 15px', ng-click='addEmail()') Join An Email Restricted Marketplace
     .form-group.col-xs-12.search
       label.col-xs-1 Search
       input.col-xs-10.col-lg-6(type='text', ng-model='search.item.name', placeholder='backpacks, boots, sleeping bags...')
@@ -22,8 +20,7 @@ nav.col-sm-2.col-xs-12.nav.navigation
       button.local-button.col-xs-4(ng-click='toggleBtns("rent")', ng-class='{"inactive": !showRent}') Rent
     .form-group.col-lg-4.col-xs-12
       label My location
-      p {{user.location || user.hometown}}
-      p.text-warning.change(ng-click='warnNonFeature("change location")') change location
+      p Evanston, IL (Northwestern)
     .col-lg-2.col-xs-2.pull-right
       a(href='#/mygear').custom-button.col-xs-12.text-center.add Add item
   
