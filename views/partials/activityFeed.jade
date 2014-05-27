@@ -49,3 +49,16 @@ nav.col-md-2.col-sm-2.col-xs-12.nav(ng-show='loggedIn', style='z-index: 1000')
           .photo.col-lg-8.col-lg-offset-0.col-xs-10.col-xs-offset-1.img-rounded(style="background-image: url('{{post[1].photo}}')")
           hr.col-lg-8.col-xs-10
         .col-xs-12.message-content {{post[1].textContent}}
+
+        //- new stuff starts here
+        .comments.col-md-10.col-md-offset-1.col-sm-12.col-xs-12(ng-repeat='comment in post[1].comments')
+          .col-xs-11.col-xs-offset-1
+            a.delete.pull-right(href='javascript:void(0)', ng-show='comment.displayName === user.displayName', ng-click='deleteComment(comment[0])') x (delete)
+            img.profilefeed.col-xs-2(ng-src='{{comment.profilePictureM}}', style='max-width: 80px')
+            .col-xs-10 {{comment.displayName}}
+            .col-xs-12.message-content {{comment.textContent}}
+        form.col-xs-offset-1
+          textarea.col-xs-9(ng-model='commentForm[post[0]]', placeholder="Comment")
+          input.custom-button.col-xs-2.pull-right.post(type='button', value='Comment', ng-click='publishComment(post[0])')
+
+        //- new stuff ends here

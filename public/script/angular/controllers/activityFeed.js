@@ -2,6 +2,8 @@ app.controller('activityFeed', ['$scope', 'sessionService', '$window', '$http', 
   
   $scope.activityForm = {};
   $scope.activityForm.message = '';
+
+  $scope.commentForm = {};
   
   $scope.activity = db.getActivityRef();
   $scope.feed = [];
@@ -10,6 +12,15 @@ app.controller('activityFeed', ['$scope', 'sessionService', '$window', '$http', 
     console.log(postSnap);
     if(postSnap.snapshot.value === null) return; //check should be unnecessary with input validation
     $scope.feed.unshift([postSnap.snapshot.name, postSnap.snapshot.value]);
+  });
+
+  $scope.activity.$on('child_changed', function(postSnap) {
+    console.log(postSnap);
+    if(postSnap.snapshot.value === null) return; //check should be unnecessary with input validation
+    $scope.feed.forEach(function(el) {
+      if (el[0] == postSnap.snapshot.name)
+        el = [postSnap.snapshot.name, postSnap.snapshot.value];
+    });
   });
   
   $scope.uploadFile = function(el) {
@@ -61,4 +72,37 @@ app.controller('activityFeed', ['$scope', 'sessionService', '$window', '$http', 
       $scope.feed.splice($scope.feed.indexOf($scope.feed.filter(function(el) {  return el[0] === postid; })[0]), 1);
     });
   }
+
+  // new stuff starts here
+
+  $scope.publishComment = function(post) {
+    var msg = $scope.commentForm[post];
+    if (!msg) { $scope.flashMessage = 'Nothing to post!'; return; }
+    session.getUser(function(user) {
+      if (user === null) $scope.flashMessage = 'Error: Not logged in. Please refresh.';
+      else {
+        console.log(user);
+        var comment = {
+            user: user.uid, 
+            textContent: msg, 
+            timestamp: db.timestamp(), 
+            profilePictureM: user.profilePictureM,
+            displayName: user.displayName
+        };
+        $scope.activity.$child(post).$child('comments').$add(comment);
+      }
+    });
+  }
+
+  $scope.deleteComment = function(commentid) {
+    console.log(commentid);
+    post = commentid.parentPost;
+    $scope.activity.$remove(commentid).then(function(res) {
+      console.log(res, 'removed');
+      $scope.feed.post.splice($scope.feed.post.indexOf($scope.feed.post.filter(function(el) {  return el[0] === commentid; })[0]), 1);
+    });
+  }
+
+  // new stuff ends here
+
 }]);
