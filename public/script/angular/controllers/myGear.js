@@ -27,13 +27,14 @@ app.controller('myGear', ['$scope', 'sessionService', 'firebaseService', '$windo
     });
 
     $scope.addGear = function() {
+      console.log($scope.addGearForm);
       $scope.s3upload.onFinishS3Put = function(public_url) {
         var item = {
           name: $scope.addGearForm.name,
           description: $scope.addGearForm.description,
           condition: $scope.addGearForm.condition,
           price: $scope.addGearForm.price,
-          rentOrBuy: $scope.addGearForm.rentalOrSale === 'Sale' ? 'Buy' : 'Rent',
+          rentOrBuy: $scope.addGearForm.forRent ? 'Rent' : 'Buy',
           image: public_url,
           location: user.location || user.hometown
         }
