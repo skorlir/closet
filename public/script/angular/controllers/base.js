@@ -1,4 +1,4 @@
-app.controller('base', ['$scope', 'sessionService', '$window', '$modal', '$http', '$filter', '$position', function($scope, session, $window, $modal, $http, $filter) {
+app.controller('base', ['$scope', 'sessionService', '$window', '$modal', '$http', '$filter', 'firebaseService', '$position', function($scope, session, $window, $modal, $http, $filter, db) {
 
   $scope.fbLogin = session.fbLogin(function(user) {
     console.log('logged in as', user.uid, user.displayName);
