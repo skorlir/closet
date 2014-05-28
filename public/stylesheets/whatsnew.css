@@ -1,9 +1,9 @@
-/* line 1, ../../SASS/whatsnew.scss */
+/* line 1, ../../sass/whatsnew.scss */
 .logo img {
   width: 100%;
 }
 
-/* line 5, ../../SASS/whatsnew.scss */
+/* line 5, ../../sass/whatsnew.scss */
 body, .head, .logo, .nav {
   padding: 0;
   margin-bottom: 0;
@@ -11,19 +11,19 @@ body, .head, .logo, .nav {
   border: none;
 }
 
-/* line 12, ../../SASS/whatsnew.scss */
+/* line 12, ../../sass/whatsnew.scss */
 .pages {
   padding: 0;
 }
 
-/* line 17, ../../SASS/whatsnew.scss */
+/* line 17, ../../sass/whatsnew.scss */
 .pages li {
   padding: 5% 20%;
   list-style: none;
   background: #FFF;
 }
 
-/* line 23, ../../SASS/whatsnew.scss */
+/* line 23, ../../sass/whatsnew.scss */
 .pages li a {
   text-decoration: none;
   color: #000;
@@ -31,40 +31,40 @@ body, .head, .logo, .nav {
   padding: 5%;
 }
 
-/* line 30, ../../SASS/whatsnew.scss */
+/* line 30, ../../sass/whatsnew.scss */
 .pages #here {
   background: #8CCF4B;
 }
 
-/* line 34, ../../SASS/whatsnew.scss */
+/* line 34, ../../sass/whatsnew.scss */
 .pages #here a {
   color: #FFF;
 }
 
-/* line 38, ../../SASS/whatsnew.scss */
+/* line 38, ../../sass/whatsnew.scss */
 .pages #here a:hover {
   cursor: default;
 }
 
-/* line 42, ../../SASS/whatsnew.scss */
+/* line 42, ../../sass/whatsnew.scss */
 .pages li a:hover {
   cursor: pointer;
   color: #8CCF4B;
 }
 
-/* line 47, ../../SASS/whatsnew.scss */
+/* line 47, ../../sass/whatsnew.scss */
 .userinfo {
   float: right;
 }
 
-/* line 51, ../../SASS/whatsnew.scss */
+/* line 51, ../../sass/whatsnew.scss */
 #loginButtons button {
   padding: 3px 15px;
   margin: 15px 0;
   font-size: 1.2em !important;
 }
 
-/* line 59, ../../SASS/whatsnew.scss */
+/* line 59, ../../sass/whatsnew.scss */
 #loggedInData img.profile {
   padding: 3%;
   position: absolute;
@@ -72,7 +72,7 @@ body, .head, .logo, .nav {
   width: 60px;
   height: 60px;
 }
-/* line 67, ../../SASS/whatsnew.scss */
+/* line 67, ../../sass/whatsnew.scss */
 #loggedInData h4.profile {
   font-size: 12pt;
   position: absolute;
@@ -80,19 +80,19 @@ body, .head, .logo, .nav {
   top: 12px;
 }
 
-/* line 75, ../../SASS/whatsnew.scss */
+/* line 75, ../../sass/whatsnew.scss */
 textarea:focus {
   outline-style: auto;
   outline-width: 3px;
   outline-color: #8CCF4B;
 }
 
-/* line 81, ../../SASS/whatsnew.scss */
+/* line 81, ../../sass/whatsnew.scss */
 .photoupload {
   font-size: 1.2em !important;
 }
 
-/* line 85, ../../SASS/whatsnew.scss */
+/* line 85, ../../sass/whatsnew.scss */
 .mainfeed {
   position: absolute;
   left: 20%;
@@ -100,50 +100,79 @@ textarea:focus {
   padding-bottom: 200px;
 }
 
-/* line 92, ../../SASS/whatsnew.scss */
+/* line 92, ../../sass/whatsnew.scss */
 .tab-content form, .message {
   padding: 2%;
   border-radius: 5px;
   background: #FFF;
 }
 
-/* line 98, ../../SASS/whatsnew.scss */
+/* line 98, ../../sass/whatsnew.scss */
 .nav-tabs > li a {
   color: #444;
   cursor: pointer;
 }
-/* line 101, ../../SASS/whatsnew.scss */
+/* line 101, ../../sass/whatsnew.scss */
 .nav-tabs > li a:hover {
   color: #000;
 }
 
-/* line 107, ../../SASS/whatsnew.scss */
+/* line 107, ../../sass/whatsnew.scss */
 .nav {
   background: none;
 }
 
-/* line 111, ../../SASS/whatsnew.scss */
+/* line 111, ../../sass/whatsnew.scss */
 .nav li {
   left: 15px;
   cursor: pointer;
 }
-/* line 115, ../../SASS/whatsnew.scss */
+/* line 115, ../../sass/whatsnew.scss */
 .nav li a {
   color: #888;
 }
 
-/* line 120, ../../SASS/whatsnew.scss */
+/* line 120, ../../sass/whatsnew.scss */
 .post {
   margin-top: 5px;
   font-size: 1.4em !important;
 }
 
-/* line 125, ../../SASS/whatsnew.scss */
+/* line 125, ../../sass/whatsnew.scss */
 .message-content {
   border: none;
 }
 
-/* line 129, ../../SASS/whatsnew.scss */
+/* line 129, ../../sass/whatsnew.scss */
 .message {
   margin-top: 2%;
+}
+
+/* line 133, ../../sass/whatsnew.scss */
+.comments {
+  border: 1px solid #CCC;
+  border-radius: 5px;
+  background: #EEE;
+  margin-top: 1%;
+}
+/* line 139, ../../sass/whatsnew.scss */
+.comments img {
+  padding: 10px 15px 0 0;
+}
+/* line 143, ../../sass/whatsnew.scss */
+.comments p {
+  margin-bottom: 3px;
+}
+/* line 147, ../../sass/whatsnew.scss */
+.comments .comment-content {
+  margin-bottom: 8px;
+}
+
+/* line 152, ../../sass/whatsnew.scss */
+.new-comment {
+  margin-top: 1%;
+}
+/* line 155, ../../sass/whatsnew.scss */
+.new-comment input.post {
+  font-size: 1.2em !important;
 }

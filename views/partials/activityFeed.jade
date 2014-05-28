@@ -51,13 +51,14 @@ nav.col-md-2.col-sm-2.col-xs-12.nav(ng-show='loggedIn', style='z-index: 1000')
         .col-xs-12.message-content {{post[1].textContent}}
 
         //- new stuff starts here
-        .comments.col-md-10.col-md-offset-1.col-sm-12.col-xs-12(ng-repeat='comment in post[1].comments')
-          .col-xs-11.col-xs-offset-1
-            a.delete.pull-right(href='javascript:void(0)', ng-show='comment.displayName === user.displayName', ng-click='deleteComment(comment[0])') x (delete)
-            img.profilefeed.col-xs-2(ng-src='{{comment.profilePictureM}}', style='max-width: 80px')
-            .col-xs-10 {{comment.displayName}}
-            .col-xs-12.message-content {{comment.textContent}}
-        form.col-xs-offset-1
+      hr.col-lg-12.col-xs-12
+      .comments.col-xs-10.col-xs-offset-1(ng-repeat='comment in post[1].comments')
+        a.delete.pull-right(href='javascript:void(0)', ng-show='comment.displayName === user.displayName', ng-click='deleteComment(comment[0])') x (delete)
+        img.profilefeed.col-xs-2(ng-src='{{comment.profilePictureM}}', style='max-width: 40px')
+        p {{comment.displayName}}
+        .col-xs-10.comment-content {{comment.textContent}}
+      .col-xs-10.col-xs-offset-1.new-comment
+        form
           textarea.col-xs-9(ng-model='commentForm[post[0]]', placeholder="Comment")
           input.custom-button.col-xs-2.pull-right.post(type='button', value='Comment', ng-click='publishComment(post[0])')
 
