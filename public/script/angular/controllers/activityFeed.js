@@ -19,9 +19,12 @@ app.controller('activityFeed', ['$scope', 'sessionService', '$window', '$http', 
     console.log('child changed');
     console.log(postSnap);
     if(postSnap.snapshot.value === null) return; //check should be unnecessary with input validation
-    $scope.feed.forEach(function(el) {
-      if (el[0] == postSnap.snapshot.name)
-        el = [postSnap.snapshot.name, postSnap.snapshot.value];
+    $scope.$apply(function() {
+      $scope.feed = $scope.feed.map(function(el) {
+        if (el[0] == postSnap.snapshot.name)
+          return [postSnap.snapshot.name, postSnap.snapshot.value];
+        return el;
+      });
     });
   });
   
@@ -90,7 +93,11 @@ app.controller('activityFeed', ['$scope', 'sessionService', '$window', '$http', 
             profilePictureM: user.profilePictureM,
             displayName: user.displayName
         };
-        $scope.activity.$child(post).$child('comments').$add(comment);
+        $scope.activity.$child(post).$child('comments').$add(comment).then(function(ref) {
+          console.log(ref);
+          ref.update({key: ref.name()});
+          console.log(ref);
+        });
         $scope.commentForm = {};
       }
     });
@@ -103,10 +110,11 @@ app.controller('activityFeed', ['$scope', 'sessionService', '$window', '$http', 
     console.log(postid);
     console.log('feed');
     console.log($scope.feed.postid);
-    $scope.activity.$remove(commentid).then(function(res) {
-      console.log(res, 'removed');
-      $scope.feed[postid].splice($scope.feed[postid].indexOf($scope.feed[postid].filter(function(el) {  return el[0] === commentid; })[0]), 1);
-    });
+    //index - is commentid.key;
+    $scope.activity
+    .$child(postid)
+    .$child('comments')
+    .$remove(commentid.key);
   }
 
   // new stuff ends here
