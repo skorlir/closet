@@ -178,7 +178,7 @@ body
         input.col-sm-10.col-sm-offset-1(type='text', , placeholder='Password')
         input.col-sm-10.col-sm-offset-1.custom-button(type='submit', value='Sign Up')
         p.col-lg-12.col-sm-10.col-sm-offset-1 Or log in with &nbsp;
-          a(href='/home') facebook
+          a#fbLogin(href='/home', ng-click='fbLogin()', ng-hide='loggedIn') facebook
     
   //
      Bootstrap core JavaScript
