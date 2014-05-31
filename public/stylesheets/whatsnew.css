@@ -150,29 +150,30 @@ textarea:focus {
 
 /* line 133, ../../sass/whatsnew.scss */
 .comments {
-  border: 1px solid #CCC;
-  border-radius: 5px;
   background: #EEE;
   margin-top: 1%;
+  padding-bottom: 4px;
 }
-/* line 139, ../../sass/whatsnew.scss */
+/* line 140, ../../sass/whatsnew.scss */
 .comments img {
   padding: 10px 15px 0 0;
 }
-/* line 143, ../../sass/whatsnew.scss */
+/* line 144, ../../sass/whatsnew.scss */
 .comments p {
-  margin-bottom: 3px;
+  margin: 4px 0;
+  font-weight: bold;
 }
-/* line 147, ../../sass/whatsnew.scss */
+/* line 149, ../../sass/whatsnew.scss */
 .comments .comment-content {
   margin-bottom: 8px;
+  font-weight: normal;
 }
 
-/* line 152, ../../sass/whatsnew.scss */
+/* line 155, ../../sass/whatsnew.scss */
 .new-comment {
   margin-top: 1%;
 }
-/* line 155, ../../sass/whatsnew.scss */
+/* line 158, ../../sass/whatsnew.scss */
 .new-comment input.post {
   font-size: 1.2em !important;
 }

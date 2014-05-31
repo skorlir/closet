@@ -131,21 +131,24 @@ textarea:focus {
 }
 
 .comments {
-	border: 1px solid #CCC;
-	border-radius: 5px;
+	// border: 1px solid #CCC;
+	// border-radius: 5px;
 	background: #EEE;
 	margin-top: 1%;
+	padding-bottom: 4px;
 
 	img {
 		padding: 10px 15px 0 0;
 	}
 
 	p {
-		margin-bottom: 3px;
+		margin: 4px 0;
+		font-weight: bold;
 	}
 
 	.comment-content {
 		margin-bottom: 8px;
+		font-weight: normal;
 	}
 }
 
