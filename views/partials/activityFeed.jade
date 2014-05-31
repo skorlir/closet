@@ -1,21 +1,11 @@
-
-nav.col-md-2.col-sm-2.col-xs-12.nav(ng-show='loggedIn', style='z-index: 1000')
-    ul.pages
-      li#here
-        a(href='#/') Adventure Zone
-      li 
-        a(href='#/marketplace') Marketplace
-      li
-        a(href='#/mygear') My Gear
-
-.col-md-8.col-sm-9(style='padding-bottom: 200px;')
+.col-md-10.col-md-offset-1.col-sm-12.zone(style='padding-bottom: 200px;')
   tabset(ng-show='loggedIn').col-md-10.col-md-offset-1
 
     tab
       tab-heading
         i.fa.fa-edit Share a story
       .col-xs-12.tabcontent
-        form.col-md-10.col-sm-12.col-xs-12(ng-submit='publishActivity()')
+        form.col-md-12(ng-submit='publishActivity()')
           textarea.col-xs-12(ng-model='activityForm.message', placeholder="What's your new adventure?")
           input.custom-button.col-xs-2.pull-right.post(type='submit', value='Post')
     tab
