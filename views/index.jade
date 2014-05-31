@@ -24,7 +24,7 @@ head
 body
   .col-lg-12.mainarea
     img.background(src='landing-assets/img/background.jpg')
-    .logo.col-lg-4.col-lg-offset-4.col-sm-8.col-sm-offset-2
+    .logo.col-lg-4.col-lg-offset-4.col-sm-8.col-sm-offset-2.col-xs-10.col-xs-offset-1
       img(src='landing-assets/img/new_logo.png', width='100', alt='logo')
 
     .col-md-10.col-md-offset-1.col-sm-12.col-xs-12.title
@@ -166,16 +166,18 @@ body
 
   .col-lg-12.bottomarea
     img.background(src='landing-assets/img/bottomarea.png')
-    .col-lg-4.col-sm-12.pull-right
-      h1 Join us. Let's go wild together.
+    .col-lg-4.col-sm-12.joinus.pull-right
+      h1 Join us.
+      h1 Let's go wild
+      h1 together.
     .col-lg-6.col-sm-12
-      form.col-lg-8.col-sm-10.pull-right.info-form
+      form.col-lg-6.col-md-8.col-sm-10.col-xs-12.pull-right.info-form
         input.col-sm-10.col-sm-offset-1(type='text', , placeholder='First name')
         input.col-sm-10.col-sm-offset-1(type='text', , placeholder='Last name')
         input.col-sm-10.col-sm-offset-1(type='text', , placeholder='Email')
         input.col-sm-10.col-sm-offset-1(type='text', , placeholder='Password')
         input.col-sm-10.col-sm-offset-1.custom-button(type='submit', value='Sign Up')
-        p.col-sm-10.col-sm-offset-1 Or log in with &nbsp;
+        p.col-lg-12.col-sm-10.col-sm-offset-1 Or log in with &nbsp;
           a(href='/home') facebook
     
   //
