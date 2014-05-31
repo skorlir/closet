@@ -17,6 +17,13 @@ body {
 	padding: 0;
 	margin-bottom: 0;
 	background: #000;
+}
+
+.logo {
+	border: none;
+}
+
+.head {
 	border-bottom: 1px solid #FFF;
 }
 
@@ -159,6 +166,7 @@ textarea:focus {
 .login-form p {
 	font-size: 1.3em;
 	margin: 20px 0;
+	color: #FFF;
 }
 
 .login {

@@ -30,7 +30,7 @@ html(ng-app='outrovert')
         input.col-sm-10.col-sm-offset-1(type='text', placeholder='Password')
         input.col-sm-10.col-sm-offset-1.custom-button(type='submit', value='Log In')
         p.col-sm-10.col-sm-offset-1 Or log in with &nbsp;
-          a(href='/home') facebook
+          a#fbLogin(href='/home', ng-click='fbLogin()', ng-hide='loggedIn') facebook
 
     p.browsehappy.text-center.col-xs-12(ng-if='document.documentMode < 11')  
       | You are using an 
