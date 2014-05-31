@@ -13,14 +13,14 @@ nav.col-md-2.col-sm-2.col-xs-12.nav(ng-show='loggedIn', style='z-index: 1000')
 
     tab
       tab-heading
-        i.fa.fa-edit Share a story
+        i.fa.fa-edit.fa-2x
       .col-xs-12.tabcontent
         form.col-md-10.col-sm-12.col-xs-12(ng-submit='publishActivity()')
-          textarea.col-xs-12(ng-model='activityForm.message', placeholder="What's your new adventure?")
+          textarea.col-xs-12(ng-model='activityForm.message', placeholder="Share a story or a review")
           input.custom-button.col-xs-2.pull-right.post(type='submit', value='Post')
     tab
       tab-heading
-        i.fa.fa-camera Upload photo
+        i.fa.fa-camera.fa-2x
       .col-xs-12.tabcontent
         form.col-md-10.col-sm-12.col-xs-12(ng-submit='publishActivity()')
           .fileinput.col-xs-5
@@ -40,7 +40,7 @@ nav.col-md-2.col-sm-2.col-xs-12.nav(ng-show='loggedIn', style='z-index: 1000')
 
   .activityFeed.col-md-10.col-md-offset-1.col-sm-12.col-xs-12(ng-repeat='post in feed', ng-show='{{!!feed.length}}')
     .message.col-xs-12
-      a.delete.pull-right(href='javascript:void(0)', ng-show='post[1].displayName === user.displayName', ng-click='deletePost(post[0])') x (delete)
+      a.delete.pull-right(href='javascript:void(0)', ng-show='post[1].displayName === user.displayName', ng-click='deletePost(post[0])') x
       img.profilefeed.col-xs-2(ng-src='{{post[1].profilePictureM}}', style='max-width: 80px')
       .col-xs-10 {{post[1].displayName}}
         small &nbsp;&nbsp; {{!!post[1].photo ? 'posted a photo' : 'says'}}
@@ -53,13 +53,13 @@ nav.col-md-2.col-sm-2.col-xs-12.nav(ng-show='loggedIn', style='z-index: 1000')
         //- new stuff starts here
       hr.col-lg-12.col-xs-12
       .comments.col-xs-10.col-xs-offset-1(ng-repeat='comment in post[1].comments')
-        a.delete.pull-right(href='javascript:void(0)', ng-show='comment.displayName === user.displayName', ng-click='deleteComment(comment, post[0])') x (delete)
+        a.delete.pull-right(href='javascript:void(0)', ng-show='comment.displayName === user.displayName', ng-click='deleteComment(comment, post[0])') x
         img.profilefeed.col-xs-2(ng-src='{{comment.profilePictureM}}', style='max-width: 40px')
         p {{comment.displayName}}&nbsp;&nbsp;
           span.comment-content {{comment.textContent}}
       .col-xs-10.col-xs-offset-1.new-comment
         form
-          textarea.col-xs-9(ng-model='commentForm[post[0]]', placeholder="Comment")
+          textarea.col-xs-9(ng-model='commentForm[post[0]]', placeholder="Write a comment...")
           input.custom-button.col-xs-2.pull-right.post(type='button', value='Comment', ng-click='publishComment(post[0])')
 
         //- new stuff ends here

@@ -175,5 +175,11 @@ textarea:focus {
 }
 /* line 158, ../../sass/whatsnew.scss */
 .new-comment input.post {
-  font-size: 1.2em !important;
+  font-size: 1em !important;
+}
+
+/* line 163, ../../sass/whatsnew.scss */
+.nav-tabs {
+  position: relative;
+  left: 10px;
 }

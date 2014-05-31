@@ -156,8 +156,13 @@ textarea:focus {
 	margin-top: 1%;
 
 	input.post {
-		font-size: 1.2em !important;
+		font-size: 1em !important;
 	}
+}
+
+.nav-tabs {
+	position: relative;
+	left: 10px;
 }
 
 
