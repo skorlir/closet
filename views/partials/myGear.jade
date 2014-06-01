@@ -1,22 +1,10 @@
-nav.col-sm-2.col-xs-12.nav.navigation
-    ul.pages
-      li
-        a(href='#/') Adventure Zone
-      li 
-        a(href='#/marketplace') NU Marketplace
-      li#here
-        a My Gear
-    p.text-center To find more Outroverts, go to 
-      a(href='http://outrovert.co') Outrovert.co
-      | !
-
-.col-lg-9.col-sm-10.col-xs-12(ng-hide='hasNUEmail()')
+.col-lg-10.col-lg-offset-1.col-sm-12(ng-hide='hasNUEmail()')
   form
-    label.col-xs-10 Add a Northwestern email Address to upload to the NU marketplace
-    input.col-xs-10(type='email', ng-model='northwesternEmail', placeholder='willie_wildcat@northwestern.edu')
-    button(ng-click='addNorthwesternEmail(northwesternEmail)').col-xs-10.custom-button Add Email
-.col-lg-9.col-sm-10.col-xs-12(ng-if='hasNUEmail() && loggedIn')
-  form.col-lg-6.col-sm-8.col-xs-10.uploadform.col-xs-offset-1(ng-submit='addGear()')
+    label.col-xs-12 Add a Northwestern email Address to upload to the NU marketplace
+    input.col-xs-12(type='email', ng-model='northwesternEmail', placeholder='willie_wildcat@northwestern.edu')
+    button(ng-click='addNorthwesternEmail(northwesternEmail)').col-xs-12.custom-button Add Email
+.col-lg-10.col-lg-offset-1.col-sm-12.zone(ng-if='hasNUEmail() && loggedIn')
+  form.col-lg-6.col-lg-offset-3.col-sm-8.col-sm-offset-2.col-xs-10.uploadform(ng-submit='addGear()')
     .form-group.col-xs-12
       label.col-xs-4 Item Name
       input.col-xs-7(type='text', placeholder='eg Camelbak Eddy Water Bottle', ng-model='addGearForm.name', required)
