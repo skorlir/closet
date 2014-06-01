@@ -41,7 +41,7 @@ app.controller('myGear', ['$scope', 'sessionService', 'firebaseService', '$windo
         
         var poster = {
           uid: user.uid,
-          profilePicture: 'http://graph.facebook.com/' + user.id + '/picture?type=small'
+          profilePicture: user.profilePicture
         }
         var itemRef = myGearDB.$add(item);
         
