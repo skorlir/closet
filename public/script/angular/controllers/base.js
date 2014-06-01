@@ -1,4 +1,11 @@
-app.controller('base', ['$scope', 'sessionService', '$window', '$modal', '$http', '$filter', 'firebaseService', 'restrictionService', '$position', '$rootScope', function($scope, session, $window, $modal, $http, $filter, db, restrictionService, $rootScope) {
+app.controller('base', ['$scope', 'sessionService', '$window', '$modal', '$http', '$filter', 'firebaseService', 'restrictionService', '$rootScope', '$location', '$position',  function($scope, session, $window, $modal, $http, $filter, db, restrictionService, $rootScope, $location) {
+  
+  console.log($location);
+  if($window.location.pathname == '/') {
+    session.getUser(function(user) {
+      if(!!user) $window.location = '/home';
+    });
+  }
 
   $scope.fbLogin = session.fbLogin(function(user) {
     console.log('logged in as', user.uid, user.displayName);

@@ -1,5 +1,5 @@
 /* line 1, ../../SASS/whatsnew.scss */
-.logo img {
+.head .logo img {
   height: 60px;
   border-bottom: 1px solid #FFF;
 }
@@ -13,7 +13,7 @@ body {
 }
 
 /* line 13, ../../SASS/whatsnew.scss */
-.head, .logo {
+.head, .head .logo {
   padding: 0;
   margin-bottom: 0;
   background: #000;

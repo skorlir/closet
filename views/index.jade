@@ -1,221 +1,222 @@
 doctype html
 html(lang='en')
-head
-  title Outrovert - Share your adventures and your gear
-  //****** faviconit.com favicons ******
-  link( rel="shortcut icon", href="/images/logoAssets/favicon.ico")
-  link( rel="icon", sizes="16x16 32x32 64x64", href="/images/logoAssets/favicon.ico")
-  link( rel="icon",type="image/png",sizes="196x196",href="/images/logoAssets/favicon-196.png")
-  link( rel="icon",type="image/png",sizes="160x160",href="/images/logoAssets/favicon-160.png")
-  link( rel="icon",type="image/png",sizes="96x96",href="/images/logoAssets/favicon-96.png")
-  link( rel="icon",type="image/png",sizes="64x64",href="/images/logoAssets/favicon-64.png")
-  link( rel="icon",type="image/png",sizes="32x32",href="/images/logoAssets/favicon-32.png")
-  link( rel="icon",type="image/png",sizes="16x16",href="/images/logoAssets/favicon-16.png")
-  link( rel="apple-touch-icon" sizes="152x152" href="/images/logoAssets/favicon-152.png")
-  link( rel="apple-touch-icon" sizes="144x144" href="/images/logoAssets/favicon-144.png")
-  link( rel="apple-touch-icon" sizes="120x120" href="/images/logoAssets/favicon-120.png")
-  link( rel="apple-touch-icon" sizes="114x114" href="/images/logoAssets/favicon-114.png")
-  link( rel="apple-touch-icon" sizes="76x76" href="/images/logoAssets/favicon-76.png")
-  link( rel="apple-touch-icon" sizes="72x72" href="/images/logoAssets/favicon-72.png")
-  link( rel="apple-touch-icon" href="/images/logoAssets/favicon-57.png")
-  meta( name="msapplication-TileColor",content="#FFFFFF")
-  meta( name="msapplication-TileImage",content="/images/logoAssets/favicon-144.png")
-  meta( name="msapplication-config",content="/images/logoAssets/browserconfig.xml")
-  // ****** faviconit.com favicons ******
-  //
-     Bootstrap core CSS 
-  link(href='landing-assets/css/bootstrap.min.css', rel='stylesheet')
-  //
-     Custom styles for this template 
-  link(href='landing-assets/css/main.css', rel='stylesheet')
-  link(href='stylesheets/base.css', rel='stylesheet')
-  link(href='stylesheets/marketplace.css', rel='stylesheet')
-  link(href='http://fonts.googleapis.com/css?family=Oswald:400,300,700', rel='stylesheet', type='text/css')
-  link(href='http://fonts.googleapis.com/css?family=EB+Garamond', rel='stylesheet', type='text/css')
+  head
+    include top
+    title Outrovert - Share your adventures and your gear
+    //****** faviconit.com favicons ******
+    link( rel="shortcut icon", href="/images/logoAssets/favicon.ico")
+    link( rel="icon", sizes="16x16 32x32 64x64", href="/images/logoAssets/favicon.ico")
+    link( rel="icon",type="image/png",sizes="196x196",href="/images/logoAssets/favicon-196.png")
+    link( rel="icon",type="image/png",sizes="160x160",href="/images/logoAssets/favicon-160.png")
+    link( rel="icon",type="image/png",sizes="96x96",href="/images/logoAssets/favicon-96.png")
+    link( rel="icon",type="image/png",sizes="64x64",href="/images/logoAssets/favicon-64.png")
+    link( rel="icon",type="image/png",sizes="32x32",href="/images/logoAssets/favicon-32.png")
+    link( rel="icon",type="image/png",sizes="16x16",href="/images/logoAssets/favicon-16.png")
+    link( rel="apple-touch-icon" sizes="152x152" href="/images/logoAssets/favicon-152.png")
+    link( rel="apple-touch-icon" sizes="144x144" href="/images/logoAssets/favicon-144.png")
+    link( rel="apple-touch-icon" sizes="120x120" href="/images/logoAssets/favicon-120.png")
+    link( rel="apple-touch-icon" sizes="114x114" href="/images/logoAssets/favicon-114.png")
+    link( rel="apple-touch-icon" sizes="76x76" href="/images/logoAssets/favicon-76.png")
+    link( rel="apple-touch-icon" sizes="72x72" href="/images/logoAssets/favicon-72.png")
+    link( rel="apple-touch-icon" href="/images/logoAssets/favicon-57.png")
+    meta( name="msapplication-TileColor",content="#FFFFFF")
+    meta( name="msapplication-TileImage",content="/images/logoAssets/favicon-144.png")
+    meta( name="msapplication-config",content="/images/logoAssets/browserconfig.xml")
+    // ****** faviconit.com favicons ******
+    //
+       Bootstrap core CSS 
+    link(href='landing-assets/css/bootstrap.min.css', rel='stylesheet')
+    //
+       Custom styles for this template 
+    link(href='landing-assets/css/main.css', rel='stylesheet')
+    link(href='stylesheets/base.css', rel='stylesheet')
+    link(href='stylesheets/marketplace.css', rel='stylesheet')
+    link(href='http://fonts.googleapis.com/css?family=Oswald:400,300,700', rel='stylesheet', type='text/css')
+    link(href='http://fonts.googleapis.com/css?family=EB+Garamond', rel='stylesheet', type='text/css')
+    script.
+      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+      })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+      ga('create', 'UA-49584452-1', 'closet-landing-page.herokuapp.com');
+      ga('send', 'pageview');
+
+  body(ng-app='outrovert', ng-controller='base')
+    .col-lg-12.mainarea
+      img.background(src='landing-assets/img/background.jpg')
+      .logo.col-lg-4.col-lg-offset-4.col-sm-8.col-sm-offset-2.col-xs-10.col-xs-offset-1
+        img(src='landing-assets/img/new_logo.png', width='100', alt='logo')
+
+      .col-md-10.col-md-offset-1.col-sm-12.col-xs-12.title
+        h1.title Love nature? Welcome home.  
+        .signup
+          a(href='/home')
+            button.custom-button Sign Up
+        p or &nbsp;
+          a.login(href='/home') log in
+
+      .col-lg-12.col-xs-12.infobar
+        .col-lg-12.col-xs-12
+          h3 Outrovert is a home for outdoor enthusiasts to trade gear and share adventures. Learn more &nbsp;
+            a(href='#about-anchor') here
+          h3 .
+        .tri-holder
+          .triangle
+          p.arrow &darr;
+
+    .fake-market.col-xs-12
+      .col-lg-10.col-lg-offset-1.col-xs-12
+        h2 MARKETPLACE
+        .listgear.pull-right
+          a(href='/home')
+            button.custom-button List my gear
+      .col-lg-10.col-lg-offset-1.col-xs-12
+        .col-sm-4.col-xs-6.gear
+          .photo.col-xs-12.img-rounded(style="background-image: url('/images/testAssets/harness.png')")
+          .star
+          .bottom.col-xs-12
+            .col-xs-3
+              img.profile.img-responsive(src='/images/testAssets/hobbyist01.png')
+            .description.col-xs-6
+              span.name(popover-placement='bottom', popover-title='Description', popover-trigger='mouseenter', popover="I've been using this harness for a few months, and it's still in great condition, but I need one that can handle more extreme environments, which is why I'm selling this one!") Misty Mountain climbing harness
+              br
+              span.quality Very Good
+            .col-xs-3.pull-right.transact
+              span.cost.text-center.pull-right $40
+              br
+              button.buy.custom-button.pull-right Buy
+        .col-sm-4.col-xs-6.gear
+          .photo.col-xs-12.img-rounded(style="background-image: url('/images/testAssets/bike.png')")
+          .star
+          .bottom.col-xs-12
+            .col-xs-3
+              img.profile.img-responsive(src='/images/testAssets/hobbyist02.png')
+            .description.col-xs-6
+              span.name(popover-placement='bottom', popover-title='Description', popover-trigger='mouseenter', popover="This bike has a bunch of miles on it. Very comfortable, lower gears are a little sticky, but still works fantastic!") Trek Cyclone road bike
+              br
+              span.quality Okay
+            .col-xs-3.pull-right.transact
+              span.cost.text-center.pull-right $200
+              br
+              button.buy.custom-button.pull-right Buy
+        .col-sm-4.col-xs-6.gear
+          .photo.col-xs-12.img-rounded(style="background-image: url('/images/testAssets/backpack.png')")
+          .star
+          .bottom.col-xs-12
+            .col-xs-3
+              img.profile.img-responsive(src='/images/testAssets/hobbyist03.png')
+            .description.col-xs-6
+              span.name(popover-placement='bottom', popover-title='Description', popover-trigger='mouseenter', popover="This was a great purchase, built in solar battery, plenty of storage space, and still very light! Moving to Northeast, where it's rainy, so looking to sell!") BrkSun Utility backpack
+              br
+              span.quality Good
+            .col-xs-3.pull-right.transact
+              span.cost.text-center.pull-right $130
+              br
+              button.buy.custom-button.pull-right Buy
+        .col-sm-4.col-xs-6.gear
+          .photo.col-xs-12.img-rounded(style="background-image: url('/images/testAssets/sleepingbag.png')")
+          .star
+          .bottom.col-xs-12
+            .col-xs-3
+              img.profile.img-responsive(src='/images/testAssets/hobbyist04.png')
+            .description.col-xs-6
+              span.name(popover-placement='bottom', popover-title='Description', popover-trigger='mouseenter', popover="Perfect for the outdoors, and only used twice! I got this, and then decided I'd prefer to use a hammock. Hardly used, and good for down to 30 degrees Fahrenheit!") Kelty outdoors sleeping bag
+              br
+              span.quality Like New
+            .col-xs-3.pull-right.transact
+              span.cost.text-center.pull-right $80
+              br
+              button.buy.custom-button.pull-right Buy
+        .col-sm-4.col-xs-6.gear
+          .photo.col-xs-12.img-rounded(style="background-image: url('/images/testAssets/lightTent.png')")
+          .star
+          .bottom.col-xs-12
+            .col-xs-3
+              img.profile.img-responsive(src='/images/testAssets/hobbyist05.png')
+            .description.col-xs-6
+              span.name(popover-placement='bottom', popover-title='Description', popover-trigger='mouseenter', popover="A great tent for beginning campers. Super easy to set up and tear down, and duarable against wind and rian. The best way to enjoy the great outdoors!") Mountain Trails 4-person tent
+              br
+              span.quality Good
+            .col-xs-3.pull-right.transact
+              span.cost.text-center.pull-right $90
+              br
+              button.buy.custom-button.pull-right Buy
+        .col-sm-4.col-xs-6.gear
+          .photo.col-xs-12.img-rounded(style="background-image: url('/images/testAssets/yellowtent.png')")
+          .star
+          .bottom.col-xs-12
+            .col-xs-3
+              img.profile.img-responsive(src='/images/testAssets/hobbyist06.png')
+            .description.col-xs-6
+              span.name(popover-placement='bottom', popover-title='Description', popover-trigger='mouseenter', popover="Great for experienced campers! Can't tell you how many times I've been thankful to have this tent. It's survived all kinds of weather and conditions! A little wear, but no tears!") Slumberjack 2-person trail tent
+              br
+              span.quality Okay
+            .col-xs-3.pull-right.transact
+              span.cost.text-center.pull-right $50
+              br
+              button.buy.custom-button.pull-right Buy
+
+    .about.col-xs-12
+      .col-lg-10.col-lg-offset-1.col-xs-12
+        h2#about-anchor ABOUT US
+      .col-lg-10.col-lg-offset-1.col-xs-12.about-block
+        .col-lg-6.col-sm-12.img
+          img(src="landing-assets/img/aboutactivity.png")
+        .col-lg-6.col-sm-12.text.pull-right
+          h3 ADVENTURE ZONE
+          p Share your stories with outdoor enthusiasts. Get inspired by their adventures and discover your next destination.
+      .col-lg-10.col-lg-offset-1.col-xs-12.about-block
+        .col-lg-6.col-sm-12.text
+          h3 BUY FROM OTHERS
+          p Buy second-hand gear from those who share the same outdoor passion with you. 
+        .col-lg-6.col-sm-12.img.pull-right
+          img(src="landing-assets/img/aboutmrktplce.png")
+      .col-lg-10.col-lg-offset-1.col-xs-12.about-block
+        .col-lg-6.col-sm-12.img
+          img(src="landing-assets/img/aboutreview.png")
+        .col-lg-6.col-sm-12.text.pull-right
+          h3 REVIEW GEAR
+          p Post reviews on outdoor gear you have used. Share your knowledge and experience with others. 
+      .col-lg-10.col-lg-offset-1.col-xs-12.about-block.last
+        .col-lg-6.col-sm-12.text
+          h3 SELL YOUR STORAGE
+          p Sell your used gear to other people who may need it, and earn some extra cash along the way.
+        .col-lg-6.col-sm-12.img.pull-right
+          img(src="landing-assets/img/aboutupload.png")
+
+    .col-lg-12.bottomarea
+      img.background(src='landing-assets/img/bottomarea.png')
+      .col-lg-4.col-sm-12.joinus.pull-right
+        h1 Join us.
+        h1 Let's go wild
+        h1 together.
+      .col-lg-6.col-sm-12
+        form.col-lg-6.col-md-8.col-sm-10.col-xs-12.centered.info-form
+          input.col-sm-10.col-sm-offset-1(type='text', placeholder='First name')
+          input.col-sm-10.col-sm-offset-1(type='text', placeholder='Last name')
+          input.col-sm-10.col-sm-offset-1(type='text', placeholder='Email')
+          input.col-sm-10.col-sm-offset-1(type='password', placeholder='Password')
+          input.col-sm-10.col-sm-offset-1.custom-button(type='submit', value='Sign Up')
+          p.col-lg-12.col-sm-10.col-sm-offset-1 Or log in with &nbsp;
+            a#fbLogin(href='/home', ng-click='fbLogin()', ng-hide='loggedIn') facebook
+
+    //
+       Bootstrap core JavaScript
+          ================================================== 
+    //
+       Placed at the end of the document so the pages load faster 
+    script(src='https://code.jquery.com/jquery-1.10.2.min.js')
+    script(src='https://code.jquery.com/ui/1.10.4/jquery-ui.min.js')
+    script(src='landing-assets/js/bootstrap.min.js')
+    //
+      BACKSTRETCH
+    //
+       You can use an image of whatever size. This script will stretch to fit in any screen size.
+  script(type='text/javascript', src='landing-assets/js/jquery.backstretch.min.js')
   script.
-    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-    m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-    })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
-
-    ga('create', 'UA-49584452-1', 'closet-landing-page.herokuapp.com');
-    ga('send', 'pageview');
-
-body
-  .col-lg-12.mainarea
-    img.background(src='landing-assets/img/background.jpg')
-    .logo.col-lg-4.col-lg-offset-4.col-sm-8.col-sm-offset-2.col-xs-10.col-xs-offset-1
-      img(src='landing-assets/img/new_logo.png', width='100', alt='logo')
-
-    .col-md-10.col-md-offset-1.col-sm-12.col-xs-12.title
-      h1.title Love nature? Welcome home.  
-      .signup
-        a(href='/home')
-          button.custom-button Sign Up
-      p or &nbsp;
-        a.login(href='/home') log in
-
-    .col-lg-12.col-xs-12.infobar
-      .col-lg-12.col-xs-12
-        h3 Outrovert is a home for outdoor enthusiasts to trade gear and share adventures. Learn more &nbsp;
-          a(href='#about-anchor') here
-        h3 .
-      .tri-holder
-        .triangle
-        p.arrow &darr;
-
-  .fake-market.col-xs-12
-    .col-lg-10.col-lg-offset-1.col-xs-12
-      h2 MARKETPLACE
-      .listgear.pull-right
-        a(href='/home')
-          button.custom-button List my gear
-    .col-lg-10.col-lg-offset-1.col-xs-12
-      .col-sm-4.col-xs-6.gear
-        .photo.col-xs-12.img-rounded(style="background-image: url('/images/testAssets/harness.png')")
-        .star
-        .bottom.col-xs-12
-          .col-xs-3
-            img.profile.img-responsive(src='/images/testAssets/hobbyist01.png')
-          .description.col-xs-6
-            span.name(popover-placement='bottom', popover-title='Description', popover-trigger='mouseenter', popover="I've been using this harness for a few months, and it's still in great condition, but I need one that can handle more extreme environments, which is why I'm selling this one!") Misty Mountain climbing harness
-            br
-            span.quality Very Good
-          .col-xs-3.pull-right.transact
-            span.cost.text-center.pull-right $40
-            br
-            button.buy.custom-button.pull-right Buy
-      .col-sm-4.col-xs-6.gear
-        .photo.col-xs-12.img-rounded(style="background-image: url('/images/testAssets/bike.png')")
-        .star
-        .bottom.col-xs-12
-          .col-xs-3
-            img.profile.img-responsive(src='/images/testAssets/hobbyist02.png')
-          .description.col-xs-6
-            span.name(popover-placement='bottom', popover-title='Description', popover-trigger='mouseenter', popover="This bike has a bunch of miles on it. Very comfortable, lower gears are a little sticky, but still works fantastic!") Trek Cyclone road bike
-            br
-            span.quality Okay
-          .col-xs-3.pull-right.transact
-            span.cost.text-center.pull-right $200
-            br
-            button.buy.custom-button.pull-right Buy
-      .col-sm-4.col-xs-6.gear
-        .photo.col-xs-12.img-rounded(style="background-image: url('/images/testAssets/backpack.png')")
-        .star
-        .bottom.col-xs-12
-          .col-xs-3
-            img.profile.img-responsive(src='/images/testAssets/hobbyist03.png')
-          .description.col-xs-6
-            span.name(popover-placement='bottom', popover-title='Description', popover-trigger='mouseenter', popover="This was a great purchase, built in solar battery, plenty of storage space, and still very light! Moving to Northeast, where it's rainy, so looking to sell!") BrkSun Utility backpack
-            br
-            span.quality Good
-          .col-xs-3.pull-right.transact
-            span.cost.text-center.pull-right $130
-            br
-            button.buy.custom-button.pull-right Buy
-      .col-sm-4.col-xs-6.gear
-        .photo.col-xs-12.img-rounded(style="background-image: url('/images/testAssets/sleepingbag.png')")
-        .star
-        .bottom.col-xs-12
-          .col-xs-3
-            img.profile.img-responsive(src='/images/testAssets/hobbyist04.png')
-          .description.col-xs-6
-            span.name(popover-placement='bottom', popover-title='Description', popover-trigger='mouseenter', popover="Perfect for the outdoors, and only used twice! I got this, and then decided I'd prefer to use a hammock. Hardly used, and good for down to 30 degrees Fahrenheit!") Kelty outdoors sleeping bag
-            br
-            span.quality Like New
-          .col-xs-3.pull-right.transact
-            span.cost.text-center.pull-right $80
-            br
-            button.buy.custom-button.pull-right Buy
-      .col-sm-4.col-xs-6.gear
-        .photo.col-xs-12.img-rounded(style="background-image: url('/images/testAssets/lightTent.png')")
-        .star
-        .bottom.col-xs-12
-          .col-xs-3
-            img.profile.img-responsive(src='/images/testAssets/hobbyist05.png')
-          .description.col-xs-6
-            span.name(popover-placement='bottom', popover-title='Description', popover-trigger='mouseenter', popover="A great tent for beginning campers. Super easy to set up and tear down, and duarable against wind and rian. The best way to enjoy the great outdoors!") Mountain Trails 4-person tent
-            br
-            span.quality Good
-          .col-xs-3.pull-right.transact
-            span.cost.text-center.pull-right $90
-            br
-            button.buy.custom-button.pull-right Buy
-      .col-sm-4.col-xs-6.gear
-        .photo.col-xs-12.img-rounded(style="background-image: url('/images/testAssets/yellowtent.png')")
-        .star
-        .bottom.col-xs-12
-          .col-xs-3
-            img.profile.img-responsive(src='/images/testAssets/hobbyist06.png')
-          .description.col-xs-6
-            span.name(popover-placement='bottom', popover-title='Description', popover-trigger='mouseenter', popover="Great for experienced campers! Can't tell you how many times I've been thankful to have this tent. It's survived all kinds of weather and conditions! A little wear, but no tears!") Slumberjack 2-person trail tent
-            br
-            span.quality Okay
-          .col-xs-3.pull-right.transact
-            span.cost.text-center.pull-right $50
-            br
-            button.buy.custom-button.pull-right Buy
-
-  .about.col-xs-12
-    .col-lg-10.col-lg-offset-1.col-xs-12
-      h2#about-anchor ABOUT US
-    .col-lg-10.col-lg-offset-1.col-xs-12.about-block
-      .col-lg-6.col-sm-12.img
-        img(src="landing-assets/img/aboutactivity.png")
-      .col-lg-6.col-sm-12.text.pull-right
-        h3 ADVENTURE ZONE
-        p Share your stories with outdoor enthusiasts. Get inspired by their adventures and discover your next destination.
-    .col-lg-10.col-lg-offset-1.col-xs-12.about-block
-      .col-lg-6.col-sm-12.text
-        h3 BUY FROM OTHERS
-        p Buy second-hand gear from those who share the same outdoor passion with you. 
-      .col-lg-6.col-sm-12.img.pull-right
-        img(src="landing-assets/img/aboutmrktplce.png")
-    .col-lg-10.col-lg-offset-1.col-xs-12.about-block
-      .col-lg-6.col-sm-12.img
-        img(src="landing-assets/img/aboutreview.png")
-      .col-lg-6.col-sm-12.text.pull-right
-        h3 REVIEW GEAR
-        p Post reviews on outdoor gear you have used. Share your knowledge and experience with others. 
-    .col-lg-10.col-lg-offset-1.col-xs-12.about-block.last
-      .col-lg-6.col-sm-12.text
-        h3 SELL YOUR STORAGE
-        p Sell your used gear to other people who may need it, and earn some extra cash along the way.
-      .col-lg-6.col-sm-12.img.pull-right
-        img(src="landing-assets/img/aboutupload.png")
-
-  .col-lg-12.bottomarea
-    img.background(src='landing-assets/img/bottomarea.png')
-    .col-lg-4.col-sm-12.joinus.pull-right
-      h1 Join us.
-      h1 Let's go wild
-      h1 together.
-    .col-lg-6.col-sm-12
-      form.col-lg-6.col-md-8.col-sm-10.col-xs-12.centered.info-form
-        input.col-sm-10.col-sm-offset-1(type='text', placeholder='First name')
-        input.col-sm-10.col-sm-offset-1(type='text', placeholder='Last name')
-        input.col-sm-10.col-sm-offset-1(type='text', placeholder='Email')
-        input.col-sm-10.col-sm-offset-1(type='password', placeholder='Password')
-        input.col-sm-10.col-sm-offset-1.custom-button(type='submit', value='Sign Up')
-        p.col-lg-12.col-sm-10.col-sm-offset-1 Or log in with &nbsp;
-          a#fbLogin(href='/home', ng-click='fbLogin()', ng-hide='loggedIn') facebook
-    
-  //
-     Bootstrap core JavaScript
-        ================================================== 
-  //
-     Placed at the end of the document so the pages load faster 
-  script(src='https://code.jquery.com/jquery-1.10.2.min.js')
-  script(src='https://code.jquery.com/ui/1.10.4/jquery-ui.min.js')
-  script(src='landing-assets/js/bootstrap.min.js')
-  //
-    BACKSTRETCH
-  //
-     You can use an image of whatever size. This script will stretch to fit in any screen size.
-script(type='text/javascript', src='landing-assets/js/jquery.backstretch.min.js')
-script.
-    $.backstretch("landing-assets/img/new_bg.jpg", {speed: 500});
-script.
-    $('.custom-button.buy').click(function() {
-      window.location = '/home';
-    });
+      $.backstretch("landing-assets/img/new_bg.jpg", {speed: 500});
+  script.
+      $('.custom-button.buy').click(function() {
+        window.location = '/home';
+      });

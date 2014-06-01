@@ -1,4 +1,4 @@
-.logo img {
+.head .logo img {
   height: 60px;
 	border-bottom: 1px solid #FFF;
 }
@@ -10,7 +10,7 @@ body {
 	border: none;
 }
 
-.head, .logo {
+.head, .head .logo {
 	padding: 0;
 	margin-bottom: 0;
 	background: #000;

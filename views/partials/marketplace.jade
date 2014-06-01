@@ -1,10 +1,10 @@
 .col-lg-10.col-lg-offset-1.col-sm-12(ng-hide='hasNUEmail()')
   form
-    label.col-xs-12 Add a Northwestern email Address to access the NU marketplace
+    label.col-xs-12 Add a Northwestern email Address to access the private NU marketplace
     input.col-xs-12(type='email', ng-model='northwesternEmail', placeholder='willie_wildcat@northwestern.edu')
     button(ng-click='addNorthwesternEmail(northwesternEmail)').col-xs-12.custom-button Add Email
     
-.col-lg-10.col-lg-offset-1.col-sm-12.market(ng-if='hasNUEmail()')
+.col-lg-10.col-lg-offset-1.col-sm-12.market
   form
     .form-group.col-xs-12.search
       label.col-xs-1 Search
