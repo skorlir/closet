@@ -23,7 +23,6 @@ html(ng-app='outrovert')
             h4.profile.pull-right {{user.displayName}}
 
     .login.col-xs-12(ng-hide='loggedIn')
-      img.loginback(src='images/loginback.png')
       img.img-responsive.col-lg-4.col-lg-offset-4.col-sm-8.col-sm-offset-2(src='/landing-assets/img/new_logo.png')
       form.col-lg-4.col-lg-offset-4.col-sm-8.col-sm-offset-2.login-form
         input.col-sm-10.col-sm-offset-1(type='text', placeholder='Email', ng-model='loginForm.email')

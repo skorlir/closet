@@ -185,14 +185,12 @@ textarea:focus {
 /* line 168, ../../SASS/whatsnew.scss */
 .login {
   padding: 0;
+  height: 100%;
+  background: url("../images/loginback.png");
+  background-size: cover;
+  background-position: 50% 50%;
 }
 /* line 171, ../../SASS/whatsnew.scss */
 .login .img-responsive {
   margin-top: 30px;
-}
-/* line 175, ../../SASS/whatsnew.scss */
-.login img.loginback {
-  position: absolute;
-  z-index: -1;
-  width: 100%;
 }
