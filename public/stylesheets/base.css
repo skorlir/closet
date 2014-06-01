@@ -86,3 +86,9 @@ body form label {
   max-width: 40px;
   max-height: 40px;
 }
+
+/* line 89, ../../SASS/base.scss */
+.img > img {
+  width: 100%;
+  padding-left: 0;
+}
