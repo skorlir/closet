@@ -243,54 +243,8 @@ a:after {
     outline-color: #8CCF4B;
 }
 
-<<<<<<< HEAD
 .text {
     text-align: left;
-=======
-h1 {
-	font-size: 600%;
-}
-
-.w {
-	margin-top: 3.5%;
-    margin-bottom: 2%;
-}
-.w i {
-	font-size: 180%;
-	padding: 2%;
-}
-.tooltip {
-    font-size: 160%;
-}
-
-i.fa-facebook {
-    color: #3B5998;
-}
-
-i.fa-twitter {
-    color: #00aced;
-}
-
-i.fa-facebook:hover,
-i.fa-facebook:focus,
-i.fa-twitter:hover,
-i.fa-twitter:focus {
-    color: #7b7b7b;
-}
-
-.scroll-down {
-    padding: 0 19%;
-}
-
-.arrow {
-    float: center;
-}
-
-.fa-arrow-down {
-    color: #8CCF4B;
-    display: inline-block;
-    margin: 20px;
->>>>>>> 809506e4559767848c1902ad72c755518636cdde
 }
 
 .about .img {
@@ -300,21 +254,11 @@ i.fa-twitter:focus {
 .about img {
     width: 85%;
 }
-
-<<<<<<< HEAD
 .about .about-block {
     padding-top: 15px;
     padding-bottom: 30px;
     border-bottom: 1px solid #DDD;
-=======
-.container.aboutpage {
-    width: 100%;
-    height: auto;
-    background: #333;
-    color: #FFF;
-    border-top: 3px #8CCF4B double;
->>>>>>> 809506e4559767848c1902ad72c755518636cdde
-}
+
 
 .about .about-block h3 {
     margin: 80px 30px 0 30px;
