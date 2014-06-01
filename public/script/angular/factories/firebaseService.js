@@ -31,15 +31,26 @@ app.factory('firebaseService', ['$firebase', function($firebase) {
     this.updateUserData = function(user) {
       var userRef = firebase.$child('/users/'+user.uid);
       
-      var providerData   = user.thirdPartyUserData;
-      var profilePicture = 'http://graph.facebook.com/%/picture'.split('%').join(user.id);
+      var provider = user.provider;
+      var providerData   = user.thirdPartyUserData || user;
+      var profilePicture;
+      
+      if(provider == 'facebook') {
+      
+        user.location        = providerData.location ? providerData.location.name : null;
+        user.hometown        = providerData.hometown ? providerData.hometown.name : null;
+        user.email           = providerData.email;
+        user.profilePictureM = 'http://graph.facebook.com/%/picture'.split('%').join(user.id);
+        user.profilePicture  = user.profilePictureM + '?type=small';
+        
+      } 
       
       userRef.$update({'displayName': user.displayName});
-      userRef.$update({'location': (providerData.location ? providerData.location.name : null)});
-      userRef.$update({'hometown': (providerData.hometown ? providerData.hometown.name : null)});
-      //userRef.$update({'email': providerData.email});
-      userRef.$update({'profilePictureM': profilePicture});
-      userRef.$update({'profilePicture': profilePicture + '?type=small'});
+      userRef.$update({'location': user.location});
+      userRef.$update({'hometown': user.hometown});
+      userRef.$update({'email': user.email});
+      userRef.$update({'profilePictureM': user.profilePictureM ? user.profilePictureM : user.profilePicture});
+      userRef.$update({'profilePicture': user.profilePicture});
       userRef.$update({'id': user.id});
       userRef.$update({'uid': user.uid});
     }

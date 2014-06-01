@@ -1,10 +1,24 @@
-app.controller('base', ['$scope', 'sessionService', '$window', '$modal', '$http', '$filter', 'firebaseService', 'restrictionService', '$position', function($scope, session, $window, $modal, $http, $filter, db, restrictionService) {
+app.controller('base', ['$scope', 'sessionService', '$window', '$modal', '$http', '$filter', 'firebaseService', 'restrictionService', '$position', '$rootScope', function($scope, session, $window, $modal, $http, $filter, db, restrictionService, $rootScope) {
 
   $scope.fbLogin = session.fbLogin(function(user) {
     console.log('logged in as', user.uid, user.displayName);
+    afterLogin(user);
+  });
+  
+  $scope.loginForm = {};
+  
+  $scope.emailLogin = session.emailLogin(function(user) {
+    console.log('logged in as', user.uid, user.email);
+    afterLogin(user);
   });
 
   $scope.logout = session.logout();
+  
+  session.getUser(function(user) {
+    
+    if(!!user) afterLogin(user);
+    
+  });
 
   //don't log out on leave, but do disconnect
   angular.element($window).bind('unload', function() {
@@ -27,21 +41,22 @@ app.controller('base', ['$scope', 'sessionService', '$window', '$modal', '$http'
       $http.post('/nonfeature', {data: thing});
     });
   }
-  
-  session.getUser(function(user) {
+    
+  function afterLogin(user) {
+    
     $scope.hasNUEmail = function() {
-        var email = [];
-        if(user.restrictions) email = user.restrictions.email;
-        else email = [user.email];
-        email = $filter('orderByPriority')(email);
-        return !!email.filter(function(em) { return em.indexOf('northwestern.edu') > -1; }).length;
+      var email = [];
+      if(user.restrictions) email = user.restrictions.email;
+      else email = [user.email];
+      email = $filter('orderByPriority')(email);
+      return !!email.filter(function(em) { return em.indexOf('northwestern.edu') > -1; }).length;
     }
-  });
-  
-  $scope.addNorthwesternEmail = function(email) {
-    session.getUser(function(user) {
+
+    $scope.addNorthwesternEmail = function(email) {
       db.addRestrictionProp('email', email, user.uid);
       restrictionService.setUser(user);
-    });
+    }
+    
   }
+
 }]);

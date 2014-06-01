@@ -20,6 +20,13 @@ html(ng-app='outrovert')
       a(href='/')
         img.img-responsive.col-xs-12(src='/landing-assets/img/new_logo.png', style='margin: 50px 0')
       button#fbLogin.custom-button.col-xs-6.col-xs-offset-3(ng-click='fbLogin()', ng-hide='loggedIn') Login with Facebook
+      hr.col-xs-6.col-xs-offset-3(style='border-color: #fff; padding: 0')
+      form.col-xs-6.col-xs-offset-3
+        .form-group.col-xs-12
+          input.form-control(ng-model='loginForm.email', type='text', placeholder='email')
+        .form-group.col-xs-12
+          input.form-control(ng-model='loginForm.password', type='password', placeholder='password')
+        button.custom-button.col-xs-12(ng-click='emailLogin(loginForm.email, loginForm.password)') Login with email
       img.col-xs-6.col-xs-offset-3(src='/images/icons.png')
 
     p.browsehappy.text-center.col-xs-12(ng-if='document.documentMode < 11')  

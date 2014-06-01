@@ -6,23 +6,7 @@ app.controller('marketplace', ['$scope', 'sessionService', '$window', '$http', '
   $scope.marketplace = [];
   $scope.filterForm  = {};
   $scope.itemForm = {};
-
-  session.getUser(function(user) {
-    $scope.hasNUEmail = function() {
-        var email = [];
-        if(user.restrictions) email = user.restrictions.email;
-        else email = [user.email];
-        email = $filter('orderByPriority')(email);
-        return !!email.filter(function(em) { return em.indexOf('northwestern.edu') > -1; }).length;
-    }
-  });
-  
-  $scope.addNorthwesternEmail = function(email) {
-    session.getUser(function(user) {
-      db.addRestrictionProp('email', email, user.uid);
-      restrictionService.setUser(user);
-    });
-  }
+  $scope.showBuy = $scope.showRent = true;
   
   $scope.marketdb.$on('child_added', function(itemSnap) {
     console.log(itemSnap);
@@ -48,6 +32,8 @@ app.controller('marketplace', ['$scope', 'sessionService', '$window', '$http', '
   });
     
   $scope.showHide = function(item) {
+    console.log($scope.showRent);
+    console.log($scope.showBuy);
     if(item.restrictions) {
       for (var r in item.restrictions) 
         if(!restrictionService.check(item.restrictions[r][0], item.restrictions[r][1])) 
