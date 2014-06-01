@@ -192,10 +192,10 @@ body
       h1 together.
     .col-lg-6.col-sm-12
       form.col-lg-6.col-md-8.col-sm-10.col-xs-12.centered.info-form
-        input.col-sm-10.col-sm-offset-1(type='text', , placeholder='First name')
-        input.col-sm-10.col-sm-offset-1(type='text', , placeholder='Last name')
-        input.col-sm-10.col-sm-offset-1(type='text', , placeholder='Email')
-        input.col-sm-10.col-sm-offset-1(type='text', , placeholder='Password')
+        input.col-sm-10.col-sm-offset-1(type='text', placeholder='First name')
+        input.col-sm-10.col-sm-offset-1(type='text', placeholder='Last name')
+        input.col-sm-10.col-sm-offset-1(type='text', placeholder='Email')
+        input.col-sm-10.col-sm-offset-1(type='password', placeholder='Password')
         input.col-sm-10.col-sm-offset-1.custom-button(type='submit', value='Sign Up')
         p.col-lg-12.col-sm-10.col-sm-offset-1 Or log in with &nbsp;
           a#fbLogin(href='/home', ng-click='fbLogin()', ng-hide='loggedIn') facebook
@@ -215,3 +215,7 @@ body
 script(type='text/javascript', src='landing-assets/js/jquery.backstretch.min.js')
 script.
     $.backstretch("landing-assets/img/new_bg.jpg", {speed: 500});
+script.
+    $('.custom-button.buy').click(function() {
+      window.location = '/home';
+    });

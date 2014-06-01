@@ -102,47 +102,53 @@ textarea:focus {
 }
 
 /* line 98, ../../SASS/whatsnew.scss */
+.nav-tabs {
+  padding-left: 15px;
+  border-bottom: none;
+}
+
+/* line 103, ../../SASS/whatsnew.scss */
 .nav-tabs > li a {
   color: #444;
   cursor: pointer;
 }
-/* line 101, ../../SASS/whatsnew.scss */
+/* line 106, ../../SASS/whatsnew.scss */
 .nav-tabs > li a:hover {
   color: #000;
 }
 
-/* line 107, ../../SASS/whatsnew.scss */
+/* line 112, ../../SASS/whatsnew.scss */
 .nav {
   background: none;
 }
 
-/* line 111, ../../SASS/whatsnew.scss */
+/* line 116, ../../SASS/whatsnew.scss */
 .nav li {
   left: 15px;
   cursor: pointer;
 }
-/* line 115, ../../SASS/whatsnew.scss */
+/* line 120, ../../SASS/whatsnew.scss */
 .nav li a {
   color: #888;
 }
 
-/* line 120, ../../SASS/whatsnew.scss */
+/* line 125, ../../SASS/whatsnew.scss */
 .post {
   margin-top: 5px;
   font-size: 1.4em !important;
 }
 
-/* line 125, ../../SASS/whatsnew.scss */
+/* line 130, ../../SASS/whatsnew.scss */
 .message-content {
   border: none;
 }
 
-/* line 129, ../../SASS/whatsnew.scss */
+/* line 134, ../../SASS/whatsnew.scss */
 .message {
   margin-top: 2%;
 }
 
-/* line 133, ../../SASS/whatsnew.scss */
+/* line 138, ../../SASS/whatsnew.scss */
 .login-form {
   background: rgba(0, 0, 0, 0.4);
   margin-top: 30px;
@@ -151,7 +157,7 @@ textarea:focus {
   padding-top: 40px;
 }
 
-/* line 141, ../../SASS/whatsnew.scss */
+/* line 146, ../../SASS/whatsnew.scss */
 .login-form input {
   font-family: Arial, Helvetica, sans-serif;
   margin: 3px 0;
@@ -161,30 +167,30 @@ textarea:focus {
   border: 1px solid #DDD;
 }
 
-/* line 150, ../../SASS/whatsnew.scss */
+/* line 155, ../../SASS/whatsnew.scss */
 .login-form .custom-button {
   display: inline-block;
   box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.3);
-  margin: 12px 0;
+  margin-top: 12px;
   border: none;
 }
 
-/* line 157, ../../SASS/whatsnew.scss */
+/* line 162, ../../SASS/whatsnew.scss */
 .login-form p {
   font-size: 1.3em;
   margin: 20px 0;
   color: #FFF;
 }
 
-/* line 163, ../../SASS/whatsnew.scss */
+/* line 168, ../../SASS/whatsnew.scss */
 .login {
   padding: 0;
 }
-/* line 166, ../../SASS/whatsnew.scss */
+/* line 171, ../../SASS/whatsnew.scss */
 .login .img-responsive {
   margin-top: 30px;
 }
-/* line 170, ../../SASS/whatsnew.scss */
+/* line 175, ../../SASS/whatsnew.scss */
 .login img.loginback {
   position: absolute;
   z-index: -1;

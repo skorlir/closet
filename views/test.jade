@@ -39,9 +39,9 @@ html(ng-app='outrovert')
       img.loginback(src='images/loginback.png')
       img.img-responsive.col-lg-4.col-lg-offset-4.col-sm-8.col-sm-offset-2(src='/landing-assets/img/new_logo.png')
       form.col-lg-4.col-lg-offset-4.col-sm-8.col-sm-offset-2.login-form
-        input.col-sm-10.col-sm-offset-1(type='text', placeholder='Email')
-        input.col-sm-10.col-sm-offset-1(type='text', placeholder='Password')
-        input.col-sm-10.col-sm-offset-1.custom-button(type='submit', value='Log In')
+        input.col-sm-10.col-sm-offset-1(type='text', placeholder='Email', ng-model='loginForm.email')
+        input.col-sm-10.col-sm-offset-1(type='password', placeholder='Password', ng-model='loginForm.password')
+        button.col-sm-10.col-sm-offset-1.custom-button(ng-click='emailLogin(loginForm.email, loginForm.password)') Log in
         p.col-sm-10.col-sm-offset-1 Or log in with &nbsp;
           a#fbLogin(href='/home', ng-click='fbLogin()', ng-hide='loggedIn') facebook
 
