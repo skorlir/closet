@@ -15,7 +15,7 @@
       button.local-button.col-xs-4(ng-click='toggleBtns("rent")', ng-class='{"inactive": !showRent}') Rent
     .form-group.col-lg-4.col-xs-12
       label My location
-      p Evanston, IL (Northwestern)
+      p {{user.location}}
     .col-lg-2.col-xs-2.pull-right
       a(href='#/mygear').custom-button.col-xs-12.text-center.add Add item
   
