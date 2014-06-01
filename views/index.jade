@@ -186,17 +186,17 @@ html(lang='en')
           img(src="landing-assets/img/aboutupload.png")
 
     .col-xs-12.bottomarea(style="background: url('landing-assets/img/bottomarea.png'); background-size: cover;")
-      .col-lg-4.col-sm-4.joinus.pull-right
+      .col-lg-4.col-sm-4.col-xs-12.joinus.pull-right
         h1 Join us.
-        h1 Let's go wild
-        h1 together.
-      .col-lg-6.col-sm-8
+          | Let's go wild
+          | together.
+      .col-lg-6.col-sm-8.col-xs-12
         form.col-lg-6.col-md-8.col-sm-10.col-xs-12.centered.info-form
-          input.col-sm-10.col-sm-offset-1(type='text', placeholder='First name')
-          input.col-sm-10.col-sm-offset-1(type='text', placeholder='Last name')
-          input.col-sm-10.col-sm-offset-1(type='text', placeholder='Last name')
-          input.col-sm-10.col-sm-offset-1(type='text', placeholder='Location')
-          input.col-sm-10.col-sm-offset-1(type='password', placeholder='Password')
+          input.col-sm-10.col-sm-offset-1.col-xs-12(type='text', placeholder='First name')
+          input.col-sm-10.col-sm-offset-1.col-xs-12(type='text', placeholder='Last name')
+          input.col-sm-10.col-sm-offset-1.col-xs-12(type='text', placeholder='Last name')
+          input.col-sm-10.col-sm-offset-1.col-xs-12(type='text', placeholder='Location')
+          input.col-sm-10.col-sm-offset-1.col-xs-12(type='password', placeholder='Password')
           input.col-sm-10.col-sm-offset-1.custom-button(type='submit', value='Sign Up')
           p.col-lg-12.col-sm-10.col-sm-offset-1 Or log in with &nbsp;
             a#fbLogin(href='/home', ng-click='fbLogin()', ng-hide='loggedIn') facebook
@@ -214,3 +214,4 @@ html(lang='en')
       $('.custom-button.buy').click(function() {
         window.location = '/home';
       });
+      $('.gear').css({'min-width' : '260px'}).addClass('centered');
