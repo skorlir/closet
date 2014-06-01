@@ -1,9 +1,9 @@
-/* line 1, ../../sass/whatsnew.scss */
+/* line 1, ../../SASS/whatsnew.scss */
 .logo img {
   width: 100%;
 }
 
-/* line 9, ../../sass/whatsnew.scss */
+/* line 9, ../../SASS/whatsnew.scss */
 body {
   padding: 0;
   margin-bottom: 0;
@@ -11,59 +11,59 @@ body {
   border: none;
 }
 
-/* line 16, ../../sass/whatsnew.scss */
+/* line 16, ../../SASS/whatsnew.scss */
 .head, .logo {
   padding: 0;
   margin-bottom: 0;
   background: #000;
 }
 
-/* line 22, ../../sass/whatsnew.scss */
+/* line 22, ../../SASS/whatsnew.scss */
 .logo {
   border: none;
 }
 
-/* line 26, ../../sass/whatsnew.scss */
+/* line 26, ../../SASS/whatsnew.scss */
 .head {
   border-bottom: 1px solid #FFF;
 }
 
-/* line 32, ../../sass/whatsnew.scss */
+/* line 32, ../../SASS/whatsnew.scss */
 .head span.navpoint {
   background: #000;
   padding: 1.5% 2% 0 2%;
   display: inline-block;
 }
-/* line 37, ../../sass/whatsnew.scss */
+/* line 37, ../../SASS/whatsnew.scss */
 .head span.navpoint a {
   text-decoration: none;
   color: #FFF;
   text-transform: uppercase;
   font-size: 1.2em;
 }
-/* line 44, ../../sass/whatsnew.scss */
+/* line 44, ../../SASS/whatsnew.scss */
 .head span.navpoint a:hover {
   font-weight: bolder;
 }
 
-/* line 50, ../../sass/whatsnew.scss */
+/* line 50, ../../SASS/whatsnew.scss */
 .zone, .market {
   padding-top: 50px;
 }
 
-/* line 54, ../../sass/whatsnew.scss */
+/* line 54, ../../SASS/whatsnew.scss */
 .userinfo {
   float: right;
 }
 
-/* line 58, ../../sass/whatsnew.scss */
+/* line 58, ../../SASS/whatsnew.scss */
 #loginButtons button {
   padding: 3px 15px;
   margin: 15px 0;
   font-size: 1.2em !important;
 }
 
-/* line 66, ../../sass/whatsnew.scss */
+/* line 66, ../../SASS/whatsnew.scss */
 #loggedInData img.profile {
   padding: 3%;
   position: absolute;
@@ -71,7 +71,7 @@ body {
   width: 60px;
   height: 60px;
 }
-/* line 74, ../../sass/whatsnew.scss */
+/* line 74, ../../SASS/whatsnew.scss */
 #loggedInData h4.profile {
   font-size: 12pt;
   position: absolute;
@@ -81,19 +81,19 @@ body {
   text-transform: uppercase;
 }
 
-/* line 84, ../../sass/whatsnew.scss */
+/* line 84, ../../SASS/whatsnew.scss */
 textarea:focus {
   outline-style: auto;
   outline-width: 3px;
   outline-color: #8CCF4B;
 }
 
-/* line 90, ../../sass/whatsnew.scss */
+/* line 90, ../../SASS/whatsnew.scss */
 .photoupload {
   font-size: 1.2em !important;
 }
 
-/* line 94, ../../sass/whatsnew.scss */
+/* line 94, ../../SASS/whatsnew.scss */
 .mainfeed {
   position: absolute;
   left: 20%;
@@ -101,55 +101,55 @@ textarea:focus {
   padding-bottom: 200px;
 }
 
-/* line 101, ../../sass/whatsnew.scss */
+/* line 101, ../../SASS/whatsnew.scss */
 .tab-content form, .message {
   padding: 2%;
   border-radius: 5px;
   background: #FFF;
 }
 
-/* line 107, ../../sass/whatsnew.scss */
+/* line 107, ../../SASS/whatsnew.scss */
 .nav-tabs > li a {
   color: #444;
   cursor: pointer;
 }
-/* line 110, ../../sass/whatsnew.scss */
+/* line 110, ../../SASS/whatsnew.scss */
 .nav-tabs > li a:hover {
   color: #000;
 }
 
-/* line 116, ../../sass/whatsnew.scss */
+/* line 116, ../../SASS/whatsnew.scss */
 .nav {
   background: none;
 }
 
-/* line 120, ../../sass/whatsnew.scss */
+/* line 120, ../../SASS/whatsnew.scss */
 .nav li {
   left: 15px;
   cursor: pointer;
 }
-/* line 124, ../../sass/whatsnew.scss */
+/* line 124, ../../SASS/whatsnew.scss */
 .nav li a {
   color: #888;
 }
 
-/* line 129, ../../sass/whatsnew.scss */
+/* line 129, ../../SASS/whatsnew.scss */
 .post {
   margin-top: 5px;
   font-size: 1.4em !important;
 }
 
-/* line 134, ../../sass/whatsnew.scss */
+/* line 134, ../../SASS/whatsnew.scss */
 .message-content {
   border: none;
 }
 
-/* line 138, ../../sass/whatsnew.scss */
+/* line 138, ../../SASS/whatsnew.scss */
 .message {
   margin-top: 2%;
 }
 
-/* line 142, ../../sass/whatsnew.scss */
+/* line 142, ../../SASS/whatsnew.scss */
 .login-form {
   background: rgba(0, 0, 0, 0.4);
   margin-top: 30px;
@@ -158,7 +158,7 @@ textarea:focus {
   padding-top: 40px;
 }
 
-/* line 150, ../../sass/whatsnew.scss */
+/* line 150, ../../SASS/whatsnew.scss */
 .login-form input {
   font-family: Arial, Helvetica, sans-serif;
   margin: 3px 0;
@@ -168,7 +168,7 @@ textarea:focus {
   border: 1px solid #DDD;
 }
 
-/* line 159, ../../sass/whatsnew.scss */
+/* line 159, ../../SASS/whatsnew.scss */
 .login-form .custom-button {
   display: inline-block;
   box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.3);
@@ -176,22 +176,22 @@ textarea:focus {
   border: none;
 }
 
-/* line 166, ../../sass/whatsnew.scss */
+/* line 166, ../../SASS/whatsnew.scss */
 .login-form p {
   font-size: 1.3em;
   margin: 20px 0;
   color: #FFF;
 }
 
-/* line 172, ../../sass/whatsnew.scss */
+/* line 172, ../../SASS/whatsnew.scss */
 .login {
   padding: 0;
 }
-/* line 175, ../../sass/whatsnew.scss */
+/* line 175, ../../SASS/whatsnew.scss */
 .login .img-responsive {
   margin-top: 30px;
 }
-/* line 179, ../../sass/whatsnew.scss */
+/* line 179, ../../SASS/whatsnew.scss */
 .login img.loginback {
   position: absolute;
   z-index: -1;
