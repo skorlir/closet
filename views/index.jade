@@ -185,12 +185,12 @@ html(lang='en')
         .col-lg-6.col-sm-12.img.pull-right
           img(src="landing-assets/img/aboutupload.png")
 
-    .col-lg-12.bottomarea(style="background: url('landing-assets/img/bottomarea.png'); background-size: cover;")
-      .col-lg-4.col-sm-12.joinus.pull-right
+    .col-xs-12.bottomarea(style="background: url('landing-assets/img/bottomarea.png'); background-size: cover;")
+      .col-lg-4.col-sm-4.joinus.pull-right
         h1 Join us.
         h1 Let's go wild
         h1 together.
-      .col-lg-6.col-sm-12
+      .col-lg-6.col-sm-8
         form.col-lg-6.col-md-8.col-sm-10.col-xs-12.centered.info-form
           input.col-sm-10.col-sm-offset-1(type='text', placeholder='First name')
           input.col-sm-10.col-sm-offset-1(type='text', placeholder='Last name')
@@ -209,13 +209,7 @@ html(lang='en')
     script(src='https://code.jquery.com/jquery-1.10.2.min.js')
     script(src='https://code.jquery.com/ui/1.10.4/jquery-ui.min.js')
     script(src='landing-assets/js/bootstrap.min.js')
-    //
-      BACKSTRETCH
-    //
-       You can use an image of whatever size. This script will stretch to fit in any screen size.
-  script(type='text/javascript', src='landing-assets/js/jquery.backstretch.min.js')
-  script.
-      $.backstretch("landing-assets/img/new_bg.jpg", {speed: 500});
+
   script.
       $('.custom-button.buy').click(function() {
         window.location = '/home';
