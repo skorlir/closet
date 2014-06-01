@@ -28,6 +28,11 @@ app.controller('activityFeed', ['$scope', 'sessionService', '$window', '$http', 
     });
   });
   
+  $scope.activity.$on('child_removed', function(rmSnap) {
+    console.log(rmSnap);
+    $scope.feed.splice($scope.feed.indexOf($scope.feed.filter(function(el) {  return el[0] === rmSnap.snapshot.name; })[0]), 1);
+  });
+  
   $scope.uploadFile = function(el) {
     $scope.imgToUpload = el.files[0];
     session.getUser(function(user) {
@@ -74,7 +79,6 @@ app.controller('activityFeed', ['$scope', 'sessionService', '$window', '$http', 
     console.log(postid);
     $scope.activity.$remove(postid).then(function(res) {
       console.log(res, 'removed');
-      $scope.feed.splice($scope.feed.indexOf($scope.feed.filter(function(el) {  return el[0] === postid; })[0]), 1);
     });
   }
 
