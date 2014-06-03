@@ -19,13 +19,19 @@ app.factory('firebaseService', ['$firebase', function($firebase) {
     this.getActivityRef = function() { return firebase.$child('/activity'); }
     this.getMarketplaceRef = function() { return firebase.$child('/marketplace'); }
     
-    this.getUserData = function(uid) {      
+    this.getUserData = function(uid, nocache) {      
       var userRef = firebase.$child('/users/'+uid);
       
-      for (var prop in userRef)
-        if (prop[0] !== '$') this.userDataCache[prop] = userRef[prop];
+      var cleanedData = {};
       
-      return this.userDataCache;
+      for (var prop in userRef)
+        if (prop[0] !== '$') cleanedData[prop] = userRef[prop]; 
+      
+      if(nocache) return cleanedData;
+      else {
+        this.userDataCache = cleanedData;
+        return this.userDataCache;
+      }
     }
     
     this.updateUserData = function(user) {

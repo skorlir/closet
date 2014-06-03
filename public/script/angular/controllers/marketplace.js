@@ -56,29 +56,21 @@ app.controller('marketplace', ['$scope', 'sessionService', '$window', '$http', '
     };
   };
   
+  $scope.stripeCheckout = StripeCheckout.configure({
+    key: 'pk_test_7uHnkwHduxs0TfbzUy4LSZD4',
+    image: '/images/logoAssets/favicon-160.png',
+    token: function(token, args) {
+      // Use the token to create the charge with a server-side script.
+      // You can access the token ID with `token.id`
+    }
+  });
+  
   $scope.openTransaction = function(r) {
-    var modal = $modal.open({
-      templateUrl: 'modal.html',
-      controller:  modalController
-    });
-    
-    modal.result.then(function(result) {
-      //confirmation == whatever is passed in. So nothing?
-      //send an email with node-mailer
-      session.getUser(function(user) {
-        $http.post('/transaction', {user: user, r: r})
-        .success(function(res) {
-          console.log("the transaction was committed.");
-          //should do something to prevent double transactions?!
-        })
-        .error(function(error) {
-          console.log(error);
-        });
-      });
-      
-    }, function(cancellation) {
-      //nothing needs done here...
-      console.log("cancel!");
+    console.log(r);
+    $scope.stripeCheckout.open({
+      name: 'Outrovert',
+      description: r.item.name,
+      amount: r.item.price * 100
     });
   };
   
