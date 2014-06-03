@@ -175,7 +175,7 @@ html(lang='en')
           input.col-sm-10.col-sm-offset-1.col-xs-12(type='email', placeholder='Email', ng-model="signupForm.email")
           //input.col-sm-10.col-sm-offset-1.col-xs-12(type='text', placeholder='Location', ng-model="signupForm.location")
           input.col-sm-10.col-sm-offset-1.col-xs-12(type='password', placeholder='Password', ng-model="signupForm.password")
-          input.col-sm-10.col-sm-offset-1.custom-button(type="submit", value='Sign Up', ng-click="logemup()")
+          input.col-sm-10.col-sm-offset-1.custom-button(value='Sign Up', ng-click="logemup()")
           p.col-lg-12.col-sm-10.col-sm-offset-1 Or log in with &nbsp;
             a#fbLogin(href='/home', ng-click='fbLogin()', ng-hide='loggedIn') facebook
 
