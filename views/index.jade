@@ -2,27 +2,6 @@ doctype html
 html(lang='en')
   head
     include top
-    title Outrovert - Share your adventures and your gear
-    //****** faviconit.com favicons ******
-    link( rel="shortcut icon", href="/images/logoAssets/favicon.ico")
-    link( rel="icon", sizes="16x16 32x32 64x64", href="/images/logoAssets/favicon.ico")
-    link( rel="icon",type="image/png",sizes="196x196",href="/images/logoAssets/favicon-196.png")
-    link( rel="icon",type="image/png",sizes="160x160",href="/images/logoAssets/favicon-160.png")
-    link( rel="icon",type="image/png",sizes="96x96",href="/images/logoAssets/favicon-96.png")
-    link( rel="icon",type="image/png",sizes="64x64",href="/images/logoAssets/favicon-64.png")
-    link( rel="icon",type="image/png",sizes="32x32",href="/images/logoAssets/favicon-32.png")
-    link( rel="icon",type="image/png",sizes="16x16",href="/images/logoAssets/favicon-16.png")
-    link( rel="apple-touch-icon" sizes="152x152" href="/images/logoAssets/favicon-152.png")
-    link( rel="apple-touch-icon" sizes="144x144" href="/images/logoAssets/favicon-144.png")
-    link( rel="apple-touch-icon" sizes="120x120" href="/images/logoAssets/favicon-120.png")
-    link( rel="apple-touch-icon" sizes="114x114" href="/images/logoAssets/favicon-114.png")
-    link( rel="apple-touch-icon" sizes="76x76" href="/images/logoAssets/favicon-76.png")
-    link( rel="apple-touch-icon" sizes="72x72" href="/images/logoAssets/favicon-72.png")
-    link( rel="apple-touch-icon" href="/images/logoAssets/favicon-57.png")
-    meta( name="msapplication-TileColor",content="#FFFFFF")
-    meta( name="msapplication-TileImage",content="/images/logoAssets/favicon-144.png")
-    meta( name="msapplication-config",content="/images/logoAssets/browserconfig.xml")
-    // ****** faviconit.com favicons ******
     //
        Bootstrap core CSS 
     link(href='landing-assets/css/bootstrap.min.css', rel='stylesheet')
@@ -51,15 +30,14 @@ html(lang='en')
       .col-md-10.col-md-offset-1.col-sm-12.col-xs-12.title
         h1.title Love nature? Welcome home.  
         .signup
-          a(href='/home')
-            button.custom-button Sign Up
+          button.custom-button#signupBtn Sign Up
         p or &nbsp;
           a(href='/home') log in
 
       .col-lg-12.col-xs-12.infobar
         .col-lg-12.col-xs-12
           h3 Outrovert is a home for outdoor enthusiasts to trade gear and share adventures. Learn more &nbsp;
-            a(href='#about-anchor') here
+            a#toAboutAnchor here
           h3 .
         .tri-holder
           .triangle
@@ -190,14 +168,14 @@ html(lang='en')
         h1 Join us.
           | Let's go wild
           | together.
-      .col-lg-6.col-sm-8.col-xs-12
+      .col-lg-6.col-sm-8.col-xs-12(ng-controller="signup")
         form.col-lg-6.col-md-8.col-sm-10.col-xs-12.centered.info-form
-          input.col-sm-10.col-sm-offset-1.col-xs-12(type='text', placeholder='First name')
-          input.col-sm-10.col-sm-offset-1.col-xs-12(type='text', placeholder='Last name')
-          input.col-sm-10.col-sm-offset-1.col-xs-12(type='text', placeholder='Last name')
-          input.col-sm-10.col-sm-offset-1.col-xs-12(type='text', placeholder='Location')
-          input.col-sm-10.col-sm-offset-1.col-xs-12(type='password', placeholder='Password')
-          input.col-sm-10.col-sm-offset-1.custom-button(type='submit', value='Sign Up')
+          input.col-sm-10.col-sm-offset-1.col-xs-12(type='text', placeholder='First name', ng-model="signupForm.firstName")
+          input.col-sm-10.col-sm-offset-1.col-xs-12(type='text', placeholder='Last name', ng-model="signupForm.lastName")
+          input.col-sm-10.col-sm-offset-1.col-xs-12(type='email', placeholder='Email', ng-model="signupForm.email")
+          //input.col-sm-10.col-sm-offset-1.col-xs-12(type='text', placeholder='Location', ng-model="signupForm.location")
+          input.col-sm-10.col-sm-offset-1.col-xs-12(type='password', placeholder='Password', ng-model="signupForm.password")
+          input.col-sm-10.col-sm-offset-1.custom-button(type="submit", value='Sign Up', ng-click="logemup()")
           p.col-lg-12.col-sm-10.col-sm-offset-1 Or log in with &nbsp;
             a#fbLogin(href='/home', ng-click='fbLogin()', ng-hide='loggedIn') facebook
 
@@ -215,3 +193,13 @@ html(lang='en')
         window.location = '/home';
       });
       $('.gear').css({'min-width' : '260px'}).addClass('centered');
+      $('#signupBtn').click(function() {
+        $('html,body').animate({
+          scrollTop : $('.bottomarea').position().top
+        }, 1000);
+      });
+      $('a#toAboutAnchor').click(function() {
+        $('html,body').animate({
+          scrollTop: $('h2#about-anchor').parent().parent().position().top
+        });
+      });

@@ -1,10 +1,17 @@
-app.controller('signup', [ '$scope', 'sessionService', '$location', function($scope, session, $location) {
+app.controller('signup', [ '$scope', 'sessionService', 'firebaseService', '$window', function($scope, session, db, $window) {
   $scope.logemup = function() {
     var email = $scope.signupForm.email;
     var password = $scope.signupForm.password;
-    session.emailSignup(email, password, function() {
-      console.log('holy crap batman');
-      $location.path('/home#/');
+    var displayName = $scope.signupForm.firstName + ' ' + $scope.signupForm.lastName;
+    var location = $scope.signupForm.location;
+    
+    if(! (email && password && (displayName !== ' ') && location) return false;
+    
+    session.emailSignup(email, password, function(u) {
+      u.displayName = $scope.signupForm.firstName + ' ' + $scope.signupForm.lastName;
+      u.location = $scope.signupForm.location;
+      db.updateUserData(u);
+      $window.location = '/home';
     });
   };
 }]);
