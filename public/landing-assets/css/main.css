@@ -7,6 +7,11 @@ body {
     -webkit-overflow-scrolling: touch;
 }
 
+.mainarea {
+  background: url('/landing-assets/img/background.jpg');
+  background-size: cover;
+}
+
 .mainarea, .bottomarea {
     padding: 0;
 }
