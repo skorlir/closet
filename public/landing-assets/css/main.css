@@ -150,6 +150,14 @@ p.arrow {
     font-family: Arial, Helvetica, sans-serif;
 }
 
+.fake-market .photo p {
+    padding: 15px 20px;
+    display: none;
+    background: #FFF;
+    color: #000;
+    height: 100%;
+}
+
 .fake-market h2, .about h2 {
     margin: 20px;
     font-family: "Arial Black", Gadget, sans-serif;
@@ -258,7 +266,7 @@ a:after {
     padding-top: 15px;
     padding-bottom: 30px;
     border-bottom: 1px solid #DDD;
-
+}
 
 .about .about-block h3 {
     margin: 80px 30px 0 30px;
