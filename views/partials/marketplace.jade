@@ -1,8 +1,8 @@
-.col-lg-10.col-lg-offset-1.col-sm-12(ng-hide='hasNUEmail()', style='padding-top: 35px;')
-  form
-    label.col-xs-12 Add a Northwestern email Address to access the private NU marketplace
-    input.col-xs-12(type='email', ng-model='northwesternEmail', placeholder='willie_wildcat@northwestern.edu')
-    button(ng-click='addNorthwesternEmail(northwesternEmail)').col-xs-12.custom-button Add Email
+//.col-lg-10.col-lg-offset-1.col-sm-12(ng-hide='hasNUEmail()', style='padding-top: 35px;')
+//  form
+//    label.col-xs-12 Add a Northwestern email Address to access the private NU marketplace
+//    input.col-xs-12(type='email', ng-model='northwesternEmail', placeholder='willie_wildcat@northwestern.edu')
+//    button(ng-click='addNorthwesternEmail(northwesternEmail)').col-xs-12.custom-button Add Email
     
 .col-lg-10.col-lg-offset-1.col-sm-12.market
   form
@@ -40,21 +40,11 @@ script(type="text/ng-template", id="modal.html").
     <h3>Are you sure?</h3>
   </div>
   <div class="modal-body">
-    By clicking OK below, you will be opening a transaction process over the item you just clicked. If you don't want to start a transaction process, click cancel.
+    <div id="stripeTarget"></div>
   </div>
   <div class="modal-footer">
     <button class="btn btn-primary" ng-click="ok()">OK</button>
     <button class="btn btn-warning" ng-click="cancel()">Cancel</button>
   </div>
 
-script(type="text/ng-template", id="emailModal.html").
-  <div class="modal-header">
-    <h3>Add New Email</h3>
-  </div>
-  <div class="modal-body">
-    <input type="email" id="email" placeholder="email" ng-model="result.email"></input>
-  </div>
-  <div class="modal-footer">
-    <button class="btn btn-primary" ng-click="ok()">Save</button>
-    <button class="btn btn-warning" ng-click="cancel()">Cancel</button>
-  </div>
+script(src="https://checkout.stripe.com/checkout.js")

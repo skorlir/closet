@@ -1,6 +1,5 @@
-app.controller('base', ['$scope', 'sessionService', '$window', '$modal', '$http', '$filter', 'firebaseService', 'restrictionService', '$rootScope', '$location', '$position',  function($scope, session, $window, $modal, $http, $filter, db, restrictionService, $rootScope, $location) {
+app.controller('base', ['$scope', 'sessionService', '$window', '$modal', '$http', '$filter', 'firebaseService', 'restrictionService', '$rootScope', '$position',  function($scope, session, $window, $modal, $http, $filter, db, restrictionService, $rootScope) {
   
-  console.log($location);
   if($window.location.pathname == '/') {
     session.getUser(function(user) {
       if(!!user) $window.location = '/home';
