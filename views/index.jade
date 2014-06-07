@@ -142,7 +142,7 @@ html(lang='en')
 
     .about.col-xs-12
       .col-lg-10.col-lg-offset-1.col-xs-12
-        h2#about-anchor ABOUT US
+        h2#about-anchor ABOUT OUTROVERT
       .col-lg-10.col-lg-offset-1.col-xs-12.about-block
         .col-lg-6.col-sm-12.img
           img(src="landing-assets/img/aboutactivity.png")
@@ -199,23 +199,15 @@ html(lang='en')
       });
 
       $('.gear').css({'min-width' : '260px'}).addClass('centered');
-<<<<<<< HEAD
 
-      $('.photo').mouseenter(function() {
-        $(this).find('p').css('opacity', .4).fadeTo(500, 0.8);
-      });
-
-      $('.photo').mouseleave(function() {
-        $(this).find('p').css('opacity', .4).fadeTo(500, 0.0);
-=======
       $('#signupBtn').click(function() {
         $('html,body').animate({
           scrollTop : $('.bottomarea').position().top
         }, 1000);
       });
+
       $('a#toAboutAnchor').click(function() {
         $('html,body').animate({
           scrollTop: $('h2#about-anchor').parent().parent().position().top
         });
->>>>>>> 8d9a25425afdb91048957378251eee19e5d4fcb5
       });

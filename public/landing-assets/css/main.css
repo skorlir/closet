@@ -157,10 +157,16 @@ p.arrow {
 
 .fake-market .photo p {
     padding: 15px 20px;
-    display: none;
+    opacity: 0;
     background: #FFF;
     color: #000;
     height: 100%;
+    transition: opacity ease 0.5s;
+    z-index: 1001;
+}
+
+.fake-market .photo p:hover {
+    opacity: 0.8;
 }
 
 .fake-market h2, .about h2 {

@@ -87,5 +87,4 @@ app.controller('marketplace', ['$scope', 'sessionService', '$window', '$http', '
 //     });
 //    });
 //  };
-  
 }]);
