@@ -51,12 +51,13 @@ html(lang='en')
       .col-lg-10.col-lg-offset-1.col-xs-12
         .col-sm-4.col-xs-6.gear
           .photo.col-xs-12.img-rounded(style="background-image: url('/images/testAssets/harness.png')")
+            p I've been using this harness for a few months, and it's still in great condition, but I need one that can handle more extreme environments, which is why I'm selling this one!
           .star
           .bottom.col-xs-12
             .col-xs-3
               img.profile.img-responsive(src='/images/testAssets/hobbyist01.png')
             .description.col-xs-6
-              span.name(popover-placement='bottom', popover-title='Description', popover-trigger='mouseenter', popover="I've been using this harness for a few months, and it's still in great condition, but I need one that can handle more extreme environments, which is why I'm selling this one!") Misty Mountain climbing harness
+              span.name Misty Mountain climbing harness
               br
               span.quality Very Good
             .col-xs-3.pull-right.transact
@@ -65,12 +66,13 @@ html(lang='en')
               button.buy.custom-button.pull-right Buy
         .col-sm-4.col-xs-6.gear
           .photo.col-xs-12.img-rounded(style="background-image: url('/images/testAssets/bike.png')")
+            p This bike has a bunch of miles on it. Very comfortable, lower gears are a little sticky, but still works fantastic!
           .star
           .bottom.col-xs-12
             .col-xs-3
               img.profile.img-responsive(src='/images/testAssets/hobbyist02.png')
             .description.col-xs-6
-              span.name(popover-placement='bottom', popover-title='Description', popover-trigger='mouseenter', popover="This bike has a bunch of miles on it. Very comfortable, lower gears are a little sticky, but still works fantastic!") Trek Cyclone road bike
+              span.name Trek Cyclone road bike
               br
               span.quality Okay
             .col-xs-3.pull-right.transact
@@ -79,12 +81,13 @@ html(lang='en')
               button.buy.custom-button.pull-right Buy
         .col-sm-4.col-xs-6.gear
           .photo.col-xs-12.img-rounded(style="background-image: url('/images/testAssets/backpack.png')")
+            p This was a great purchase, built in solar battery, plenty of storage space, and still very light! Moving to Northeast, where it's rainy, so looking to sell!
           .star
           .bottom.col-xs-12
             .col-xs-3
               img.profile.img-responsive(src='/images/testAssets/hobbyist03.png')
             .description.col-xs-6
-              span.name(popover-placement='bottom', popover-title='Description', popover-trigger='mouseenter', popover="This was a great purchase, built in solar battery, plenty of storage space, and still very light! Moving to Northeast, where it's rainy, so looking to sell!") BrkSun Utility backpack
+              span.name BrkSun Utility backpack
               br
               span.quality Good
             .col-xs-3.pull-right.transact
@@ -93,12 +96,13 @@ html(lang='en')
               button.buy.custom-button.pull-right Buy
         .col-sm-4.col-xs-6.gear
           .photo.col-xs-12.img-rounded(style="background-image: url('/images/testAssets/sleepingbag.png')")
+            p Perfect for the outdoors, and only used twice! I got this, and then decided I'd prefer to use a hammock. Hardly used, and good for down to 30 degrees Fahrenheit!
           .star
           .bottom.col-xs-12
             .col-xs-3
               img.profile.img-responsive(src='/images/testAssets/hobbyist04.png')
             .description.col-xs-6
-              span.name(popover-placement='bottom', popover-title='Description', popover-trigger='mouseenter', popover="Perfect for the outdoors, and only used twice! I got this, and then decided I'd prefer to use a hammock. Hardly used, and good for down to 30 degrees Fahrenheit!") Kelty outdoors sleeping bag
+              span.name Kelty outdoors sleeping bag
               br
               span.quality Like New
             .col-xs-3.pull-right.transact
@@ -107,12 +111,13 @@ html(lang='en')
               button.buy.custom-button.pull-right Buy
         .col-sm-4.col-xs-6.gear
           .photo.col-xs-12.img-rounded(style="background-image: url('/images/testAssets/lightTent.png')")
+            p A great tent for beginning campers. Super easy to set up and tear down, and duarable against wind and rian. The best way to enjoy the great outdoors!
           .star
           .bottom.col-xs-12
             .col-xs-3
               img.profile.img-responsive(src='/images/testAssets/hobbyist05.png')
             .description.col-xs-6
-              span.name(popover-placement='bottom', popover-title='Description', popover-trigger='mouseenter', popover="A great tent for beginning campers. Super easy to set up and tear down, and duarable against wind and rian. The best way to enjoy the great outdoors!") Mountain Trails 4-person tent
+              span.name Mountain Trails 4-person tent
               br
               span.quality Good
             .col-xs-3.pull-right.transact
@@ -121,12 +126,13 @@ html(lang='en')
               button.buy.custom-button.pull-right Buy
         .col-sm-4.col-xs-6.gear
           .photo.col-xs-12.img-rounded(style="background-image: url('/images/testAssets/yellowtent.png')")
+            p Great for experienced campers! Can't tell you how many times I've been thankful to have this tent. It's survived all kinds of weather and conditions! A little wear, but no tears!
           .star
           .bottom.col-xs-12
             .col-xs-3
               img.profile.img-responsive(src='/images/testAssets/hobbyist06.png')
             .description.col-xs-6
-              span.name(popover-placement='bottom', popover-title='Description', popover-trigger='mouseenter', popover="Great for experienced campers! Can't tell you how many times I've been thankful to have this tent. It's survived all kinds of weather and conditions! A little wear, but no tears!") Slumberjack 2-person trail tent
+              span.name Slumberjack 2-person trail tent
               br
               span.quality Okay
             .col-xs-3.pull-right.transact
@@ -136,7 +142,7 @@ html(lang='en')
 
     .about.col-xs-12
       .col-lg-10.col-lg-offset-1.col-xs-12
-        h2#about-anchor ABOUT US
+        h2#about-anchor ABOUT OUTROVERT
       .col-lg-10.col-lg-offset-1.col-xs-12.about-block
         .col-lg-6.col-sm-12.img
           img(src="landing-assets/img/aboutactivity.png")
@@ -191,12 +197,15 @@ html(lang='en')
       $('.custom-button.buy').click(function() {
         window.location = '/home';
       });
+
       $('.gear').css({'min-width' : '260px'}).addClass('centered');
+
       $('#signupBtn').click(function() {
         $('html,body').animate({
           scrollTop : $('.bottomarea').position().top
         }, 1000);
       });
+
       $('a#toAboutAnchor').click(function() {
         $('html,body').animate({
           scrollTop: $('h2#about-anchor').parent().parent().position().top

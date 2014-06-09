@@ -22,7 +22,8 @@
   .col-xs-12.marketplace-content
     .col-sm-4.col-xs-6.gear(ng-repeat='result in marketplace | filter:search', ng-show='showHide(result.item)')
       .photo.col-xs-12.img-rounded(style="background-image: url('{{result.item.image}}')")
-        .star(style='text-align: center; position: absolute; top: 5px; color: white; width: 100%;', class='fa fa-question-circle', popover-placement='bottom', popover-title='Description', popover-trigger='mouseenter', popover='{{result.item.description}}')
+        img(ng-show='{{result.item.sold === undefined ? false : true}}', src='images/sold.png')
+        p {{result.item.description}}
       .bottom.col-xs-12
         .col-xs-3
           img.profile.img-responsive(ng-src='{{result.poster.profilePicture}}')
@@ -30,7 +31,7 @@
           span.name(popover-placement='bottom', popover-trigger='mouseenter', popover='{{result.item.name}}', style='text-overflow: ellipsis; white-space: nowrap; width: 100%; display: inline-block; overflow: hidden;') {{result.item.name}}
           br
           span.quality {{result.item.condition}}
-        .col-xs-3.pull-right.transact
+        .col-xs-3.pull-right.transact(ng-hide='{{result.item.sold}}')
           span.cost.text-center.pull-right {{result.item.price | currency}}
           br
           button.buy.custom-button.pull-right(ng-click='hasNUEmail() ? openTransaction(result) : needEmailWarning()') {{result.item.rentOrBuy}}
