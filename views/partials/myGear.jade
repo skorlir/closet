@@ -1,10 +1,10 @@
-//.col-lg-10.col-lg-offset-1.col-sm-12(ng-hide='hasNUEmail()', style='padding-top: 35px;')
-//  form
-//    label.col-xs-12 Add a Northwestern email Address to upload to the NU marketplace
-//    input.col-xs-12(type='email', ng-model='northwesternEmail', placeholder='willie_wildcat@northwestern.edu')
-//    button(ng-click='addNorthwesternEmail(northwesternEmail)').col-xs-12.custom-button Add Email
+.col-lg-10.col-lg-offset-1.col-sm-12(ng-hide='hasNUEmail()', style='padding-top: 35px;')
+  form
+    label.col-xs-12 Add a Northwestern email Address to upload
+    input.col-xs-12(type='email', ng-model='northwesternEmail', placeholder='willie_wildcat@northwestern.edu')
+    button(ng-click='addNorthwesternEmail(northwesternEmail)').col-xs-12.custom-button Add Email
 
-.col-lg-10.col-lg-offset-1.col-sm-12.zone(ng-if='loggedIn')
+.col-lg-10.col-lg-offset-1.col-sm-12.zone(ng-if='loggedIn && hasNUEmail()')
   form.col-lg-6.col-lg-offset-3.col-sm-8.col-sm-offset-2.col-xs-10.uploadform(ng-submit='addGear()')
     .form-group.col-xs-12
       label.col-xs-4 Item Name

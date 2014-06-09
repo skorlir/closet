@@ -1,8 +1,8 @@
-//.col-lg-10.col-lg-offset-1.col-sm-12(ng-hide='hasNUEmail()', style='padding-top: 35px;')
-//  form
-//    label.col-xs-12 Add a Northwestern email Address to access the private NU marketplace
-//    input.col-xs-12(type='email', ng-model='northwesternEmail', placeholder='willie_wildcat@northwestern.edu')
-//    button(ng-click='addNorthwesternEmail(northwesternEmail)').col-xs-12.custom-button Add Email
+.col-lg-10.col-lg-offset-1.col-sm-12(ng-hide='hasNUEmail()', style='padding-top: 35px;')
+  form
+    label.col-xs-12 Add a Northwestern email Address to access the private NU marketplace
+    input.col-xs-12(type='email', ng-model='northwesternEmail', placeholder='willie_wildcat@northwestern.edu')
+    button(ng-click='addNorthwesternEmail(northwesternEmail)').col-xs-12.custom-button Add Email
     
 .col-lg-10.col-lg-offset-1.col-sm-12.market
   form
@@ -33,7 +33,7 @@
         .col-xs-3.pull-right.transact
           span.cost.text-center.pull-right {{result.item.price | currency}}
           br
-          button.buy.custom-button.pull-right(ng-click='openTransaction(result)') {{result.item.rentOrBuy}}
+          button.buy.custom-button.pull-right(ng-click='hasNUEmail() ? openTransaction(result) : needEmailWarning()') {{result.item.rentOrBuy}}
           
 script(type="text/ng-template", id="modal.html").
   <div class="modal-header">
