@@ -68,6 +68,8 @@ a.add:hover {
 	}
 
   .photo {
+  	text-align: center;
+
   	p {
 	    padding: 15px 20px;
 	    opacity: 0;
@@ -79,6 +81,11 @@ a.add:hover {
 
 		p:hover {
 			opacity: 0.8;
+		}
+
+		img {
+			position: relative;
+			height: 100%;
 		}
   }
 
