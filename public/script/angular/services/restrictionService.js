@@ -36,7 +36,6 @@ app.service('restrictionService', ['$filter', function($filter) {
                                     (strArg = rPt2.split(" "), checkArg = rPt1, strArg.shift());
     userField = strArg.join();
     var userValues = this.user.restrictions ? $filter('orderByPriority')(this.user.restrictions[userField]) : [this.user[userField]];
-    console.log(userValues);
     var check_this = this;
     return this.user && this.user[userField] && userValues.some(function(v) { 
       return check_this._comparators[cmd](v, checkArg) 

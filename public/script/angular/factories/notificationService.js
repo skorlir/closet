@@ -32,13 +32,13 @@ app.factory('notificationService', ['sessionService', 'firebaseService', functio
     
     toRef.$child('/notifications').$add(of);
     
-    $.post('/notifier', data)
-    .done(function(res) {
-      console.log(res);
-    })
-    .fail(function(err) {
-      console.log(err.responseText);
-    });
+//    $.post('/notifier', data)
+//    .done(function(res) {
+//      console.log(res);
+//    })
+//    .fail(function(err) {
+//      console.log(err.responseText);
+//    });
   }
   
   function notifyPurchase(sellerUid, item, purchaser) {

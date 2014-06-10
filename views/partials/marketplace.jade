@@ -1,9 +1,3 @@
-.col-lg-10.col-lg-offset-1.col-sm-12(ng-hide='hasNUEmail()', style='padding-top: 35px;')
-  form
-    label.col-xs-12 Add a Northwestern email Address to use the private NU marketplace
-    input.col-xs-12(type='email', ng-model='northwesternEmail', placeholder='willie_wildcat@northwestern.edu')
-    button(ng-click='addNorthwesternEmail(northwesternEmail)').col-xs-12.custom-button Add Email
-    
 .col-lg-10.col-lg-offset-1.col-sm-12.market
   form
     .form-group.col-xs-12.search
@@ -34,18 +28,6 @@
         .col-xs-3.pull-right.transact(ng-hide='{{result.item.sold}}')
           span.cost.text-center.pull-right {{result.item.price | currency}}
           br
-          button.buy.custom-button.pull-right(ng-click='hasNUEmail() ? openTransaction(result) : needEmailWarning()') {{result.item.rentOrBuy}}
-          
-script(type="text/ng-template", id="modal.html").
-  <div class="modal-header">
-    <h3>Are you sure?</h3>
-  </div>
-  <div class="modal-body">
-    By confirming below, Outrovert will send a reservation to Norris Outdoors on your behalf. Thanks!
-  </div>
-  <div class="modal-footer">
-    <button class="btn btn-primary" ng-click="ok()">OK</button>
-    <button class="btn btn-warning" ng-click="cancel()">Cancel</button>
-  </div>
+          button.buy.custom-button.pull-right(ng-click='openTransaction(result)') {{result.item.rentOrBuy}}
 
 script(src="https://checkout.stripe.com/checkout.js")

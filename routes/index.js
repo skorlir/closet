@@ -7,6 +7,7 @@ var fs = require('fs');
 var path = require('path');
 var crypto = require('crypto');
 var nodemailer = require('nodemailer');
+var stripe     = require('stripe')("sk_test_XZ4cLrAvVlvAoUTWDsdXnqOi");
 
 var AWS_ACCESS_KEY = process.env.OUTROVERT_AWS_ACCESS_KEY_ID || 'AKIAIL4CN36DNKF2J6MQ';
 var AWS_SECRET_KEY = process.env.OUTROVERT_AWS_SECRET_ACCESS_KEY || '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';
@@ -20,7 +21,7 @@ var smtpTransport = nodemailer.createTransport("SMTP", {
 	}
 });
 
-var toOutrovert = "User ### has opened a transaction on NORRIS.Ourtrovert (var dump): %%%";
+var toOutrovert = "User ### has opened a transaction on Outrovert (var dump): %%%";
 
 var toUser      = "<p>Hi ###,<br><p>Thank you for using Outrovert's marketplace!<br><p>Your transaction on %%% has been opened, and we'll update you as soon as the seller has accepted the offer with further details.<br><br><p>If you have any questions, please feel free to reply to this email or chat with us in the Olark window on outrovert.co! <br><p>Thanks!<p>The Outrovert Team";
 
@@ -117,6 +118,48 @@ function generateSignature(put_request) {
 	//signature = signature.replace('%3D','=');
 	//EDIT: No they didn't but their uploader was broken
 	return signature;
+}
+
+exports.stripeCall = function(req, res) {
+  //          stripeToken: token,
+  //        item: r.item,
+  //        seller: r.poster,
+  //        purchaser: $scope.user
+  var stripeToken = req.body.stripeToken;
+  var customerId  = req.body.purchaser.stripeCustomerId;
+  console.log(stripeToken);
+  console.log(customerId);
+  
+  if(customerId) {
+    setTimeout(function() {
+      stripe.charges.create({
+        amount: req.body.item.price,
+        currency: "usd",
+        customer: customerId
+      });
+    }, 3*24*60*60);
+    console.log(customerId);
+    res.send(customerId);
+  }
+  else {
+    stripe.customers.create({
+      card: stripeToken.id,
+      description: req.body.purchaser.email
+    }).then(function(customer) { 
+      console.log("got there...");
+      setTimeout(function() {
+        stripe.charges.create({
+          amount: req.body.item.price,
+          currency: "usd",
+          customer: customer.id
+        });
+      }, 3*24*60*60);
+      console.log(customer.id);
+      res.send(customer.id);
+    }, function(err) {
+      console.log(err);
+    });
+  }
 }
 
 exports.verifyEmail= function(req, res) {
