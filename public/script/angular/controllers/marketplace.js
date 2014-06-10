@@ -1,4 +1,4 @@
-app.controller('marketplace', ['$scope', 'sessionService', '$window', '$http', 'firebaseService', '$modal', 'restrictionService', '$filter', function($scope, session, $window, $http, db, $modal, restrictionService, $filter) {
+app.controller('marketplace', ['$scope', 'sessionService', '$window', '$http', 'firebaseService', '$modal', 'restrictionService', '$filter', 'notificationService', function($scope, session, $window, $http, db, $modal, restrictionService, $filter, notif) {
   //item.image item.poster.profilePicture item.poster.uid item.price item.description.name item.description.quality item.description.tags item.description.categories item.action item.location
   
   $scope.marketdb = db.getMarketplaceRef();
@@ -70,7 +70,17 @@ app.controller('marketplace', ['$scope', 'sessionService', '$window', '$http', '
     $scope.stripeCheckout.open({
       name: 'Outrovert',
       description: r.item.name,
-      amount: r.item.price * 100
+      amount: r.item.price * 100,
+      email: $scope.user.email,
+      token: function(token, args) {
+        var data = {
+          stripeToken: token,
+          item: r.item,
+          seller: r.poster,
+          purchaser: $scope.user
+        };
+        $.post()
+      }
     });
   };
   
