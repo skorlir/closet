@@ -1,4 +1,4 @@
-app.controller('marketplace', ['$scope', 'sessionService', '$window', '$http', 'firebaseService', '$modal', 'restrictionService', '$filter', function($scope, session, $window, $http, db, $modal, restrictionService, $filter) {
+app.controller('marketplace', ['$scope', 'sessionService', '$window', '$http', 'firebaseService', '$modal', 'restrictionService', '$filter', 'notificationService', function($scope, session, $window, $http, db, $modal, restrictionService, $filter, notif) {
   //item.image item.poster.profilePicture item.poster.uid item.price item.description.name item.description.quality item.description.tags item.description.categories item.action item.location
   
   $scope.marketdb = db.getMarketplaceRef();
@@ -67,11 +67,47 @@ app.controller('marketplace', ['$scope', 'sessionService', '$window', '$http', '
   
   $scope.openTransaction = function(r) {
     console.log(r);
-    $scope.stripeCheckout.open({
-      name: 'Outrovert',
-      description: r.item.name,
-      amount: r.item.price * 100
+    
+    var modal = $modal.open({
+      templateUrl: 'modal.html',
+      controller: modalController
     });
+    
+    modal.result.then(function(result) {
+      //confirmation == whatever is passed in. So nothing?
+      //send an email with node-mailer
+      session.getUser(function(user) {
+        notif.notify.purchase(r.poster.uid, r.item, user);
+        $http.post('/transaction', {user: user, r: r})
+        .success(function(res) {
+          console.log("the transaction was committed.");
+          //should do something to prevent double transactions?!
+        })
+        .error(function(error) {
+          console.log(error);
+        });
+      });
+      
+    }, function(cancellation) {
+      //nothing needs done here...
+      console.log("cancel!");
+    });
+//    $scope.stripeCheckout.open({
+//      name: 'Outrovert',
+//      description: r.item.name,
+//      amount: r.item.price * 100,
+//      email: $scope.user.email,
+//      token: function(token, args) {
+//        var data = {
+//          stripeToken: token,
+//          item: r.item,
+//          seller: r.poster,
+//          purchaser: $scope.user
+//        };
+//        notif.notify.notifyPurchase(r.poster.uid, r.item, $scope.user);
+//        $.post('/')
+//      }
+//    });
   };
   
 //  $scope.addEmail = function() {

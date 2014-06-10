@@ -1,7 +1,8 @@
 app.factory('firebaseService', ['$firebase', function($firebase) {
   //sweltering-fire-110
-  var serverUri = window.developmentMode ? 'https://outrovert-testing.firebaseio.com' : 
-                                        'https://sweltering-fire-110.firebaseio.com';
+  var serverUri = 'https://norris-outdoor.firebaseio.com';
+  //window.developmentMode ? 'https://outrovert-testing.firebaseio.com' : 
+                                        //'https://sweltering-fire-110.firebaseio.com';
   var root     = new Firebase(serverUri);
   var firebase = $firebase(root);
   
@@ -22,16 +23,12 @@ app.factory('firebaseService', ['$firebase', function($firebase) {
     this.getUserData = function(uid, nocache) {      
       var userRef = firebase.$child('/users/'+uid);
       
-      var cleanedData = {};
+      console.log(userRef);
       
       for (var prop in userRef)
-        if (prop[0] !== '$') cleanedData[prop] = userRef[prop]; 
+        if (prop[0] !== '$') this.userDataCache[prop] = userRef[prop]; 
       
-      if(nocache) return cleanedData;
-      else {
-        this.userDataCache = cleanedData;
-        return this.userDataCache;
-      }
+      return this.userDataCache;
     }
     
     this.updateUserData = function(user) {

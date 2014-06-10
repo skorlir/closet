@@ -28,6 +28,8 @@ app.get('/partials/:partial', function(req, res) {
 });
 app.get('/aws0signature', routes.aws0signature);
 
+app.post('/emailVerifier', routes.verifyEmail);
+
 app.post('/transaction', routes.commitTransaction);
 app.post('/nonfeature', routes.nonfeature);
 

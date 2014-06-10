@@ -1,8 +1,8 @@
-//.col-lg-10.col-lg-offset-1.col-sm-12(ng-hide='hasNUEmail()', style='padding-top: 35px;')
-//  form
-//    label.col-xs-12 Add a Northwestern email Address to access the private NU marketplace
-//    input.col-xs-12(type='email', ng-model='northwesternEmail', placeholder='willie_wildcat@northwestern.edu')
-//    button(ng-click='addNorthwesternEmail(northwesternEmail)').col-xs-12.custom-button Add Email
+.col-lg-10.col-lg-offset-1.col-sm-12(ng-hide='hasNUEmail()', style='padding-top: 35px;')
+  form
+    label.col-xs-12 Add a Northwestern email Address to use the private NU marketplace
+    input.col-xs-12(type='email', ng-model='northwesternEmail', placeholder='willie_wildcat@northwestern.edu')
+    button(ng-click='addNorthwesternEmail(northwesternEmail)').col-xs-12.custom-button Add Email
     
 .col-lg-10.col-lg-offset-1.col-sm-12.market
   form
@@ -22,9 +22,9 @@
   .col-xs-12.marketplace-content
     .col-sm-4.col-xs-6.gear(ng-repeat='result in marketplace | filter:search', ng-show='showHide(result.item)')
       .photo.col-xs-12.img-rounded(style="background-image: url('{{result.item.image}}')")
-        img(ng-show='{{result.item.sold === undefined ? false : true}}', src='images/sold.png')
+        img(ng-show='{{result.item.sold === undefined ? false : true}}', src='images/sold.png', style="width: 33%; margin: 0 auto;")
         p {{result.item.description}}
-      .bottom.col-xs-12
+      .bottom.col-xs-12(style="min-height: 75px")
         .col-xs-3
           img.profile.img-responsive(ng-src='{{result.poster.profilePicture}}')
         .description.col-xs-6
@@ -34,14 +34,14 @@
         .col-xs-3.pull-right.transact(ng-hide='{{result.item.sold}}')
           span.cost.text-center.pull-right {{result.item.price | currency}}
           br
-          button.buy.custom-button.pull-right(ng-click='openTransaction(result)') {{result.item.rentOrBuy}}
+          button.buy.custom-button.pull-right(ng-click='hasNUEmail() ? openTransaction(result) : needEmailWarning()') {{result.item.rentOrBuy}}
           
 script(type="text/ng-template", id="modal.html").
   <div class="modal-header">
     <h3>Are you sure?</h3>
   </div>
   <div class="modal-body">
-    <div id="stripeTarget"></div>
+    By confirming below, Outrovert will send a reservation to Norris Outdoors on your behalf. Thanks!
   </div>
   <div class="modal-footer">
     <button class="btn btn-primary" ng-click="ok()">OK</button>
