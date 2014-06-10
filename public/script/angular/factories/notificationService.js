@@ -10,7 +10,7 @@ app.factory('notificationService', ['sessionService', 'firebaseService', functio
   function fillTemplate(t, paramsObj) {
     t = NOTIFICATION_MSG_TEMPLATES[t];
     t = t.replace(/\*-(\w+)-\*/g, function(match, capture, index, origString) {
-      return paramsObj[capture];
+      return paramsObj[capture].displayName || paramsObj[capture].name || paramsObj[capture];
     });
     
     return t;
