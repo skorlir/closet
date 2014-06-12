@@ -1,14 +1,5 @@
-nav.col-sm-2.col-xs-12.nav.navigation
-    ul.pages
-      li
-        a(href='#/') What's New
-      li 
-        a(href='#/marketplace') Marketplace
-      li#here
-        a My Gear
-
-.col-lg-9.col-sm-10.col-xs-12(ng-show='loggedIn')
-  form.col-lg-6.col-sm-8.col-xs-10.uploadform.col-xs-offset-1(ng-submit='addGear()')
+.col-lg-10.col-lg-offset-1.col-sm-12.zone(ng-if='loggedIn')
+  form.col-lg-6.col-lg-offset-3.col-sm-8.col-sm-offset-2.col-xs-10.uploadform(ng-submit='addGear()')
     .form-group.col-xs-12
       label.col-xs-4 Item Name
       input.col-xs-7(type='text', placeholder='eg Camelbak Eddy Water Bottle', ng-model='addGearForm.name', required)
@@ -36,9 +27,9 @@ nav.col-sm-2.col-xs-12.nav.navigation
       textarea.col-xs-7(ng-model='addGearForm.description')
     .form-group.col-xs-12
       label.col-xs-4 Picture
-      .fileinput.col-xs-3
+      .fileinput.col-xs-8
         input.col-xs-12(type="file", name="file", class='file', onchange="angular.element(this).scope().uploadFile(this)", required)
-        .fakeinput.col-xs-12
+        //- .fakeinput.col-xs-12
           input.custom-button.col-xs-12(type='button', value='Choose File')
     .form-group.col-xs-12
       input.col-xs-4.col-xs-offset-4.post(type='submit', value='Post Item')

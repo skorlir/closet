@@ -7,6 +7,12 @@ html(ng-app='outrovert')
       span.logo.col-xs-2
         a(href='/')
           img(src='images/logoAssets/cornerlogo.png', ng-show="loggedIn")
+      span.navpoint.col-xs-2
+        a(href='#/')#here Adventure Zone
+      span.navpoint.col-xs-2
+        a(href='#/marketplace') Marketplace
+      span.navpoint.col-xs-2
+        a(href='#/mygear') My Gear
       span.col-xs-5.col-md-4.pull-right
         #loginButtons.col-xs-4.pull-right
           button#logout.custom-button.pull-right(ng-click='logout()', ng-show='loggedIn') Log out
@@ -16,11 +22,14 @@ html(ng-app='outrovert')
             //- .col-xs-12
             h4.profile.pull-right {{user.displayName}}
 
-    .login.col-xs-6.col-xs-offset-3(ng-hide='loggedIn')
-      a(href='/')
-        img.img-responsive.col-xs-12(src='/landing-assets/img/new_logo.png', style='margin: 50px 0')
-      button#fbLogin.custom-button.col-xs-6.col-xs-offset-3(ng-click='fbLogin()', ng-hide='loggedIn') Login with Facebook
-      img.col-xs-6.col-xs-offset-3(src='/images/icons.png')
+    .login.col-xs-12(ng-hide='loggedIn')
+      img.img-responsive.col-lg-4.col-lg-offset-4.col-sm-8.col-sm-offset-2(src='/landing-assets/img/new_logo.png')
+      form.col-lg-4.col-lg-offset-4.col-sm-8.col-sm-offset-2.login-form
+        input.col-sm-10.col-sm-offset-1(type='text', placeholder='Email', ng-model='loginForm.email')
+        input.col-sm-10.col-sm-offset-1(type='password', placeholder='Password', ng-model='loginForm.password')
+        button.col-sm-10.col-sm-offset-1.custom-button(ng-click='emailLogin(loginForm.email, loginForm.password)') Log in
+        p.col-sm-10.col-sm-offset-1 Or log in with &nbsp;
+          a#fbLogin(href='/home', ng-click='fbLogin()', ng-hide='loggedIn') facebook
 
     p.browsehappy.text-center.col-xs-12(ng-if='document.documentMode < 11')  
       | You are using an 
@@ -39,7 +48,7 @@ html(ng-app='outrovert')
         li
           a(href='#/mygear') My Gear
 
-    ng-view(ng-show='loggedIn')
+    ng-view(ng-if='loggedIn')
     
     include lazy-scripts
 

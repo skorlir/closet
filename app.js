@@ -9,9 +9,9 @@ var express = require('express')
 var app = express();
 
 //HTTP authentication scheme
-var httpAuth = express.basicAuth(function(user, pass) {
- 		return (user === 'admin' && pass === 'granular crafty gidget') || (user === 'beta' && pass === "I'm an Outrovert");
-	});
+//var httpAuth = express.basicAuth(function(user, pass) {
+// 		return (user === 'admin' && pass === 'granular crafty gidget') || (user === 'beta' && pass === "I'm an Outrovert");
+//	});
 
 //set up the basic environment
 require('./setupEnv')(app);
@@ -22,11 +22,13 @@ app.use(app.router);
 
 //declare routing
 app.get('/', routes.index);
-app.get('/home', httpAuth, routes.test);
+app.get('/home', routes.test);
 app.get('/partials/:partial', function(req, res) {
   res.render('partials/'+req.params.partial);
 });
 app.get('/aws0signature', routes.aws0signature);
+
+app.post('/stripeCall', routes.stripeCall);
 
 app.post('/transaction', routes.commitTransaction);
 app.post('/nonfeature', routes.nonfeature);

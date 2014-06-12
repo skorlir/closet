@@ -6,6 +6,8 @@ app.factory('sessionService',  ['firebaseService', '$firebaseSimpleLogin', '$roo
 
   $rootScope.$on('$firebaseSimpleLogin:login', function(e, user) {
 
+    //TODO: add password auth stuff so it doesn't pretend everything is facebook
+    $rootScope.loggedIn = true; //but be more optimistic about login
     var userData = db.getUserRef(user.uid);
 
     var userConnections = userData.$child('connections');
@@ -19,13 +21,12 @@ app.factory('sessionService',  ['firebaseService', '$firebaseSimpleLogin', '$roo
     
       db.updateUserData(user);
       sessionUser = db.getUserData(user.uid);
-      $rootScope.loggedIn = true;
       $rootScope.user = sessionUser;
       console.log(sessionUser);
     });
 
     $rootScope.disconnect = function() {
-      if(con) userConnections.$remove(con);
+      if(con) (userConnections.$remove(con), con = null);
       lastOnline.$set(db.timestamp());
       
       $rootScope.loggedIn = false;
@@ -50,6 +51,28 @@ app.factory('sessionService',  ['firebaseService', '$firebaseSimpleLogin', '$roo
         });
       }
     },
+    
+    emailSignup: function(email, password, next) {
+      auth.$createUser(email, password).then(function(user) {
+        next(user);
+      }, function(error) {
+        console.log(error);
+      });
+    },
+    
+    emailLogin: function(next) {
+      return function(email, password) {
+        console.log(email, password);
+        auth.$login('password', {
+          email: email,
+          password: password
+        }).then(function(user) {
+          next(user);
+        }, function(error) {
+          console.log(error);
+        });
+      }
+    },
 
     logout: function(next) {
       return function() {
@@ -60,7 +83,7 @@ app.factory('sessionService',  ['firebaseService', '$firebaseSimpleLogin', '$roo
     },
 
     getUser: function(next) {
-      auth.$getCurrentUser().then(function(user) {next(db.getUserData(user.uid))});
+      auth.$getCurrentUser().then(function(user) {user ? user.uid ? next(db.getUserData(user.uid)) : next(user) : next(null);});
     }
   }
   

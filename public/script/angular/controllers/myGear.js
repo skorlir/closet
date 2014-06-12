@@ -3,10 +3,12 @@ app.controller('myGear', ['$scope', 'sessionService', 'firebaseService', '$windo
     
     $scope.uploadFile = function(el) {
       $scope.imgToUpload = el.files[0];
-      $scope.s3upload = new $window.S3Upload({
-        s3_object_name: user.uid + '_' + $scope.imgToUpload.name,
-        s3_sign_put_url: 'aws0signature',
-        file_dom_selector: null
+      session.getUser(function(user) {
+        $scope.s3upload = new $window.S3Upload({
+          s3_object_name: user.uid + '_' + $scope.imgToUpload.name,
+          s3_sign_put_url: 'aws0signature',
+          file_dom_selector: null
+        });
       });
       $scope.fileElement = el;
     };
@@ -25,19 +27,21 @@ app.controller('myGear', ['$scope', 'sessionService', 'firebaseService', '$windo
     });
 
     $scope.addGear = function() {
+      console.log($scope.addGearForm);
       $scope.s3upload.onFinishS3Put = function(public_url) {
         var item = {
           name: $scope.addGearForm.name,
           description: $scope.addGearForm.description,
           condition: $scope.addGearForm.condition,
           price: $scope.addGearForm.price,
-          rentOrBuy: $scope.addGearForm.rentalOrSale === 'Sale' ? 'Buy' : 'Rent',
-          image: public_url
+          rentOrBuy: $scope.addGearForm.forRent ? 'Rent' : 'Buy',
+          image: public_url,
+          location: user.location || user.hometown
         }
         
         var poster = {
           uid: user.uid,
-          profilePicture: 'http://graph.facebook.com/' + user.id + '/picture?type=small'
+          profilePicture: user.profilePicture
         }
         var itemRef = myGearDB.$add(item);
         

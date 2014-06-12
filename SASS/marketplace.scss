@@ -67,6 +67,28 @@ a.add:hover {
 		padding: 0;
 	}
 
+  .photo {
+  	text-align: center;
+
+  	p {
+	    padding: 15px 20px;
+	    opacity: 0;
+	    background: #FFF;
+	    color: #000;
+	    height: 100%;
+	    transition: opacity ease 0.5s;
+	  }
+
+		p:hover {
+			opacity: 0.8;
+		}
+
+		img {
+			position: relative;
+			height: 100%;
+		}
+  }
+
 	.description {
 		margin-top: 1%;
 	}

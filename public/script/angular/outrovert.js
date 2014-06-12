@@ -11,7 +11,11 @@ var router = function($routeProvider) {
     templateUrl: '/partials/myGear',
     controller: 'myGear'
   });
+  $routeProvider.when('/signup', {
+    templateUrl: '/partials/signup',
+    controller: 'signup'
+  });
 }
 
 var app = angular.module('outrovert', ['firebase', 'ngRoute', 'ui.bootstrap'], router);
-window.developmentMode = true;
+//window.developmentMode = true;
